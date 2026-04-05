@@ -1,0 +1,19 @@
+
+#nullable enable
+
+namespace Neon
+{
+    /// <summary>
+    /// Annotation properties.<br/>
+    /// Example: {"github-commit-ref":"github-branch-name"}
+    /// </summary>
+    public sealed partial class AnnotationValueData
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

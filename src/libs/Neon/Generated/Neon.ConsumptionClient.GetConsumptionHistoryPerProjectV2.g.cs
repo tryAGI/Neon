@@ -1,0 +1,420 @@
+
+#nullable enable
+
+namespace Neon
+{
+    public partial class ConsumptionClient
+    {
+        partial void PrepareGetConsumptionHistoryPerProjectV2Arguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string? cursor,
+            ref int? limit,
+            global::System.Collections.Generic.IList<string>? projectIds,
+            ref global::System.DateTime from,
+            ref global::System.DateTime to,
+            ref global::Neon.ConsumptionHistoryGranularity granularity,
+            ref string orgId,
+            global::System.Collections.Generic.IList<string> metrics);
+        partial void PrepareGetConsumptionHistoryPerProjectV2Request(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? cursor,
+            int? limit,
+            global::System.Collections.Generic.IList<string>? projectIds,
+            global::System.DateTime from,
+            global::System.DateTime to,
+            global::Neon.ConsumptionHistoryGranularity granularity,
+            string orgId,
+            global::System.Collections.Generic.IList<string> metrics);
+        partial void ProcessGetConsumptionHistoryPerProjectV2Response(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessGetConsumptionHistoryPerProjectV2ResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// Retrieve project consumption metrics<br/>
+        /// Retrieves consumption metrics for Launch, Scale, Agent, and Enterprise plan projects. History begins at the time of upgrade.<br/>
+        /// Results are ordered by time in ascending order (oldest to newest).<br/>
+        /// Issuing a call to this API does not wake a project's compute endpoint.
+        /// </summary>
+        /// <param name="cursor"></param>
+        /// <param name="limit">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="projectIds"></param>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <param name="granularity"></param>
+        /// <param name="orgId"></param>
+        /// <param name="metrics"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Neon.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>> GetConsumptionHistoryPerProjectV2Async(
+            global::System.DateTime from,
+            global::System.DateTime to,
+            global::Neon.ConsumptionHistoryGranularity granularity,
+            string orgId,
+            global::System.Collections.Generic.IList<string> metrics,
+            string? cursor = default,
+            int? limit = default,
+            global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            PrepareArguments(
+                client: HttpClient);
+            PrepareGetConsumptionHistoryPerProjectV2Arguments(
+                httpClient: HttpClient,
+                cursor: ref cursor,
+                limit: ref limit,
+                projectIds: projectIds,
+                from: ref from,
+                to: ref to,
+                granularity: ref granularity,
+                orgId: ref orgId,
+                metrics: metrics);
+
+            var __pathBuilder = new global::Neon.PathBuilder(
+                path: "/consumption_history/v2/projects",
+                baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("cursor", cursor)
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("project_ids", projectIds, delimiter: ",", explode: true)
+                .AddRequiredParameter("from", from.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddRequiredParameter("to", to.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddRequiredParameter("granularity", granularity.ToValueString())
+                .AddRequiredParameter("org_id", orgId)
+                .AddRequiredParameter("metrics", metrics, delimiter: ",", explode: true) 
+                ; 
+            var __path = __pathBuilder.ToString();
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Get,
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in Authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
+
+            PrepareRequest(
+                client: HttpClient,
+                request: __httpRequest);
+            PrepareGetConsumptionHistoryPerProjectV2Request(
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
+                cursor: cursor,
+                limit: limit,
+                projectIds: projectIds,
+                from: from,
+                to: to,
+                granularity: granularity,
+                orgId: orgId,
+                metrics: metrics);
+
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: HttpClient,
+                response: __response);
+            ProcessGetConsumptionHistoryPerProjectV2Response(
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            // This endpoint is not available. It is only supported with Launch, Scale, Business, and Enterprise plan accounts.
+            if ((int)__response.StatusCode == 403)
+            {
+                string? __content_403 = null;
+                global::System.Exception? __exception_403 = null;
+                global::Neon.GeneralError? __value_403 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_403 = __ex;
+                }
+
+                throw new global::Neon.ApiException<global::Neon.GeneralError>(
+                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_403,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_403,
+                    ResponseObject = __value_403,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Account is not a member of the organization specified by `org_id`.
+            if ((int)__response.StatusCode == 404)
+            {
+                string? __content_404 = null;
+                global::System.Exception? __exception_404 = null;
+                global::Neon.GeneralError? __value_404 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_404 = global::Neon.GeneralError.FromJson(__content_404, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_404 = global::Neon.GeneralError.FromJson(__content_404, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_404 = __ex;
+                }
+
+                throw new global::Neon.ApiException<global::Neon.GeneralError>(
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_404,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_404,
+                    ResponseObject = __value_404,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // The specified `date-time` range is outside the boundaries of the specified `granularity`. Adjust your `from` and `to` values or select a different `granularity`. 
+            if ((int)__response.StatusCode == 406)
+            {
+                string? __content_406 = null;
+                global::System.Exception? __exception_406 = null;
+                global::Neon.GeneralError? __value_406 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_406 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_406 = global::Neon.GeneralError.FromJson(__content_406, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_406 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_406 = global::Neon.GeneralError.FromJson(__content_406, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_406 = __ex;
+                }
+
+                throw new global::Neon.ApiException<global::Neon.GeneralError>(
+                    message: __content_406 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_406,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_406,
+                    ResponseObject = __value_406,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Too many requests
+            if ((int)__response.StatusCode == 429)
+            {
+                string? __content_429 = null;
+                global::System.Exception? __exception_429 = null;
+                global::Neon.GeneralError? __value_429 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_429 = global::Neon.GeneralError.FromJson(__content_429, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_429 = global::Neon.GeneralError.FromJson(__content_429, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_429 = __ex;
+                }
+
+                throw new global::Neon.ApiException<global::Neon.GeneralError>(
+                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_429,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_429,
+                    ResponseObject = __value_429,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // General Error.  The request may or may not be safe to retry, depending on the HTTP method, response status code, and whether a response was received.  - If no response is returned from the API, a network error or timeout likely occurred. - In some cases, the request may have reached the server and been successfully processed, but the response failed to reach the client. As a result, retrying non-idempotent requests can lead to unintended results.  The following HTTP methods are considered non-idempotent: `POST`, `PATCH`, `DELETE`, and `PUT`. Retrying these methods is generally **not safe**. The following methods are considered idempotent: `GET`, `HEAD`, and `OPTIONS`. Retrying these methods is **safe** in the event of a network error or timeout.  Any request that returns a `503 Service Unavailable` response is always safe to retry.  Any request that returns a `423 Locked` response is safe to retry. `423 Locked` indicates that the resource is temporarily locked, for example, due to another operation in progress. 
+            if (!__response.IsSuccessStatusCode)
+            {
+                string? __content_default = null;
+                global::System.Exception? __exception_default = null;
+                global::Neon.GeneralError? __value_default = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_default = __ex;
+                }
+
+                throw new global::Neon.ApiException<global::Neon.GeneralError>(
+                    message: __content_default ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_default,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_default,
+                    ResponseObject = __value_default,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessGetConsumptionHistoryPerProjectV2ResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
+
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>.FromJson(__content, JsonSerializerOptions) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    throw new global::Neon.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    string? __content = null;
+                    try
+                    {
+                        __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                            cancellationToken
+#endif
+                        ).ConfigureAwait(false);
+                    }
+                    catch (global::System.Exception)
+                    {
+                    }
+
+                    throw new global::Neon.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+        }
+    }
+}
