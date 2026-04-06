@@ -12,7 +12,8 @@ namespace Neon.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -42,7 +43,9 @@ namespace Neon.JsonConverters
                 {
                     try
                     {
-                        projectResponse = global::System.Text.Json.JsonSerializer.Deserialize<global::Neon.ProjectResponse>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.ProjectResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.ProjectResponse> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.ProjectResponse).Name}");
+                        projectResponse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -55,7 +58,9 @@ namespace Neon.JsonConverters
                 {
                     try
                     {
-                        branches = global::System.Text.Json.JsonSerializer.Deserialize<global::Neon.BranchesResponse>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.BranchesResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.BranchesResponse> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.BranchesResponse).Name}");
+                        branches = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -70,7 +75,9 @@ namespace Neon.JsonConverters
             {
                 try
                 {
-                    projectResponse = global::System.Text.Json.JsonSerializer.Deserialize<global::Neon.ProjectResponse>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.ProjectResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.ProjectResponse> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.ProjectResponse).Name}");
+                    projectResponse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -81,7 +88,9 @@ namespace Neon.JsonConverters
 
                 try
                 {
-                    branches = global::System.Text.Json.JsonSerializer.Deserialize<global::Neon.BranchesResponse>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.BranchesResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.BranchesResponse> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.BranchesResponse).Name}");
+                    branches = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -106,15 +115,20 @@ namespace Neon.JsonConverters
             global::Neon.ProjectRecoverResponse value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsProjectResponse)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProjectResponse, typeof(global::Neon.ProjectResponse), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.ProjectResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.ProjectResponse?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.ProjectResponse).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProjectResponse!, typeInfo);
             }
             else if (value.IsBranches)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Branches, typeof(global::Neon.BranchesResponse), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.BranchesResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.BranchesResponse?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.BranchesResponse).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Branches!, typeInfo);
             }
         }
     }

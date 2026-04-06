@@ -12,7 +12,8 @@ namespace Neon.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -43,7 +44,9 @@ namespace Neon.JsonConverters
                 {
                     try
                     {
-                        vPCEndpoint = global::System.Text.Json.JsonSerializer.Deserialize<global::Neon.VPCEndpoint>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.VPCEndpoint), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.VPCEndpoint> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.VPCEndpoint).Name}");
+                        vPCEndpoint = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -56,7 +59,9 @@ namespace Neon.JsonConverters
                 {
                     try
                     {
-                        vPCEndpointWithRegionVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::Neon.VPCEndpointWithRegionVariant2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.VPCEndpointWithRegionVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.VPCEndpointWithRegionVariant2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.VPCEndpointWithRegionVariant2).Name}");
+                        vPCEndpointWithRegionVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -71,7 +76,9 @@ namespace Neon.JsonConverters
             {
                 try
                 {
-                    vPCEndpoint = global::System.Text.Json.JsonSerializer.Deserialize<global::Neon.VPCEndpoint>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.VPCEndpoint), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.VPCEndpoint> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.VPCEndpoint).Name}");
+                    vPCEndpoint = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -82,7 +89,9 @@ namespace Neon.JsonConverters
 
                 try
                 {
-                    vPCEndpointWithRegionVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::Neon.VPCEndpointWithRegionVariant2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.VPCEndpointWithRegionVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.VPCEndpointWithRegionVariant2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.VPCEndpointWithRegionVariant2).Name}");
+                    vPCEndpointWithRegionVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -107,15 +116,20 @@ namespace Neon.JsonConverters
             global::Neon.VPCEndpointWithRegion value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsVPCEndpoint)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VPCEndpoint, typeof(global::Neon.VPCEndpoint), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.VPCEndpoint), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.VPCEndpoint?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.VPCEndpoint).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VPCEndpoint!, typeInfo);
             }
             else if (value.IsVPCEndpointWithRegionVariant2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VPCEndpointWithRegionVariant2, typeof(global::Neon.VPCEndpointWithRegionVariant2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.VPCEndpointWithRegionVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.VPCEndpointWithRegionVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.VPCEndpointWithRegionVariant2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VPCEndpointWithRegionVariant2!, typeInfo);
             }
         }
     }

@@ -77,7 +77,7 @@ namespace Neon
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -116,13 +116,13 @@ namespace Neon
                     if (ReadResponseAsString)
                     {
                         __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerOptions);
+                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
                     }
                     else
                     {
                         __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerOptions);
+                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)

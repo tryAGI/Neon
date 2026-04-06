@@ -93,13 +93,13 @@ namespace Neon
                     if (ReadResponseAsString)
                     {
                         __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerOptions);
+                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
                     }
                     else
                     {
                         __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerOptions);
+                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -143,7 +143,7 @@ namespace Neon
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::Neon.ApiKeysListResponseItem>?>(__content, JsonSerializerOptions) ??
+                        (global::System.Collections.Generic.IList<global::Neon.ApiKeysListResponseItem>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Neon.ApiKeysListResponseItem>), JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -173,7 +173,7 @@ namespace Neon
                     ).ConfigureAwait(false);
 
                     return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::Neon.ApiKeysListResponseItem>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        (global::System.Collections.Generic.IList<global::Neon.ApiKeysListResponseItem>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::Neon.ApiKeysListResponseItem>), JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
