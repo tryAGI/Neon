@@ -112,13 +112,13 @@ namespace Neon
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::Neon.GeneralError.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::Neon.GeneralError.FromJson(__content_404, JsonSerializerContext);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::Neon.GeneralError.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::Neon.GeneralError.FromJson(__content_404, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -150,13 +150,13 @@ namespace Neon
                     if (ReadResponseAsString)
                     {
                         __content_412 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_412 = global::Neon.GeneralError.FromJson(__content_412, JsonSerializerOptions);
+                        __value_412 = global::Neon.GeneralError.FromJson(__content_412, JsonSerializerContext);
                     }
                     else
                     {
                         __content_412 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_412 = global::Neon.GeneralError.FromJson(__content_412, JsonSerializerOptions);
+                        __value_412 = global::Neon.GeneralError.FromJson(__content_412, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -188,13 +188,13 @@ namespace Neon
                     if (ReadResponseAsString)
                     {
                         __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerOptions);
+                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
                     }
                     else
                     {
                         __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerOptions);
+                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -238,7 +238,7 @@ namespace Neon
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Neon.RolePasswordResponse.FromJson(__content, JsonSerializerOptions) ??
+                        global::Neon.RolePasswordResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -268,7 +268,7 @@ namespace Neon
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Neon.RolePasswordResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::Neon.RolePasswordResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

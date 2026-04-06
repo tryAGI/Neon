@@ -6,7 +6,7 @@ namespace Neon
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct AllOf<T1, T2, T3, T4> : global::System.IEquatable<AllOf<T1, T2, T3, T4>>
+    public readonly partial struct AllOf<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T1, [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T2, [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T3, [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T4> : global::System.IEquatable<AllOf<T1, T2, T3, T4>>
     {
         /// <summary>
         /// 
@@ -183,9 +183,9 @@ namespace Neon
             Value4?.ToString() 
             ;
 
-        private static bool RequiresValue<TValue>() => RequirementCache<TValue>.Value;
+        private static bool RequiresValue<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] TValue>() => RequirementCache<TValue>.Value;
 
-        private static bool DetermineRequiresValue(global::System.Type type)
+        private static bool DetermineRequiresValue([global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] global::System.Type type)
         {
             if (global::System.Nullable.GetUnderlyingType(type) != null)
             {
@@ -216,7 +216,7 @@ namespace Neon
             return false;
         }
 
-        private static class RequirementCache<TValue>
+        private static class RequirementCache<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] TValue>
         {
             public static readonly bool Value = DetermineRequiresValue(typeof(TValue));
         }

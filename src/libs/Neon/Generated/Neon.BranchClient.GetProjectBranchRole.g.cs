@@ -113,13 +113,13 @@ namespace Neon
                     if (ReadResponseAsString)
                     {
                         __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerOptions);
+                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
                     }
                     else
                     {
                         __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerOptions);
+                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -163,7 +163,7 @@ namespace Neon
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Neon.RoleResponse.FromJson(__content, JsonSerializerOptions) ??
+                        global::Neon.RoleResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -193,7 +193,7 @@ namespace Neon
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Neon.RoleResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::Neon.RoleResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

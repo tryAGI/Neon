@@ -12,7 +12,8 @@ namespace Neon.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -47,7 +48,9 @@ namespace Neon.JsonConverters
                 {
                     try
                     {
-                        standardServer = global::System.Text.Json.JsonSerializer.Deserialize<global::Neon.StandardEmailServer>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.StandardEmailServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.StandardEmailServer> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.StandardEmailServer).Name}");
+                        standardServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -60,7 +63,9 @@ namespace Neon.JsonConverters
                 {
                     try
                     {
-                        sendNeonAuthTestEmailRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::Neon.SendNeonAuthTestEmailRequestVariant2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.SendNeonAuthTestEmailRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.SendNeonAuthTestEmailRequestVariant2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.SendNeonAuthTestEmailRequestVariant2).Name}");
+                        sendNeonAuthTestEmailRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -75,7 +80,9 @@ namespace Neon.JsonConverters
             {
                 try
                 {
-                    standardServer = global::System.Text.Json.JsonSerializer.Deserialize<global::Neon.StandardEmailServer>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.StandardEmailServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.StandardEmailServer> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.StandardEmailServer).Name}");
+                    standardServer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -86,7 +93,9 @@ namespace Neon.JsonConverters
 
                 try
                 {
-                    sendNeonAuthTestEmailRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::Neon.SendNeonAuthTestEmailRequestVariant2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.SendNeonAuthTestEmailRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.SendNeonAuthTestEmailRequestVariant2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.SendNeonAuthTestEmailRequestVariant2).Name}");
+                    sendNeonAuthTestEmailRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -111,15 +120,20 @@ namespace Neon.JsonConverters
             global::Neon.SendNeonAuthTestEmailRequest value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsStandardServer)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StandardServer, typeof(global::Neon.StandardEmailServer), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.StandardEmailServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.StandardEmailServer?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.StandardEmailServer).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StandardServer!, typeInfo);
             }
             else if (value.IsSendNeonAuthTestEmailRequestVariant2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SendNeonAuthTestEmailRequestVariant2, typeof(global::Neon.SendNeonAuthTestEmailRequestVariant2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.SendNeonAuthTestEmailRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.SendNeonAuthTestEmailRequestVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.SendNeonAuthTestEmailRequestVariant2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SendNeonAuthTestEmailRequestVariant2!, typeInfo);
             }
         }
     }

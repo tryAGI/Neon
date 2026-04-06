@@ -159,13 +159,13 @@ namespace Neon
                     if (ReadResponseAsString)
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
                     }
                     else
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -197,13 +197,13 @@ namespace Neon
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::Neon.GeneralError.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::Neon.GeneralError.FromJson(__content_404, JsonSerializerContext);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::Neon.GeneralError.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::Neon.GeneralError.FromJson(__content_404, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -235,13 +235,13 @@ namespace Neon
                     if (ReadResponseAsString)
                     {
                         __content_406 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_406 = global::Neon.GeneralError.FromJson(__content_406, JsonSerializerOptions);
+                        __value_406 = global::Neon.GeneralError.FromJson(__content_406, JsonSerializerContext);
                     }
                     else
                     {
                         __content_406 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_406 = global::Neon.GeneralError.FromJson(__content_406, JsonSerializerOptions);
+                        __value_406 = global::Neon.GeneralError.FromJson(__content_406, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -273,13 +273,13 @@ namespace Neon
                     if (ReadResponseAsString)
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = global::Neon.GeneralError.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::Neon.GeneralError.FromJson(__content_429, JsonSerializerContext);
                     }
                     else
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_429 = global::Neon.GeneralError.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::Neon.GeneralError.FromJson(__content_429, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -311,13 +311,13 @@ namespace Neon
                     if (ReadResponseAsString)
                     {
                         __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerOptions);
+                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
                     }
                     else
                     {
                         __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerOptions);
+                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -361,7 +361,7 @@ namespace Neon
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectResponse, global::Neon.PaginationResponse>.FromJson(__content, JsonSerializerOptions) ??
+                        global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectResponse, global::Neon.PaginationResponse>.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -391,7 +391,7 @@ namespace Neon
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectResponse, global::Neon.PaginationResponse>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectResponse, global::Neon.PaginationResponse>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

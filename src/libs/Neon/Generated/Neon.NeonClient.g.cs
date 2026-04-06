@@ -36,124 +36,7 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
-        #pragma warning disable CS0618 // Type or member is obsolete
-        public global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; } = new global::System.Text.Json.JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-                Converters =
-                {
-                    new global::Neon.JsonConverters.TelemetryConnectionProtocolJsonConverter(),
-                    new global::Neon.JsonConverters.TelemetryConnectionProtocolNullableJsonConverter(),
-                    new global::Neon.JsonConverters.TelemetryConfigTypeJsonConverter(),
-                    new global::Neon.JsonConverters.TelemetryConfigTypeNullableJsonConverter(),
-                    new global::Neon.JsonConverters.AdvisorCategoryJsonConverter(),
-                    new global::Neon.JsonConverters.AdvisorCategoryNullableJsonConverter(),
-                    new global::Neon.JsonConverters.AdvisorIssueFacingJsonConverter(),
-                    new global::Neon.JsonConverters.AdvisorIssueFacingNullableJsonConverter(),
-                    new global::Neon.JsonConverters.OperationActionJsonConverter(),
-                    new global::Neon.JsonConverters.OperationActionNullableJsonConverter(),
-                    new global::Neon.JsonConverters.OperationStatusJsonConverter(),
-                    new global::Neon.JsonConverters.OperationStatusNullableJsonConverter(),
-                    new global::Neon.JsonConverters.ConsumptionHistoryGranularityJsonConverter(),
-                    new global::Neon.JsonConverters.ConsumptionHistoryGranularityNullableJsonConverter(),
-                    new global::Neon.JsonConverters.ProjectAuditLogLevelJsonConverter(),
-                    new global::Neon.JsonConverters.ProjectAuditLogLevelNullableJsonConverter(),
-                    new global::Neon.JsonConverters.EndpointStateJsonConverter(),
-                    new global::Neon.JsonConverters.EndpointStateNullableJsonConverter(),
-                    new global::Neon.JsonConverters.EndpointTypeJsonConverter(),
-                    new global::Neon.JsonConverters.EndpointTypeNullableJsonConverter(),
-                    new global::Neon.JsonConverters.EndpointPoolerModeJsonConverter(),
-                    new global::Neon.JsonConverters.EndpointPoolerModeNullableJsonConverter(),
-                    new global::Neon.JsonConverters.PaymentSourceBankCardBrandJsonConverter(),
-                    new global::Neon.JsonConverters.PaymentSourceBankCardBrandNullableJsonConverter(),
-                    new global::Neon.JsonConverters.BillingAccountStateJsonConverter(),
-                    new global::Neon.JsonConverters.BillingAccountStateNullableJsonConverter(),
-                    new global::Neon.JsonConverters.BillingSubscriptionTypeJsonConverter(),
-                    new global::Neon.JsonConverters.BillingSubscriptionTypeNullableJsonConverter(),
-                    new global::Neon.JsonConverters.BillingPaymentMethodJsonConverter(),
-                    new global::Neon.JsonConverters.BillingPaymentMethodNullableJsonConverter(),
-                    new global::Neon.JsonConverters.MemberRoleJsonConverter(),
-                    new global::Neon.JsonConverters.MemberRoleNullableJsonConverter(),
-                    new global::Neon.JsonConverters.EnableOrganizationFeatureRequestFeatureJsonConverter(),
-                    new global::Neon.JsonConverters.EnableOrganizationFeatureRequestFeatureNullableJsonConverter(),
-                    new global::Neon.JsonConverters.AuthDetailsResponseAuthMethodJsonConverter(),
-                    new global::Neon.JsonConverters.AuthDetailsResponseAuthMethodNullableJsonConverter(),
-                    new global::Neon.JsonConverters.IdentityProviderIdJsonConverter(),
-                    new global::Neon.JsonConverters.IdentityProviderIdNullableJsonConverter(),
-                    new global::Neon.JsonConverters.UserDeletionConditionNameJsonConverter(),
-                    new global::Neon.JsonConverters.UserDeletionConditionNameNullableJsonConverter(),
-                    new global::Neon.JsonConverters.OrgDeletionConditionNameJsonConverter(),
-                    new global::Neon.JsonConverters.OrgDeletionConditionNameNullableJsonConverter(),
-                    new global::Neon.JsonConverters.DataAPICreateRequestAuthProviderJsonConverter(),
-                    new global::Neon.JsonConverters.DataAPICreateRequestAuthProviderNullableJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthSupportedAuthProviderJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthSupportedAuthProviderNullableJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthProviderProjectOwnedByJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthProviderProjectOwnedByNullableJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthProviderProjectTransferStatusJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthProviderProjectTransferStatusNullableJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthOrganizationConfigCreatorRoleJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthOrganizationConfigCreatorRoleNullableJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthOrganizationConfigUpdateCreatorRoleJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthOrganizationConfigUpdateCreatorRoleNullableJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthWebhookConfigEnabledEventJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthWebhookConfigEnabledEventNullableJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthOauthProviderIdJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthOauthProviderIdNullableJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthOauthProviderTypeJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthOauthProviderTypeNullableJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthEmailServerConfigDiscriminatorTypeJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthEmailServerConfigDiscriminatorTypeNullableJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthEmailVerificationMethodJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthEmailVerificationMethodNullableJsonConverter(),
-                    new global::Neon.JsonConverters.SupportTicketSeverityJsonConverter(),
-                    new global::Neon.JsonConverters.SupportTicketSeverityNullableJsonConverter(),
-                    new global::Neon.JsonConverters.ApplicationTypeJsonConverter(),
-                    new global::Neon.JsonConverters.ApplicationTypeNullableJsonConverter(),
-                    new global::Neon.JsonConverters.GetProjectAdvisorSecurityIssuesMinSeverityJsonConverter(),
-                    new global::Neon.JsonConverters.GetProjectAdvisorSecurityIssuesMinSeverityNullableJsonConverter(),
-                    new global::Neon.JsonConverters.ListProjectBranchesSortByJsonConverter(),
-                    new global::Neon.JsonConverters.ListProjectBranchesSortByNullableJsonConverter(),
-                    new global::Neon.JsonConverters.ListProjectBranchesSortOrderJsonConverter(),
-                    new global::Neon.JsonConverters.ListProjectBranchesSortOrderNullableJsonConverter(),
-                    new global::Neon.JsonConverters.GetOrganizationMembersSortByJsonConverter(),
-                    new global::Neon.JsonConverters.GetOrganizationMembersSortByNullableJsonConverter(),
-                    new global::Neon.JsonConverters.GetOrganizationMembersSortOrderJsonConverter(),
-                    new global::Neon.JsonConverters.GetOrganizationMembersSortOrderNullableJsonConverter(),
-                    new global::Neon.JsonConverters.OrgApiKeyCreateRequestJsonConverter(),
-                    new global::Neon.JsonConverters.OrgApiKeyCreateResponseJsonConverter(),
-                    new global::Neon.JsonConverters.OrgApiKeyRevokeResponseJsonConverter(),
-                    new global::Neon.JsonConverters.OrgApiKeysListResponseItemJsonConverter(),
-                    new global::Neon.JsonConverters.ProjectRecoverResponseJsonConverter(),
-                    new global::Neon.JsonConverters.BranchAnonymizedCreateRequestJsonConverter(),
-                    new global::Neon.JsonConverters.VPCEndpointWithRegionJsonConverter(),
-                    new global::Neon.JsonConverters.NeonAuthEmailServerConfigJsonConverter(),
-                    new global::Neon.JsonConverters.SendNeonAuthTestEmailRequestJsonConverter(),
-                    new global::Neon.JsonConverters.BranchOperationsJsonConverter(),
-                    new global::Neon.JsonConverters.EndpointOperationsJsonConverter(),
-                    new global::Neon.JsonConverters.DatabaseOperationsJsonConverter(),
-                    new global::Neon.JsonConverters.RoleOperationsJsonConverter(),
-                    new global::Neon.JsonConverters.JWKSCreationOperationJsonConverter(),
-                    new global::Neon.JsonConverters.OneOfJsonConverter<bool?, string>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchCreateRequest, global::Neon.AnnotationCreateValueRequest>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectsResponse, global::Neon.PaginationResponse, global::Neon.ProjectsApplicationsMapResponse, global::Neon.ProjectsIntegrationsMapResponse>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectsResponse, global::Neon.PaginationResponse>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectResponse, global::Neon.OperationsResponse>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.OperationsResponse, global::Neon.PaginationResponse>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchesResponse, global::Neon.AnnotationsMapResponse, global::Neon.CursorPaginationResponse>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.AnnotationResponse>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ConsumptionHistoryPerProjectResponse, global::Neon.PaginationResponse>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.OrganizationMembersResponse, global::Neon.CursorPaginationResponse>(),
-                    new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>(),
-                    new global::Neon.JsonConverters.UnixTimestampJsonConverter(),
-                }
-            };
-        #pragma warning restore CS0618 // Type or member is obsolete
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::Neon.SourceGenerationContext.Default;
 
 
         /// <summary>
@@ -162,7 +45,7 @@ namespace Neon
         public ApiKeyClient ApiKey => new ApiKeyClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
@@ -171,7 +54,7 @@ namespace Neon
         public AuthClient Auth => new AuthClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
@@ -180,7 +63,7 @@ namespace Neon
         public AuthLegacyClient AuthLegacy => new AuthLegacyClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
@@ -189,7 +72,7 @@ namespace Neon
         public BranchClient Branch => new BranchClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
@@ -198,7 +81,7 @@ namespace Neon
         public ConsumptionClient Consumption => new ConsumptionClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
@@ -207,7 +90,7 @@ namespace Neon
         public DataAPIClient DataAPI => new DataAPIClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
@@ -216,7 +99,7 @@ namespace Neon
         public EndpointClient Endpoint => new EndpointClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
@@ -225,7 +108,7 @@ namespace Neon
         public OperationClient Operation => new OperationClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
@@ -234,7 +117,7 @@ namespace Neon
         public OrganizationsClient Organizations => new OrganizationsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
@@ -243,7 +126,7 @@ namespace Neon
         public ProjectClient Project => new ProjectClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
@@ -252,7 +135,7 @@ namespace Neon
         public RegionClient Region => new RegionClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
@@ -261,7 +144,7 @@ namespace Neon
         public SnapshotClient Snapshot => new SnapshotClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
@@ -270,7 +153,7 @@ namespace Neon
         public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
+            JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
