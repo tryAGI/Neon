@@ -5,6 +5,25 @@ namespace Neon
 {
     public partial class OrganizationsClient
     {
+
+
+        private static readonly global::Neon.EndPointSecurityRequirement s_UpdateOrganizationMemberSecurityRequirement0 =
+            new global::Neon.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Neon.EndPointAuthorizationRequirement[]
+                {                    new global::Neon.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Neon.EndPointSecurityRequirement[] s_UpdateOrganizationMemberSecurityRequirements =
+            new global::Neon.EndPointSecurityRequirement[]
+            {                s_UpdateOrganizationMemberSecurityRequirement0,
+            };
         partial void PrepareUpdateOrganizationMemberArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string orgId,
@@ -51,9 +70,15 @@ namespace Neon
                 memberId: ref memberId,
                 request: request);
 
+
+            var __authorizations = global::Neon.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpdateOrganizationMemberSecurityRequirements,
+                operationName: "UpdateOrganizationMemberAsync");
+
             var __pathBuilder = new global::Neon.PathBuilder(
                 path: $"/organizations/{orgId}/members/{memberId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
@@ -63,7 +88,7 @@ namespace Neon
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

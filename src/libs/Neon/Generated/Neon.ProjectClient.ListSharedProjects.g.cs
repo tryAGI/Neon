@@ -5,6 +5,25 @@ namespace Neon
 {
     public partial class ProjectClient
     {
+
+
+        private static readonly global::Neon.EndPointSecurityRequirement s_ListSharedProjectsSecurityRequirement0 =
+            new global::Neon.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Neon.EndPointAuthorizationRequirement[]
+                {                    new global::Neon.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Neon.EndPointSecurityRequirement[] s_ListSharedProjectsSecurityRequirements =
+            new global::Neon.EndPointSecurityRequirement[]
+            {                s_ListSharedProjectsSecurityRequirement0,
+            };
         partial void PrepareListSharedProjectsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? cursor,
@@ -56,6 +75,12 @@ namespace Neon
                 search: ref search,
                 timeout: ref timeout);
 
+
+            var __authorizations = global::Neon.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListSharedProjectsSecurityRequirements,
+                operationName: "ListSharedProjectsAsync");
+
             var __pathBuilder = new global::Neon.PathBuilder(
                 path: "/projects/shared",
                 baseUri: HttpClient.BaseAddress); 
@@ -64,7 +89,7 @@ namespace Neon
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("search", search)
                 .AddOptionalParameter("timeout", timeout?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -74,7 +99,7 @@ namespace Neon
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
