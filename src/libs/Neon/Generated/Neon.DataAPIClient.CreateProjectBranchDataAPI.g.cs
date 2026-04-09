@@ -5,6 +5,25 @@ namespace Neon
 {
     public partial class DataAPIClient
     {
+
+
+        private static readonly global::Neon.EndPointSecurityRequirement s_CreateProjectBranchDataAPISecurityRequirement0 =
+            new global::Neon.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Neon.EndPointAuthorizationRequirement[]
+                {                    new global::Neon.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Neon.EndPointSecurityRequirement[] s_CreateProjectBranchDataAPISecurityRequirements =
+            new global::Neon.EndPointSecurityRequirement[]
+            {                s_CreateProjectBranchDataAPISecurityRequirement0,
+            };
         partial void PrepareCreateProjectBranchDataAPIArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string projectId,
@@ -57,9 +76,15 @@ namespace Neon
                 databaseName: ref databaseName,
                 request: request);
 
+
+            var __authorizations = global::Neon.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateProjectBranchDataAPISecurityRequirements,
+                operationName: "CreateProjectBranchDataAPIAsync");
+
             var __pathBuilder = new global::Neon.PathBuilder(
                 path: $"/projects/{projectId}/branches/{branchId}/data-api/{databaseName}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -69,7 +94,7 @@ namespace Neon
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

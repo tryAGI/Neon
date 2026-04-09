@@ -5,6 +5,25 @@ namespace Neon
 {
     public partial class BranchClient
     {
+
+
+        private static readonly global::Neon.EndPointSecurityRequirement s_UpdateProjectBranchSecurityRequirement0 =
+            new global::Neon.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Neon.EndPointAuthorizationRequirement[]
+                {                    new global::Neon.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Neon.EndPointSecurityRequirement[] s_UpdateProjectBranchSecurityRequirements =
+            new global::Neon.EndPointSecurityRequirement[]
+            {                s_UpdateProjectBranchSecurityRequirement0,
+            };
         partial void PrepareUpdateProjectBranchArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string projectId,
@@ -54,9 +73,15 @@ namespace Neon
                 branchId: ref branchId,
                 request: request);
 
+
+            var __authorizations = global::Neon.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpdateProjectBranchSecurityRequirements,
+                operationName: "UpdateProjectBranchAsync");
+
             var __pathBuilder = new global::Neon.PathBuilder(
                 path: $"/projects/{projectId}/branches/{branchId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
@@ -66,7 +91,7 @@ namespace Neon
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

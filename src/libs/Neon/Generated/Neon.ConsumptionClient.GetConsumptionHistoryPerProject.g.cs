@@ -5,6 +5,25 @@ namespace Neon
 {
     public partial class ConsumptionClient
     {
+
+
+        private static readonly global::Neon.EndPointSecurityRequirement s_GetConsumptionHistoryPerProjectSecurityRequirement0 =
+            new global::Neon.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Neon.EndPointAuthorizationRequirement[]
+                {                    new global::Neon.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Neon.EndPointSecurityRequirement[] s_GetConsumptionHistoryPerProjectSecurityRequirements =
+            new global::Neon.EndPointSecurityRequirement[]
+            {                s_GetConsumptionHistoryPerProjectSecurityRequirement0,
+            };
         partial void PrepareGetConsumptionHistoryPerProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? cursor,
@@ -82,6 +101,12 @@ namespace Neon
                 includeV1Metrics: ref includeV1Metrics,
                 metrics: metrics);
 
+
+            var __authorizations = global::Neon.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetConsumptionHistoryPerProjectSecurityRequirements,
+                operationName: "GetConsumptionHistoryPerProjectAsync");
+
             var __pathBuilder = new global::Neon.PathBuilder(
                 path: "/consumption_history/projects",
                 baseUri: HttpClient.BaseAddress); 
@@ -95,7 +120,7 @@ namespace Neon
                 .AddOptionalParameter("org_id", orgId)
                 .AddOptionalParameter("include_v1_metrics", includeV1Metrics?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("metrics", metrics, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -105,7 +130,7 @@ namespace Neon
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
