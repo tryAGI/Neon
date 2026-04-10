@@ -20,6 +20,7 @@ namespace Neon
         /// <param name="granularity"></param>
         /// <param name="orgId"></param>
         /// <param name="metrics"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>> GetConsumptionHistoryPerProjectV2Async(
@@ -31,6 +32,7 @@ namespace Neon
             string? cursor = default,
             int? limit = default,
             global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

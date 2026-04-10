@@ -11,6 +11,7 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.BranchOperations> RestoreProjectBranchAsync(
@@ -18,6 +19,7 @@ namespace Neon
             string branchId,
 
             global::Neon.BranchRestoreRequest request,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Restore branch<br/>
@@ -41,6 +43,7 @@ namespace Neon
         /// If not empty, the previous state of the branch will be saved to a branch with this name.<br/>
         /// If the branch has children or the `source_branch_id` is equal to the branch id, this field is required. All existing child branches will be moved to the newly created branch under the name `preserve_under_name`.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.BranchOperations> RestoreProjectBranchAsync(
@@ -50,6 +53,7 @@ namespace Neon
             string? sourceLsn = default,
             global::System.DateTime? sourceTimestamp = default,
             string? preserveUnderName = default,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

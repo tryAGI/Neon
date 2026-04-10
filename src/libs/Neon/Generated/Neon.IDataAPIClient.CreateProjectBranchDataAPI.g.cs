@@ -13,6 +13,7 @@ namespace Neon
         /// <param name="branchId"></param>
         /// <param name="databaseName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.DataAPICreateResponse> CreateProjectBranchDataAPIAsync(
@@ -21,6 +22,7 @@ namespace Neon
             string databaseName,
 
             global::Neon.DataAPICreateRequest request,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Neon Data API<br/>
@@ -55,6 +57,7 @@ namespace Neon
         /// <param name="settings">
         /// Configuration settings for the Neon Data API
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.DataAPICreateResponse> CreateProjectBranchDataAPIAsync(
@@ -68,6 +71,7 @@ namespace Neon
             bool? addDefaultGrants = default,
             bool? skipAuthSchema = default,
             global::Neon.DataAPISettings? settings = default,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

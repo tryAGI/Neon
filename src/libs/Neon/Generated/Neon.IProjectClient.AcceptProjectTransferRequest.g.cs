@@ -12,6 +12,7 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="requestId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
         global::System.Threading.Tasks.Task AcceptProjectTransferRequestAsync(
@@ -19,6 +20,7 @@ namespace Neon
             string requestId,
 
             global::Neon.AcceptProjectTransferRequestRequest request,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Accept a project transfer request<br/>
@@ -31,12 +33,14 @@ namespace Neon
         /// The Neon organization ID to transfer the project to. If not provided, the project will be<br/>
         /// transferred to the current user or organization account.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task AcceptProjectTransferRequestAsync(
             string projectId,
             string requestId,
             string? orgId = default,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

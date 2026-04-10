@@ -11,6 +11,7 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.NeonAuthEmailAndPasswordConfig> UpdateNeonAuthEmailAndPasswordConfigAsync(
@@ -18,6 +19,7 @@ namespace Neon
             string branchId,
 
             global::Neon.NeonAuthEmailAndPasswordConfigUpdate request,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update email and password configuration<br/>
@@ -48,6 +50,7 @@ namespace Neon
         /// <param name="disableSignUp">
         /// Whether to disable new user sign ups
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.NeonAuthEmailAndPasswordConfig> UpdateNeonAuthEmailAndPasswordConfigAsync(
@@ -60,6 +63,7 @@ namespace Neon
             bool? sendVerificationEmailOnSignUp = default,
             bool? sendVerificationEmailOnSignIn = default,
             bool? disableSignUp = default,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

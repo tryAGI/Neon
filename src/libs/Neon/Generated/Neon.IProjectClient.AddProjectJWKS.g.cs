@@ -17,12 +17,14 @@ namespace Neon
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.JWKSCreationOperation> AddProjectJWKSAsync(
             string projectId,
 
             global::Neon.AddProjectJWKSRequest request,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add JWKS URL<br/>
@@ -50,6 +52,7 @@ namespace Neon
         /// DEPRECATED. This field should only be used when using Neon RLS. If true, the role creation will be skipped.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.JWKSCreationOperation> AddProjectJWKSAsync(
@@ -59,6 +62,7 @@ namespace Neon
             string? branchId = default,
             string? jwtAudience = default,
             bool? skipRoleCreation = default,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

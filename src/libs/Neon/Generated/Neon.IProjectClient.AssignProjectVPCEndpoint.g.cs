@@ -15,6 +15,7 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="vpcEndpointId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
         global::System.Threading.Tasks.Task AssignProjectVPCEndpointAsync(
@@ -22,6 +23,7 @@ namespace Neon
             string vpcEndpointId,
 
             global::Neon.VPCEndpointAssignment request,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set VPC endpoint restriction<br/>
@@ -34,12 +36,14 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="vpcEndpointId"></param>
         /// <param name="label"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task AssignProjectVPCEndpointAsync(
             string projectId,
             string vpcEndpointId,
             string label,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -17,12 +17,14 @@ namespace Neon
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.ProjectTransferRequestResponse> CreateProjectTransferRequestAsync(
             string projectId,
 
             global::Neon.CreateProjectTransferRequestRequest request,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a project transfer request<br/>
@@ -40,11 +42,13 @@ namespace Neon
         /// Specifies the validity duration of the transfer request in seconds. If not provided,<br/>
         /// the request will expire after 24 hours (86,400 seconds).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.ProjectTransferRequestResponse> CreateProjectTransferRequestAsync(
             string projectId,
             long? ttlSeconds = default,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
