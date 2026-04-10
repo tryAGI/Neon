@@ -18,6 +18,7 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.OperationsResponse> FinalizeRestoreBranchAsync(
@@ -25,6 +26,7 @@ namespace Neon
             string branchId,
 
             global::Neon.FinalizeRestoreBranchRequest request,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Finalize restore<br/>
@@ -42,12 +44,14 @@ namespace Neon
         /// <param name="name">
         /// used to rename the existing branch when it is replaced. if omitted, a default name is generated and used
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.OperationsResponse> FinalizeRestoreBranchAsync(
             string projectId,
             string branchId,
             string? name = default,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

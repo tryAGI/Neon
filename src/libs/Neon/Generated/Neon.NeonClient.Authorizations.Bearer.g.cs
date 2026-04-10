@@ -25,6 +25,7 @@ namespace Neon
             Authorizations.Add(new global::Neon.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "HttpBearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

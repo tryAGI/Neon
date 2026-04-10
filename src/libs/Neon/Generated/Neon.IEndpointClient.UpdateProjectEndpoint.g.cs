@@ -19,6 +19,7 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="endpointId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.EndpointOperations> UpdateProjectEndpointAsync(
@@ -26,6 +27,7 @@ namespace Neon
             string endpointId,
 
             global::Neon.EndpointUpdateRequest request,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update compute endpoint<br/>
@@ -42,12 +44,14 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="endpointId"></param>
         /// <param name="endpoint"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Neon.EndpointOperations> UpdateProjectEndpointAsync(
             string projectId,
             string endpointId,
             global::Neon.EndpointUpdateRequestEndpoint endpoint,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
