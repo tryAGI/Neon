@@ -512,6 +512,8 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOrganizationConfigCreatorRole), TypeInfoPropertyName = "NeonAuthOrganizationConfigCreatorRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOrganizationConfigUpdate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOrganizationConfigUpdateCreatorRole), TypeInfoPropertyName = "NeonAuthOrganizationConfigUpdateCreatorRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthMagicLinkConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthMagicLinkConfigUpdate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthTransferAuthProviderProjectRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthTransferAuthProviderProjectResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ListNeonAuthIntegrationsResponse))]
