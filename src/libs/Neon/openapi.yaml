@@ -3192,6 +3192,64 @@
                 }
             }
         },
+        "/projects/{project_id}/branches/{branch_id}/auth/config": {
+            "parameters": [
+                {
+                    "name": "project_id",
+                    "in": "path",
+                    "description": "The Neon project ID",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9-]{1,60}$"
+                    }
+                },
+                {
+                    "name": "branch_id",
+                    "in": "path",
+                    "description": "The Neon branch ID",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9-]{1,60}$"
+                    }
+                }
+            ],
+            "patch": {
+                "summary": "Update auth configuration",
+                "description": "Updates the auth configuration for the branch.\nCurrently supports updating the application name used in auth emails.\n",
+                "tags": [
+                    "Auth"
+                ],
+                "operationId": "updateNeonAuthConfig",
+                "x-internal": true,
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NeonAuthConfigUpdate"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "The auth configuration has been updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NeonAuthConfigResponse"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/GeneralError"
+                    }
+                }
+            }
+        },
         "/projects/{project_id}/branches/{branch_id}/auth/webhooks": {
             "parameters": [
                 {
@@ -13808,6 +13866,38 @@
                     },
                     "base_url": {
                         "type": "string"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The application name used in auth emails and communications. Defaults to the Neon project name.",
+                        "minLength": 1,
+                        "maxLength": 256
+                    }
+                }
+            },
+            "NeonAuthConfigUpdate": {
+                "type": "object",
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The application name used in auth emails and communications.",
+                        "minLength": 1,
+                        "maxLength": 256
+                    }
+                }
+            },
+            "NeonAuthConfigResponse": {
+                "type": "object",
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The application name used in auth emails and communications."
                     }
                 }
             },
@@ -14124,6 +14214,16 @@
                     },
                     "manual": {
                         "type": "boolean"
+                    },
+                    "full_size": {
+                        "description": "Full logical size of the snapshot in bytes at the time it was taken.\n\nWhen absent, the logical size has not been calculated yet and the snapshot is not being charged.\n\nWhen present, a value of 0 means the snapshot is not being charged.\n",
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "diff_size": {
+                        "description": "Incremental storage size in bytes since the previous scheduled snapshot, when the snapshot is billed on incremental (diff) usage.\n\nWhen absent, either the incremental size has not been calculated yet and the snapshot is not being charged, or the snapshot is charged at full logical size (in that case `full_size` is set).\n",
+                        "type": "integer",
+                        "format": "int64"
                     }
                 }
             },

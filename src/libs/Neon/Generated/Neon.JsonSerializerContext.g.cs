@@ -539,6 +539,8 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.SendNeonAuthTestEmailResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthEmailVerificationMethod), TypeInfoPropertyName = "NeonAuthEmailVerificationMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthEmailAndPasswordConfigUpdate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthConfigUpdate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthConfigResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.GeneralError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchOperations), TypeInfoPropertyName = "BranchOperations2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointOperations), TypeInfoPropertyName = "EndpointOperations2")]

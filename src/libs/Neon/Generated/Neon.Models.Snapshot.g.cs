@@ -60,6 +60,21 @@ namespace Neon
         public bool? Manual { get; set; }
 
         /// <summary>
+        /// Full logical size of the snapshot in bytes at the time it was taken.<br/>
+        /// When absent, the logical size has not been calculated yet and the snapshot is not being charged.<br/>
+        /// When present, a value of 0 means the snapshot is not being charged.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("full_size")]
+        public long? FullSize { get; set; }
+
+        /// <summary>
+        /// Incremental storage size in bytes since the previous scheduled snapshot, when the snapshot is billed on incremental (diff) usage.<br/>
+        /// When absent, either the incremental size has not been calculated yet and the snapshot is not being charged, or the snapshot is charged at full logical size (in that case `full_size` is set).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("diff_size")]
+        public long? DiffSize { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -76,6 +91,15 @@ namespace Neon
         /// <param name="sourceBranchId"></param>
         /// <param name="expiresAt"></param>
         /// <param name="manual"></param>
+        /// <param name="fullSize">
+        /// Full logical size of the snapshot in bytes at the time it was taken.<br/>
+        /// When absent, the logical size has not been calculated yet and the snapshot is not being charged.<br/>
+        /// When present, a value of 0 means the snapshot is not being charged.
+        /// </param>
+        /// <param name="diffSize">
+        /// Incremental storage size in bytes since the previous scheduled snapshot, when the snapshot is billed on incremental (diff) usage.<br/>
+        /// When absent, either the incremental size has not been calculated yet and the snapshot is not being charged, or the snapshot is charged at full logical size (in that case `full_size` is set).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -87,7 +111,9 @@ namespace Neon
             string? timestamp,
             string? sourceBranchId,
             string? expiresAt,
-            bool? manual)
+            bool? manual,
+            long? fullSize,
+            long? diffSize)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -97,6 +123,8 @@ namespace Neon
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.ExpiresAt = expiresAt;
             this.Manual = manual;
+            this.FullSize = fullSize;
+            this.DiffSize = diffSize;
         }
 
         /// <summary>
