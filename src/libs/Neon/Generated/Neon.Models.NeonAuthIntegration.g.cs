@@ -73,6 +73,12 @@ namespace Neon
         public string? BaseUrl { get; set; }
 
         /// <summary>
+        /// The application name used in auth emails and communications. Defaults to the Neon project name.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -90,6 +96,9 @@ namespace Neon
         /// <param name="jwksUrl"></param>
         /// <param name="transferStatus"></param>
         /// <param name="baseUrl"></param>
+        /// <param name="name">
+        /// The application name used in auth emails and communications. Defaults to the Neon project name.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -102,7 +111,8 @@ namespace Neon
             global::Neon.NeonAuthProviderProjectOwnedBy ownedBy,
             string jwksUrl,
             global::Neon.NeonAuthProviderProjectTransferStatus? transferStatus,
-            string? baseUrl)
+            string? baseUrl,
+            string? name)
         {
             this.AuthProvider = authProvider;
             this.AuthProviderProjectId = authProviderProjectId ?? throw new global::System.ArgumentNullException(nameof(authProviderProjectId));
@@ -113,6 +123,7 @@ namespace Neon
             this.TransferStatus = transferStatus;
             this.JwksUrl = jwksUrl ?? throw new global::System.ArgumentNullException(nameof(jwksUrl));
             this.BaseUrl = baseUrl;
+            this.Name = name;
         }
 
         /// <summary>
