@@ -17,6 +17,12 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("magic_link")]
+        public global::Neon.NeonAuthMagicLinkConfig? MagicLink { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email_provider")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthEmailServerConfigJsonConverter))]
         public global::Neon.NeonAuthEmailServerConfig? EmailProvider { get; set; }
@@ -49,6 +55,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="NeonAuthPluginConfigs" /> class.
         /// </summary>
         /// <param name="organization"></param>
+        /// <param name="magicLink"></param>
         /// <param name="emailProvider"></param>
         /// <param name="emailAndPassword"></param>
         /// <param name="oauthProviders"></param>
@@ -58,12 +65,14 @@ namespace Neon
 #endif
         public NeonAuthPluginConfigs(
             global::Neon.NeonAuthOrganizationConfig? organization,
+            global::Neon.NeonAuthMagicLinkConfig? magicLink,
             global::Neon.NeonAuthEmailServerConfig? emailProvider,
             global::Neon.NeonAuthEmailAndPasswordConfig? emailAndPassword,
             global::System.Collections.Generic.IList<global::Neon.NeonAuthOauthProvider>? oauthProviders,
             bool? allowLocalhost)
         {
             this.Organization = organization;
+            this.MagicLink = magicLink;
             this.EmailProvider = emailProvider;
             this.EmailAndPassword = emailAndPassword;
             this.OauthProviders = oauthProviders;
