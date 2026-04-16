@@ -3,11 +3,11 @@
 
 namespace Neon
 {
-    public partial class UsersClient
+    public partial class AuthClient
     {
 
 
-        private static readonly global::Neon.EndPointSecurityRequirement s_TransferProjectsFromUserToOrgSecurityRequirement0 =
+        private static readonly global::Neon.EndPointSecurityRequirement s_GetNeonAuthPhoneNumberPluginSecurityRequirement0 =
             new global::Neon.EndPointSecurityRequirement
             {
                 Authorizations = new global::Neon.EndPointAuthorizationRequirement[]
@@ -21,53 +21,56 @@ namespace Neon
                     },
                 },
             };
-        private static readonly global::Neon.EndPointSecurityRequirement[] s_TransferProjectsFromUserToOrgSecurityRequirements =
+        private static readonly global::Neon.EndPointSecurityRequirement[] s_GetNeonAuthPhoneNumberPluginSecurityRequirements =
             new global::Neon.EndPointSecurityRequirement[]
-            {                s_TransferProjectsFromUserToOrgSecurityRequirement0,
+            {                s_GetNeonAuthPhoneNumberPluginSecurityRequirement0,
             };
-        partial void PrepareTransferProjectsFromUserToOrgArguments(
+        partial void PrepareGetNeonAuthPhoneNumberPluginArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Neon.TransferProjectsToOrganizationRequest request);
-        partial void PrepareTransferProjectsFromUserToOrgRequest(
+            ref string projectId,
+            ref string branchId);
+        partial void PrepareGetNeonAuthPhoneNumberPluginRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Neon.TransferProjectsToOrganizationRequest request);
-        partial void ProcessTransferProjectsFromUserToOrgResponse(
+            string projectId,
+            string branchId);
+        partial void ProcessGetNeonAuthPhoneNumberPluginResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessTransferProjectsFromUserToOrgResponseContent(
+        partial void ProcessGetNeonAuthPhoneNumberPluginResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Transfer projects from personal account to organization<br/>
-        /// Transfers selected projects, identified by their IDs, from your personal account to a specified organization.
+        /// Get phone number plugin configuration<br/>
+        /// Returns the phone number plugin configuration for Neon Auth.<br/>
+        /// The phone number plugin enables phone-based OTP authentication.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="projectId"></param>
+        /// <param name="branchId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Neon.EmptyResponse> TransferProjectsFromUserToOrgAsync(
-
-            global::Neon.TransferProjectsToOrganizationRequest request,
+        public async global::System.Threading.Tasks.Task<global::Neon.NeonAuthPhoneNumberConfig> GetNeonAuthPhoneNumberPluginAsync(
+            string projectId,
+            string branchId,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareTransferProjectsFromUserToOrgArguments(
+            PrepareGetNeonAuthPhoneNumberPluginArguments(
                 httpClient: HttpClient,
-                request: request);
+                projectId: ref projectId,
+                branchId: ref branchId);
 
 
             var __authorizations = global::Neon.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_TransferProjectsFromUserToOrgSecurityRequirements,
-                operationName: "TransferProjectsFromUserToOrgAsync");
+                securityRequirements: s_GetNeonAuthPhoneNumberPluginSecurityRequirements,
+                operationName: "GetNeonAuthPhoneNumberPluginAsync");
 
             using var __timeoutCancellationTokenSource = global::Neon.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -86,7 +89,7 @@ namespace Neon
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::Neon.PathBuilder(
-                                path: "/users/me/projects/transfer",
+                                path: $"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Neon.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -94,7 +97,7 @@ namespace Neon
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -117,12 +120,6 @@ namespace Neon
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::Neon.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -131,10 +128,11 @@ namespace Neon
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareTransferProjectsFromUserToOrgRequest(
+                PrepareGetNeonAuthPhoneNumberPluginRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    request: request);
+                    projectId: projectId,
+                    branchId: branchId);
 
                 return __httpRequest;
             }
@@ -151,10 +149,10 @@ namespace Neon
                     await global::Neon.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "TransferProjectsFromUserToOrg",
-                                methodName: "TransferProjectsFromUserToOrgAsync",
-                                pathTemplate: "\"/users/me/projects/transfer\"",
-                                httpMethod: "POST",
+                                operationId: "GetNeonAuthPhoneNumberPlugin",
+                                methodName: "GetNeonAuthPhoneNumberPluginAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -178,10 +176,10 @@ namespace Neon
                         await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "TransferProjectsFromUserToOrg",
-                                methodName: "TransferProjectsFromUserToOrgAsync",
-                                pathTemplate: "\"/users/me/projects/transfer\"",
-                                httpMethod: "POST",
+                                operationId: "GetNeonAuthPhoneNumberPlugin",
+                                methodName: "GetNeonAuthPhoneNumberPluginAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -213,10 +211,10 @@ namespace Neon
                         await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "TransferProjectsFromUserToOrg",
-                                methodName: "TransferProjectsFromUserToOrgAsync",
-                                pathTemplate: "\"/users/me/projects/transfer\"",
-                                httpMethod: "POST",
+                                operationId: "GetNeonAuthPhoneNumberPlugin",
+                                methodName: "GetNeonAuthPhoneNumberPluginAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -252,7 +250,7 @@ namespace Neon
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessTransferProjectsFromUserToOrgResponse(
+                ProcessGetNeonAuthPhoneNumberPluginResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -260,10 +258,10 @@ namespace Neon
                     await global::Neon.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "TransferProjectsFromUserToOrg",
-                                methodName: "TransferProjectsFromUserToOrgAsync",
-                                pathTemplate: "\"/users/me/projects/transfer\"",
-                                httpMethod: "POST",
+                                operationId: "GetNeonAuthPhoneNumberPlugin",
+                                methodName: "GetNeonAuthPhoneNumberPluginAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -280,10 +278,10 @@ namespace Neon
                     await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "TransferProjectsFromUserToOrg",
-                                methodName: "TransferProjectsFromUserToOrgAsync",
-                                pathTemplate: "\"/users/me/projects/transfer\"",
-                                httpMethod: "POST",
+                                operationId: "GetNeonAuthPhoneNumberPlugin",
+                                methodName: "GetNeonAuthPhoneNumberPluginAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -295,82 +293,6 @@ namespace Neon
                                 willRetry: false,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Transfer failed - the target organization has too many projects or its plan is incompatible with the source account. Reduce the number of projects or upgrade the target organization to increase its capacity.
-                            if ((int)__response.StatusCode == 406)
-                            {
-                                string? __content_406 = null;
-                                global::System.Exception? __exception_406 = null;
-                                global::Neon.LimitsUnsatisfiedResponse? __value_406 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_406 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_406 = global::Neon.LimitsUnsatisfiedResponse.FromJson(__content_406, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_406 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_406 = global::Neon.LimitsUnsatisfiedResponse.FromJson(__content_406, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_406 = __ex;
-                                }
-
-                                throw new global::Neon.ApiException<global::Neon.LimitsUnsatisfiedResponse>(
-                                    message: __content_406 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_406,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_406,
-                                    ResponseObject = __value_406,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value),
-                                };
-                            }
-                            // One or more of the provided project IDs have GitHub or Vercel integrations installed. Transferring integration projects is currently not supported
-                            if ((int)__response.StatusCode == 422)
-                            {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::Neon.ProjectsWithIntegrationResponse? __value_422 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::Neon.ProjectsWithIntegrationResponse.FromJson(__content_422, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_422 = global::Neon.ProjectsWithIntegrationResponse.FromJson(__content_422, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_422 = __ex;
-                                }
-
-                                throw new global::Neon.ApiException<global::Neon.ProjectsWithIntegrationResponse>(
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value),
-                                };
-                            }
                             // General Error.  The request may or may not be safe to retry, depending on the HTTP method, response status code, and whether a response was received.  - If no response is returned from the API, a network error or timeout likely occurred. - In some cases, the request may have reached the server and been successfully processed, but the response failed to reach the client. As a result, retrying non-idempotent requests can lead to unintended results.  The following HTTP methods are considered non-idempotent: `POST`, `PATCH`, `DELETE`, and `PUT`. Retrying these methods is generally **not safe**. The following methods are considered idempotent: `GET`, `HEAD`, and `OPTIONS`. Retrying these methods is **safe** in the event of a network error or timeout.  Any request that returns a `503 Service Unavailable` response is always safe to retry.  Any request that returns a `423 Locked` response is safe to retry. `423 Locked` indicates that the resource is temporarily locked, for example, due to another operation in progress. 
                             if (!__response.IsSuccessStatusCode)
                             {
@@ -422,7 +344,7 @@ namespace Neon
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessTransferProjectsFromUserToOrgResponseContent(
+                                ProcessGetNeonAuthPhoneNumberPluginResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -432,7 +354,7 @@ namespace Neon
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::Neon.EmptyResponse.FromJson(__content, JsonSerializerContext) ??
+                                        global::Neon.NeonAuthPhoneNumberConfig.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -462,7 +384,7 @@ namespace Neon
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::Neon.EmptyResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::Neon.NeonAuthPhoneNumberConfig.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
@@ -500,36 +422,6 @@ namespace Neon
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Transfer projects from personal account to organization<br/>
-        /// Transfers selected projects, identified by their IDs, from your personal account to a specified organization.
-        /// </summary>
-        /// <param name="destinationOrgId">
-        /// The destination organization identifier
-        /// </param>
-        /// <param name="projectIds">
-        /// The list of projects ids to transfer. Maximum of 400 project ids
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Neon.EmptyResponse> TransferProjectsFromUserToOrgAsync(
-            string destinationOrgId,
-            global::System.Collections.Generic.IList<string> projectIds,
-            global::Neon.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::Neon.TransferProjectsToOrganizationRequest
-            {
-                DestinationOrgId = destinationOrgId,
-                ProjectIds = projectIds,
-            };
-
-            return await TransferProjectsFromUserToOrgAsync(
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

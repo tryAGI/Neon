@@ -19,6 +19,10 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        PhoneNumberVerified,
+        /// <summary>
+        /// 
+        /// </summary>
         SendMagicLink,
         /// <summary>
         /// 
@@ -48,6 +52,7 @@ namespace Neon
             {
                 NeonAuthWebhookConfigEnabledEvent.OrganizationInvitationAccepted => "organization.invitation.accepted",
                 NeonAuthWebhookConfigEnabledEvent.OrganizationInvitationCreated => "organization.invitation.created",
+                NeonAuthWebhookConfigEnabledEvent.PhoneNumberVerified => "phone_number.verified",
                 NeonAuthWebhookConfigEnabledEvent.SendMagicLink => "send.magic_link",
                 NeonAuthWebhookConfigEnabledEvent.SendOtp => "send.otp",
                 NeonAuthWebhookConfigEnabledEvent.UserBeforeCreate => "user.before_create",
@@ -64,6 +69,7 @@ namespace Neon
             {
                 "organization.invitation.accepted" => NeonAuthWebhookConfigEnabledEvent.OrganizationInvitationAccepted,
                 "organization.invitation.created" => NeonAuthWebhookConfigEnabledEvent.OrganizationInvitationCreated,
+                "phone_number.verified" => NeonAuthWebhookConfigEnabledEvent.PhoneNumberVerified,
                 "send.magic_link" => NeonAuthWebhookConfigEnabledEvent.SendMagicLink,
                 "send.otp" => NeonAuthWebhookConfigEnabledEvent.SendOtp,
                 "user.before_create" => NeonAuthWebhookConfigEnabledEvent.UserBeforeCreate,
