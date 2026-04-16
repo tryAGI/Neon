@@ -124,6 +124,10 @@ namespace Neon
         /// 
         /// </summary>
         TimelineUnarchive,
+        /// <summary>
+        /// 
+        /// </summary>
+        TimelineUpdateProtectedConfig,
     }
 
     /// <summary>
@@ -167,6 +171,7 @@ namespace Neon
                 OperationAction.TimelineArchive => "timeline_archive",
                 OperationAction.TimelineMarkInvisible => "timeline_mark_invisible",
                 OperationAction.TimelineUnarchive => "timeline_unarchive",
+                OperationAction.TimelineUpdateProtectedConfig => "timeline_update_protected_config",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -206,6 +211,7 @@ namespace Neon
                 "timeline_archive" => OperationAction.TimelineArchive,
                 "timeline_mark_invisible" => OperationAction.TimelineMarkInvisible,
                 "timeline_unarchive" => OperationAction.TimelineUnarchive,
+                "timeline_update_protected_config" => OperationAction.TimelineUpdateProtectedConfig,
                 _ => null,
             };
         }
