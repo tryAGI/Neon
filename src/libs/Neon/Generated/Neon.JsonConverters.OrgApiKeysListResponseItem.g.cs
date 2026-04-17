@@ -23,12 +23,23 @@ namespace Neon.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("created_at")) __score0++;
             if (__jsonProps.Contains("created_by")) __score0++;
+            if (__jsonProps.Contains("created_by.id")) __score0++;
+            if (__jsonProps.Contains("created_by.image")) __score0++;
+            if (__jsonProps.Contains("created_by.name")) __score0++;
             if (__jsonProps.Contains("id")) __score0++;
             if (__jsonProps.Contains("last_used_at")) __score0++;
             if (__jsonProps.Contains("last_used_from_addr")) __score0++;
