@@ -31,6 +31,10 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        SharedPaymentToken,
+        /// <summary>
+        /// 
+        /// </summary>
         Sponsorship,
         /// <summary>
         /// 
@@ -67,6 +71,7 @@ namespace Neon
                 BillingPaymentMethod.AzureMp => "azure_mp",
                 BillingPaymentMethod.DirectPayment => "direct_payment",
                 BillingPaymentMethod.None => "none",
+                BillingPaymentMethod.SharedPaymentToken => "shared_payment_token",
                 BillingPaymentMethod.Sponsorship => "sponsorship",
                 BillingPaymentMethod.Staff => "staff",
                 BillingPaymentMethod.Stripe => "stripe",
@@ -87,6 +92,7 @@ namespace Neon
                 "azure_mp" => BillingPaymentMethod.AzureMp,
                 "direct_payment" => BillingPaymentMethod.DirectPayment,
                 "none" => BillingPaymentMethod.None,
+                "shared_payment_token" => BillingPaymentMethod.SharedPaymentToken,
                 "sponsorship" => BillingPaymentMethod.Sponsorship,
                 "staff" => BillingPaymentMethod.Staff,
                 "stripe" => BillingPaymentMethod.Stripe,
