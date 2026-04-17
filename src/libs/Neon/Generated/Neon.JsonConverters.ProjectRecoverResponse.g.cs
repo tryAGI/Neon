@@ -23,11 +23,52 @@ namespace Neon.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("project")) __score0++;
+            if (__jsonProps.Contains("project.active_time_seconds")) __score0++;
+            if (__jsonProps.Contains("project.branch_logical_size_limit")) __score0++;
+            if (__jsonProps.Contains("project.branch_logical_size_limit_bytes")) __score0++;
+            if (__jsonProps.Contains("project.compute_last_active_at")) __score0++;
+            if (__jsonProps.Contains("project.compute_time_seconds")) __score0++;
+            if (__jsonProps.Contains("project.consumption_period_end")) __score0++;
+            if (__jsonProps.Contains("project.consumption_period_start")) __score0++;
+            if (__jsonProps.Contains("project.cpu_used_sec")) __score0++;
+            if (__jsonProps.Contains("project.created_at")) __score0++;
+            if (__jsonProps.Contains("project.creation_source")) __score0++;
+            if (__jsonProps.Contains("project.data_storage_bytes_hour")) __score0++;
+            if (__jsonProps.Contains("project.data_transfer_bytes")) __score0++;
+            if (__jsonProps.Contains("project.default_endpoint_settings")) __score0++;
+            if (__jsonProps.Contains("project.hipaa_enabled_at")) __score0++;
+            if (__jsonProps.Contains("project.history_retention_seconds")) __score0++;
+            if (__jsonProps.Contains("project.id")) __score0++;
+            if (__jsonProps.Contains("project.maintenance_scheduled_for")) __score0++;
+            if (__jsonProps.Contains("project.maintenance_starts_at")) __score0++;
+            if (__jsonProps.Contains("project.name")) __score0++;
+            if (__jsonProps.Contains("project.org_id")) __score0++;
+            if (__jsonProps.Contains("project.owner")) __score0++;
+            if (__jsonProps.Contains("project.owner_id")) __score0++;
+            if (__jsonProps.Contains("project.pg_version")) __score0++;
+            if (__jsonProps.Contains("project.platform_id")) __score0++;
+            if (__jsonProps.Contains("project.provisioner")) __score0++;
+            if (__jsonProps.Contains("project.proxy_host")) __score0++;
+            if (__jsonProps.Contains("project.quota_reset_at")) __score0++;
+            if (__jsonProps.Contains("project.region_id")) __score0++;
+            if (__jsonProps.Contains("project.settings")) __score0++;
+            if (__jsonProps.Contains("project.store_passwords")) __score0++;
+            if (__jsonProps.Contains("project.synthetic_storage_size")) __score0++;
+            if (__jsonProps.Contains("project.updated_at")) __score0++;
+            if (__jsonProps.Contains("project.written_data_bytes")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("branches")) __score1++;
             var __bestScore = 0;

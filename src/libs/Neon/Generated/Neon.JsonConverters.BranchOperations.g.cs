@@ -23,11 +23,49 @@ namespace Neon.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("branch")) __score0++;
+            if (__jsonProps.Contains("branch.active_time_seconds")) __score0++;
+            if (__jsonProps.Contains("branch.compute_time_seconds")) __score0++;
+            if (__jsonProps.Contains("branch.cpu_used_sec")) __score0++;
+            if (__jsonProps.Contains("branch.created_at")) __score0++;
+            if (__jsonProps.Contains("branch.created_by")) __score0++;
+            if (__jsonProps.Contains("branch.creation_source")) __score0++;
+            if (__jsonProps.Contains("branch.current_state")) __score0++;
+            if (__jsonProps.Contains("branch.data_transfer_bytes")) __score0++;
+            if (__jsonProps.Contains("branch.default")) __score0++;
+            if (__jsonProps.Contains("branch.expires_at")) __score0++;
+            if (__jsonProps.Contains("branch.id")) __score0++;
+            if (__jsonProps.Contains("branch.init_source")) __score0++;
+            if (__jsonProps.Contains("branch.last_reset_at")) __score0++;
+            if (__jsonProps.Contains("branch.logical_size")) __score0++;
+            if (__jsonProps.Contains("branch.name")) __score0++;
+            if (__jsonProps.Contains("branch.parent_id")) __score0++;
+            if (__jsonProps.Contains("branch.parent_lsn")) __score0++;
+            if (__jsonProps.Contains("branch.parent_timestamp")) __score0++;
+            if (__jsonProps.Contains("branch.pending_state")) __score0++;
+            if (__jsonProps.Contains("branch.primary")) __score0++;
+            if (__jsonProps.Contains("branch.project_id")) __score0++;
+            if (__jsonProps.Contains("branch.protected")) __score0++;
+            if (__jsonProps.Contains("branch.restore_status")) __score0++;
+            if (__jsonProps.Contains("branch.restored_as")) __score0++;
+            if (__jsonProps.Contains("branch.restored_from")) __score0++;
+            if (__jsonProps.Contains("branch.restricted_actions")) __score0++;
+            if (__jsonProps.Contains("branch.state_changed_at")) __score0++;
+            if (__jsonProps.Contains("branch.ttl_interval_seconds")) __score0++;
+            if (__jsonProps.Contains("branch.updated_at")) __score0++;
+            if (__jsonProps.Contains("branch.written_data_bytes")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("operations")) __score1++;
             var __bestScore = 0;

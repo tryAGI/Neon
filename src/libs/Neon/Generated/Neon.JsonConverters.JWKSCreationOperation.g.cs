@@ -23,11 +23,28 @@ namespace Neon.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("jwks")) __score0++;
+            if (__jsonProps.Contains("jwks.branch_id")) __score0++;
+            if (__jsonProps.Contains("jwks.created_at")) __score0++;
+            if (__jsonProps.Contains("jwks.id")) __score0++;
+            if (__jsonProps.Contains("jwks.jwks_url")) __score0++;
+            if (__jsonProps.Contains("jwks.jwt_audience")) __score0++;
+            if (__jsonProps.Contains("jwks.project_id")) __score0++;
+            if (__jsonProps.Contains("jwks.provider_name")) __score0++;
+            if (__jsonProps.Contains("jwks.role_names")) __score0++;
+            if (__jsonProps.Contains("jwks.updated_at")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("operations")) __score1++;
             var __bestScore = 0;
