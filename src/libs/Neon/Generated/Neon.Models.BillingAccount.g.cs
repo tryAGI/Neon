@@ -134,6 +134,14 @@ namespace Neon
         public global::Neon.PlanDetails? PlanDetails { get; set; }
 
         /// <summary>
+        /// Monthly spending cap in cents for V3 paid plans. When set,<br/>
+        /// notifications are sent at 80% and 100% of this limit. `null`<br/>
+        /// means no limit is configured.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spending_limit_cents")]
+        public long? SpendingLimitCents { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -193,6 +201,11 @@ namespace Neon
         /// The type of the tax identification number based on the country.
         /// </param>
         /// <param name="planDetails"></param>
+        /// <param name="spendingLimitCents">
+        /// Monthly spending cap in cents for V3 paid plans. When set,<br/>
+        /// notifications are sent at 80% and 100% of this limit. `null`<br/>
+        /// means no limit is configured.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -214,7 +227,8 @@ namespace Neon
             string? orbPortalUrl,
             string? taxId,
             string? taxIdType,
-            global::Neon.PlanDetails? planDetails)
+            global::Neon.PlanDetails? planDetails,
+            long? spendingLimitCents)
         {
             this.State = state;
             this.PaymentSource = paymentSource ?? throw new global::System.ArgumentNullException(nameof(paymentSource));
@@ -234,6 +248,7 @@ namespace Neon
             this.TaxId = taxId;
             this.TaxIdType = taxIdType;
             this.PlanDetails = planDetails;
+            this.SpendingLimitCents = spendingLimitCents;
         }
 
         /// <summary>
