@@ -897,46 +897,6 @@
                 }
             }
         },
-        "/projects/{project_id}/restore": {
-            "parameters": [
-                {
-                    "name": "project_id",
-                    "in": "path",
-                    "description": "The Neon project ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "pattern": "^[a-z0-9-]{1,60}$"
-                    }
-                }
-            ],
-            "post": {
-                "summary": "Restore a deleted project",
-                "description": "DEPRECATED, use `/projects/{project_id}/recover` instead. Restores a deleted project during the deletion grace period.\nYou can obtain a `project_id` by listing the projects for your Neon account.\n",
-                "tags": [
-                    "Project"
-                ],
-                "operationId": "restoreProject",
-                "deprecated": true,
-                "x-stability-level": "beta",
-                "x-sunset": "2026-02-06",
-                "responses": {
-                    "200": {
-                        "description": "Returned the restored project",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProjectRecoverResponse"
-                                }
-                            }
-                        }
-                    },
-                    "default": {
-                        "$ref": "#/components/responses/GeneralError"
-                    }
-                }
-            }
-        },
         "/projects/{project_id}/recover": {
             "parameters": [
                 {
