@@ -7,7 +7,7 @@ namespace Neon
     {
 
 
-        private static readonly global::Neon.EndPointSecurityRequirement s_DeleteProjectBranchSecurityRequirement0 =
+        private static readonly global::Neon.EndPointSecurityRequirement s_RecoverProjectBranchSecurityRequirement0 =
             new global::Neon.EndPointSecurityRequirement
             {
                 Authorizations = new global::Neon.EndPointAuthorizationRequirement[]
@@ -21,74 +21,60 @@ namespace Neon
                     },
                 },
             };
-        private static readonly global::Neon.EndPointSecurityRequirement[] s_DeleteProjectBranchSecurityRequirements =
+        private static readonly global::Neon.EndPointSecurityRequirement[] s_RecoverProjectBranchSecurityRequirements =
             new global::Neon.EndPointSecurityRequirement[]
-            {                s_DeleteProjectBranchSecurityRequirement0,
+            {                s_RecoverProjectBranchSecurityRequirement0,
             };
-        partial void PrepareDeleteProjectBranchArguments(
+        partial void PrepareRecoverProjectBranchArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool? hardDelete,
             ref string projectId,
             ref string branchId);
-        partial void PrepareDeleteProjectBranchRequest(
+        partial void PrepareRecoverProjectBranchRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool? hardDelete,
             string projectId,
             string branchId);
-        partial void ProcessDeleteProjectBranchResponse(
+        partial void ProcessRecoverProjectBranchResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessDeleteProjectBranchResponseContent(
+        partial void ProcessRecoverProjectBranchResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Delete branch<br/>
-        /// Deletes the specified branch from a project, and places<br/>
-        /// all compute endpoints into an idle state, breaking existing client connections.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain a `branch_id` by listing the project's branches.<br/>
-        /// For related information, see [Manage branches](https://neon.tech/docs/manage/branches/).<br/>
-        /// When a successful response status is received, the compute endpoints are still active,<br/>
-        /// and the branch is not yet deleted from storage.<br/>
-        /// The deletion occurs after all operations finish.<br/>
-        /// You cannot delete a project's root or default branch, and you cannot delete a branch that has a child branch.<br/>
-        /// A project must have at least one branch.<br/>
-        /// By default, deleted branches can be recovered within a 7-day grace period.<br/>
-        /// Use the `hard_delete` parameter to permanently delete the branch immediately without a recovery window.<br/>
-        /// Soft delete and branch recovery are in preview and not available to all users.
+        /// Recover a deleted branch<br/>
+        /// Recovers a deleted branch during the deletion grace period (7 days).<br/>
+        /// The branch must have been soft deleted and not yet permanently deleted.<br/>
+        /// Recovery restores the branch and its endpoints to an idle state.<br/>
+        /// Connection strings remain valid after recovery.<br/>
+        /// TTL branches become non-TTL branches after recovery.<br/>
+        /// This endpoint is in preview and not available to all users.
         /// </summary>
-        /// <param name="hardDelete">
-        /// Default Value: false
-        /// </param>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Neon.BranchOperations> DeleteProjectBranchAsync(
+        public async global::System.Threading.Tasks.Task<global::Neon.BranchRecoverResponse> RecoverProjectBranchAsync(
             string projectId,
             string branchId,
-            bool? hardDelete = default,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareDeleteProjectBranchArguments(
+            PrepareRecoverProjectBranchArguments(
                 httpClient: HttpClient,
-                hardDelete: ref hardDelete,
                 projectId: ref projectId,
                 branchId: ref branchId);
 
 
             var __authorizations = global::Neon.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_DeleteProjectBranchSecurityRequirements,
-                operationName: "DeleteProjectBranchAsync");
+                securityRequirements: s_RecoverProjectBranchSecurityRequirements,
+                operationName: "RecoverProjectBranchAsync");
 
             using var __timeoutCancellationTokenSource = global::Neon.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -107,18 +93,15 @@ namespace Neon
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::Neon.PathBuilder(
-                                path: $"/projects/{projectId}/branches/{branchId}",
-                                baseUri: HttpClient.BaseAddress); 
-                            __pathBuilder
-                                .AddOptionalParameter("hard_delete", hardDelete?.ToString().ToLowerInvariant()) 
-                                ;
+                                path: $"/projects/{projectId}/branches/{branchId}/recover",
+                                baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Neon.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Delete,
+                    method: global::System.Net.Http.HttpMethod.Post,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -149,10 +132,9 @@ namespace Neon
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareDeleteProjectBranchRequest(
+                PrepareRecoverProjectBranchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    hardDelete: hardDelete,
                     projectId: projectId,
                     branchId: branchId);
 
@@ -171,10 +153,10 @@ namespace Neon
                     await global::Neon.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteProjectBranch",
-                                methodName: "DeleteProjectBranchAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "RecoverProjectBranch",
+                                methodName: "RecoverProjectBranchAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/recover\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -198,10 +180,10 @@ namespace Neon
                         await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteProjectBranch",
-                                methodName: "DeleteProjectBranchAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "RecoverProjectBranch",
+                                methodName: "RecoverProjectBranchAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/recover\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -233,10 +215,10 @@ namespace Neon
                         await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteProjectBranch",
-                                methodName: "DeleteProjectBranchAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "RecoverProjectBranch",
+                                methodName: "RecoverProjectBranchAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/recover\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -272,7 +254,7 @@ namespace Neon
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessDeleteProjectBranchResponse(
+                ProcessRecoverProjectBranchResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -280,10 +262,10 @@ namespace Neon
                     await global::Neon.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteProjectBranch",
-                                methodName: "DeleteProjectBranchAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "RecoverProjectBranch",
+                                methodName: "RecoverProjectBranchAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/recover\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -300,10 +282,10 @@ namespace Neon
                     await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteProjectBranch",
-                                methodName: "DeleteProjectBranchAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}\"",
-                                httpMethod: "DELETE",
+                                operationId: "RecoverProjectBranch",
+                                methodName: "RecoverProjectBranchAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/recover\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -366,7 +348,7 @@ namespace Neon
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessDeleteProjectBranchResponseContent(
+                                ProcessRecoverProjectBranchResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -376,7 +358,7 @@ namespace Neon
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::Neon.BranchOperations.FromJson(__content, JsonSerializerContext) ??
+                                        global::Neon.BranchRecoverResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -406,7 +388,7 @@ namespace Neon
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::Neon.BranchOperations.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::Neon.BranchRecoverResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)

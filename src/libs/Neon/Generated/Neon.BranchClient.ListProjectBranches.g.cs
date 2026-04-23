@@ -32,6 +32,7 @@ namespace Neon
             ref string? cursor,
             ref global::Neon.ListProjectBranchesSortOrder? sortOrder,
             ref int? limit,
+            ref bool? includeDeleted,
             ref string projectId);
         partial void PrepareListProjectBranchesRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -41,6 +42,7 @@ namespace Neon
             string? cursor,
             global::Neon.ListProjectBranchesSortOrder? sortOrder,
             int? limit,
+            bool? includeDeleted,
             string projectId);
         partial void ProcessListProjectBranchesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -70,6 +72,9 @@ namespace Neon
         /// Default Value: desc
         /// </param>
         /// <param name="limit"></param>
+        /// <param name="includeDeleted">
+        /// Default Value: false
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -81,6 +86,7 @@ namespace Neon
             string? cursor = default,
             global::Neon.ListProjectBranchesSortOrder? sortOrder = default,
             int? limit = default,
+            bool? includeDeleted = default,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -93,6 +99,7 @@ namespace Neon
                 cursor: ref cursor,
                 sortOrder: ref sortOrder,
                 limit: ref limit,
+                includeDeleted: ref includeDeleted,
                 projectId: ref projectId);
 
 
@@ -125,7 +132,8 @@ namespace Neon
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("sort_order", sortOrder?.ToValueString())
-                                .AddOptionalParameter("limit", limit?.ToString()) 
+                                .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("include_deleted", includeDeleted?.ToString().ToLowerInvariant()) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Neon.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -172,6 +180,7 @@ namespace Neon
                     cursor: cursor,
                     sortOrder: sortOrder,
                     limit: limit,
+                    includeDeleted: includeDeleted,
                     projectId: projectId);
 
                 return __httpRequest;
