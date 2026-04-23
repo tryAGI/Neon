@@ -189,6 +189,8 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.BranchOperationsJsonConverter),
 
+            typeof(global::Neon.JsonConverters.BranchRecoverResponseJsonConverter),
+
             typeof(global::Neon.JsonConverters.EndpointOperationsJsonConverter),
 
             typeof(global::Neon.JsonConverters.DatabaseOperationsJsonConverter),
@@ -546,6 +548,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthConfigResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.GeneralError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchOperations), TypeInfoPropertyName = "BranchOperations2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchRecoverResponse), TypeInfoPropertyName = "BranchRecoverResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointOperations), TypeInfoPropertyName = "EndpointOperations2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DatabaseOperations), TypeInfoPropertyName = "DatabaseOperations2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RoleOperations), TypeInfoPropertyName = "RoleOperations2")]
