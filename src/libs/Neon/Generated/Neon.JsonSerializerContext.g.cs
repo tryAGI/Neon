@@ -421,6 +421,8 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BillingAccountState), TypeInfoPropertyName = "BillingAccountState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BillingSubscriptionType), TypeInfoPropertyName = "BillingSubscriptionType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BillingPaymentMethod), TypeInfoPropertyName = "BillingPaymentMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.SpendingLimitUpdateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.SpendingLimitResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Database))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DatabaseCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DatabaseCreateRequestDatabase))]
