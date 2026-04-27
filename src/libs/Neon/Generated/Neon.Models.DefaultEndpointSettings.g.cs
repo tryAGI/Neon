@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Neon
@@ -15,9 +17,10 @@ namespace Neon
         public global::System.Collections.Generic.Dictionary<string, string>? PgSettings { get; set; }
 
         /// <summary>
-        /// A raw representation of PgBouncer settings
+        /// DEPRECATED. A raw representation of PgBouncer settings. This schema is deprecated and will be removed after 2026-06-20.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pgbouncer_settings")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.Dictionary<string, string>? PgbouncerSettings { get; set; }
 
         /// <summary>
@@ -55,9 +58,6 @@ namespace Neon
         /// <param name="pgSettings">
         /// A raw representation of Postgres settings
         /// </param>
-        /// <param name="pgbouncerSettings">
-        /// A raw representation of PgBouncer settings
-        /// </param>
         /// <param name="autoscalingLimitMinCu"></param>
         /// <param name="autoscalingLimitMaxCu"></param>
         /// <param name="suspendTimeoutSeconds">
@@ -73,13 +73,11 @@ namespace Neon
 #endif
         public DefaultEndpointSettings(
             global::System.Collections.Generic.Dictionary<string, string>? pgSettings,
-            global::System.Collections.Generic.Dictionary<string, string>? pgbouncerSettings,
             double? autoscalingLimitMinCu,
             double? autoscalingLimitMaxCu,
             long? suspendTimeoutSeconds)
         {
             this.PgSettings = pgSettings;
-            this.PgbouncerSettings = pgbouncerSettings;
             this.AutoscalingLimitMinCu = autoscalingLimitMinCu;
             this.AutoscalingLimitMaxCu = autoscalingLimitMaxCu;
             this.SuspendTimeoutSeconds = suspendTimeoutSeconds;

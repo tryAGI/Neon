@@ -69,10 +69,11 @@ namespace Neon
         public bool? PoolerEnabled { get; set; }
 
         /// <summary>
-        /// The connection pooler mode. Neon supports PgBouncer in `transaction` mode only.
+        /// DEPRECATED. The connection pooler mode. Neon supports PgBouncer in `transaction` mode only. This schema is deprecated and will be removed after 2026-06-20.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pooler_mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.EndpointPoolerModeJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Neon.EndpointPoolerMode? PoolerMode { get; set; }
 
         /// <summary>
@@ -140,9 +141,6 @@ namespace Neon
         /// * serverless-platform<br/>
         /// Clients must expect, that any string value that is not documented in the description above should be treated as a error. UNKNOWN value if safe to treat as an error too.
         /// </param>
-        /// <param name="poolerMode">
-        /// The connection pooler mode. Neon supports PgBouncer in `transaction` mode only.
-        /// </param>
         /// <param name="disabled">
         /// Whether to restrict connections to the compute endpoint.<br/>
         /// Enabling this option schedules a suspend compute operation.<br/>
@@ -175,7 +173,6 @@ namespace Neon
             double? autoscalingLimitMinCu,
             double? autoscalingLimitMaxCu,
             string? provisioner,
-            global::Neon.EndpointPoolerMode? poolerMode,
             bool? disabled,
             bool? passwordlessAccess,
             long? suspendTimeoutSeconds,
@@ -188,7 +185,6 @@ namespace Neon
             this.AutoscalingLimitMinCu = autoscalingLimitMinCu;
             this.AutoscalingLimitMaxCu = autoscalingLimitMaxCu;
             this.Provisioner = provisioner;
-            this.PoolerMode = poolerMode;
             this.Disabled = disabled;
             this.PasswordlessAccess = passwordlessAccess;
             this.SuspendTimeoutSeconds = suspendTimeoutSeconds;

@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Neon
@@ -101,10 +103,11 @@ namespace Neon
         public required bool PoolerEnabled { get; set; }
 
         /// <summary>
-        /// The connection pooler mode. Neon supports PgBouncer in `transaction` mode only.
+        /// DEPRECATED. The connection pooler mode. Neon supports PgBouncer in `transaction` mode only. This schema is deprecated and will be removed after 2026-06-20.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pooler_mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.EndpointPoolerModeJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Neon.EndpointPoolerMode PoolerMode { get; set; }
 
         /// <summary>
@@ -283,9 +286,6 @@ namespace Neon
         /// <param name="pendingState">
         /// The state of the compute endpoint
         /// </param>
-        /// <param name="poolerMode">
-        /// The connection pooler mode. Neon supports PgBouncer in `transaction` mode only.
-        /// </param>
         /// <param name="lastActive">
         /// A timestamp indicating when the compute endpoint was last active
         /// </param>
@@ -323,7 +323,6 @@ namespace Neon
             string provisioner,
             string? name,
             global::Neon.EndpointState? pendingState,
-            global::Neon.EndpointPoolerMode poolerMode,
             global::System.DateTime? lastActive,
             global::System.DateTime? startedAt,
             global::System.DateTime? suspendedAt,
@@ -342,7 +341,6 @@ namespace Neon
             this.PendingState = pendingState;
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.PoolerEnabled = poolerEnabled;
-            this.PoolerMode = poolerMode;
             this.Disabled = disabled;
             this.PasswordlessAccess = passwordlessAccess;
             this.LastActive = lastActive;

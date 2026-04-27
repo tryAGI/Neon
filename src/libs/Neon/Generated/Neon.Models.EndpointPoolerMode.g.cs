@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// The connection pooler mode. Neon supports PgBouncer in `transaction` mode only.
+    /// DEPRECATED. The connection pooler mode. Neon supports PgBouncer in `transaction` mode only. This schema is deprecated and will be removed after 2026-06-20.
     /// </summary>
     public enum EndpointPoolerMode
     {

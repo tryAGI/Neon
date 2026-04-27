@@ -56,10 +56,11 @@ namespace Neon
         public bool? PoolerEnabled { get; set; }
 
         /// <summary>
-        /// The connection pooler mode. Neon supports PgBouncer in `transaction` mode only.
+        /// DEPRECATED. The connection pooler mode. Neon supports PgBouncer in `transaction` mode only. This schema is deprecated and will be removed after 2026-06-20.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pooler_mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.EndpointPoolerModeJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Neon.EndpointPoolerMode? PoolerMode { get; set; }
 
         /// <summary>
@@ -118,9 +119,6 @@ namespace Neon
         /// <param name="settings">
         /// A collection of settings for a compute endpoint
         /// </param>
-        /// <param name="poolerMode">
-        /// The connection pooler mode. Neon supports PgBouncer in `transaction` mode only.
-        /// </param>
         /// <param name="disabled">
         /// Whether to restrict connections to the compute endpoint.<br/>
         /// Enabling this option schedules a suspend compute operation.<br/>
@@ -150,7 +148,6 @@ namespace Neon
             double? autoscalingLimitMaxCu,
             string? provisioner,
             global::Neon.EndpointSettingsData? settings,
-            global::Neon.EndpointPoolerMode? poolerMode,
             bool? disabled,
             bool? passwordlessAccess,
             long? suspendTimeoutSeconds,
@@ -160,7 +157,6 @@ namespace Neon
             this.AutoscalingLimitMaxCu = autoscalingLimitMaxCu;
             this.Provisioner = provisioner;
             this.Settings = settings;
-            this.PoolerMode = poolerMode;
             this.Disabled = disabled;
             this.PasswordlessAccess = passwordlessAccess;
             this.SuspendTimeoutSeconds = suspendTimeoutSeconds;

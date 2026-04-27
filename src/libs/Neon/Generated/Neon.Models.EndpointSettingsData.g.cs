@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Neon
@@ -15,9 +17,10 @@ namespace Neon
         public global::System.Collections.Generic.Dictionary<string, string>? PgSettings { get; set; }
 
         /// <summary>
-        /// A raw representation of PgBouncer settings
+        /// DEPRECATED. A raw representation of PgBouncer settings. This schema is deprecated and will be removed after 2026-06-20.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pgbouncer_settings")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.Dictionary<string, string>? PgbouncerSettings { get; set; }
 
         /// <summary>
@@ -38,9 +41,6 @@ namespace Neon
         /// <param name="pgSettings">
         /// A raw representation of Postgres settings
         /// </param>
-        /// <param name="pgbouncerSettings">
-        /// A raw representation of PgBouncer settings
-        /// </param>
         /// <param name="preloadLibraries">
         /// The shared libraries to preload into the project's compute instances.
         /// </param>
@@ -49,11 +49,9 @@ namespace Neon
 #endif
         public EndpointSettingsData(
             global::System.Collections.Generic.Dictionary<string, string>? pgSettings,
-            global::System.Collections.Generic.Dictionary<string, string>? pgbouncerSettings,
             global::Neon.PreloadLibraries? preloadLibraries)
         {
             this.PgSettings = pgSettings;
-            this.PgbouncerSettings = pgbouncerSettings;
             this.PreloadLibraries = preloadLibraries;
         }
 
