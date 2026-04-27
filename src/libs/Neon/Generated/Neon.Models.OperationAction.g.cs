@@ -51,6 +51,10 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        FinalizeMigration,
+        /// <summary>
+        /// 
+        /// </summary>
         ImportData,
         /// <summary>
         /// 
@@ -152,6 +156,7 @@ namespace Neon
                 OperationAction.DeleteTimeline => "delete_timeline",
                 OperationAction.DetachParentBranch => "detach_parent_branch",
                 OperationAction.DisableMaintenance => "disable_maintenance",
+                OperationAction.FinalizeMigration => "finalize_migration",
                 OperationAction.ImportData => "import_data",
                 OperationAction.PrepareSecondaryPageserver => "prepare_secondary_pageserver",
                 OperationAction.PrewarmReplica => "prewarm_replica",
@@ -192,6 +197,7 @@ namespace Neon
                 "delete_timeline" => OperationAction.DeleteTimeline,
                 "detach_parent_branch" => OperationAction.DetachParentBranch,
                 "disable_maintenance" => OperationAction.DisableMaintenance,
+                "finalize_migration" => OperationAction.FinalizeMigration,
                 "import_data" => OperationAction.ImportData,
                 "prepare_secondary_pageserver" => OperationAction.PrepareSecondaryPageserver,
                 "prewarm_replica" => OperationAction.PrewarmReplica,
