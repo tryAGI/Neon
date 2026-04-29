@@ -45,6 +45,10 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.ProjectAuditLogLevelNullableJsonConverter),
 
+            typeof(global::Neon.JsonConverters.BranchRecoveryInfoDeletionMethodJsonConverter),
+
+            typeof(global::Neon.JsonConverters.BranchRecoveryInfoDeletionMethodNullableJsonConverter),
+
             typeof(global::Neon.JsonConverters.EndpointStateJsonConverter),
 
             typeof(global::Neon.JsonConverters.EndpointStateNullableJsonConverter),
@@ -344,6 +348,8 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchCreatedBy))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.BranchRestrictedAction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchRestrictedAction))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchRecoveryInfo))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchRecoveryInfoDeletionMethod), TypeInfoPropertyName = "BranchRecoveryInfoDeletionMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchConsumption))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchCreateRequestEndpointOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointType), TypeInfoPropertyName = "EndpointType2")]
