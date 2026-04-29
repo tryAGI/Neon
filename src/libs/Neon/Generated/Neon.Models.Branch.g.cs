@@ -235,6 +235,14 @@ namespace Neon
         public global::System.Collections.Generic.IList<global::Neon.BranchRestrictedAction>? RestrictedActions { get; set; }
 
         /// <summary>
+        /// Recovery information for a deleted branch. Only present when listing deleted branches<br/>
+        /// with `include_deleted=true`.<br/>
+        /// This is part of the Branch Recovery feature, which is in preview and not available to all users.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("recovery")]
+        public global::Neon.BranchRecoveryInfo? Recovery { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -347,6 +355,11 @@ namespace Neon
         /// <param name="restrictedActions">
         /// A list of actions that are currently restricted for this branch and the reason why.
         /// </param>
+        /// <param name="recovery">
+        /// Recovery information for a deleted branch. Only present when listing deleted branches<br/>
+        /// with `include_deleted=true`.<br/>
+        /// This is part of the Branch Recovery feature, which is in preview and not available to all users.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -379,7 +392,8 @@ namespace Neon
             string? restoreStatus,
             string? restoredFrom,
             string? restoredAs,
-            global::System.Collections.Generic.IList<global::Neon.BranchRestrictedAction>? restrictedActions)
+            global::System.Collections.Generic.IList<global::Neon.BranchRestrictedAction>? restrictedActions,
+            global::Neon.BranchRecoveryInfo? recovery)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
@@ -410,6 +424,7 @@ namespace Neon
             this.RestoredFrom = restoredFrom;
             this.RestoredAs = restoredAs;
             this.RestrictedActions = restrictedActions;
+            this.Recovery = recovery;
         }
 
         /// <summary>

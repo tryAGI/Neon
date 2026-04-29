@@ -58,6 +58,7 @@ namespace Neon.JsonConverters
             if (__jsonProps.Contains("branch.primary")) __score0++;
             if (__jsonProps.Contains("branch.project_id")) __score0++;
             if (__jsonProps.Contains("branch.protected")) __score0++;
+            if (__jsonProps.Contains("branch.recovery")) __score0++;
             if (__jsonProps.Contains("branch.restore_status")) __score0++;
             if (__jsonProps.Contains("branch.restored_as")) __score0++;
             if (__jsonProps.Contains("branch.restored_from")) __score0++;
