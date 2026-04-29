@@ -139,9 +139,9 @@ namespace Neon
                 PrepareGetProjectBranchRolePasswordRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    branchId: branchId,
-                    roleName: roleName);
+                    projectId: projectId!,
+                    branchId: branchId!,
+                    roleName: roleName!);
 
                 return __httpRequest;
             }

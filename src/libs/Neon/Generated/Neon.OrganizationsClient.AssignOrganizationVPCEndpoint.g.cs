@@ -144,9 +144,9 @@ namespace Neon
                 PrepareAssignOrganizationVPCEndpointRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    orgId: orgId,
-                    regionId: regionId,
-                    vpcEndpointId: vpcEndpointId,
+                    orgId: orgId!,
+                    regionId: regionId!,
+                    vpcEndpointId: vpcEndpointId!,
                     request: request);
 
                 return __httpRequest;

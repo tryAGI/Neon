@@ -149,9 +149,9 @@ namespace Neon
                 PrepareUpdateNeonAuthUserRoleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    branchId: branchId,
-                    authUserId: authUserId,
+                    projectId: projectId!,
+                    branchId: branchId!,
+                    authUserId: authUserId!,
                     request: request);
 
                 return __httpRequest;

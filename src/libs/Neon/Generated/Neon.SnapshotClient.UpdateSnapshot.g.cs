@@ -145,8 +145,8 @@ namespace Neon
                 PrepareUpdateSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    snapshotId: snapshotId,
+                    projectId: projectId!,
+                    snapshotId: snapshotId!,
                     request: request);
 
                 return __httpRequest;

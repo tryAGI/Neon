@@ -143,8 +143,8 @@ namespace Neon
                 PrepareAssignProjectVPCEndpointRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    vpcEndpointId: vpcEndpointId,
+                    projectId: projectId!,
+                    vpcEndpointId: vpcEndpointId!,
                     request: request);
 
                 return __httpRequest;

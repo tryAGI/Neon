@@ -125,8 +125,8 @@ namespace Neon
                 PrepareDeleteProjectVPCEndpointRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    vpcEndpointId: vpcEndpointId);
+                    projectId: projectId!,
+                    vpcEndpointId: vpcEndpointId!);
 
                 return __httpRequest;
             }

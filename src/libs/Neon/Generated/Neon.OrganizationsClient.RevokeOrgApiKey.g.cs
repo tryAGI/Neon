@@ -135,8 +135,8 @@ namespace Neon
                 PrepareRevokeOrgApiKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    keyId: keyId,
-                    orgId: orgId);
+                    keyId: keyId!,
+                    orgId: orgId!);
 
                 return __httpRequest;
             }

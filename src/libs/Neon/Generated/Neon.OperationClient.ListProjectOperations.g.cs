@@ -147,7 +147,7 @@ namespace Neon
                     httpRequestMessage: __httpRequest,
                     cursor: cursor,
                     limit: limit,
-                    projectId: projectId);
+                    projectId: projectId!);
 
                 return __httpRequest;
             }

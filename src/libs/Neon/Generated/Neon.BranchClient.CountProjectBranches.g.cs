@@ -135,7 +135,7 @@ namespace Neon
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     search: search,
-                    projectId: projectId);
+                    projectId: projectId!);
 
                 return __httpRequest;
             }

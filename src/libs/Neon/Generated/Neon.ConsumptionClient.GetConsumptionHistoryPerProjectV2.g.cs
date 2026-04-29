@@ -177,11 +177,11 @@ namespace Neon
                     cursor: cursor,
                     limit: limit,
                     projectIds: projectIds,
-                    from: from,
-                    to: to,
-                    granularity: granularity,
-                    orgId: orgId,
-                    metrics: metrics);
+                    from: from!,
+                    to: to!,
+                    granularity: granularity!,
+                    orgId: orgId!,
+                    metrics: metrics!);
 
                 return __httpRequest;
             }

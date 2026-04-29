@@ -126,7 +126,7 @@ namespace Neon
                 PrepareRecoverProjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId);
+                    projectId: projectId!);
 
                 return __httpRequest;
             }

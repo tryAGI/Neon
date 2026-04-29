@@ -134,8 +134,8 @@ namespace Neon
                 PrepareSuspendProjectEndpointRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    endpointId: endpointId);
+                    projectId: projectId!,
+                    endpointId: endpointId!);
 
                 return __httpRequest;
             }
