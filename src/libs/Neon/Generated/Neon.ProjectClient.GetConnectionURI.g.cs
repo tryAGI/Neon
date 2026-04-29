@@ -160,11 +160,11 @@ namespace Neon
                 PrepareGetConnectionURIRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
+                    projectId: projectId!,
                     branchId: branchId,
                     endpointId: endpointId,
-                    databaseName: databaseName,
-                    roleName: roleName,
+                    databaseName: databaseName!,
+                    roleName: roleName!,
                     pooled: pooled);
 
                 return __httpRequest;

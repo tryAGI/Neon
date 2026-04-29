@@ -130,8 +130,8 @@ namespace Neon
                 PrepareListOrganizationVPCEndpointsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    orgId: orgId,
-                    regionId: regionId);
+                    orgId: orgId!,
+                    regionId: regionId!);
 
                 return __httpRequest;
             }

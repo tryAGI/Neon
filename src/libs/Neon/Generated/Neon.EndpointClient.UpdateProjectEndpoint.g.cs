@@ -152,8 +152,8 @@ namespace Neon
                 PrepareUpdateProjectEndpointRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    endpointId: endpointId,
+                    projectId: projectId!,
+                    endpointId: endpointId!,
                     request: request);
 
                 return __httpRequest;

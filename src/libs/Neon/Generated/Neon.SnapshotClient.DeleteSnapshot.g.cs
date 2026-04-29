@@ -131,8 +131,8 @@ namespace Neon
                 PrepareDeleteSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    snapshotId: snapshotId);
+                    projectId: projectId!,
+                    snapshotId: snapshotId!);
 
                 return __httpRequest;
             }

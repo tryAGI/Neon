@@ -158,9 +158,9 @@ namespace Neon
                 PrepareGetProjectBranchSchemaRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    branchId: branchId,
-                    dbName: dbName,
+                    projectId: projectId!,
+                    branchId: branchId!,
+                    dbName: dbName!,
                     lsn: lsn,
                     timestamp: timestamp,
                     format: format);

@@ -183,9 +183,9 @@ namespace Neon
                     cursor: cursor,
                     limit: limit,
                     projectIds: projectIds,
-                    from: from,
-                    to: to,
-                    granularity: granularity,
+                    from: from!,
+                    to: to!,
+                    granularity: granularity!,
                     orgId: orgId,
                     includeV1Metrics: includeV1Metrics,
                     metrics: metrics);

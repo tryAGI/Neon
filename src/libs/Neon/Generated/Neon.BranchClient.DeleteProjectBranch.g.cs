@@ -153,8 +153,8 @@ namespace Neon
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     hardDelete: hardDelete,
-                    projectId: projectId,
-                    branchId: branchId);
+                    projectId: projectId!,
+                    branchId: branchId!);
 
                 return __httpRequest;
             }

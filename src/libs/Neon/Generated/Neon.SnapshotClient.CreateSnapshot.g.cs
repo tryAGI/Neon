@@ -162,8 +162,8 @@ namespace Neon
                     timestamp: timestamp,
                     name: name,
                     expiresAt: expiresAt,
-                    projectId: projectId,
-                    branchId: branchId);
+                    projectId: projectId!,
+                    branchId: branchId!);
 
                 return __httpRequest;
             }

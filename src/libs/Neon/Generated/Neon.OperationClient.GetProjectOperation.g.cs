@@ -133,8 +133,8 @@ namespace Neon
                 PrepareGetProjectOperationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    operationId: operationId);
+                    projectId: projectId!,
+                    operationId: operationId!);
 
                 return __httpRequest;
             }

@@ -144,8 +144,8 @@ namespace Neon
                 PrepareUpdateOrganizationMemberRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    orgId: orgId,
-                    memberId: memberId,
+                    orgId: orgId!,
+                    memberId: memberId!,
                     request: request);
 
                 return __httpRequest;

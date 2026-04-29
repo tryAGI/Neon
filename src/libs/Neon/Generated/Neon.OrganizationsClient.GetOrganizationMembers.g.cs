@@ -159,7 +159,7 @@ namespace Neon
                     cursor: cursor,
                     sortOrder: sortOrder,
                     limit: limit,
-                    orgId: orgId);
+                    orgId: orgId!);
 
                 return __httpRequest;
             }

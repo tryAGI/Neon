@@ -131,8 +131,8 @@ namespace Neon
                 PrepareGetNeonAuthPhoneNumberPluginRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    branchId: branchId);
+                    projectId: projectId!,
+                    branchId: branchId!);
 
                 return __httpRequest;
             }

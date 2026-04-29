@@ -152,9 +152,9 @@ namespace Neon
                 PrepareUpdateProjectBranchDataAPIRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    branchId: branchId,
-                    databaseName: databaseName,
+                    projectId: projectId!,
+                    branchId: branchId!,
+                    databaseName: databaseName!,
                     request: request);
 
                 return __httpRequest;

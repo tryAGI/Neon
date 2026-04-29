@@ -172,10 +172,10 @@ namespace Neon
                 PrepareGetProjectBranchSchemaComparisonRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    branchId: branchId,
+                    projectId: projectId!,
+                    branchId: branchId!,
                     baseBranchId: baseBranchId,
-                    dbName: dbName,
+                    dbName: dbName!,
                     lsn: lsn,
                     timestamp: timestamp,
                     baseLsn: baseLsn,

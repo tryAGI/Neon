@@ -154,8 +154,8 @@ namespace Neon
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     name: name,
-                    projectId: projectId,
-                    snapshotId: snapshotId,
+                    projectId: projectId!,
+                    snapshotId: snapshotId!,
                     request: request);
 
                 return __httpRequest;

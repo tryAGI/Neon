@@ -140,8 +140,8 @@ namespace Neon
                 PrepareAcceptProjectTransferRequestRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    requestId: requestId,
+                    projectId: projectId!,
+                    requestId: requestId!,
                     request: request);
 
                 return __httpRequest;

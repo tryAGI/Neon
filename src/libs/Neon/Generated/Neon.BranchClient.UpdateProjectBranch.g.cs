@@ -147,8 +147,8 @@ namespace Neon
                 PrepareUpdateProjectBranchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    branchId: branchId,
+                    projectId: projectId!,
+                    branchId: branchId!,
                     request: request);
 
                 return __httpRequest;

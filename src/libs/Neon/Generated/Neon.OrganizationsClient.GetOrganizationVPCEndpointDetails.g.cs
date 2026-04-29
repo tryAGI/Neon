@@ -135,9 +135,9 @@ namespace Neon
                 PrepareGetOrganizationVPCEndpointDetailsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    orgId: orgId,
-                    regionId: regionId,
-                    vpcEndpointId: vpcEndpointId);
+                    orgId: orgId!,
+                    regionId: regionId!,
+                    vpcEndpointId: vpcEndpointId!);
 
                 return __httpRequest;
             }

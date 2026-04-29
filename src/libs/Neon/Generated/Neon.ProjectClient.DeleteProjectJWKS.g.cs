@@ -130,8 +130,8 @@ namespace Neon
                 PrepareDeleteProjectJWKSRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    jwksId: jwksId);
+                    projectId: projectId!,
+                    jwksId: jwksId!);
 
                 return __httpRequest;
             }

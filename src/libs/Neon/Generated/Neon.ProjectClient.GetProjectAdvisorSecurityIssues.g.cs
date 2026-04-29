@@ -159,7 +159,7 @@ namespace Neon
                     databaseName: databaseName,
                     category: category,
                     minSeverity: minSeverity,
-                    projectId: projectId);
+                    projectId: projectId!);
 
                 return __httpRequest;
             }

@@ -181,7 +181,7 @@ namespace Neon
                     sortOrder: sortOrder,
                     limit: limit,
                     includeDeleted: includeDeleted,
-                    projectId: projectId);
+                    projectId: projectId!);
 
                 return __httpRequest;
             }

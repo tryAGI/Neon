@@ -149,9 +149,9 @@ namespace Neon
                 PrepareUpdateBranchNeonAuthOauthProviderRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    branchId: branchId,
-                    oauthProviderId: oauthProviderId,
+                    projectId: projectId!,
+                    branchId: branchId!,
+                    oauthProviderId: oauthProviderId!,
                     request: request);
 
                 return __httpRequest;

@@ -130,8 +130,8 @@ namespace Neon
                 PrepareRevokePermissionFromProjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    permissionId: permissionId);
+                    projectId: projectId!,
+                    permissionId: permissionId!);
 
                 return __httpRequest;
             }

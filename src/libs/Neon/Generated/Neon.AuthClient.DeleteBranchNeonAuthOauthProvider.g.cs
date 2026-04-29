@@ -130,9 +130,9 @@ namespace Neon
                 PrepareDeleteBranchNeonAuthOauthProviderRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    branchId: branchId,
-                    oauthProviderId: oauthProviderId);
+                    projectId: projectId!,
+                    branchId: branchId!,
+                    oauthProviderId: oauthProviderId!);
 
                 return __httpRequest;
             }
