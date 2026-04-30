@@ -59,6 +59,10 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        MarkMigrationPrepared,
+        /// <summary>
+        /// 
+        /// </summary>
         PrepareSecondaryPageserver,
         /// <summary>
         /// 
@@ -158,6 +162,7 @@ namespace Neon
                 OperationAction.DisableMaintenance => "disable_maintenance",
                 OperationAction.FinalizeMigration => "finalize_migration",
                 OperationAction.ImportData => "import_data",
+                OperationAction.MarkMigrationPrepared => "mark_migration_prepared",
                 OperationAction.PrepareSecondaryPageserver => "prepare_secondary_pageserver",
                 OperationAction.PrewarmReplica => "prewarm_replica",
                 OperationAction.PromoteReplica => "promote_replica",
@@ -199,6 +204,7 @@ namespace Neon
                 "disable_maintenance" => OperationAction.DisableMaintenance,
                 "finalize_migration" => OperationAction.FinalizeMigration,
                 "import_data" => OperationAction.ImportData,
+                "mark_migration_prepared" => OperationAction.MarkMigrationPrepared,
                 "prepare_secondary_pageserver" => OperationAction.PrepareSecondaryPageserver,
                 "prewarm_replica" => OperationAction.PrewarmReplica,
                 "promote_replica" => OperationAction.PromoteReplica,
