@@ -29,6 +29,24 @@ namespace Neon
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Neon.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.NeonAuthOrganizationConfig>> UpdateNeonAuthOrganizationPluginAsResponseAsync(
+            string projectId,
+            string branchId,
+
+            global::Neon.NeonAuthOrganizationConfigUpdate request,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update organization plugin configuration<br/>
+        /// Updates the organization plugin configuration for Neon Auth.<br/>
+        /// The organization plugin enables multi-tenant organization support.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="branchId"></param>
         /// <param name="enabled">
         /// Whether the organization plugin is enabled
         /// </param>

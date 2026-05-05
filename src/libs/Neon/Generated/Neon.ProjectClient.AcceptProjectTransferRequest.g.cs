@@ -59,6 +59,34 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            await AcceptProjectTransferRequestAsResponseAsync(
+                projectId: projectId,
+                requestId: requestId,
+
+                request: request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Accept a project transfer request<br/>
+        /// Accepts a transfer request for the specified project, transferring it to the specified organization<br/>
+        /// or user. If org_id is not passed, the project will be transferred to the current user or organization account.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="requestId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Neon.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse> AcceptProjectTransferRequestAsResponseAsync(
+            string projectId,
+            string requestId,
+
+            global::Neon.AcceptProjectTransferRequestRequest request,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -91,6 +119,7 @@ namespace Neon
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Neon.PathBuilder(
                                 path: $"/projects/{projectId}/transfer_requests/{requestId}",
                                 baseUri: HttpClient.BaseAddress);
@@ -172,6 +201,8 @@ namespace Neon
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -182,6 +213,11 @@ namespace Neon
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Neon.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -199,6 +235,8 @@ namespace Neon
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -208,8 +246,7 @@ namespace Neon
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Neon.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -218,6 +255,11 @@ namespace Neon
                         __attempt < __maxAttempts &&
                         global::Neon.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Neon.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -234,14 +276,15 @@ namespace Neon
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Neon.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -281,6 +324,8 @@ namespace Neon
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -301,6 +346,8 @@ namespace Neon
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Account doesn't satisfy the plan requirements to own the project
@@ -397,6 +444,10 @@ namespace Neon
                                 {
                                     __response.EnsureSuccessStatusCode();
 
+                return new global::Neon.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Neon.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -418,6 +469,10 @@ namespace Neon
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
+                                    return new global::Neon.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Neon.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

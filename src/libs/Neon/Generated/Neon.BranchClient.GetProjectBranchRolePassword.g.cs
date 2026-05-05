@@ -66,6 +66,37 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetProjectBranchRolePasswordAsResponseAsync(
+                projectId: projectId,
+                branchId: branchId,
+                roleName: roleName,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Retrieve role password<br/>
+        /// Retrieves the password for the specified Postgres role, if possible.<br/>
+        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
+        /// You can obtain the `branch_id` by listing the project's branches.<br/>
+        /// You can obtain the `role_name` by listing the roles for a branch.<br/>
+        /// For related information, see [Manage roles](https://neon.tech/docs/manage/roles/).
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="branchId"></param>
+        /// <param name="roleName"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Neon.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.RolePasswordResponse>> GetProjectBranchRolePasswordAsResponseAsync(
+            string projectId,
+            string branchId,
+            string roleName,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetProjectBranchRolePasswordArguments(
@@ -96,6 +127,7 @@ namespace Neon
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Neon.PathBuilder(
                                 path: $"/projects/{projectId}/branches/{branchId}/roles/{roleName}/reveal_password",
                                 baseUri: HttpClient.BaseAddress);
@@ -171,6 +203,8 @@ namespace Neon
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -181,6 +215,11 @@ namespace Neon
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Neon.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -198,6 +237,8 @@ namespace Neon
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -207,8 +248,7 @@ namespace Neon
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Neon.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -217,6 +257,11 @@ namespace Neon
                         __attempt < __maxAttempts &&
                         global::Neon.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Neon.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -233,14 +278,15 @@ namespace Neon
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Neon.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -280,6 +326,8 @@ namespace Neon
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -300,6 +348,8 @@ namespace Neon
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Role not found
@@ -438,9 +488,13 @@ namespace Neon
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Neon.RolePasswordResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Neon.RolePasswordResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Neon.AutoSDKHttpResponse<global::Neon.RolePasswordResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Neon.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -468,9 +522,13 @@ namespace Neon
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Neon.RolePasswordResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Neon.RolePasswordResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Neon.AutoSDKHttpResponse<global::Neon.RolePasswordResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Neon.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

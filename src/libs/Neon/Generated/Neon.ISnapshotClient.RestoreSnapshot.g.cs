@@ -32,6 +32,26 @@ namespace Neon
         /// <param name="name"></param>
         /// <param name="projectId"></param>
         /// <param name="snapshotId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Neon.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>>> RestoreSnapshotAsResponseAsync(
+            string projectId,
+            string snapshotId,
+
+            global::Neon.RestoreSnapshotRequest request,
+            string? name = default,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Restore snapshot<br/>
+        /// Restore the specified snapshot to a new branch and optionally finalize the restore operation.<br/>
+        /// **Note**: This endpoint is currently in Beta.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="projectId"></param>
+        /// <param name="snapshotId"></param>
         /// <param name="requestName">
         /// A name for the newly restored branch.<br/>
         /// If omitted, a default name will be generated.

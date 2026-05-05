@@ -45,7 +45,7 @@ namespace Neon
         /// <summary>
         /// These methods allow you to create and manage API keys for your Neon account. For related information, see [Manage API keys](https://neon.tech/docs/manage/api-keys).
         /// </summary>
-        public ApiKeyClient ApiKey => new ApiKeyClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ApiKeyClient ApiKey => new ApiKeyClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -54,7 +54,7 @@ namespace Neon
         /// <summary>
         /// These methods allow you to create and manage Neon Auth projects.
         /// </summary>
-        public AuthClient Auth => new AuthClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AuthClient Auth => new AuthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -63,7 +63,7 @@ namespace Neon
         /// <summary>
         /// These methods allow you to create and manage Neon Auth projects. Deprecated. See routes with the `Auth` tag instead.
         /// </summary>
-        public AuthLegacyClient AuthLegacy => new AuthLegacyClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AuthLegacyClient AuthLegacy => new AuthLegacyClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -72,7 +72,7 @@ namespace Neon
         /// <summary>
         /// These methods allow you to create and manage branches in your Neon project. For related information, see [Manage branches](https://neon.tech/docs/manage/branches).
         /// </summary>
-        public BranchClient Branch => new BranchClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BranchClient Branch => new BranchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -81,7 +81,7 @@ namespace Neon
         /// <summary>
         /// These methods allow you to view consumption details for your Neon account.
         /// </summary>
-        public ConsumptionClient Consumption => new ConsumptionClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ConsumptionClient Consumption => new ConsumptionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -90,7 +90,7 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
-        public DataAPIClient DataAPI => new DataAPIClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DataAPIClient DataAPI => new DataAPIClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -99,7 +99,7 @@ namespace Neon
         /// <summary>
         /// These methods allow you to create and manage compute endpoints in your Neon project. For related information, see [Manage compute endpoints](https://neon.tech/docs/manage/endpoints).
         /// </summary>
-        public EndpointClient Endpoint => new EndpointClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EndpointClient Endpoint => new EndpointClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -108,7 +108,7 @@ namespace Neon
         /// <summary>
         /// These methods allow you to view operation details for your Neon project. For related information, see [Operations](https://neon.tech/docs/manage/operations).
         /// </summary>
-        public OperationClient Operation => new OperationClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OperationClient Operation => new OperationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -117,7 +117,7 @@ namespace Neon
         /// <summary>
         /// These methods allow you to manage your Neon organizations.
         /// </summary>
-        public OrganizationsClient Organizations => new OrganizationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OrganizationsClient Organizations => new OrganizationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -126,7 +126,7 @@ namespace Neon
         /// <summary>
         /// These methods allow you to create and manage Neon projects. For related information, see [Manage projects](https://neon.tech/docs/manage/projects).
         /// </summary>
-        public ProjectClient Project => new ProjectClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ProjectClient Project => new ProjectClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -135,7 +135,7 @@ namespace Neon
         /// <summary>
         /// These methods allow you to inspect Neon regions.
         /// </summary>
-        public RegionClient Region => new RegionClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RegionClient Region => new RegionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -144,7 +144,7 @@ namespace Neon
         /// <summary>
         /// These methods allow you to create and manage snapshots.
         /// </summary>
-        public SnapshotClient Snapshot => new SnapshotClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SnapshotClient Snapshot => new SnapshotClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -153,7 +153,7 @@ namespace Neon
         /// <summary>
         /// These methods allow you to manage your Neon user account.
         /// </summary>
-        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public UsersClient Users => new UsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -192,10 +192,10 @@ namespace Neon
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public NeonClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::Neon.EndPointAuthorization>? authorizations = null,
-            global::Neon.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::Neon.EndPointAuthorization>? authorizations,
+            global::Neon.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
