@@ -18,5 +18,19 @@ namespace Neon
             string permissionId,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Revoke project access<br/>
+        /// Revokes project access from the user associated with the specified permission `id`. You can retrieve a user's permission `id` by listing project access.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="permissionId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Neon.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.ProjectPermission>> RevokePermissionFromProjectAsResponseAsync(
+            string projectId,
+            string permissionId,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
