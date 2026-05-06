@@ -65,6 +65,12 @@ namespace Neon
         public bool? AllowHipaaProjects { get; set; }
 
         /// <summary>
+        /// If true, all members must have MFA enabled to access this organization
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("require_mfa")]
+        public bool? RequireMfa { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -90,6 +96,9 @@ namespace Neon
         /// <param name="allowHipaaProjects">
         /// If true, allow account to mark projects as HIPAA
         /// </param>
+        /// <param name="requireMfa">
+        /// If true, all members must have MFA enabled to access this organization
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -101,7 +110,8 @@ namespace Neon
             global::System.DateTime createdAt,
             string managedBy,
             global::System.DateTime updatedAt,
-            bool? allowHipaaProjects)
+            bool? allowHipaaProjects,
+            bool? requireMfa)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -111,6 +121,7 @@ namespace Neon
             this.ManagedBy = managedBy ?? throw new global::System.ArgumentNullException(nameof(managedBy));
             this.UpdatedAt = updatedAt;
             this.AllowHipaaProjects = allowHipaaProjects;
+            this.RequireMfa = requireMfa;
         }
 
         /// <summary>
