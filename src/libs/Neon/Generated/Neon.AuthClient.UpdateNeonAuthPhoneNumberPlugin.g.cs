@@ -29,13 +29,13 @@ namespace Neon
             global::System.Net.Http.HttpClient httpClient,
             ref string projectId,
             ref string branchId,
-            global::Neon.NeonAuthPhoneNumberConfig request);
+            global::Neon.NeonAuthPhoneNumberConfigUpdate request);
         partial void PrepareUpdateNeonAuthPhoneNumberPluginRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string projectId,
             string branchId,
-            global::Neon.NeonAuthPhoneNumberConfig request);
+            global::Neon.NeonAuthPhoneNumberConfigUpdate request);
         partial void ProcessUpdateNeonAuthPhoneNumberPluginResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -48,6 +48,7 @@ namespace Neon
         /// <summary>
         /// Update phone number plugin configuration<br/>
         /// Updates the phone number plugin configuration for Neon Auth.<br/>
+        /// Only the fields provided in the request body are updated; omitted fields retain their current values.<br/>
         /// The phone number plugin enables phone-based OTP authentication.<br/>
         /// OTP codes are delivered via the `send.otp` webhook event with `delivery_preference: "sms"`.<br/>
         /// A webhook must be configured with the `send.otp` event enabled for SMS delivery to work.
@@ -62,7 +63,7 @@ namespace Neon
             string projectId,
             string branchId,
 
-            global::Neon.NeonAuthPhoneNumberConfig request,
+            global::Neon.NeonAuthPhoneNumberConfigUpdate request,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -80,6 +81,7 @@ namespace Neon
         /// <summary>
         /// Update phone number plugin configuration<br/>
         /// Updates the phone number plugin configuration for Neon Auth.<br/>
+        /// Only the fields provided in the request body are updated; omitted fields retain their current values.<br/>
         /// The phone number plugin enables phone-based OTP authentication.<br/>
         /// OTP codes are delivered via the `send.otp` webhook event with `delivery_preference: "sms"`.<br/>
         /// A webhook must be configured with the `send.otp` event enabled for SMS delivery to work.
@@ -94,7 +96,7 @@ namespace Neon
             string projectId,
             string branchId,
 
-            global::Neon.NeonAuthPhoneNumberConfig request,
+            global::Neon.NeonAuthPhoneNumberConfigUpdate request,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -132,7 +134,7 @@ namespace Neon
             {
 
                             var __pathBuilder = new global::Neon.PathBuilder(
-                                path: $"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number",
+                                path: $"/projects/{projectId}/branches/{branchId}/auth/plugins/phone-number",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Neon.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -140,7 +142,7 @@ namespace Neon
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Put,
+                    method: new global::System.Net.Http.HttpMethod("PATCH"),
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -201,8 +203,8 @@ namespace Neon
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateNeonAuthPhoneNumberPlugin",
                                 methodName: "UpdateNeonAuthPhoneNumberPluginAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
-                                httpMethod: "PUT",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone-number\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -235,8 +237,8 @@ namespace Neon
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateNeonAuthPhoneNumberPlugin",
                                 methodName: "UpdateNeonAuthPhoneNumberPluginAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
-                                httpMethod: "PUT",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone-number\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -276,8 +278,8 @@ namespace Neon
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateNeonAuthPhoneNumberPlugin",
                                 methodName: "UpdateNeonAuthPhoneNumberPluginAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
-                                httpMethod: "PUT",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone-number\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -324,8 +326,8 @@ namespace Neon
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateNeonAuthPhoneNumberPlugin",
                                 methodName: "UpdateNeonAuthPhoneNumberPluginAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
-                                httpMethod: "PUT",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone-number\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -346,8 +348,8 @@ namespace Neon
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateNeonAuthPhoneNumberPlugin",
                                 methodName: "UpdateNeonAuthPhoneNumberPluginAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
-                                httpMethod: "PUT",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone-number\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -502,6 +504,7 @@ namespace Neon
         /// <summary>
         /// Update phone number plugin configuration<br/>
         /// Updates the phone number plugin configuration for Neon Auth.<br/>
+        /// Only the fields provided in the request body are updated; omitted fields retain their current values.<br/>
         /// The phone number plugin enables phone-based OTP authentication.<br/>
         /// OTP codes are delivered via the `send.otp` webhook event with `delivery_preference: "sms"`.<br/>
         /// A webhook must be configured with the `send.otp` event enabled for SMS delivery to work.
@@ -509,16 +512,10 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="enabled">
-        /// Whether the phone number plugin is enabled<br/>
-        /// Default Value: false
+        /// Whether the phone number plugin is enabled
         /// </param>
         /// <param name="otpExpiresIn">
-        /// Time in seconds before the OTP expires<br/>
-        /// Default Value: 300
-        /// </param>
-        /// <param name="allowedAttempts">
-        /// Maximum number of OTP verification attempts before lockout<br/>
-        /// Default Value: 3
+        /// Time in seconds before the OTP expires
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -526,17 +523,15 @@ namespace Neon
         public async global::System.Threading.Tasks.Task<global::Neon.NeonAuthPhoneNumberConfig> UpdateNeonAuthPhoneNumberPluginAsync(
             string projectId,
             string branchId,
-            bool enabled,
+            bool? enabled = default,
             int? otpExpiresIn = default,
-            int? allowedAttempts = default,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Neon.NeonAuthPhoneNumberConfig
+            var __request = new global::Neon.NeonAuthPhoneNumberConfigUpdate
             {
                 Enabled = enabled,
                 OtpExpiresIn = otpExpiresIn,
-                AllowedAttempts = allowedAttempts,
             };
 
             return await UpdateNeonAuthPhoneNumberPluginAsync(
