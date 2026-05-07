@@ -115,7 +115,7 @@ namespace Neon
             {
 
                             var __pathBuilder = new global::Neon.PathBuilder(
-                                path: $"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number",
+                                path: $"/projects/{projectId}/branches/{branchId}/auth/plugins/phone-number",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Neon.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -177,7 +177,7 @@ namespace Neon
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetNeonAuthPhoneNumberPlugin",
                                 methodName: "GetNeonAuthPhoneNumberPluginAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone-number\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -211,7 +211,7 @@ namespace Neon
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetNeonAuthPhoneNumberPlugin",
                                 methodName: "GetNeonAuthPhoneNumberPluginAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone-number\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -252,7 +252,7 @@ namespace Neon
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetNeonAuthPhoneNumberPlugin",
                                 methodName: "GetNeonAuthPhoneNumberPluginAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone-number\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -300,7 +300,7 @@ namespace Neon
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetNeonAuthPhoneNumberPlugin",
                                 methodName: "GetNeonAuthPhoneNumberPluginAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone-number\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -322,7 +322,7 @@ namespace Neon
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetNeonAuthPhoneNumberPlugin",
                                 methodName: "GetNeonAuthPhoneNumberPluginAsync",
-                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone_number\"",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/auth/plugins/phone-number\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
