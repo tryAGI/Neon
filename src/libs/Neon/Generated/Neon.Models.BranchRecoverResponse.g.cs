@@ -29,6 +29,19 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBranchResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.BranchResponse? value)
+        {
+            value = BranchResponse;
+            return IsBranchResponse;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.EndpointsOptionalResponse? EndpointsOptional { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Neon
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EndpointsOptional))]
 #endif
         public bool IsEndpointsOptional => EndpointsOptional != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEndpointsOptional(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.EndpointsOptionalResponse? value)
+        {
+            value = EndpointsOptional;
+            return IsEndpointsOptional;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Neon
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Neon.BranchResponse?, TResult>? branchResponse = null,
-            global::System.Func<global::Neon.EndpointsOptionalResponse?, TResult>? endpointsOptional = null,
+            global::System.Func<global::Neon.BranchResponse, TResult>? branchResponse = null,
+            global::System.Func<global::Neon.EndpointsOptionalResponse, TResult>? endpointsOptional = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Neon
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Neon.BranchResponse?>? branchResponse = null,
-            global::System.Action<global::Neon.EndpointsOptionalResponse?>? endpointsOptional = null,
+            global::System.Action<global::Neon.BranchResponse>? branchResponse = null,
+
+            global::System.Action<global::Neon.EndpointsOptionalResponse>? endpointsOptional = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBranchResponse)
+            {
+                branchResponse?.Invoke(BranchResponse!);
+            }
+            else if (IsEndpointsOptional)
+            {
+                endpointsOptional?.Invoke(EndpointsOptional!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Neon.BranchResponse>? branchResponse = null,
+            global::System.Action<global::Neon.EndpointsOptionalResponse>? endpointsOptional = null,
             bool validate = true)
         {
             if (validate)

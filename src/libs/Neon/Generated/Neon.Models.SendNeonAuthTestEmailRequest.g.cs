@@ -29,6 +29,19 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStandardServer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.StandardEmailServer? value)
+        {
+            value = StandardServer;
+            return IsStandardServer;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.SendNeonAuthTestEmailRequestVariant2? SendNeonAuthTestEmailRequestVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Neon
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SendNeonAuthTestEmailRequestVariant2))]
 #endif
         public bool IsSendNeonAuthTestEmailRequestVariant2 => SendNeonAuthTestEmailRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSendNeonAuthTestEmailRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.SendNeonAuthTestEmailRequestVariant2? value)
+        {
+            value = SendNeonAuthTestEmailRequestVariant2;
+            return IsSendNeonAuthTestEmailRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Neon
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Neon.StandardEmailServer?, TResult>? standardServer = null,
-            global::System.Func<global::Neon.SendNeonAuthTestEmailRequestVariant2?, TResult>? sendNeonAuthTestEmailRequestVariant2 = null,
+            global::System.Func<global::Neon.StandardEmailServer, TResult>? standardServer = null,
+            global::System.Func<global::Neon.SendNeonAuthTestEmailRequestVariant2, TResult>? sendNeonAuthTestEmailRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Neon
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Neon.StandardEmailServer?>? standardServer = null,
-            global::System.Action<global::Neon.SendNeonAuthTestEmailRequestVariant2?>? sendNeonAuthTestEmailRequestVariant2 = null,
+            global::System.Action<global::Neon.StandardEmailServer>? standardServer = null,
+
+            global::System.Action<global::Neon.SendNeonAuthTestEmailRequestVariant2>? sendNeonAuthTestEmailRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStandardServer)
+            {
+                standardServer?.Invoke(StandardServer!);
+            }
+            else if (IsSendNeonAuthTestEmailRequestVariant2)
+            {
+                sendNeonAuthTestEmailRequestVariant2?.Invoke(SendNeonAuthTestEmailRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Neon.StandardEmailServer>? standardServer = null,
+            global::System.Action<global::Neon.SendNeonAuthTestEmailRequestVariant2>? sendNeonAuthTestEmailRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
