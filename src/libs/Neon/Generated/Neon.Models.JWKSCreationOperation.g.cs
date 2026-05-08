@@ -29,6 +29,19 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.JWKSResponse? value)
+        {
+            value = Response;
+            return IsResponse;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.OperationsResponse? OperationsResponse { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Neon
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OperationsResponse))]
 #endif
         public bool IsOperationsResponse => OperationsResponse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOperationsResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.OperationsResponse? value)
+        {
+            value = OperationsResponse;
+            return IsOperationsResponse;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Neon
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Neon.JWKSResponse?, TResult>? response = null,
-            global::System.Func<global::Neon.OperationsResponse?, TResult>? operationsResponse = null,
+            global::System.Func<global::Neon.JWKSResponse, TResult>? response = null,
+            global::System.Func<global::Neon.OperationsResponse, TResult>? operationsResponse = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Neon
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Neon.JWKSResponse?>? response = null,
-            global::System.Action<global::Neon.OperationsResponse?>? operationsResponse = null,
+            global::System.Action<global::Neon.JWKSResponse>? response = null,
+
+            global::System.Action<global::Neon.OperationsResponse>? operationsResponse = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponse)
+            {
+                response?.Invoke(Response!);
+            }
+            else if (IsOperationsResponse)
+            {
+                operationsResponse?.Invoke(OperationsResponse!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Neon.JWKSResponse>? response = null,
+            global::System.Action<global::Neon.OperationsResponse>? operationsResponse = null,
             bool validate = true)
         {
             if (validate)

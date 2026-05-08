@@ -29,6 +29,19 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickApiKeyCreateRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.ApiKeyCreateRequest? value)
+        {
+            value = ApiKeyCreateRequest;
+            return IsApiKeyCreateRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.OrgApiKeyCreateRequestVariant2? OrgApiKeyCreateRequestVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Neon
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrgApiKeyCreateRequestVariant2))]
 #endif
         public bool IsOrgApiKeyCreateRequestVariant2 => OrgApiKeyCreateRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrgApiKeyCreateRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.OrgApiKeyCreateRequestVariant2? value)
+        {
+            value = OrgApiKeyCreateRequestVariant2;
+            return IsOrgApiKeyCreateRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Neon
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Neon.ApiKeyCreateRequest?, TResult>? apiKeyCreateRequest = null,
-            global::System.Func<global::Neon.OrgApiKeyCreateRequestVariant2?, TResult>? orgApiKeyCreateRequestVariant2 = null,
+            global::System.Func<global::Neon.ApiKeyCreateRequest, TResult>? apiKeyCreateRequest = null,
+            global::System.Func<global::Neon.OrgApiKeyCreateRequestVariant2, TResult>? orgApiKeyCreateRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Neon
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Neon.ApiKeyCreateRequest?>? apiKeyCreateRequest = null,
-            global::System.Action<global::Neon.OrgApiKeyCreateRequestVariant2?>? orgApiKeyCreateRequestVariant2 = null,
+            global::System.Action<global::Neon.ApiKeyCreateRequest>? apiKeyCreateRequest = null,
+
+            global::System.Action<global::Neon.OrgApiKeyCreateRequestVariant2>? orgApiKeyCreateRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsApiKeyCreateRequest)
+            {
+                apiKeyCreateRequest?.Invoke(ApiKeyCreateRequest!);
+            }
+            else if (IsOrgApiKeyCreateRequestVariant2)
+            {
+                orgApiKeyCreateRequestVariant2?.Invoke(OrgApiKeyCreateRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Neon.ApiKeyCreateRequest>? apiKeyCreateRequest = null,
+            global::System.Action<global::Neon.OrgApiKeyCreateRequestVariant2>? orgApiKeyCreateRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

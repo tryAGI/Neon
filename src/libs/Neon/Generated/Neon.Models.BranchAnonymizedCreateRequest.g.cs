@@ -29,6 +29,19 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnnotationValue(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.AnnotationCreateValueRequest? value)
+        {
+            value = AnnotationValue;
+            return IsAnnotationValue;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.BranchAnonymizedCreateRequestVariant2? BranchAnonymizedCreateRequestVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Neon
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BranchAnonymizedCreateRequestVariant2))]
 #endif
         public bool IsBranchAnonymizedCreateRequestVariant2 => BranchAnonymizedCreateRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBranchAnonymizedCreateRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.BranchAnonymizedCreateRequestVariant2? value)
+        {
+            value = BranchAnonymizedCreateRequestVariant2;
+            return IsBranchAnonymizedCreateRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Neon
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Neon.AnnotationCreateValueRequest?, TResult>? annotationValue = null,
-            global::System.Func<global::Neon.BranchAnonymizedCreateRequestVariant2?, TResult>? branchAnonymizedCreateRequestVariant2 = null,
+            global::System.Func<global::Neon.AnnotationCreateValueRequest, TResult>? annotationValue = null,
+            global::System.Func<global::Neon.BranchAnonymizedCreateRequestVariant2, TResult>? branchAnonymizedCreateRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Neon
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Neon.AnnotationCreateValueRequest?>? annotationValue = null,
-            global::System.Action<global::Neon.BranchAnonymizedCreateRequestVariant2?>? branchAnonymizedCreateRequestVariant2 = null,
+            global::System.Action<global::Neon.AnnotationCreateValueRequest>? annotationValue = null,
+
+            global::System.Action<global::Neon.BranchAnonymizedCreateRequestVariant2>? branchAnonymizedCreateRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAnnotationValue)
+            {
+                annotationValue?.Invoke(AnnotationValue!);
+            }
+            else if (IsBranchAnonymizedCreateRequestVariant2)
+            {
+                branchAnonymizedCreateRequestVariant2?.Invoke(BranchAnonymizedCreateRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Neon.AnnotationCreateValueRequest>? annotationValue = null,
+            global::System.Action<global::Neon.BranchAnonymizedCreateRequestVariant2>? branchAnonymizedCreateRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
