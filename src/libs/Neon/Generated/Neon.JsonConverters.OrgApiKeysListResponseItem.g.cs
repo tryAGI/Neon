@@ -91,6 +91,7 @@ namespace Neon.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.ApiKeysListResponseItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.ApiKeysListResponseItem> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.ApiKeysListResponseItem).Name}");
                     apiKeysListResponseItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -101,9 +102,13 @@ namespace Neon.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (apiKeysListResponseItem == null && orgApiKeysListResponseItemVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.OrgApiKeysListResponseItemVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.OrgApiKeysListResponseItemVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.OrgApiKeysListResponseItemVariant2).Name}");
                     orgApiKeysListResponseItemVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
