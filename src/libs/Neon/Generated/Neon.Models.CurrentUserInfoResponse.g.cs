@@ -178,5 +178,6 @@ namespace Neon
         public CurrentUserInfoResponse()
         {
         }
+
     }
 }

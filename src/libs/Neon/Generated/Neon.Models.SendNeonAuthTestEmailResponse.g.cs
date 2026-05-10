@@ -53,5 +53,6 @@ namespace Neon
         public SendNeonAuthTestEmailResponse()
         {
         }
+
     }
 }

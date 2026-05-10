@@ -42,6 +42,13 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public global::Neon.ApiKeysListResponseItem PickApiKeysListResponseItem() => IsApiKeysListResponseItem
+            ? ApiKeysListResponseItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKeysListResponseItem' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.OrgApiKeysListResponseItemVariant2? OrgApiKeysListResponseItemVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Neon
             value = OrgApiKeysListResponseItemVariant2;
             return IsOrgApiKeysListResponseItemVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.OrgApiKeysListResponseItemVariant2 PickOrgApiKeysListResponseItemVariant2() => IsOrgApiKeysListResponseItemVariant2
+            ? OrgApiKeysListResponseItemVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrgApiKeysListResponseItemVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

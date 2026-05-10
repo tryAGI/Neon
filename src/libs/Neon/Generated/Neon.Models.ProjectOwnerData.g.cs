@@ -75,5 +75,6 @@ namespace Neon
         public ProjectOwnerData()
         {
         }
+
     }
 }

@@ -86,5 +86,6 @@ namespace Neon
         public NeonAuthOrganizationConfigUpdate()
         {
         }
+
     }
 }

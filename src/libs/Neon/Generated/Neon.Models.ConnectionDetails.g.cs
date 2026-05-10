@@ -56,5 +56,6 @@ namespace Neon
         public ConnectionDetails()
         {
         }
+
     }
 }

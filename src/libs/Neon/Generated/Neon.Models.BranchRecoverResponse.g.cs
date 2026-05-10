@@ -42,6 +42,13 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public global::Neon.BranchResponse PickBranchResponse() => IsBranchResponse
+            ? BranchResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BranchResponse' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.EndpointsOptionalResponse? EndpointsOptional { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Neon
             value = EndpointsOptional;
             return IsEndpointsOptional;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.EndpointsOptionalResponse PickEndpointsOptional() => IsEndpointsOptional
+            ? EndpointsOptional!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EndpointsOptional' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

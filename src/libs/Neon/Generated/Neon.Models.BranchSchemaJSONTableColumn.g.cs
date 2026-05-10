@@ -72,5 +72,6 @@ namespace Neon
         public BranchSchemaJSONTableColumn()
         {
         }
+
     }
 }

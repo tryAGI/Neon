@@ -63,5 +63,6 @@ namespace Neon
         public BranchAnonymizedCreateRequestVariant2()
         {
         }
+
     }
 }

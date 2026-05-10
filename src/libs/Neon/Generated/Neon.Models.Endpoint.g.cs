@@ -361,5 +361,6 @@ namespace Neon
         public Endpoint()
         {
         }
+
     }
 }

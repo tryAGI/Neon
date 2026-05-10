@@ -42,6 +42,13 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public global::Neon.VPCEndpoint PickVPCEndpoint() => IsVPCEndpoint
+            ? VPCEndpoint!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VPCEndpoint' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.VPCEndpointWithRegionVariant2? VPCEndpointWithRegionVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Neon
             value = VPCEndpointWithRegionVariant2;
             return IsVPCEndpointWithRegionVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.VPCEndpointWithRegionVariant2 PickVPCEndpointWithRegionVariant2() => IsVPCEndpointWithRegionVariant2
+            ? VPCEndpointWithRegionVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VPCEndpointWithRegionVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -49,5 +49,6 @@ namespace Neon
         public PlanDetails()
         {
         }
+
     }
 }

@@ -104,5 +104,6 @@ namespace Neon
         public MaskingRule()
         {
         }
+
     }
 }

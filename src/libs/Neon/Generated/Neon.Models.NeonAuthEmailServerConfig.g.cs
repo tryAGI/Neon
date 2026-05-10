@@ -47,6 +47,13 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public global::Neon.StandardEmailServer PickStandard() => IsStandard
+            ? Standard!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Standard' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.SharedEmailServer? Shared { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Neon
             value = Shared;
             return IsShared;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.SharedEmailServer PickShared() => IsShared
+            ? Shared!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

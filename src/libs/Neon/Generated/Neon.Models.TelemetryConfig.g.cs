@@ -64,5 +64,6 @@ namespace Neon
         public TelemetryConfig()
         {
         }
+
     }
 }

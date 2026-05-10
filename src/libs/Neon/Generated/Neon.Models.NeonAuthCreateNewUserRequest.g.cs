@@ -70,5 +70,6 @@ namespace Neon
         public NeonAuthCreateNewUserRequest()
         {
         }
+
     }
 }

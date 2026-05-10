@@ -42,6 +42,13 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public global::Neon.AnnotationCreateValueRequest PickAnnotationValue() => IsAnnotationValue
+            ? AnnotationValue!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnnotationValue' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.BranchAnonymizedCreateRequestVariant2? BranchAnonymizedCreateRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Neon
             value = BranchAnonymizedCreateRequestVariant2;
             return IsBranchAnonymizedCreateRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.BranchAnonymizedCreateRequestVariant2 PickBranchAnonymizedCreateRequestVariant2() => IsBranchAnonymizedCreateRequestVariant2
+            ? BranchAnonymizedCreateRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BranchAnonymizedCreateRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

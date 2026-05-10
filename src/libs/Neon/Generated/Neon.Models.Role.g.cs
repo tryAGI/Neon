@@ -111,5 +111,6 @@ namespace Neon
         public Role()
         {
         }
+
     }
 }

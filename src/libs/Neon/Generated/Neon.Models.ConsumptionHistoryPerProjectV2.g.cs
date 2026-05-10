@@ -52,5 +52,6 @@ namespace Neon
         public ConsumptionHistoryPerProjectV2()
         {
         }
+
     }
 }

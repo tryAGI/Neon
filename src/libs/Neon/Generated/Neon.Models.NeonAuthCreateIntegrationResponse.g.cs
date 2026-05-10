@@ -110,5 +110,6 @@ namespace Neon
         public NeonAuthCreateIntegrationResponse()
         {
         }
+
     }
 }

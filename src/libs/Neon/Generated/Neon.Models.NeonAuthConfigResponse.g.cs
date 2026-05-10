@@ -42,5 +42,6 @@ namespace Neon
         public NeonAuthConfigResponse()
         {
         }
+
     }
 }

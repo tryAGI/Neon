@@ -42,6 +42,13 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public global::Neon.StandardEmailServer PickStandardServer() => IsStandardServer
+            ? StandardServer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StandardServer' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.SendNeonAuthTestEmailRequestVariant2? SendNeonAuthTestEmailRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Neon
             value = SendNeonAuthTestEmailRequestVariant2;
             return IsSendNeonAuthTestEmailRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.SendNeonAuthTestEmailRequestVariant2 PickSendNeonAuthTestEmailRequestVariant2() => IsSendNeonAuthTestEmailRequestVariant2
+            ? SendNeonAuthTestEmailRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SendNeonAuthTestEmailRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
