@@ -116,6 +116,7 @@ namespace Neon.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.ProjectResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.ProjectResponse> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.ProjectResponse).Name}");
                     projectResponse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -126,9 +127,13 @@ namespace Neon.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (projectResponse == null && branches == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.BranchesResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.BranchesResponse> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.BranchesResponse).Name}");
                     branches = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
