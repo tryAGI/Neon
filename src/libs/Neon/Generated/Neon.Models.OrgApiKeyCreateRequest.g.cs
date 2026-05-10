@@ -89,6 +89,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static OrgApiKeyCreateRequest FromApiKeyCreateRequest(global::Neon.ApiKeyCreateRequest? value) => new OrgApiKeyCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OrgApiKeyCreateRequest(global::Neon.OrgApiKeyCreateRequestVariant2 value) => new OrgApiKeyCreateRequest((global::Neon.OrgApiKeyCreateRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Neon
         {
             OrgApiKeyCreateRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OrgApiKeyCreateRequest FromOrgApiKeyCreateRequestVariant2(global::Neon.OrgApiKeyCreateRequestVariant2? value) => new OrgApiKeyCreateRequest(value);
 
         /// <summary>
         /// 

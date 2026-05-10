@@ -89,6 +89,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static BranchAnonymizedCreateRequest FromAnnotationValue(global::Neon.AnnotationCreateValueRequest? value) => new BranchAnonymizedCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BranchAnonymizedCreateRequest(global::Neon.BranchAnonymizedCreateRequestVariant2 value) => new BranchAnonymizedCreateRequest((global::Neon.BranchAnonymizedCreateRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Neon
         {
             BranchAnonymizedCreateRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BranchAnonymizedCreateRequest FromBranchAnonymizedCreateRequestVariant2(global::Neon.BranchAnonymizedCreateRequestVariant2? value) => new BranchAnonymizedCreateRequest(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static DatabaseOperations FromResponse1(global::Neon.DatabaseResponse? value) => new DatabaseOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DatabaseOperations(global::Neon.OperationsResponse value) => new DatabaseOperations((global::Neon.OperationsResponse?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Neon
         {
             Response2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DatabaseOperations FromResponse2(global::Neon.OperationsResponse? value) => new DatabaseOperations(value);
 
         /// <summary>
         /// 

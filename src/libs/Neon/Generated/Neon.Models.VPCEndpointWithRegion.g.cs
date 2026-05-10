@@ -89,6 +89,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static VPCEndpointWithRegion FromVPCEndpoint(global::Neon.VPCEndpoint? value) => new VPCEndpointWithRegion(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VPCEndpointWithRegion(global::Neon.VPCEndpointWithRegionVariant2 value) => new VPCEndpointWithRegion((global::Neon.VPCEndpointWithRegionVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Neon
         {
             VPCEndpointWithRegionVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VPCEndpointWithRegion FromVPCEndpointWithRegionVariant2(global::Neon.VPCEndpointWithRegionVariant2? value) => new VPCEndpointWithRegion(value);
 
         /// <summary>
         /// 

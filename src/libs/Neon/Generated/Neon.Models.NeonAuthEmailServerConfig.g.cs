@@ -94,6 +94,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static NeonAuthEmailServerConfig FromStandard(global::Neon.StandardEmailServer? value) => new NeonAuthEmailServerConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator NeonAuthEmailServerConfig(global::Neon.SharedEmailServer value) => new NeonAuthEmailServerConfig((global::Neon.SharedEmailServer?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Neon
         {
             Shared = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static NeonAuthEmailServerConfig FromShared(global::Neon.SharedEmailServer? value) => new NeonAuthEmailServerConfig(value);
 
         /// <summary>
         /// 

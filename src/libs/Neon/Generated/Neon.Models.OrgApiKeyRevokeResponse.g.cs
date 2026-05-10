@@ -89,6 +89,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static OrgApiKeyRevokeResponse FromApiKeyRevokeResponse(global::Neon.ApiKeyRevokeResponse? value) => new OrgApiKeyRevokeResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OrgApiKeyRevokeResponse(global::Neon.OrgApiKeyRevokeResponseVariant2 value) => new OrgApiKeyRevokeResponse((global::Neon.OrgApiKeyRevokeResponseVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Neon
         {
             OrgApiKeyRevokeResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OrgApiKeyRevokeResponse FromOrgApiKeyRevokeResponseVariant2(global::Neon.OrgApiKeyRevokeResponseVariant2? value) => new OrgApiKeyRevokeResponse(value);
 
         /// <summary>
         /// 
