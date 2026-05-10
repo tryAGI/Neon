@@ -42,6 +42,13 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public global::Neon.ApiKeyCreateRequest PickApiKeyCreateRequest() => IsApiKeyCreateRequest
+            ? ApiKeyCreateRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKeyCreateRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.OrgApiKeyCreateRequestVariant2? OrgApiKeyCreateRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Neon
             value = OrgApiKeyCreateRequestVariant2;
             return IsOrgApiKeyCreateRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.OrgApiKeyCreateRequestVariant2 PickOrgApiKeyCreateRequestVariant2() => IsOrgApiKeyCreateRequestVariant2
+            ? OrgApiKeyCreateRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrgApiKeyCreateRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -39,5 +39,6 @@ namespace Neon
         public BranchSchemaCompareResponse()
         {
         }
+
     }
 }

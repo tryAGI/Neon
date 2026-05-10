@@ -197,5 +197,6 @@ namespace Neon
         public EndpointCreateRequestEndpoint()
         {
         }
+
     }
 }

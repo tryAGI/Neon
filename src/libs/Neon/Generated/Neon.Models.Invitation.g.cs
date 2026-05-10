@@ -101,5 +101,6 @@ namespace Neon
         public Invitation()
         {
         }
+
     }
 }

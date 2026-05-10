@@ -123,5 +123,6 @@ namespace Neon
         public AnonymizedBranchStatusResponse()
         {
         }
+
     }
 }

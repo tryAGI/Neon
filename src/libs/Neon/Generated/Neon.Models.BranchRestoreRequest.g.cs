@@ -83,5 +83,6 @@ namespace Neon
         public BranchRestoreRequest()
         {
         }
+
     }
 }

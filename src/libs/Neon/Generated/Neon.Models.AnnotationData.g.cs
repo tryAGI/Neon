@@ -73,5 +73,6 @@ namespace Neon
         public AnnotationData()
         {
         }
+
     }
 }

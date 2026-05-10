@@ -82,5 +82,6 @@ namespace Neon
         public Member()
         {
         }
+
     }
 }

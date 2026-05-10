@@ -69,5 +69,6 @@ namespace Neon
         public ProjectPermission()
         {
         }
+
     }
 }

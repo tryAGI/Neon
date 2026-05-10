@@ -44,5 +44,6 @@ namespace Neon
         public AnnotationCreateValueRequest()
         {
         }
+
     }
 }

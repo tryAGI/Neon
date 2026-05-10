@@ -257,5 +257,6 @@ namespace Neon
         public BillingAccount()
         {
         }
+
     }
 }

@@ -43,5 +43,6 @@ namespace Neon
         public SpendingLimitResponse()
         {
         }
+
     }
 }

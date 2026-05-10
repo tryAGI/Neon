@@ -77,5 +77,6 @@ namespace Neon
         public RestoreSnapshotRequest()
         {
         }
+
     }
 }

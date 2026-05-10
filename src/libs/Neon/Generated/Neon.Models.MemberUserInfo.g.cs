@@ -66,5 +66,6 @@ namespace Neon
         public MemberUserInfo()
         {
         }
+
     }
 }

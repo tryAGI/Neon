@@ -42,6 +42,13 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public global::Neon.JWKSResponse PickResponse() => IsResponse
+            ? Response!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Response' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.OperationsResponse? OperationsResponse { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Neon
             value = OperationsResponse;
             return IsOperationsResponse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.OperationsResponse PickOperationsResponse() => IsOperationsResponse
+            ? OperationsResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OperationsResponse' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

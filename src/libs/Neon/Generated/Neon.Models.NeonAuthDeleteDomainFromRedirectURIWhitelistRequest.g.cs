@@ -51,5 +51,6 @@ namespace Neon
         public NeonAuthDeleteDomainFromRedirectURIWhitelistRequest()
         {
         }
+
     }
 }

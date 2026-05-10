@@ -42,6 +42,13 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public global::Neon.ProjectResponse PickProjectResponse() => IsProjectResponse
+            ? ProjectResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProjectResponse' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.BranchesResponse? Branches { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Neon
             value = Branches;
             return IsBranches;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.BranchesResponse PickBranches() => IsBranches
+            ? Branches!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Branches' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
