@@ -89,6 +89,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static BranchRecoverResponse FromBranchResponse(global::Neon.BranchResponse? value) => new BranchRecoverResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BranchRecoverResponse(global::Neon.EndpointsOptionalResponse value) => new BranchRecoverResponse((global::Neon.EndpointsOptionalResponse?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Neon
         {
             EndpointsOptional = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BranchRecoverResponse FromEndpointsOptional(global::Neon.EndpointsOptionalResponse? value) => new BranchRecoverResponse(value);
 
         /// <summary>
         /// 

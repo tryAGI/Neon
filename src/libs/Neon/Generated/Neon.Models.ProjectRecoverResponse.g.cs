@@ -89,6 +89,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static ProjectRecoverResponse FromProjectResponse(global::Neon.ProjectResponse? value) => new ProjectRecoverResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ProjectRecoverResponse(global::Neon.BranchesResponse value) => new ProjectRecoverResponse((global::Neon.BranchesResponse?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Neon
         {
             Branches = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ProjectRecoverResponse FromBranches(global::Neon.BranchesResponse? value) => new ProjectRecoverResponse(value);
 
         /// <summary>
         /// 

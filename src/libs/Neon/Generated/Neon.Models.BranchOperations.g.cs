@@ -89,6 +89,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static BranchOperations FromResponse1(global::Neon.BranchResponse? value) => new BranchOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BranchOperations(global::Neon.OperationsResponse value) => new BranchOperations((global::Neon.OperationsResponse?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Neon
         {
             Response2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BranchOperations FromResponse2(global::Neon.OperationsResponse? value) => new BranchOperations(value);
 
         /// <summary>
         /// 

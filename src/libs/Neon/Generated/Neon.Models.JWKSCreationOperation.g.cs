@@ -89,6 +89,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static JWKSCreationOperation FromResponse(global::Neon.JWKSResponse? value) => new JWKSCreationOperation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator JWKSCreationOperation(global::Neon.OperationsResponse value) => new JWKSCreationOperation((global::Neon.OperationsResponse?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Neon
         {
             OperationsResponse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static JWKSCreationOperation FromOperationsResponse(global::Neon.OperationsResponse? value) => new JWKSCreationOperation(value);
 
         /// <summary>
         /// 

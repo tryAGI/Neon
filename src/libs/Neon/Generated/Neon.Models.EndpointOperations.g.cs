@@ -89,6 +89,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static EndpointOperations FromResponse1(global::Neon.EndpointResponse? value) => new EndpointOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EndpointOperations(global::Neon.OperationsResponse value) => new EndpointOperations((global::Neon.OperationsResponse?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Neon
         {
             Response2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EndpointOperations FromResponse2(global::Neon.OperationsResponse? value) => new EndpointOperations(value);
 
         /// <summary>
         /// 

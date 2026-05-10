@@ -89,6 +89,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static RoleOperations FromResponse1(global::Neon.RoleResponse? value) => new RoleOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RoleOperations(global::Neon.OperationsResponse value) => new RoleOperations((global::Neon.OperationsResponse?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Neon
         {
             Response2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RoleOperations FromResponse2(global::Neon.OperationsResponse? value) => new RoleOperations(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static SendNeonAuthTestEmailRequest FromStandardServer(global::Neon.StandardEmailServer? value) => new SendNeonAuthTestEmailRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SendNeonAuthTestEmailRequest(global::Neon.SendNeonAuthTestEmailRequestVariant2 value) => new SendNeonAuthTestEmailRequest((global::Neon.SendNeonAuthTestEmailRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Neon
         {
             SendNeonAuthTestEmailRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SendNeonAuthTestEmailRequest FromSendNeonAuthTestEmailRequestVariant2(global::Neon.SendNeonAuthTestEmailRequestVariant2? value) => new SendNeonAuthTestEmailRequest(value);
 
         /// <summary>
         /// 
