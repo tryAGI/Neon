@@ -42,7 +42,7 @@ namespace Neon
 
         /// <summary>
         /// JWT claim key to use for role extraction<br/>
-        /// Default Value: ."role"
+        /// Default Value: .role
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jwt_role_claim_key")]
         public string? JwtRoleClaimKey { get; set; }
@@ -100,7 +100,7 @@ namespace Neon
         /// </param>
         /// <param name="jwtRoleClaimKey">
         /// JWT claim key to use for role extraction<br/>
-        /// Default Value: ."role"
+        /// Default Value: .role
         /// </param>
         /// <param name="jwtCacheMaxLifetime">
         /// Maximum lifetime for JWT cache in seconds
