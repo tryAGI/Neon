@@ -29,6 +29,26 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStandardServer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.StandardEmailServer? value)
+        {
+            value = StandardServer;
+            return IsStandardServer;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.StandardEmailServer PickStandardServer() => IsStandardServer
+            ? StandardServer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StandardServer' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.SendNeonAuthTestEmailRequestVariant2? SendNeonAuthTestEmailRequestVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Neon
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SendNeonAuthTestEmailRequestVariant2))]
 #endif
         public bool IsSendNeonAuthTestEmailRequestVariant2 => SendNeonAuthTestEmailRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSendNeonAuthTestEmailRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.SendNeonAuthTestEmailRequestVariant2? value)
+        {
+            value = SendNeonAuthTestEmailRequestVariant2;
+            return IsSendNeonAuthTestEmailRequestVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.SendNeonAuthTestEmailRequestVariant2 PickSendNeonAuthTestEmailRequestVariant2() => IsSendNeonAuthTestEmailRequestVariant2
+            ? SendNeonAuthTestEmailRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SendNeonAuthTestEmailRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static SendNeonAuthTestEmailRequest FromStandardServer(global::Neon.StandardEmailServer? value) => new SendNeonAuthTestEmailRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SendNeonAuthTestEmailRequest(global::Neon.SendNeonAuthTestEmailRequestVariant2 value) => new SendNeonAuthTestEmailRequest((global::Neon.SendNeonAuthTestEmailRequestVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Neon
         {
             SendNeonAuthTestEmailRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SendNeonAuthTestEmailRequest FromSendNeonAuthTestEmailRequestVariant2(global::Neon.SendNeonAuthTestEmailRequestVariant2? value) => new SendNeonAuthTestEmailRequest(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Neon
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Neon.StandardEmailServer?, TResult>? standardServer = null,
-            global::System.Func<global::Neon.SendNeonAuthTestEmailRequestVariant2?, TResult>? sendNeonAuthTestEmailRequestVariant2 = null,
+            global::System.Func<global::Neon.StandardEmailServer, TResult>? standardServer = null,
+            global::System.Func<global::Neon.SendNeonAuthTestEmailRequestVariant2, TResult>? sendNeonAuthTestEmailRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Neon
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Neon.StandardEmailServer?>? standardServer = null,
-            global::System.Action<global::Neon.SendNeonAuthTestEmailRequestVariant2?>? sendNeonAuthTestEmailRequestVariant2 = null,
+            global::System.Action<global::Neon.StandardEmailServer>? standardServer = null,
+
+            global::System.Action<global::Neon.SendNeonAuthTestEmailRequestVariant2>? sendNeonAuthTestEmailRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStandardServer)
+            {
+                standardServer?.Invoke(StandardServer!);
+            }
+            else if (IsSendNeonAuthTestEmailRequestVariant2)
+            {
+                sendNeonAuthTestEmailRequestVariant2?.Invoke(SendNeonAuthTestEmailRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Neon.StandardEmailServer>? standardServer = null,
+            global::System.Action<global::Neon.SendNeonAuthTestEmailRequestVariant2>? sendNeonAuthTestEmailRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -34,6 +34,26 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStandard(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.StandardEmailServer? value)
+        {
+            value = Standard;
+            return IsStandard;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.StandardEmailServer PickStandard() => IsStandard
+            ? Standard!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Standard' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.SharedEmailServer? Shared { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace Neon
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Shared))]
 #endif
         public bool IsShared => Shared != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShared(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.SharedEmailServer? value)
+        {
+            value = Shared;
+            return IsShared;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.SharedEmailServer PickShared() => IsShared
+            ? Shared!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -68,6 +108,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static NeonAuthEmailServerConfig FromStandard(global::Neon.StandardEmailServer? value) => new NeonAuthEmailServerConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator NeonAuthEmailServerConfig(global::Neon.SharedEmailServer value) => new NeonAuthEmailServerConfig((global::Neon.SharedEmailServer?)value);
 
         /// <summary>
@@ -82,6 +127,11 @@ namespace Neon
         {
             Shared = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static NeonAuthEmailServerConfig FromShared(global::Neon.SharedEmailServer? value) => new NeonAuthEmailServerConfig(value);
 
         /// <summary>
         /// 
@@ -126,8 +176,8 @@ namespace Neon
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Neon.StandardEmailServer?, TResult>? standard = null,
-            global::System.Func<global::Neon.SharedEmailServer?, TResult>? shared = null,
+            global::System.Func<global::Neon.StandardEmailServer, TResult>? standard = null,
+            global::System.Func<global::Neon.SharedEmailServer, TResult>? shared = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +201,32 @@ namespace Neon
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Neon.StandardEmailServer?>? standard = null,
-            global::System.Action<global::Neon.SharedEmailServer?>? shared = null,
+            global::System.Action<global::Neon.StandardEmailServer>? standard = null,
+
+            global::System.Action<global::Neon.SharedEmailServer>? shared = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStandard)
+            {
+                standard?.Invoke(Standard!);
+            }
+            else if (IsShared)
+            {
+                shared?.Invoke(Shared!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Neon.StandardEmailServer>? standard = null,
+            global::System.Action<global::Neon.SharedEmailServer>? shared = null,
             bool validate = true)
         {
             if (validate)

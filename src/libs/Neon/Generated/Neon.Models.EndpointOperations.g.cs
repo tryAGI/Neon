@@ -29,6 +29,26 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResponse1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.EndpointResponse? value)
+        {
+            value = Response1;
+            return IsResponse1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.EndpointResponse PickResponse1() => IsResponse1
+            ? Response1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Response1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.OperationsResponse? Response2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Neon
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Response2))]
 #endif
         public bool IsResponse2 => Response2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponse2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.OperationsResponse? value)
+        {
+            value = Response2;
+            return IsResponse2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.OperationsResponse PickResponse2() => IsResponse2
+            ? Response2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Response2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static EndpointOperations FromResponse1(global::Neon.EndpointResponse? value) => new EndpointOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EndpointOperations(global::Neon.OperationsResponse value) => new EndpointOperations((global::Neon.OperationsResponse?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Neon
         {
             Response2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EndpointOperations FromResponse2(global::Neon.OperationsResponse? value) => new EndpointOperations(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Neon
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Neon.EndpointResponse?, TResult>? response1 = null,
-            global::System.Func<global::Neon.OperationsResponse?, TResult>? response2 = null,
+            global::System.Func<global::Neon.EndpointResponse, TResult>? response1 = null,
+            global::System.Func<global::Neon.OperationsResponse, TResult>? response2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Neon
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Neon.EndpointResponse?>? response1 = null,
-            global::System.Action<global::Neon.OperationsResponse?>? response2 = null,
+            global::System.Action<global::Neon.EndpointResponse>? response1 = null,
+
+            global::System.Action<global::Neon.OperationsResponse>? response2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponse1)
+            {
+                response1?.Invoke(Response1!);
+            }
+            else if (IsResponse2)
+            {
+                response2?.Invoke(Response2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Neon.EndpointResponse>? response1 = null,
+            global::System.Action<global::Neon.OperationsResponse>? response2 = null,
             bool validate = true)
         {
             if (validate)

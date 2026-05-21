@@ -24,13 +24,6 @@ namespace Neon
         public int? OtpExpiresIn { get; set; }
 
         /// <summary>
-        /// Maximum number of OTP verification attempts before lockout<br/>
-        /// Default Value: 3
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_attempts")]
-        public int? AllowedAttempts { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,21 +40,15 @@ namespace Neon
         /// Time in seconds before the OTP expires<br/>
         /// Default Value: 300
         /// </param>
-        /// <param name="allowedAttempts">
-        /// Maximum number of OTP verification attempts before lockout<br/>
-        /// Default Value: 3
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public NeonAuthPhoneNumberConfig(
             bool enabled,
-            int? otpExpiresIn,
-            int? allowedAttempts)
+            int? otpExpiresIn)
         {
             this.Enabled = enabled;
             this.OtpExpiresIn = otpExpiresIn;
-            this.AllowedAttempts = allowedAttempts;
         }
 
         /// <summary>
@@ -70,5 +57,6 @@ namespace Neon
         public NeonAuthPhoneNumberConfig()
         {
         }
+
     }
 }

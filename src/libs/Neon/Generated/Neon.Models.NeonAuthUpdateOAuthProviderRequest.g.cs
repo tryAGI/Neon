@@ -57,5 +57,6 @@ namespace Neon
         public NeonAuthUpdateOAuthProviderRequest()
         {
         }
+
     }
 }

@@ -77,6 +77,7 @@ namespace Neon.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.VPCEndpoint), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.VPCEndpoint> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.VPCEndpoint).Name}");
                     vPCEndpoint = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -87,9 +88,13 @@ namespace Neon.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (vPCEndpoint == null && vPCEndpointWithRegionVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.VPCEndpointWithRegionVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.VPCEndpointWithRegionVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.VPCEndpointWithRegionVariant2).Name}");
                     vPCEndpointWithRegionVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

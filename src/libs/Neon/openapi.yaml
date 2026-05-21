@@ -3267,7 +3267,7 @@
                 }
             }
         },
-        "/projects/{project_id}/branches/{branch_id}/auth/plugins/phone_number": {
+        "/projects/{project_id}/branches/{branch_id}/auth/plugins/phone-number": {
             "parameters": [
                 {
                     "name": "project_id",
@@ -3313,9 +3313,9 @@
                     }
                 }
             },
-            "put": {
+            "patch": {
                 "summary": "Update phone number plugin configuration",
-                "description": "Updates the phone number plugin configuration for Neon Auth.\nThe phone number plugin enables phone-based OTP authentication.\nOTP codes are delivered via the `send.otp` webhook event with `delivery_preference: \"sms\"`.\nA webhook must be configured with the `send.otp` event enabled for SMS delivery to work.\n",
+                "description": "Updates the phone number plugin configuration for Neon Auth.\nOnly the fields provided in the request body are updated; omitted fields retain their current values.\nThe phone number plugin enables phone-based OTP authentication.\nOTP codes are delivered via the `send.otp` webhook event with `delivery_preference: \"sms\"`.\nA webhook must be configured with the `send.otp` event enabled for SMS delivery to work.\n",
                 "tags": [
                     "Auth"
                 ],
@@ -3324,7 +3324,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/NeonAuthPhoneNumberConfig"
+                                "$ref": "#/components/schemas/NeonAuthPhoneNumberConfigUpdate"
                             }
                         }
                     },
@@ -6727,7 +6727,8 @@
                                     "plan": "scale",
                                     "managed_by": "console",
                                     "created_at": "2024-02-23T17:42:25Z",
-                                    "updated_at": "2024-02-26T20:41:25Z"
+                                    "updated_at": "2024-02-26T20:41:25Z",
+                                    "require_mfa": false
                                 }
                             }
                         }
@@ -9048,7 +9049,8 @@
                     "promote_replica",
                     "set_storage_non_dirty",
                     "swap_binding_id",
-                    "finalize_migration"
+                    "finalize_migration",
+                    "mark_migration_prepared"
                 ]
             },
             "OperationStatus": {
@@ -9855,6 +9857,46 @@
                 },
                 "required": [
                     "project_id",
+                    "periods"
+                ]
+            },
+            "ConsumptionHistoryPerBranchV2Response": {
+                "type": "object",
+                "properties": {
+                    "branches": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ConsumptionHistoryPerBranchV2"
+                        }
+                    }
+                },
+                "required": [
+                    "branches"
+                ]
+            },
+            "ConsumptionHistoryPerBranchV2": {
+                "type": "object",
+                "properties": {
+                    "project_id": {
+                        "description": "The project that owns the branch",
+                        "type": "string",
+                        "pattern": "^[a-z0-9-]{1,60}$"
+                    },
+                    "branch_id": {
+                        "description": "The branch ID",
+                        "type": "string",
+                        "pattern": "^[a-z0-9-]{1,60}$"
+                    },
+                    "periods": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ConsumptionHistoryPerPeriodV2"
+                        }
+                    }
+                },
+                "required": [
+                    "project_id",
+                    "branch_id",
                     "periods"
                 ]
             },
@@ -12323,6 +12365,11 @@
                     "has_mfa": {
                         "type": "boolean",
                         "description": "Whether the member has MFA (TOTP) enabled"
+                    },
+                    "deactivated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Timestamp of when the user account was deactivated.\nAbsent for active users. When present, the UI should render a\n\"Deactivated\" badge inline next to the member.\n"
                     }
                 }
             },
@@ -12382,6 +12429,10 @@
                     },
                     "allow_hipaa_projects": {
                         "description": "If true, allow account to mark projects as HIPAA",
+                        "type": "boolean"
+                    },
+                    "require_mfa": {
+                        "description": "If true, all members must have MFA enabled to access this organization",
                         "type": "boolean"
                     }
                 }
@@ -12446,13 +12497,14 @@
             },
             "OrganizationsUpdateRequest": {
                 "type": "object",
-                "required": [
-                    "name"
-                ],
                 "properties": {
                     "name": {
                         "type": "string",
                         "maxLength": 64
+                    },
+                    "require_mfa": {
+                        "description": "If true, all members must have MFA enabled to access this organization",
+                        "type": "boolean"
                     }
                 }
             },
@@ -13265,7 +13317,7 @@
                     "jwt_role_claim_key": {
                         "type": "string",
                         "description": "JWT claim key to use for role extraction",
-                        "default": ".\"role\""
+                        "default": ".role"
                     },
                     "jwt_cache_max_lifetime": {
                         "type": "integer",
@@ -13868,13 +13920,21 @@
                         "default": 300,
                         "minimum": 60,
                         "maximum": 600
+                    }
+                }
+            },
+            "NeonAuthPhoneNumberConfigUpdate": {
+                "type": "object",
+                "properties": {
+                    "enabled": {
+                        "type": "boolean",
+                        "description": "Whether the phone number plugin is enabled"
                     },
-                    "allowed_attempts": {
+                    "otp_expires_in": {
                         "type": "integer",
-                        "description": "Maximum number of OTP verification attempts before lockout",
-                        "default": 3,
-                        "minimum": 1,
-                        "maximum": 10
+                        "description": "Time in seconds before the OTP expires",
+                        "minimum": 60,
+                        "maximum": 600
                     }
                 }
             },

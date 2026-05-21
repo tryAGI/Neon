@@ -61,5 +61,6 @@ namespace Neon
         public ConsumptionHistoryPerTimeframeV2()
         {
         }
+
     }
 }

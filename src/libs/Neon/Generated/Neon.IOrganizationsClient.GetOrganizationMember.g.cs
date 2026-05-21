@@ -18,5 +18,19 @@ namespace Neon
             string memberId,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Retrieve organization member details<br/>
+        /// Retrieves information about the specified organization member.
+        /// </summary>
+        /// <param name="orgId"></param>
+        /// <param name="memberId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Neon.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.Member>> GetOrganizationMemberAsResponseAsync(
+            string orgId,
+            string memberId,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

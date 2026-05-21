@@ -172,5 +172,6 @@ namespace Neon
         public AdvisorIssue()
         {
         }
+
     }
 }

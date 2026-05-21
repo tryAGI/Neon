@@ -29,6 +29,24 @@ namespace Neon
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Neon.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.NeonAuthCreateIntegrationResponse>> CreateNeonAuthAsResponseAsync(
+            string projectId,
+            string branchId,
+
+            global::Neon.EnableNeonAuthIntegrationRequest request,
+            global::Neon.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Enable Neon Auth for the branch<br/>
+        /// Enables Neon Auth integrationfor the branch.<br/>
+        /// You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="branchId"></param>
         /// <param name="authProvider"></param>
         /// <param name="databaseName"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

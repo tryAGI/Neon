@@ -76,5 +76,6 @@ namespace Neon
         public BranchSchemaJSONTableConstraint()
         {
         }
+
     }
 }

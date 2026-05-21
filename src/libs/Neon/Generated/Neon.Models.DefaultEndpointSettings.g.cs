@@ -89,5 +89,6 @@ namespace Neon
         public DefaultEndpointSettings()
         {
         }
+
     }
 }

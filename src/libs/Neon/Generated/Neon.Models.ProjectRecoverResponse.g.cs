@@ -29,6 +29,26 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProjectResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.ProjectResponse? value)
+        {
+            value = ProjectResponse;
+            return IsProjectResponse;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.ProjectResponse PickProjectResponse() => IsProjectResponse
+            ? ProjectResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProjectResponse' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.BranchesResponse? Branches { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Neon
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Branches))]
 #endif
         public bool IsBranches => Branches != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBranches(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.BranchesResponse? value)
+        {
+            value = Branches;
+            return IsBranches;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.BranchesResponse PickBranches() => IsBranches
+            ? Branches!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Branches' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static ProjectRecoverResponse FromProjectResponse(global::Neon.ProjectResponse? value) => new ProjectRecoverResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ProjectRecoverResponse(global::Neon.BranchesResponse value) => new ProjectRecoverResponse((global::Neon.BranchesResponse?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Neon
         {
             Branches = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ProjectRecoverResponse FromBranches(global::Neon.BranchesResponse? value) => new ProjectRecoverResponse(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Neon
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Neon.ProjectResponse?, TResult>? projectResponse = null,
-            global::System.Func<global::Neon.BranchesResponse?, TResult>? branches = null,
+            global::System.Func<global::Neon.ProjectResponse, TResult>? projectResponse = null,
+            global::System.Func<global::Neon.BranchesResponse, TResult>? branches = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Neon
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Neon.ProjectResponse?>? projectResponse = null,
-            global::System.Action<global::Neon.BranchesResponse?>? branches = null,
+            global::System.Action<global::Neon.ProjectResponse>? projectResponse = null,
+
+            global::System.Action<global::Neon.BranchesResponse>? branches = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsProjectResponse)
+            {
+                projectResponse?.Invoke(ProjectResponse!);
+            }
+            else if (IsBranches)
+            {
+                branches?.Invoke(Branches!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Neon.ProjectResponse>? projectResponse = null,
+            global::System.Action<global::Neon.BranchesResponse>? branches = null,
             bool validate = true)
         {
             if (validate)

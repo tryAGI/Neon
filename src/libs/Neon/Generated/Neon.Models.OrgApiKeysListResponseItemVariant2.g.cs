@@ -41,5 +41,6 @@ namespace Neon
         public OrgApiKeysListResponseItemVariant2()
         {
         }
+
     }
 }

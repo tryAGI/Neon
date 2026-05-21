@@ -40,5 +40,6 @@ namespace Neon
         public EndpointUpdateRequest()
         {
         }
+
     }
 }

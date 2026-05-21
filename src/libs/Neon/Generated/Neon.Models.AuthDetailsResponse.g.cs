@@ -60,5 +60,6 @@ namespace Neon
         public AuthDetailsResponse()
         {
         }
+
     }
 }

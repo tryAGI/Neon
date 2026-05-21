@@ -119,5 +119,6 @@ namespace Neon
         public NeonAuthEmailAndPasswordConfig()
         {
         }
+
     }
 }

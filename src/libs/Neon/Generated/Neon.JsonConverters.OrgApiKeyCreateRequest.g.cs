@@ -76,6 +76,7 @@ namespace Neon.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.ApiKeyCreateRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.ApiKeyCreateRequest> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.ApiKeyCreateRequest).Name}");
                     apiKeyCreateRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -86,9 +87,13 @@ namespace Neon.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (apiKeyCreateRequest == null && orgApiKeyCreateRequestVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.OrgApiKeyCreateRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.OrgApiKeyCreateRequestVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.OrgApiKeyCreateRequestVariant2).Name}");
                     orgApiKeyCreateRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

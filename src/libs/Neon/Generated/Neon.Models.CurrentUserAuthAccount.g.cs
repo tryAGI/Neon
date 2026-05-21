@@ -87,5 +87,6 @@ namespace Neon
         public CurrentUserAuthAccount()
         {
         }
+
     }
 }

@@ -55,5 +55,6 @@ namespace Neon
         public InvitationCreateRequest()
         {
         }
+
     }
 }

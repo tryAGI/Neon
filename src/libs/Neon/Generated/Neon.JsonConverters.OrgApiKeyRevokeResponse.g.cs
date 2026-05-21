@@ -82,6 +82,7 @@ namespace Neon.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.ApiKeyRevokeResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.ApiKeyRevokeResponse> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.ApiKeyRevokeResponse).Name}");
                     apiKeyRevokeResponse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -92,9 +93,13 @@ namespace Neon.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (apiKeyRevokeResponse == null && orgApiKeyRevokeResponseVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.OrgApiKeyRevokeResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.OrgApiKeyRevokeResponseVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.OrgApiKeyRevokeResponseVariant2).Name}");
                     orgApiKeyRevokeResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

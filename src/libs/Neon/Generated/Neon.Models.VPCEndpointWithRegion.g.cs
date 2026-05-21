@@ -29,6 +29,26 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVPCEndpoint(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.VPCEndpoint? value)
+        {
+            value = VPCEndpoint;
+            return IsVPCEndpoint;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.VPCEndpoint PickVPCEndpoint() => IsVPCEndpoint
+            ? VPCEndpoint!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VPCEndpoint' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.VPCEndpointWithRegionVariant2? VPCEndpointWithRegionVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Neon
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VPCEndpointWithRegionVariant2))]
 #endif
         public bool IsVPCEndpointWithRegionVariant2 => VPCEndpointWithRegionVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVPCEndpointWithRegionVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.VPCEndpointWithRegionVariant2? value)
+        {
+            value = VPCEndpointWithRegionVariant2;
+            return IsVPCEndpointWithRegionVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Neon.VPCEndpointWithRegionVariant2 PickVPCEndpointWithRegionVariant2() => IsVPCEndpointWithRegionVariant2
+            ? VPCEndpointWithRegionVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VPCEndpointWithRegionVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        public static VPCEndpointWithRegion FromVPCEndpoint(global::Neon.VPCEndpoint? value) => new VPCEndpointWithRegion(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VPCEndpointWithRegion(global::Neon.VPCEndpointWithRegionVariant2 value) => new VPCEndpointWithRegion((global::Neon.VPCEndpointWithRegionVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Neon
         {
             VPCEndpointWithRegionVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VPCEndpointWithRegion FromVPCEndpointWithRegionVariant2(global::Neon.VPCEndpointWithRegionVariant2? value) => new VPCEndpointWithRegion(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Neon
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Neon.VPCEndpoint?, TResult>? vPCEndpoint = null,
-            global::System.Func<global::Neon.VPCEndpointWithRegionVariant2?, TResult>? vPCEndpointWithRegionVariant2 = null,
+            global::System.Func<global::Neon.VPCEndpoint, TResult>? vPCEndpoint = null,
+            global::System.Func<global::Neon.VPCEndpointWithRegionVariant2, TResult>? vPCEndpointWithRegionVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Neon
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Neon.VPCEndpoint?>? vPCEndpoint = null,
-            global::System.Action<global::Neon.VPCEndpointWithRegionVariant2?>? vPCEndpointWithRegionVariant2 = null,
+            global::System.Action<global::Neon.VPCEndpoint>? vPCEndpoint = null,
+
+            global::System.Action<global::Neon.VPCEndpointWithRegionVariant2>? vPCEndpointWithRegionVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVPCEndpoint)
+            {
+                vPCEndpoint?.Invoke(VPCEndpoint!);
+            }
+            else if (IsVPCEndpointWithRegionVariant2)
+            {
+                vPCEndpointWithRegionVariant2?.Invoke(VPCEndpointWithRegionVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Neon.VPCEndpoint>? vPCEndpoint = null,
+            global::System.Action<global::Neon.VPCEndpointWithRegionVariant2>? vPCEndpointWithRegionVariant2 = null,
             bool validate = true)
         {
             if (validate)
