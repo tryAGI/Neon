@@ -416,18 +416,17 @@ namespace Neon
                                     __exception_default = __ex;
                                 }
 
-                                throw new global::Neon.ApiException<global::Neon.GeneralError>(
+
+                                throw global::Neon.ApiException<global::Neon.GeneralError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_default ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_default,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_default,
-                                    ResponseObject = __value_default,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_default,
+                                    responseObject: __value_default,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -461,17 +460,15 @@ namespace Neon
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::Neon.ApiException(
+                                    throw global::Neon.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -508,17 +505,15 @@ namespace Neon
                                     {
                                     }
 
-                                    throw new global::Neon.ApiException(
+                                    throw global::Neon.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

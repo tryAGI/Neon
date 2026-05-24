@@ -371,18 +371,17 @@ namespace Neon
                                     __exception_406 = __ex;
                                 }
 
-                                throw new global::Neon.ApiException<global::Neon.LimitsUnsatisfiedResponse>(
+
+                                throw global::Neon.ApiException<global::Neon.LimitsUnsatisfiedResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_406 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_406,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_406,
-                                    ResponseObject = __value_406,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_406,
+                                    responseObject: __value_406,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // One or more of the provided project IDs have GitHub or Vercel integrations installed. Transferring integration projects is currently not supported
                             if ((int)__response.StatusCode == 422)
@@ -409,18 +408,17 @@ namespace Neon
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::Neon.ApiException<global::Neon.ProjectsWithIntegrationResponse>(
+
+                                throw global::Neon.ApiException<global::Neon.ProjectsWithIntegrationResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // General Error.  The request may or may not be safe to retry, depending on the HTTP method, response status code, and whether a response was received.  - If no response is returned from the API, a network error or timeout likely occurred. - In some cases, the request may have reached the server and been successfully processed, but the response failed to reach the client. As a result, retrying non-idempotent requests can lead to unintended results.  The following HTTP methods are considered non-idempotent: `POST`, `PATCH`, `DELETE`, and `PUT`. Retrying these methods is generally **not safe**. The following methods are considered idempotent: `GET`, `HEAD`, and `OPTIONS`. Retrying these methods is **safe** in the event of a network error or timeout.  Any request that returns a `503 Service Unavailable` response is always safe to retry.  Any request that returns a `423 Locked` response is safe to retry. `423 Locked` indicates that the resource is temporarily locked, for example, due to another operation in progress. 
                             if (!__response.IsSuccessStatusCode)
@@ -447,18 +445,17 @@ namespace Neon
                                     __exception_default = __ex;
                                 }
 
-                                throw new global::Neon.ApiException<global::Neon.GeneralError>(
+
+                                throw global::Neon.ApiException<global::Neon.GeneralError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_default ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_default,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_default,
-                                    ResponseObject = __value_default,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_default,
+                                    responseObject: __value_default,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -492,17 +489,15 @@ namespace Neon
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::Neon.ApiException(
+                                    throw global::Neon.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -539,17 +534,15 @@ namespace Neon
                                     {
                                     }
 
-                                    throw new global::Neon.ApiException(
+                                    throw global::Neon.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
