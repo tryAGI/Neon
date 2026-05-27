@@ -6,12 +6,12 @@ namespace Neon
     {
         /// <summary>
         /// Recover a deleted branch<br/>
-        /// Recovers a deleted branch during the deletion grace period (7 days).<br/>
+        /// Recovers a deleted branch within the 7-day deletion recovery period.<br/>
         /// The branch must have been soft deleted and not yet permanently deleted.<br/>
         /// Recovery restores the branch and its endpoints to an idle state.<br/>
         /// Connection strings remain valid after recovery.<br/>
         /// TTL branches become non-TTL branches after recovery.<br/>
-        /// This endpoint is in preview and not available to all users.
+        /// To list deleted branches available for recovery, use `GET /projects/{project_id}/branches?include_deleted=true`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -25,12 +25,12 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Recover a deleted branch<br/>
-        /// Recovers a deleted branch during the deletion grace period (7 days).<br/>
+        /// Recovers a deleted branch within the 7-day deletion recovery period.<br/>
         /// The branch must have been soft deleted and not yet permanently deleted.<br/>
         /// Recovery restores the branch and its endpoints to an idle state.<br/>
         /// Connection strings remain valid after recovery.<br/>
         /// TTL branches become non-TTL branches after recovery.<br/>
-        /// This endpoint is in preview and not available to all users.
+        /// To list deleted branches available for recovery, use `GET /projects/{project_id}/branches?include_deleted=true`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

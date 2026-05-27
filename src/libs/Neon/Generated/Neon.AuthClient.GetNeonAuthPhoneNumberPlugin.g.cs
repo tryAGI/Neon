@@ -44,7 +44,7 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Get phone number plugin configuration<br/>
+        /// Retrieve phone number plugin configuration<br/>
         /// Returns the phone number plugin configuration for Neon Auth.<br/>
         /// The phone number plugin enables phone-based OTP authentication.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Get phone number plugin configuration<br/>
+        /// Retrieve phone number plugin configuration<br/>
         /// Returns the phone number plugin configuration for Neon Auth.<br/>
         /// The phone number plugin enables phone-based OTP authentication.
         /// </summary>

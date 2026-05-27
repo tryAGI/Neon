@@ -43,10 +43,9 @@ namespace Neon
 
         /// <summary>
         /// Delete project<br/>
-        /// Deletes the specified project.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// Deleting a project is a permanent action.<br/>
-        /// Deleting a project also deletes endpoints, branches, databases, and users that belong to the project.
+        /// Deletes the specified project and all its endpoints, branches, databases, and users.<br/>
+        /// Deleted projects can be recovered within 7 days using `POST /projects/{project_id}/recover`.<br/>
+        /// To list recoverable projects, use `GET /projects?recoverable=true`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -67,10 +66,9 @@ namespace Neon
         }
         /// <summary>
         /// Delete project<br/>
-        /// Deletes the specified project.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// Deleting a project is a permanent action.<br/>
-        /// Deleting a project also deletes endpoints, branches, databases, and users that belong to the project.
+        /// Deletes the specified project and all its endpoints, branches, databases, and users.<br/>
+        /// Deleted projects can be recovered within 7 days using `POST /projects/{project_id}/recover`.<br/>
+        /// To list recoverable projects, use `GET /projects?recoverable=true`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

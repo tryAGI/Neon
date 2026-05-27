@@ -5,7 +5,7 @@ namespace Neon
     public partial interface IBranchClient
     {
         /// <summary>
-        /// Finalize restore<br/>
+        /// Finalize branch restore from snapshot<br/>
         /// Finalize the restore operation for a branch created from a snapshot.<br/>
         /// This operation updates the branch so it functions as the original branch it replaced.<br/>
         /// This includes:<br/>
@@ -29,7 +29,7 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Finalize restore<br/>
+        /// Finalize branch restore from snapshot<br/>
         /// Finalize the restore operation for a branch created from a snapshot.<br/>
         /// This operation updates the branch so it functions as the original branch it replaced.<br/>
         /// This includes:<br/>
@@ -53,7 +53,7 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Finalize restore<br/>
+        /// Finalize branch restore from snapshot<br/>
         /// Finalize the restore operation for a branch created from a snapshot.<br/>
         /// This operation updates the branch so it functions as the original branch it replaced.<br/>
         /// This includes:<br/>

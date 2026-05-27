@@ -45,9 +45,10 @@ namespace Neon
         /// Create API key<br/>
         /// Creates an API key.<br/>
         /// The `key_name` is a user-specified name for the key.<br/>
-        /// This method returns an `id` and `key`. The `key` is a randomly generated, 64-bit token required to access the Neon API.<br/>
+        /// Returns an `id` and `key`; the `key` is a randomly generated, 64-bit token required to access the Neon API.<br/>
+        /// Store the key securely — it is only returned once.<br/>
         /// API keys can also be managed in the Neon Console.<br/>
-        /// See [Manage API keys](https://neon.tech/docs/manage/api-keys/).
+        /// See [Manage API keys](https://neon.com/docs/manage/api-keys/).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -72,9 +73,10 @@ namespace Neon
         /// Create API key<br/>
         /// Creates an API key.<br/>
         /// The `key_name` is a user-specified name for the key.<br/>
-        /// This method returns an `id` and `key`. The `key` is a randomly generated, 64-bit token required to access the Neon API.<br/>
+        /// Returns an `id` and `key`; the `key` is a randomly generated, 64-bit token required to access the Neon API.<br/>
+        /// Store the key securely — it is only returned once.<br/>
         /// API keys can also be managed in the Neon Console.<br/>
-        /// See [Manage API keys](https://neon.tech/docs/manage/api-keys/).
+        /// See [Manage API keys](https://neon.com/docs/manage/api-keys/).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -482,9 +484,10 @@ namespace Neon
         /// Create API key<br/>
         /// Creates an API key.<br/>
         /// The `key_name` is a user-specified name for the key.<br/>
-        /// This method returns an `id` and `key`. The `key` is a randomly generated, 64-bit token required to access the Neon API.<br/>
+        /// Returns an `id` and `key`; the `key` is a randomly generated, 64-bit token required to access the Neon API.<br/>
+        /// Store the key securely — it is only returned once.<br/>
         /// API keys can also be managed in the Neon Console.<br/>
-        /// See [Manage API keys](https://neon.tech/docs/manage/api-keys/).
+        /// See [Manage API keys](https://neon.com/docs/manage/api-keys/).
         /// </summary>
         /// <param name="keyName">
         /// A user-specified API key name. This value is required when creating an API key.

@@ -6,7 +6,8 @@ namespace Neon
     {
         /// <summary>
         /// List project snapshots<br/>
-        /// List the snapshots for the specified project.<br/>
+        /// Lists the snapshots for the specified project.<br/>
+        /// Each snapshot represents a point-in-time backup of the project data.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
@@ -19,7 +20,8 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List project snapshots<br/>
-        /// List the snapshots for the specified project.<br/>
+        /// Lists the snapshots for the specified project.<br/>
+        /// Each snapshot represents a point-in-time backup of the project data.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>

@@ -5,7 +5,12 @@ namespace Neon
     public partial interface IAuthClient
     {
         /// <summary>
-        /// Disables Neon Auth for the branch
+        /// Disable Neon Auth for the branch<br/>
+        /// Disables the Neon Auth integration for the specified branch, removing the connection<br/>
+        /// to the authentication provider.<br/>
+        /// If `delete_data` is `true`, also deletes the `neon_auth` schema and all associated tables<br/>
+        /// from the branch database.<br/>
+        /// The integration can be re-enabled by calling `POST /projects/{project_id}/branches/{branch_id}/auth`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -21,7 +26,12 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Disables Neon Auth for the branch
+        /// Disable Neon Auth for the branch<br/>
+        /// Disables the Neon Auth integration for the specified branch, removing the connection<br/>
+        /// to the authentication provider.<br/>
+        /// If `delete_data` is `true`, also deletes the `neon_auth` schema and all associated tables<br/>
+        /// from the branch database.<br/>
+        /// The integration can be re-enabled by calling `POST /projects/{project_id}/branches/{branch_id}/auth`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -37,7 +47,12 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Disables Neon Auth for the branch
+        /// Disable Neon Auth for the branch<br/>
+        /// Disables the Neon Auth integration for the specified branch, removing the connection<br/>
+        /// to the authentication provider.<br/>
+        /// If `delete_data` is `true`, also deletes the `neon_auth` schema and all associated tables<br/>
+        /// from the branch database.<br/>
+        /// The integration can be re-enabled by calling `POST /projects/{project_id}/branches/{branch_id}/auth`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

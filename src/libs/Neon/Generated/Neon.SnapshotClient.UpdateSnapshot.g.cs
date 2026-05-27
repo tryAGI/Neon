@@ -47,7 +47,7 @@ namespace Neon
 
         /// <summary>
         /// Update snapshot<br/>
-        /// Update the specified snapshot.<br/>
+        /// Updates the specified snapshot.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
@@ -77,7 +77,7 @@ namespace Neon
         }
         /// <summary>
         /// Update snapshot<br/>
-        /// Update the specified snapshot.<br/>
+        /// Updates the specified snapshot.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
@@ -492,7 +492,7 @@ namespace Neon
         }
         /// <summary>
         /// Update snapshot<br/>
-        /// Update the specified snapshot.<br/>
+        /// Updates the specified snapshot.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>

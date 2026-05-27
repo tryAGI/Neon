@@ -6,19 +6,13 @@ namespace Neon
     {
         /// <summary>
         /// Delete branch<br/>
-        /// Deletes the specified branch from a project, and places<br/>
-        /// all compute endpoints into an idle state, breaking existing client connections.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain a `branch_id` by listing the project's branches.<br/>
-        /// For related information, see [Manage branches](https://neon.tech/docs/manage/branches/).<br/>
-        /// When a successful response status is received, the compute endpoints are still active,<br/>
-        /// and the branch is not yet deleted from storage.<br/>
-        /// The deletion occurs after all operations finish.<br/>
-        /// You cannot delete a project's root or default branch, and you cannot delete a branch that has a child branch.<br/>
+        /// Deletes the specified branch from a project and places all compute endpoints into an idle state, breaking existing client connections.<br/>
+        /// The deletion completes after all operations finish.<br/>
+        /// You cannot delete a project's root or default branch, or a branch that has a child branch.<br/>
         /// A project must have at least one branch.<br/>
         /// By default, deleted branches can be recovered within a 7-day grace period.<br/>
-        /// Use the `hard_delete` parameter to permanently delete the branch immediately without a recovery window.<br/>
-        /// Soft delete and branch recovery are in preview and not available to all users.
+        /// Use the `hard_delete` parameter to permanently delete the branch immediately.<br/>
+        /// For related information, see [Manage branches](https://neon.com/docs/manage/branches/).
         /// </summary>
         /// <param name="hardDelete">
         /// Default Value: false
@@ -36,19 +30,13 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete branch<br/>
-        /// Deletes the specified branch from a project, and places<br/>
-        /// all compute endpoints into an idle state, breaking existing client connections.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain a `branch_id` by listing the project's branches.<br/>
-        /// For related information, see [Manage branches](https://neon.tech/docs/manage/branches/).<br/>
-        /// When a successful response status is received, the compute endpoints are still active,<br/>
-        /// and the branch is not yet deleted from storage.<br/>
-        /// The deletion occurs after all operations finish.<br/>
-        /// You cannot delete a project's root or default branch, and you cannot delete a branch that has a child branch.<br/>
+        /// Deletes the specified branch from a project and places all compute endpoints into an idle state, breaking existing client connections.<br/>
+        /// The deletion completes after all operations finish.<br/>
+        /// You cannot delete a project's root or default branch, or a branch that has a child branch.<br/>
         /// A project must have at least one branch.<br/>
         /// By default, deleted branches can be recovered within a 7-day grace period.<br/>
-        /// Use the `hard_delete` parameter to permanently delete the branch immediately without a recovery window.<br/>
-        /// Soft delete and branch recovery are in preview and not available to all users.
+        /// Use the `hard_delete` parameter to permanently delete the branch immediately.<br/>
+        /// For related information, see [Manage branches](https://neon.com/docs/manage/branches/).
         /// </summary>
         /// <param name="hardDelete">
         /// Default Value: false

@@ -50,7 +50,7 @@ namespace Neon
         /// <summary>
         /// List shared projects<br/>
         /// Retrieves a list of projects shared with your Neon account.<br/>
-        /// For more information, see [Manage projects](https://neon.tech/docs/manage/projects/).
+        /// For more information, see [Manage projects](https://neon.com/docs/manage/projects/).
         /// </summary>
         /// <param name="cursor"></param>
         /// <param name="limit">
@@ -83,7 +83,7 @@ namespace Neon
         /// <summary>
         /// List shared projects<br/>
         /// Retrieves a list of projects shared with your Neon account.<br/>
-        /// For more information, see [Manage projects](https://neon.tech/docs/manage/projects/).
+        /// For more information, see [Manage projects](https://neon.com/docs/manage/projects/).
         /// </summary>
         /// <param name="cursor"></param>
         /// <param name="limit">

@@ -45,7 +45,7 @@ namespace Neon
 
         /// <summary>
         /// Grant project access<br/>
-        /// Grants project access to the account associated with the specified email address
+        /// Grants project access to the account associated with the specified email address.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
@@ -71,7 +71,7 @@ namespace Neon
         }
         /// <summary>
         /// Grant project access<br/>
-        /// Grants project access to the account associated with the specified email address
+        /// Grants project access to the account associated with the specified email address.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
@@ -481,7 +481,7 @@ namespace Neon
         }
         /// <summary>
         /// Grant project access<br/>
-        /// Grants project access to the account associated with the specified email address
+        /// Grants project access to the account associated with the specified email address.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="email"></param>

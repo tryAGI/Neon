@@ -5,7 +5,7 @@ namespace Neon
     public partial interface IOrganizationsClient
     {
         /// <summary>
-        /// Retrieve organization members details<br/>
+        /// List organization members<br/>
         /// Retrieves a paginated list of members for the specified organization.
         /// </summary>
         /// <param name="sortBy">
@@ -29,7 +29,7 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Retrieve organization members details<br/>
+        /// List organization members<br/>
         /// Retrieves a paginated list of members for the specified organization.
         /// </summary>
         /// <param name="sortBy">

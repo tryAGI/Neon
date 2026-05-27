@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// These methods allow you to create and manage Neon projects. For related information, see [Manage projects](https://neon.tech/docs/manage/projects).<br/>
+    /// These methods allow you to create and manage Neon projects. For related information, see [Manage projects](https://neon.com/docs/manage/projects).<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

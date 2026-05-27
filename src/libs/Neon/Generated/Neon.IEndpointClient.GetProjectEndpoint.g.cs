@@ -8,10 +8,8 @@ namespace Neon
         /// Retrieve compute endpoint details<br/>
         /// Retrieves information about the specified compute endpoint.<br/>
         /// A compute endpoint is a Neon compute instance.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain an `endpoint_id` by listing your project's compute endpoints.<br/>
         /// An `endpoint_id` has an `ep-` prefix.<br/>
-        /// For information about compute endpoints, see [Manage computes](https://neon.tech/docs/manage/endpoints/).
+        /// For information about compute endpoints, see [Manage computes](https://neon.com/docs/manage/endpoints/).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="endpointId"></param>
@@ -27,10 +25,8 @@ namespace Neon
         /// Retrieve compute endpoint details<br/>
         /// Retrieves information about the specified compute endpoint.<br/>
         /// A compute endpoint is a Neon compute instance.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain an `endpoint_id` by listing your project's compute endpoints.<br/>
         /// An `endpoint_id` has an `ep-` prefix.<br/>
-        /// For information about compute endpoints, see [Manage computes](https://neon.tech/docs/manage/endpoints/).
+        /// For information about compute endpoints, see [Manage computes](https://neon.com/docs/manage/endpoints/).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="endpointId"></param>

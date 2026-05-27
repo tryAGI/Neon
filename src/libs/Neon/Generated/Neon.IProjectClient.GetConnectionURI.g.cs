@@ -7,9 +7,7 @@ namespace Neon
         /// <summary>
         /// Retrieve connection URI<br/>
         /// Retrieves a connection URI for the specified database.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `database_name` by listing the databases for a branch.<br/>
-        /// You can obtain a `role_name` by listing the roles for a branch.
+        /// The URI uses the standard PostgreSQL connection string format. Set `pooled=true` to include the `-pooler` suffix for a connection pooler URI.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -32,9 +30,7 @@ namespace Neon
         /// <summary>
         /// Retrieve connection URI<br/>
         /// Retrieves a connection URI for the specified database.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `database_name` by listing the databases for a branch.<br/>
-        /// You can obtain a `role_name` by listing the roles for a branch.
+        /// The URI uses the standard PostgreSQL connection string format. Set `pooled=true` to include the `-pooler` suffix for a connection pooler URI.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

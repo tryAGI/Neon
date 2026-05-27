@@ -7,7 +7,6 @@ namespace Neon
         /// <summary>
         /// List operations<br/>
         /// Retrieves a list of operations for the specified Neon project.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
         /// The number of operations returned can be large.<br/>
         /// To paginate the response, issue an initial request with a `limit` value.<br/>
         /// Then, add the `cursor` value that was returned in the response to the next request.<br/>
@@ -29,7 +28,6 @@ namespace Neon
         /// <summary>
         /// List operations<br/>
         /// Retrieves a list of operations for the specified Neon project.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
         /// The number of operations returned can be large.<br/>
         /// To paginate the response, issue an initial request with a `limit` value.<br/>
         /// Then, add the `cursor` value that was returned in the response to the next request.<br/>

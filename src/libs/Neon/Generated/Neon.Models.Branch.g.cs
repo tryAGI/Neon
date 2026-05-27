@@ -32,7 +32,7 @@ namespace Neon
 
         /// <summary>
         /// The Log Sequence Number (LSN) on the parent branch from which this branch was created.<br/>
-        /// When restoring a branch using the [Restore branch](https://api-docs.neon.tech/reference/restoreprojectbranch) endpoint,<br/>
+        /// When restoring a branch using the `POST /projects/{project_id}/branches/{branch_id}/restore` endpoint,<br/>
         /// this value isn’t finalized until all operations related to the restore have completed successfully.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_lsn")]
@@ -40,7 +40,7 @@ namespace Neon
 
         /// <summary>
         /// The point in time on the parent branch from which this branch was created.<br/>
-        /// When restoring a branch using the [Restore branch](https://api-docs.neon.tech/reference/restoreprojectbranch) endpoint,<br/>
+        /// When restoring a branch using the `POST /projects/{project_id}/branches/{branch_id}/restore` endpoint,<br/>
         /// this value isn’t finalized until all operations related to the restore have completed successfully.<br/>
         /// After all the operations completed, this value might stay empty.
         /// </summary>
@@ -301,12 +301,12 @@ namespace Neon
         /// </param>
         /// <param name="parentLsn">
         /// The Log Sequence Number (LSN) on the parent branch from which this branch was created.<br/>
-        /// When restoring a branch using the [Restore branch](https://api-docs.neon.tech/reference/restoreprojectbranch) endpoint,<br/>
+        /// When restoring a branch using the `POST /projects/{project_id}/branches/{branch_id}/restore` endpoint,<br/>
         /// this value isn’t finalized until all operations related to the restore have completed successfully.
         /// </param>
         /// <param name="parentTimestamp">
         /// The point in time on the parent branch from which this branch was created.<br/>
-        /// When restoring a branch using the [Restore branch](https://api-docs.neon.tech/reference/restoreprojectbranch) endpoint,<br/>
+        /// When restoring a branch using the `POST /projects/{project_id}/branches/{branch_id}/restore` endpoint,<br/>
         /// this value isn’t finalized until all operations related to the restore have completed successfully.<br/>
         /// After all the operations completed, this value might stay empty.
         /// </param>

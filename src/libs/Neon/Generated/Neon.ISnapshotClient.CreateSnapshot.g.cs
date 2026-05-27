@@ -6,8 +6,8 @@ namespace Neon
     {
         /// <summary>
         /// Create snapshot<br/>
-        /// Create a snapshot from the specified branch using the provided parameters.<br/>
-        /// This endpoint may initiate an asynchronous operation.<br/>
+        /// Creates a snapshot from the specified branch.<br/>
+        /// This operation may initiate an asynchronous process.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="lsn"></param>
@@ -30,8 +30,8 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create snapshot<br/>
-        /// Create a snapshot from the specified branch using the provided parameters.<br/>
-        /// This endpoint may initiate an asynchronous operation.<br/>
+        /// Creates a snapshot from the specified branch.<br/>
+        /// This operation may initiate an asynchronous process.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="lsn"></param>

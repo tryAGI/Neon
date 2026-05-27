@@ -44,8 +44,9 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Get webhook configuration for Neon Auth<br/>
-        /// Returns the webhook configuration for Neon Auth.
+        /// Retrieve Neon Auth webhook configuration<br/>
+        /// Returns the webhook configuration for the specified branch's Neon Auth integration,<br/>
+        /// including the endpoint URL and the events that trigger it.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -68,8 +69,9 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Get webhook configuration for Neon Auth<br/>
-        /// Returns the webhook configuration for Neon Auth.
+        /// Retrieve Neon Auth webhook configuration<br/>
+        /// Returns the webhook configuration for the specified branch's Neon Auth integration,<br/>
+        /// including the endpoint URL and the events that trigger it.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

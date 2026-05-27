@@ -46,8 +46,9 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Update webhook configuration for Neon Auth<br/>
-        /// Updates the webhook configuration for Neon Auth on a specific branch.
+        /// Update Neon Auth webhook configuration<br/>
+        /// Updates the webhook configuration for the specified branch's Neon Auth integration.<br/>
+        /// Webhooks notify an external endpoint when auth events occur, such as user creation or sign-in.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -75,8 +76,9 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Update webhook configuration for Neon Auth<br/>
-        /// Updates the webhook configuration for Neon Auth on a specific branch.
+        /// Update Neon Auth webhook configuration<br/>
+        /// Updates the webhook configuration for the specified branch's Neon Auth integration.<br/>
+        /// Webhooks notify an external endpoint when auth events occur, such as user creation or sign-in.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -489,8 +491,9 @@ namespace Neon
             }
         }
         /// <summary>
-        /// Update webhook configuration for Neon Auth<br/>
-        /// Updates the webhook configuration for Neon Auth on a specific branch.
+        /// Update Neon Auth webhook configuration<br/>
+        /// Updates the webhook configuration for the specified branch's Neon Auth integration.<br/>
+        /// Webhooks notify an external endpoint when auth events occur, such as user creation or sign-in.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

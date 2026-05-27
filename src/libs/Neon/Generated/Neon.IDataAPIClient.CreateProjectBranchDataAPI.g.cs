@@ -7,7 +7,7 @@ namespace Neon
         /// <summary>
         /// Create Neon Data API<br/>
         /// Creates a new instance of Neon Data API in the specified branch.<br/>
-        /// You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// The Data API exposes a REST interface over the branch database. The `database_name` path parameter determines which database the API serves.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -27,7 +27,7 @@ namespace Neon
         /// <summary>
         /// Create Neon Data API<br/>
         /// Creates a new instance of Neon Data API in the specified branch.<br/>
-        /// You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// The Data API exposes a REST interface over the branch database. The `database_name` path parameter determines which database the API serves.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -47,7 +47,7 @@ namespace Neon
         /// <summary>
         /// Create Neon Data API<br/>
         /// Creates a new instance of Neon Data API in the specified branch.<br/>
-        /// You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// The Data API exposes a REST interface over the branch database. The `database_name` path parameter determines which database the API serves.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

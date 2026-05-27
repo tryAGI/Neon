@@ -46,7 +46,7 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Finalize restore<br/>
+        /// Finalize branch restore from snapshot<br/>
         /// Finalize the restore operation for a branch created from a snapshot.<br/>
         /// This operation updates the branch so it functions as the original branch it replaced.<br/>
         /// This includes:<br/>
@@ -82,7 +82,7 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Finalize restore<br/>
+        /// Finalize branch restore from snapshot<br/>
         /// Finalize the restore operation for a branch created from a snapshot.<br/>
         /// This operation updates the branch so it functions as the original branch it replaced.<br/>
         /// This includes:<br/>
@@ -503,7 +503,7 @@ namespace Neon
             }
         }
         /// <summary>
-        /// Finalize restore<br/>
+        /// Finalize branch restore from snapshot<br/>
         /// Finalize the restore operation for a branch created from a snapshot.<br/>
         /// This operation updates the branch so it functions as the original branch it replaced.<br/>
         /// This includes:<br/>

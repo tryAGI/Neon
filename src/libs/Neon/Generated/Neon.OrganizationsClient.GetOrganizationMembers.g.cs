@@ -50,7 +50,7 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Retrieve organization members details<br/>
+        /// List organization members<br/>
         /// Retrieves a paginated list of members for the specified organization.
         /// </summary>
         /// <param name="sortBy">
@@ -87,7 +87,7 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Retrieve organization members details<br/>
+        /// List organization members<br/>
         /// Retrieves a paginated list of members for the specified organization.
         /// </summary>
         /// <param name="sortBy">

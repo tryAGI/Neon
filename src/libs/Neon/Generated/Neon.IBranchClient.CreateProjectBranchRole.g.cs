@@ -7,9 +7,7 @@ namespace Neon
         /// <summary>
         /// Create role<br/>
         /// Creates a Postgres role in the specified branch.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
-        /// For related information, see [Manage roles](https://neon.tech/docs/manage/roles/).<br/>
+        /// For related information, see [Manage roles](https://neon.com/docs/manage/roles/).<br/>
         /// Connections established to the active compute endpoint will be dropped.<br/>
         /// If the compute endpoint is idle, the endpoint becomes active for a short period of time and is suspended afterward.
         /// </summary>
@@ -29,9 +27,7 @@ namespace Neon
         /// <summary>
         /// Create role<br/>
         /// Creates a Postgres role in the specified branch.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
-        /// For related information, see [Manage roles](https://neon.tech/docs/manage/roles/).<br/>
+        /// For related information, see [Manage roles](https://neon.com/docs/manage/roles/).<br/>
         /// Connections established to the active compute endpoint will be dropped.<br/>
         /// If the compute endpoint is idle, the endpoint becomes active for a short period of time and is suspended afterward.
         /// </summary>
@@ -51,9 +47,7 @@ namespace Neon
         /// <summary>
         /// Create role<br/>
         /// Creates a Postgres role in the specified branch.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
-        /// For related information, see [Manage roles](https://neon.tech/docs/manage/roles/).<br/>
+        /// For related information, see [Manage roles](https://neon.com/docs/manage/roles/).<br/>
         /// Connections established to the active compute endpoint will be dropped.<br/>
         /// If the compute endpoint is idle, the endpoint becomes active for a short period of time and is suspended afterward.
         /// </summary>

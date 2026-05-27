@@ -8,8 +8,7 @@ namespace Neon
         /// Update Neon Data API<br/>
         /// Updates the Neon Data API configuration for the specified branch.<br/>
         /// You can optionally provide settings to update the Data API configuration.<br/>
-        /// The schema cache is always refreshed as part of this operation.<br/>
-        /// You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// The schema cache is always refreshed as part of this operation.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -30,8 +29,7 @@ namespace Neon
         /// Update Neon Data API<br/>
         /// Updates the Neon Data API configuration for the specified branch.<br/>
         /// You can optionally provide settings to update the Data API configuration.<br/>
-        /// The schema cache is always refreshed as part of this operation.<br/>
-        /// You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// The schema cache is always refreshed as part of this operation.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -52,8 +50,7 @@ namespace Neon
         /// Update Neon Data API<br/>
         /// Updates the Neon Data API configuration for the specified branch.<br/>
         /// You can optionally provide settings to update the Data API configuration.<br/>
-        /// The schema cache is always refreshed as part of this operation.<br/>
-        /// You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// The schema cache is always refreshed as part of this operation.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

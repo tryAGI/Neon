@@ -8,8 +8,6 @@ namespace Neon
         /// Start anonymization<br/>
         /// Starts the anonymization process for an anonymized branch that is in the initialized, error, or anonymized state.<br/>
         /// This will apply all defined masking rules to anonymize sensitive data in the branch databases.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
         /// The branch must be an anonymized branch to start anonymization.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
@@ -27,8 +25,6 @@ namespace Neon
         /// Start anonymization<br/>
         /// Starts the anonymization process for an anonymized branch that is in the initialized, error, or anonymized state.<br/>
         /// This will apply all defined masking rules to anonymize sensitive data in the branch databases.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
         /// The branch must be an anonymized branch to start anonymization.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>

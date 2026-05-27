@@ -47,9 +47,7 @@ namespace Neon
         /// List branch endpoints<br/>
         /// Retrieves a list of compute endpoints for the specified branch.<br/>
         /// Neon permits only one read-write compute endpoint per branch.<br/>
-        /// A branch can have multiple read-only compute endpoints.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.
+        /// A branch can have multiple read-only compute endpoints.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -75,9 +73,7 @@ namespace Neon
         /// List branch endpoints<br/>
         /// Retrieves a list of compute endpoints for the specified branch.<br/>
         /// Neon permits only one read-write compute endpoint per branch.<br/>
-        /// A branch can have multiple read-only compute endpoints.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.
+        /// A branch can have multiple read-only compute endpoints.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

@@ -5,8 +5,8 @@ namespace Neon
     public partial interface IOrganizationsClient
     {
         /// <summary>
-        /// Retrieve organization invitation details<br/>
-        /// Retrieves information about extended invitations for the specified organization
+        /// List organization invitations<br/>
+        /// Retrieves pending and accepted invitations for the specified organization.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,8 +17,8 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Retrieve organization invitation details<br/>
-        /// Retrieves information about extended invitations for the specified organization
+        /// List organization invitations<br/>
+        /// Retrieves pending and accepted invitations for the specified organization.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

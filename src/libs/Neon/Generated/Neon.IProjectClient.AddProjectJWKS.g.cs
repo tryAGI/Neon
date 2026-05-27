@@ -8,12 +8,12 @@ namespace Neon
     {
         /// <summary>
         /// Add JWKS URL<br/>
-        /// Add a new JWKS URL to a project, such that it can be used for verifying JWTs used as the authentication mechanism for the specified project.<br/>
+        /// Adds a JWKS URL to the specified project for verifying JWTs used as the authentication mechanism.<br/>
         /// The URL must be a valid HTTPS URL that returns a JSON Web Key Set.<br/>
-        /// The `provider_name` field allows you to specify which authentication provider you're using (e.g., Clerk, Auth0, AWS Cognito, etc.).<br/>
-        /// The `branch_id` can be used to specify on which branches the JWKS URL will be accepted. If not specified, then it will work on any branch.<br/>
-        /// The `role_names` can be used to specify for which roles the JWKS URL will be accepted. If not specified, then default roles will be used (authenticator, authenticated and anonymous).<br/>
-        /// The `jwt_audience` can be used to specify which "aud" values should be accepted by Neon in the JWTs that are used for authentication.
+        /// The `provider_name` field allows you to specify which authentication provider you're using (e.g., Clerk, Auth0, AWS Cognito).<br/>
+        /// The `branch_id` scopes the JWKS URL to specific branches; if not specified, it applies to all branches.<br/>
+        /// The `role_names` scopes the URL to specific roles; if not specified, default roles are used (`authenticator`, `authenticated`, `anonymous`).<br/>
+        /// The `jwt_audience` specifies which `aud` values are accepted in JWTs.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
@@ -28,12 +28,12 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add JWKS URL<br/>
-        /// Add a new JWKS URL to a project, such that it can be used for verifying JWTs used as the authentication mechanism for the specified project.<br/>
+        /// Adds a JWKS URL to the specified project for verifying JWTs used as the authentication mechanism.<br/>
         /// The URL must be a valid HTTPS URL that returns a JSON Web Key Set.<br/>
-        /// The `provider_name` field allows you to specify which authentication provider you're using (e.g., Clerk, Auth0, AWS Cognito, etc.).<br/>
-        /// The `branch_id` can be used to specify on which branches the JWKS URL will be accepted. If not specified, then it will work on any branch.<br/>
-        /// The `role_names` can be used to specify for which roles the JWKS URL will be accepted. If not specified, then default roles will be used (authenticator, authenticated and anonymous).<br/>
-        /// The `jwt_audience` can be used to specify which "aud" values should be accepted by Neon in the JWTs that are used for authentication.
+        /// The `provider_name` field allows you to specify which authentication provider you're using (e.g., Clerk, Auth0, AWS Cognito).<br/>
+        /// The `branch_id` scopes the JWKS URL to specific branches; if not specified, it applies to all branches.<br/>
+        /// The `role_names` scopes the URL to specific roles; if not specified, default roles are used (`authenticator`, `authenticated`, `anonymous`).<br/>
+        /// The `jwt_audience` specifies which `aud` values are accepted in JWTs.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
@@ -48,12 +48,12 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add JWKS URL<br/>
-        /// Add a new JWKS URL to a project, such that it can be used for verifying JWTs used as the authentication mechanism for the specified project.<br/>
+        /// Adds a JWKS URL to the specified project for verifying JWTs used as the authentication mechanism.<br/>
         /// The URL must be a valid HTTPS URL that returns a JSON Web Key Set.<br/>
-        /// The `provider_name` field allows you to specify which authentication provider you're using (e.g., Clerk, Auth0, AWS Cognito, etc.).<br/>
-        /// The `branch_id` can be used to specify on which branches the JWKS URL will be accepted. If not specified, then it will work on any branch.<br/>
-        /// The `role_names` can be used to specify for which roles the JWKS URL will be accepted. If not specified, then default roles will be used (authenticator, authenticated and anonymous).<br/>
-        /// The `jwt_audience` can be used to specify which "aud" values should be accepted by Neon in the JWTs that are used for authentication.
+        /// The `provider_name` field allows you to specify which authentication provider you're using (e.g., Clerk, Auth0, AWS Cognito).<br/>
+        /// The `branch_id` scopes the JWKS URL to specific branches; if not specified, it applies to all branches.<br/>
+        /// The `role_names` scopes the URL to specific roles; if not specified, default roles are used (`authenticator`, `authenticated`, `anonymous`).<br/>
+        /// The `jwt_audience` specifies which `aud` values are accepted in JWTs.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="jwksUrl">

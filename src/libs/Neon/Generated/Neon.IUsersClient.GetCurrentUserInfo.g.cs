@@ -6,7 +6,8 @@ namespace Neon
     {
         /// <summary>
         /// Retrieve current user details<br/>
-        /// Retrieves information about the current Neon user account.
+        /// Retrieves information about the currently authenticated Neon user,<br/>
+        /// including account identifiers, plan details, and linked auth accounts.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -16,7 +17,8 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Retrieve current user details<br/>
-        /// Retrieves information about the current Neon user account.
+        /// Retrieves information about the currently authenticated Neon user,<br/>
+        /// including account identifiers, plan details, and linked auth accounts.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

@@ -44,7 +44,7 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Get all plugin configurations<br/>
+        /// Retrieve Neon Auth plugin configurations<br/>
         /// Returns all plugin configurations for Neon Auth in a single response.<br/>
         /// This endpoint aggregates organization, email provider, email and password,<br/>
         /// OAuth providers, and localhost settings.
@@ -70,7 +70,7 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Get all plugin configurations<br/>
+        /// Retrieve Neon Auth plugin configurations<br/>
         /// Returns all plugin configurations for Neon Auth in a single response.<br/>
         /// This endpoint aggregates organization, email provider, email and password,<br/>
         /// OAuth providers, and localhost settings.

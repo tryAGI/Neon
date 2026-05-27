@@ -7,9 +7,7 @@ namespace Neon
         /// <summary>
         /// Retrieve operation details<br/>
         /// Retrieves details for the specified operation.<br/>
-        /// An operation is an action performed on a Neon project resource.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain a `operation_id` by listing operations for the project.
+        /// An operation is an action performed on a Neon project resource.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="operationId"></param>
@@ -24,9 +22,7 @@ namespace Neon
         /// <summary>
         /// Retrieve operation details<br/>
         /// Retrieves details for the specified operation.<br/>
-        /// An operation is an action performed on a Neon project resource.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain a `operation_id` by listing operations for the project.
+        /// An operation is an action performed on a Neon project resource.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="operationId"></param>

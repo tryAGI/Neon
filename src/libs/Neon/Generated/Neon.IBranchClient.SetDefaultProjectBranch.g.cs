@@ -8,9 +8,7 @@ namespace Neon
         /// Set branch as default<br/>
         /// Sets the specified branch as the project's default branch.<br/>
         /// The default designation is automatically removed from the previous default branch.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
-        /// For more information, see [Manage branches](https://neon.tech/docs/manage/branches/).
+        /// For more information, see [Manage branches](https://neon.com/docs/manage/branches/).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -26,9 +24,7 @@ namespace Neon
         /// Set branch as default<br/>
         /// Sets the specified branch as the project's default branch.<br/>
         /// The default designation is automatically removed from the previous default branch.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
-        /// For more information, see [Manage branches](https://neon.tech/docs/manage/branches/).
+        /// For more information, see [Manage branches](https://neon.com/docs/manage/branches/).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

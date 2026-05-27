@@ -5,8 +5,9 @@ namespace Neon
     public partial interface IAuthClient
     {
         /// <summary>
-        /// Get email provider configuration<br/>
-        /// Gets the email provider configuration for the specified branch.
+        /// Retrieve email provider configuration<br/>
+        /// Retrieves the email provider configuration for the specified branch's Neon Auth integration,<br/>
+        /// including the provider type and server settings.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -19,8 +20,9 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get email provider configuration<br/>
-        /// Gets the email provider configuration for the specified branch.
+        /// Retrieve email provider configuration<br/>
+        /// Retrieves the email provider configuration for the specified branch's Neon Auth integration,<br/>
+        /// including the provider type and server settings.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

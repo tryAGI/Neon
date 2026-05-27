@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// These methods allow you to view operation details for your Neon project. For related information, see [Operations](https://neon.tech/docs/manage/operations).<br/>
+    /// These methods allow you to view operation details for your Neon project. For related information, see [Operations](https://neon.com/docs/manage/operations).<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

@@ -7,9 +7,7 @@ namespace Neon
         /// <summary>
         /// List roles<br/>
         /// Retrieves a list of Postgres roles from the specified branch.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
-        /// For related information, see [Manage roles](https://neon.tech/docs/manage/roles/).
+        /// For related information, see [Manage roles](https://neon.com/docs/manage/roles/).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -24,9 +22,7 @@ namespace Neon
         /// <summary>
         /// List roles<br/>
         /// Retrieves a list of Postgres roles from the specified branch.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
-        /// For related information, see [Manage roles](https://neon.tech/docs/manage/roles/).
+        /// For related information, see [Manage roles](https://neon.com/docs/manage/roles/).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

@@ -44,10 +44,10 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Remove member from the organization<br/>
-        /// Remove member from the organization.<br/>
-        /// Only an admin of the organization can perform this action.<br/>
-        /// If another admin is being removed, it will not be allows in case it is the only admin left in the organization.
+        /// Remove organization member<br/>
+        /// Removes the specified member from the organization.<br/>
+        /// Only organization admins can perform this action.<br/>
+        /// The last admin in an organization cannot be removed.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="memberId"></param>
@@ -70,10 +70,10 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Remove member from the organization<br/>
-        /// Remove member from the organization.<br/>
-        /// Only an admin of the organization can perform this action.<br/>
-        /// If another admin is being removed, it will not be allows in case it is the only admin left in the organization.
+        /// Remove organization member<br/>
+        /// Removes the specified member from the organization.<br/>
+        /// Only organization admins can perform this action.<br/>
+        /// The last admin in an organization cannot be removed.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="memberId"></param>

@@ -6,7 +6,8 @@ namespace Neon
     {
         /// <summary>
         /// Delete domain from redirect_uri whitelist<br/>
-        /// Deletes a domain from the redirect_uri whitelist for the specified project.
+        /// Removes a domain from the redirect URI whitelist for the specified branch.<br/>
+        /// After removal, the domain can no longer be used as a redirect target after authentication.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -23,7 +24,8 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete domain from redirect_uri whitelist<br/>
-        /// Deletes a domain from the redirect_uri whitelist for the specified project.
+        /// Removes a domain from the redirect URI whitelist for the specified branch.<br/>
+        /// After removal, the domain can no longer be used as a redirect target after authentication.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -40,7 +42,8 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete domain from redirect_uri whitelist<br/>
-        /// Deletes a domain from the redirect_uri whitelist for the specified project.
+        /// Removes a domain from the redirect URI whitelist for the specified branch.<br/>
+        /// After removal, the domain can no longer be used as a redirect target after authentication.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

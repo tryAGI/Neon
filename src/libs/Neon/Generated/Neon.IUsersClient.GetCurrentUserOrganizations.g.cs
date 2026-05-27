@@ -5,8 +5,8 @@ namespace Neon
     public partial interface IUsersClient
     {
         /// <summary>
-        /// Retrieve current user organizations list<br/>
-        /// Retrieves information about the current Neon user's organizations
+        /// List organizations for the current user<br/>
+        /// Retrieves the organizations that the currently authenticated user belongs to.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -15,8 +15,8 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Retrieve current user organizations list<br/>
-        /// Retrieves information about the current Neon user's organizations
+        /// List organizations for the current user<br/>
+        /// Retrieves the organizations that the currently authenticated user belongs to.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

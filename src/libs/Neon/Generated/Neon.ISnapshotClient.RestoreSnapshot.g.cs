@@ -6,7 +6,8 @@ namespace Neon
     {
         /// <summary>
         /// Restore snapshot<br/>
-        /// Restore the specified snapshot to a new branch and optionally finalize the restore operation.<br/>
+        /// Restores the specified snapshot to a new branch,<br/>
+        /// and optionally finalizes the restore operation to replace the original branch.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="name"></param>
@@ -26,7 +27,8 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Restore snapshot<br/>
-        /// Restore the specified snapshot to a new branch and optionally finalize the restore operation.<br/>
+        /// Restores the specified snapshot to a new branch,<br/>
+        /// and optionally finalizes the restore operation to replace the original branch.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="name"></param>
@@ -46,7 +48,8 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Restore snapshot<br/>
-        /// Restore the specified snapshot to a new branch and optionally finalize the restore operation.<br/>
+        /// Restores the specified snapshot to a new branch,<br/>
+        /// and optionally finalizes the restore operation to replace the original branch.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="name"></param>

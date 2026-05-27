@@ -46,8 +46,9 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Get Neon Data API<br/>
-        /// Retrieves the Neon Data API for the specified branch.
+        /// Retrieve Neon Data API configuration<br/>
+        /// Retrieves the Neon Data API configuration for the specified branch,<br/>
+        /// including endpoint URL, enabled state, and database settings.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -73,8 +74,9 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Get Neon Data API<br/>
-        /// Retrieves the Neon Data API for the specified branch.
+        /// Retrieve Neon Data API configuration<br/>
+        /// Retrieves the Neon Data API configuration for the specified branch,<br/>
+        /// including endpoint URL, enabled state, and database settings.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

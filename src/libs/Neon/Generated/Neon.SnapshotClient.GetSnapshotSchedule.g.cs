@@ -44,8 +44,8 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// View backup schedule<br/>
-        /// View the backup schedule for the specified branch.<br/>
+        /// Retrieve backup schedule<br/>
+        /// Returns the backup schedule for the specified branch, including the configured snapshot frequencies.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
@@ -69,8 +69,8 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// View backup schedule<br/>
-        /// View the backup schedule for the specified branch.<br/>
+        /// Retrieve backup schedule<br/>
+        /// Returns the backup schedule for the specified branch, including the configured snapshot frequencies.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>

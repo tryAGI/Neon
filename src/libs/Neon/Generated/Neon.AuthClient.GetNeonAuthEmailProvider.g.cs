@@ -44,8 +44,9 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Get email provider configuration<br/>
-        /// Gets the email provider configuration for the specified branch.
+        /// Retrieve email provider configuration<br/>
+        /// Retrieves the email provider configuration for the specified branch's Neon Auth integration,<br/>
+        /// including the provider type and server settings.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -68,8 +69,9 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Get email provider configuration<br/>
-        /// Gets the email provider configuration for the specified branch.
+        /// Retrieve email provider configuration<br/>
+        /// Retrieves the email provider configuration for the specified branch's Neon Auth integration,<br/>
+        /// including the provider type and server settings.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

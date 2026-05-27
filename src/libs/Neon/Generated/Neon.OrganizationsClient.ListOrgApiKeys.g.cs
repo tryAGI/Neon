@@ -46,7 +46,7 @@ namespace Neon
         /// Retrieves the API keys for the specified organization.<br/>
         /// The response does not include API key tokens. A token is only provided when creating an API key.<br/>
         /// API keys can also be managed in the Neon Console.<br/>
-        /// For more information, see [Manage API keys](https://neon.tech/docs/manage/api-keys/).
+        /// For more information, see [Manage API keys](https://neon.com/docs/manage/api-keys/).
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -70,7 +70,7 @@ namespace Neon
         /// Retrieves the API keys for the specified organization.<br/>
         /// The response does not include API key tokens. A token is only provided when creating an API key.<br/>
         /// API keys can also be managed in the Neon Console.<br/>
-        /// For more information, see [Manage API keys](https://neon.tech/docs/manage/api-keys/).
+        /// For more information, see [Manage API keys](https://neon.com/docs/manage/api-keys/).
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

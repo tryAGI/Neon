@@ -44,8 +44,9 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Get details of Neon Auth for the branch<br/>
-        /// / Fetches the details of the Neon Auth for the specified branch. You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// Retrieve Neon Auth details for the branch<br/>
+        /// Retrieves the Neon Auth integration details for the specified branch,<br/>
+        /// including the auth provider type and integration status.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -68,8 +69,9 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Get details of Neon Auth for the branch<br/>
-        /// / Fetches the details of the Neon Auth for the specified branch. You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// Retrieve Neon Auth details for the branch<br/>
+        /// Retrieves the Neon Auth integration details for the specified branch,<br/>
+        /// including the auth provider type and integration status.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

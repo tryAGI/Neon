@@ -49,7 +49,8 @@ namespace Neon
 
         /// <summary>
         /// Update auth user role<br/>
-        /// Updates the role of an auth user for the specified project.
+        /// Updates the role of a user in the Neon Auth user directory for the specified branch.<br/>
+        /// The role controls the user's level of access within the Neon Auth integration.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -81,7 +82,8 @@ namespace Neon
         }
         /// <summary>
         /// Update auth user role<br/>
-        /// Updates the role of an auth user for the specified project.
+        /// Updates the role of a user in the Neon Auth user directory for the specified branch.<br/>
+        /// The role controls the user's level of access within the Neon Auth integration.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -499,7 +501,8 @@ namespace Neon
         }
         /// <summary>
         /// Update auth user role<br/>
-        /// Updates the role of an auth user for the specified project.
+        /// Updates the role of a user in the Neon Auth user directory for the specified branch.<br/>
+        /// The role controls the user's level of access within the Neon Auth integration.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

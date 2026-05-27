@@ -72,9 +72,9 @@ namespace Neon
 
         /// <summary>
         /// URL to documentation on how to fix this issue<br/>
-        /// Example: https://neon.tech/docs/guides/database-advisor
+        /// Example: https://neon.com/docs/data-api/database-advisor
         /// </summary>
-        /// <example>https://neon.tech/docs/guides/database-advisor</example>
+        /// <example>https://neon.com/docs/data-api/database-advisor</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("remediation")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Remediation { get; set; }
@@ -131,7 +131,7 @@ namespace Neon
         /// </param>
         /// <param name="remediation">
         /// URL to documentation on how to fix this issue<br/>
-        /// Example: https://neon.tech/docs/guides/database-advisor
+        /// Example: https://neon.com/docs/data-api/database-advisor
         /// </param>
         /// <param name="metadata">
         /// Additional context-specific metadata

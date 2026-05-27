@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// These methods allow you to create and manage API keys for your Neon account. For related information, see [Manage API keys](https://neon.tech/docs/manage/api-keys).<br/>
+    /// These methods allow you to create and manage API keys for your Neon account. For related information, see [Manage API keys](https://neon.com/docs/manage/api-keys).<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

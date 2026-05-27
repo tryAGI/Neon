@@ -42,7 +42,8 @@ namespace Neon
 
         /// <summary>
         /// Delete auth user<br/>
-        /// Deletes the auth user for the specified project.
+        /// Deletes the specified user from the Neon Auth user directory for the specified branch.<br/>
+        /// Removes the user record from `neon_auth.users_sync`. This action cannot be undone.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -67,7 +68,8 @@ namespace Neon
         }
         /// <summary>
         /// Delete auth user<br/>
-        /// Deletes the auth user for the specified project.
+        /// Deletes the specified user from the Neon Auth user directory for the specified branch.<br/>
+        /// Removes the user record from `neon_auth.users_sync`. This action cannot be undone.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
