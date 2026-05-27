@@ -6,14 +6,12 @@ namespace Neon
     {
         /// <summary>
         /// Delete compute endpoint<br/>
-        /// Delete the specified compute endpoint.<br/>
+        /// Deletes the specified compute endpoint.<br/>
         /// A compute endpoint is a Neon compute instance.<br/>
         /// Deleting a compute endpoint drops existing network connections to the compute endpoint.<br/>
-        /// The deletion is completed when last operation in the chain finishes successfully.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain an `endpoint_id` by listing your project's compute endpoints.<br/>
+        /// The deletion is completed when the last operation in the chain finishes successfully.<br/>
         /// An `endpoint_id` has an `ep-` prefix.<br/>
-        /// For information about compute endpoints, see [Manage computes](https://neon.tech/docs/manage/endpoints/).
+        /// For information about compute endpoints, see [Manage computes](https://neon.com/docs/manage/endpoints/).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="endpointId"></param>
@@ -27,14 +25,12 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete compute endpoint<br/>
-        /// Delete the specified compute endpoint.<br/>
+        /// Deletes the specified compute endpoint.<br/>
         /// A compute endpoint is a Neon compute instance.<br/>
         /// Deleting a compute endpoint drops existing network connections to the compute endpoint.<br/>
-        /// The deletion is completed when last operation in the chain finishes successfully.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain an `endpoint_id` by listing your project's compute endpoints.<br/>
+        /// The deletion is completed when the last operation in the chain finishes successfully.<br/>
         /// An `endpoint_id` has an `ep-` prefix.<br/>
-        /// For information about compute endpoints, see [Manage computes](https://neon.tech/docs/manage/endpoints/).
+        /// For information about compute endpoints, see [Manage computes](https://neon.com/docs/manage/endpoints/).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="endpointId"></param>

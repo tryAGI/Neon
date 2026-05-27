@@ -44,8 +44,9 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Get allow localhost<br/>
-        /// Get the allow localhost configuration for the specified branch.
+        /// Retrieve localhost allow setting<br/>
+        /// Retrieves the localhost allow setting for the specified branch's Neon Auth integration.<br/>
+        /// When enabled, authentication flows work from `localhost` without adding it to the redirect URI whitelist.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -68,8 +69,9 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Get allow localhost<br/>
-        /// Get the allow localhost configuration for the specified branch.
+        /// Retrieve localhost allow setting<br/>
+        /// Retrieves the localhost allow setting for the specified branch's Neon Auth integration.<br/>
+        /// When enabled, authentication flows work from `localhost` without adding it to the redirect URI whitelist.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

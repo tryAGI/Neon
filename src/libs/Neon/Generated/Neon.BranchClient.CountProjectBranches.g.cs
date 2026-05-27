@@ -46,7 +46,7 @@ namespace Neon
         /// <summary>
         /// Retrieve number of branches<br/>
         /// Retrieves the total number of branches in the specified project.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.
+        /// Supports an optional `search` parameter to count branches matching a name filter.
         /// </summary>
         /// <param name="search"></param>
         /// <param name="projectId"></param>
@@ -71,7 +71,7 @@ namespace Neon
         /// <summary>
         /// Retrieve number of branches<br/>
         /// Retrieves the total number of branches in the specified project.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.
+        /// Supports an optional `search` parameter to count branches matching a name filter.
         /// </summary>
         /// <param name="search"></param>
         /// <param name="projectId"></param>

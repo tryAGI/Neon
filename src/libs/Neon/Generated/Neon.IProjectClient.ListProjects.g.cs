@@ -6,9 +6,11 @@ namespace Neon
     {
         /// <summary>
         /// List projects<br/>
-        /// Retrieves a list of projects for an organization.<br/>
-        /// You may need to specify an org_id parameter depending on your API key type.<br/>
-        /// For more information, see [Manage projects](https://neon.tech/docs/manage/projects/).
+        /// Retrieves a list of projects for the specified organization.<br/>
+        /// If using a personal API key, include the `org_id` parameter to specify which organization to work with.<br/>
+        /// If using an org API key, `org_id` is automatically inferred from the key.<br/>
+        /// For more information, see [Manage organizations using the Neon API](https://neon.com/docs/manage/orgs-api)<br/>
+        /// and [Manage projects](https://neon.com/docs/manage/projects/).
         /// </summary>
         /// <param name="cursor"></param>
         /// <param name="limit">
@@ -34,9 +36,11 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List projects<br/>
-        /// Retrieves a list of projects for an organization.<br/>
-        /// You may need to specify an org_id parameter depending on your API key type.<br/>
-        /// For more information, see [Manage projects](https://neon.tech/docs/manage/projects/).
+        /// Retrieves a list of projects for the specified organization.<br/>
+        /// If using a personal API key, include the `org_id` parameter to specify which organization to work with.<br/>
+        /// If using an org API key, `org_id` is automatically inferred from the key.<br/>
+        /// For more information, see [Manage organizations using the Neon API](https://neon.com/docs/manage/orgs-api)<br/>
+        /// and [Manage projects](https://neon.com/docs/manage/projects/).
         /// </summary>
         /// <param name="cursor"></param>
         /// <param name="limit">

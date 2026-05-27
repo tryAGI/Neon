@@ -42,11 +42,10 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Retrieve the organization's monthly spending limit<br/>
-        /// Returns the configured spending limit for a V3 paid organization.<br/>
-        /// `spending_limit_cents: null` indicates that no limit is currently<br/>
-        /// set. Available to organization members with read access on Launch<br/>
-        /// and Scale plans only.
+        /// Retrieve organization spending limit<br/>
+        /// Returns the configured monthly spending limit for the specified organization.<br/>
+        /// `spending_limit_cents: null` indicates that no limit is currently set.<br/>
+        /// Available to organization members with read access on Launch and Scale plans only.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -66,11 +65,10 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Retrieve the organization's monthly spending limit<br/>
-        /// Returns the configured spending limit for a V3 paid organization.<br/>
-        /// `spending_limit_cents: null` indicates that no limit is currently<br/>
-        /// set. Available to organization members with read access on Launch<br/>
-        /// and Scale plans only.
+        /// Retrieve organization spending limit<br/>
+        /// Returns the configured monthly spending limit for the specified organization.<br/>
+        /// `spending_limit_cents: null` indicates that no limit is currently set.<br/>
+        /// Available to organization members with read access on Launch and Scale plans only.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

@@ -4,9 +4,9 @@
 namespace Neon
 {
     /// <summary>
-    /// The Neon API allows you to access and manage Neon programmatically. You can use the Neon API to manage API keys, projects, branches, compute endpoints, databases, roles, and operations. For information about these features, refer to the [Neon documentation](https://neon.tech/docs/manage/overview/).<br/>
+    /// The Neon API allows you to access and manage Neon programmatically. You can use the Neon API to manage API keys, projects, branches, compute endpoints, databases, roles, and operations. For information about these features, refer to the [Neon documentation](https://neon.com/docs/manage/overview/).<br/>
     /// You can run Neon API requests from this API reference using the **Try It** feature. Enter your API key as a **Bearer** token in the **Authorization** section of the page.<br/>
-    /// You can create and manage API keys in the Neon Console. See [Manage API keys](https://neon.tech/docs/manage/api-keys/) for instructions.<br/>
+    /// You can create and manage API keys in the Neon Console. See [Manage API keys](https://neon.com/docs/manage/api-keys/) for instructions.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -43,7 +43,7 @@ namespace Neon
 
 
         /// <summary>
-        /// These methods allow you to create and manage API keys for your Neon account. For related information, see [Manage API keys](https://neon.tech/docs/manage/api-keys).
+        /// These methods allow you to create and manage API keys for your Neon account. For related information, see [Manage API keys](https://neon.com/docs/manage/api-keys).
         /// </summary>
         public ApiKeyClient ApiKey => new ApiKeyClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -70,7 +70,7 @@ namespace Neon
         };
 
         /// <summary>
-        /// These methods allow you to create and manage branches in your Neon project. For related information, see [Manage branches](https://neon.tech/docs/manage/branches).
+        /// These methods allow you to create and manage branches in your Neon project. For related information, see [Manage branches](https://neon.com/docs/manage/branches).
         /// </summary>
         public BranchClient Branch => new BranchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -97,7 +97,7 @@ namespace Neon
         };
 
         /// <summary>
-        /// These methods allow you to create and manage compute endpoints in your Neon project. For related information, see [Manage compute endpoints](https://neon.tech/docs/manage/endpoints).
+        /// These methods allow you to create and manage compute endpoints in your Neon project. For related information, see [Manage compute endpoints](https://neon.com/docs/manage/endpoints).
         /// </summary>
         public EndpointClient Endpoint => new EndpointClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -106,7 +106,7 @@ namespace Neon
         };
 
         /// <summary>
-        /// These methods allow you to view operation details for your Neon project. For related information, see [Operations](https://neon.tech/docs/manage/operations).
+        /// These methods allow you to view operation details for your Neon project. For related information, see [Operations](https://neon.com/docs/manage/operations).
         /// </summary>
         public OperationClient Operation => new OperationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -124,7 +124,7 @@ namespace Neon
         };
 
         /// <summary>
-        /// These methods allow you to create and manage Neon projects. For related information, see [Manage projects](https://neon.tech/docs/manage/projects).
+        /// These methods allow you to create and manage Neon projects. For related information, see [Manage projects](https://neon.com/docs/manage/projects).
         /// </summary>
         public ProjectClient Project => new ProjectClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

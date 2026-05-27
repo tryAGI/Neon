@@ -48,7 +48,7 @@ namespace Neon
         /// <summary>
         /// Delete Neon Data API<br/>
         /// Deletes the Neon Data API for the specified branch.<br/>
-        /// You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// Existing connections using the Data API endpoint will fail after deletion.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -76,7 +76,7 @@ namespace Neon
         /// <summary>
         /// Delete Neon Data API<br/>
         /// Deletes the Neon Data API for the specified branch.<br/>
-        /// You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// Existing connections using the Data API endpoint will fail after deletion.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

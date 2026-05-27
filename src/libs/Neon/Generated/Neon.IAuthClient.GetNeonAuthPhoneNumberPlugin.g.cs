@@ -5,7 +5,7 @@ namespace Neon
     public partial interface IAuthClient
     {
         /// <summary>
-        /// Get phone number plugin configuration<br/>
+        /// Retrieve phone number plugin configuration<br/>
         /// Returns the phone number plugin configuration for Neon Auth.<br/>
         /// The phone number plugin enables phone-based OTP authentication.
         /// </summary>
@@ -20,7 +20,7 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get phone number plugin configuration<br/>
+        /// Retrieve phone number plugin configuration<br/>
         /// Returns the phone number plugin configuration for Neon Auth.<br/>
         /// The phone number plugin enables phone-based OTP authentication.
         /// </summary>

@@ -6,7 +6,8 @@ namespace Neon
     {
         /// <summary>
         /// Update email provider configuration<br/>
-        /// Updates the email provider configuration for the specified branch.
+        /// Updates the email provider configuration for the specified branch's Neon Auth integration.<br/>
+        /// The email provider handles transactional messages such as verification emails and password reset links.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -23,7 +24,8 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update email provider configuration<br/>
-        /// Updates the email provider configuration for the specified branch.
+        /// Updates the email provider configuration for the specified branch's Neon Auth integration.<br/>
+        /// The email provider handles transactional messages such as verification emails and password reset links.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

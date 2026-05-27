@@ -7,7 +7,7 @@ namespace Neon
         /// <summary>
         /// Update project<br/>
         /// Updates the specified project.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.
+        /// Configurable properties include the project name, default compute settings, history retention period, and IP allowlist.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
@@ -23,7 +23,7 @@ namespace Neon
         /// <summary>
         /// Update project<br/>
         /// Updates the specified project.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.
+        /// Configurable properties include the project name, default compute settings, history retention period, and IP allowlist.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
@@ -39,7 +39,7 @@ namespace Neon
         /// <summary>
         /// Update project<br/>
         /// Updates the specified project.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.
+        /// Configurable properties include the project name, default compute settings, history retention period, and IP allowlist.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="project"></param>

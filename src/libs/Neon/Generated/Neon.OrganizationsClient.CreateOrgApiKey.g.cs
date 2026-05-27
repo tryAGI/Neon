@@ -47,9 +47,10 @@ namespace Neon
         /// Create organization API key<br/>
         /// Creates an API key for the specified organization.<br/>
         /// The `key_name` is a user-specified name for the key.<br/>
-        /// This method returns an `id` and `key`. The `key` is a randomly generated, 64-bit token required to access the Neon API.<br/>
+        /// Returns an `id` and `key`; the `key` is a randomly generated, 64-bit token required to access the Neon API.<br/>
+        /// Store the key securely — it is only returned once.<br/>
         /// API keys can also be managed in the Neon Console.<br/>
-        /// See [Manage API keys](https://neon.tech/docs/manage/api-keys/).
+        /// See [Manage API keys](https://neon.com/docs/manage/api-keys/).
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="request"></param>
@@ -77,9 +78,10 @@ namespace Neon
         /// Create organization API key<br/>
         /// Creates an API key for the specified organization.<br/>
         /// The `key_name` is a user-specified name for the key.<br/>
-        /// This method returns an `id` and `key`. The `key` is a randomly generated, 64-bit token required to access the Neon API.<br/>
+        /// Returns an `id` and `key`; the `key` is a randomly generated, 64-bit token required to access the Neon API.<br/>
+        /// Store the key securely — it is only returned once.<br/>
         /// API keys can also be managed in the Neon Console.<br/>
-        /// See [Manage API keys](https://neon.tech/docs/manage/api-keys/).
+        /// See [Manage API keys](https://neon.com/docs/manage/api-keys/).
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="request"></param>
@@ -489,9 +491,10 @@ namespace Neon
         /// Create organization API key<br/>
         /// Creates an API key for the specified organization.<br/>
         /// The `key_name` is a user-specified name for the key.<br/>
-        /// This method returns an `id` and `key`. The `key` is a randomly generated, 64-bit token required to access the Neon API.<br/>
+        /// Returns an `id` and `key`; the `key` is a randomly generated, 64-bit token required to access the Neon API.<br/>
+        /// Store the key securely — it is only returned once.<br/>
         /// API keys can also be managed in the Neon Console.<br/>
-        /// See [Manage API keys](https://neon.tech/docs/manage/api-keys/).
+        /// See [Manage API keys](https://neon.com/docs/manage/api-keys/).
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

@@ -5,8 +5,10 @@ namespace Neon
     public partial interface IBranchClient
     {
         /// <summary>
-        /// Restore branch<br/>
-        /// Restores a branch to an earlier state in its own or another branch's history
+        /// Restore branch to a historical state<br/>
+        /// Restores a branch to an earlier state in its own or another branch's history<br/>
+        /// by specifying an LSN or timestamp.<br/>
+        /// Creates a new branch from the historical state.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -22,8 +24,10 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Restore branch<br/>
-        /// Restores a branch to an earlier state in its own or another branch's history
+        /// Restore branch to a historical state<br/>
+        /// Restores a branch to an earlier state in its own or another branch's history<br/>
+        /// by specifying an LSN or timestamp.<br/>
+        /// Creates a new branch from the historical state.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -39,8 +43,10 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Restore branch<br/>
-        /// Restores a branch to an earlier state in its own or another branch's history
+        /// Restore branch to a historical state<br/>
+        /// Restores a branch to an earlier state in its own or another branch's history<br/>
+        /// by specifying an LSN or timestamp.<br/>
+        /// Creates a new branch from the historical state.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

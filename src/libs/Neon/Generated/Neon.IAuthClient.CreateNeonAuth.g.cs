@@ -6,8 +6,8 @@ namespace Neon
     {
         /// <summary>
         /// Enable Neon Auth for the branch<br/>
-        /// Enables Neon Auth integrationfor the branch.<br/>
-        /// You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// Enables Neon Auth for the specified branch by connecting it to an authentication provider.<br/>
+        /// Creating the integration provisions the `neon_auth` schema in the branch database, which stores user identity data synchronized from the provider.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -24,8 +24,8 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Enable Neon Auth for the branch<br/>
-        /// Enables Neon Auth integrationfor the branch.<br/>
-        /// You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// Enables Neon Auth for the specified branch by connecting it to an authentication provider.<br/>
+        /// Creating the integration provisions the `neon_auth` schema in the branch database, which stores user identity data synchronized from the provider.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -42,8 +42,8 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Enable Neon Auth for the branch<br/>
-        /// Enables Neon Auth integrationfor the branch.<br/>
-        /// You can obtain the `project_id` and `branch_id` by listing the projects and branches for your Neon account.
+        /// Enables Neon Auth for the specified branch by connecting it to an authentication provider.<br/>
+        /// Creating the integration provisions the `neon_auth` schema in the branch database, which stores user identity data synchronized from the provider.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

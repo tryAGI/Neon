@@ -8,9 +8,7 @@ namespace Neon
         /// List databases<br/>
         /// Retrieves a list of databases for the specified branch.<br/>
         /// A branch can have multiple databases.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
-        /// For related information, see [Manage databases](https://neon.tech/docs/manage/databases/).
+        /// For related information, see [Manage databases](https://neon.com/docs/manage/databases/).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -26,9 +24,7 @@ namespace Neon
         /// List databases<br/>
         /// Retrieves a list of databases for the specified branch.<br/>
         /// A branch can have multiple databases.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
-        /// For related information, see [Manage databases](https://neon.tech/docs/manage/databases/).
+        /// For related information, see [Manage databases](https://neon.com/docs/manage/databases/).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

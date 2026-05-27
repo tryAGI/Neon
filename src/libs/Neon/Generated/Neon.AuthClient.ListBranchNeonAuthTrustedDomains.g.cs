@@ -45,7 +45,8 @@ namespace Neon
 
         /// <summary>
         /// List domains in redirect_uri whitelist<br/>
-        /// Lists the domains in the redirect_uri whitelist for the specified project.
+        /// Lists the trusted domains in the redirect URI whitelist for the specified branch.<br/>
+        /// Only domains in this list are permitted as redirect targets after authentication.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -69,7 +70,8 @@ namespace Neon
         }
         /// <summary>
         /// List domains in redirect_uri whitelist<br/>
-        /// Lists the domains in the redirect_uri whitelist for the specified project.
+        /// Lists the trusted domains in the redirect URI whitelist for the specified branch.<br/>
+        /// Only domains in this list are permitted as redirect targets after authentication.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

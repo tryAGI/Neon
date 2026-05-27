@@ -5,8 +5,9 @@ namespace Neon
     public partial interface IDataAPIClient
     {
         /// <summary>
-        /// Get Neon Data API<br/>
-        /// Retrieves the Neon Data API for the specified branch.
+        /// Retrieve Neon Data API configuration<br/>
+        /// Retrieves the Neon Data API configuration for the specified branch,<br/>
+        /// including endpoint URL, enabled state, and database settings.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -21,8 +22,9 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Neon Data API<br/>
-        /// Retrieves the Neon Data API for the specified branch.
+        /// Retrieve Neon Data API configuration<br/>
+        /// Retrieves the Neon Data API configuration for the specified branch,<br/>
+        /// including endpoint URL, enabled state, and database settings.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

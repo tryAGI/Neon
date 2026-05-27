@@ -6,8 +6,10 @@ namespace Neon
     {
         /// <summary>
         /// Recover a deleted project<br/>
-        /// Recovers a deleted project during the deletion grace period.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.
+        /// Recovers a deleted project within the 7-day deletion recovery period.<br/>
+        /// Restores branches, endpoints, settings, and connection strings.<br/>
+        /// Some integrations require manual reconfiguration after recovery.<br/>
+        /// To list recoverable projects, use `GET /projects?recoverable=true`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,8 +21,10 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Recover a deleted project<br/>
-        /// Recovers a deleted project during the deletion grace period.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.
+        /// Recovers a deleted project within the 7-day deletion recovery period.<br/>
+        /// Restores branches, endpoints, settings, and connection strings.<br/>
+        /// Some integrations require manual reconfiguration after recovery.<br/>
+        /// To list recoverable projects, use `GET /projects?recoverable=true`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

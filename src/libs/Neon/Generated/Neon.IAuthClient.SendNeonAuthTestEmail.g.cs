@@ -6,7 +6,9 @@ namespace Neon
     {
         /// <summary>
         /// Send test email<br/>
-        /// Sends a test email to the specified email address.
+        /// Sends a test email using the configured email server settings to verify SMTP connectivity and credentials.<br/>
+        /// The request body must include the SMTP server settings<br/>
+        /// (`host`, `port`, `username`, `password`, `sender_email`, `sender_name`) and the `recipient_email` address.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -23,7 +25,9 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Send test email<br/>
-        /// Sends a test email to the specified email address.
+        /// Sends a test email using the configured email server settings to verify SMTP connectivity and credentials.<br/>
+        /// The request body must include the SMTP server settings<br/>
+        /// (`host`, `port`, `username`, `password`, `sender_email`, `sender_name`) and the `recipient_email` address.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -40,7 +44,9 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Send test email<br/>
-        /// Sends a test email to the specified email address.
+        /// Sends a test email using the configured email server settings to verify SMTP connectivity and credentials.<br/>
+        /// The request body must include the SMTP server settings<br/>
+        /// (`host`, `port`, `username`, `password`, `sender_email`, `sender_name`) and the `recipient_email` address.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

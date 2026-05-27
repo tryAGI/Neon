@@ -47,7 +47,9 @@ namespace Neon
 
         /// <summary>
         /// Create new auth user<br/>
-        /// Creates a new user in Neon Auth.
+        /// Creates a new user in the Neon Auth user directory for the specified branch.<br/>
+        /// The user is created in the `neon_auth.users_sync` table and can immediately authenticate<br/>
+        /// using the branch's configured auth providers.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -76,7 +78,9 @@ namespace Neon
         }
         /// <summary>
         /// Create new auth user<br/>
-        /// Creates a new user in Neon Auth.
+        /// Creates a new user in the Neon Auth user directory for the specified branch.<br/>
+        /// The user is created in the `neon_auth.users_sync` table and can immediately authenticate<br/>
+        /// using the branch's configured auth providers.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -490,7 +494,9 @@ namespace Neon
         }
         /// <summary>
         /// Create new auth user<br/>
-        /// Creates a new user in Neon Auth.
+        /// Creates a new user in the Neon Auth user directory for the specified branch.<br/>
+        /// The user is created in the `neon_auth.users_sync` table and can immediately authenticate<br/>
+        /// using the branch's configured auth providers.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

@@ -48,9 +48,8 @@ namespace Neon
         /// Revokes the specified organization API key.<br/>
         /// An API key that is no longer needed can be revoked.<br/>
         /// This action cannot be reversed.<br/>
-        /// You can obtain `key_id` values by listing the API keys for an organization.<br/>
         /// API keys can also be managed in the Neon Console.<br/>
-        /// See [Manage API keys](https://neon.tech/docs/manage/api-keys/).
+        /// See [Manage API keys](https://neon.com/docs/manage/api-keys/).
         /// </summary>
         /// <param name="keyId"></param>
         /// <param name="orgId"></param>
@@ -77,9 +76,8 @@ namespace Neon
         /// Revokes the specified organization API key.<br/>
         /// An API key that is no longer needed can be revoked.<br/>
         /// This action cannot be reversed.<br/>
-        /// You can obtain `key_id` values by listing the API keys for an organization.<br/>
         /// API keys can also be managed in the Neon Console.<br/>
-        /// See [Manage API keys](https://neon.tech/docs/manage/api-keys/).
+        /// See [Manage API keys](https://neon.com/docs/manage/api-keys/).
         /// </summary>
         /// <param name="keyId"></param>
         /// <param name="orgId"></param>

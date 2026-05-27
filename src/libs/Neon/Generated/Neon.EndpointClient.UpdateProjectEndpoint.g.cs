@@ -48,10 +48,8 @@ namespace Neon
         /// <summary>
         /// Update compute endpoint<br/>
         /// Updates the specified compute endpoint.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain an `endpoint_id` and `branch_id` by listing your project's compute endpoints.<br/>
         /// An `endpoint_id` has an `ep-` prefix. A `branch_id` has a `br-` prefix.<br/>
-        ///  For more information about compute endpoints, see [Manage computes](https://neon.tech/docs/manage/endpoints/).<br/>
+        /// For more information about compute endpoints, see [Manage computes](https://neon.com/docs/manage/endpoints/).<br/>
         /// If the returned list of operations is not empty, the compute endpoint is not ready to use.<br/>
         /// The client must wait for the last operation to finish before using the compute endpoint.<br/>
         /// If the compute endpoint was idle before the update, it becomes active for a short period of time,<br/>
@@ -85,10 +83,8 @@ namespace Neon
         /// <summary>
         /// Update compute endpoint<br/>
         /// Updates the specified compute endpoint.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain an `endpoint_id` and `branch_id` by listing your project's compute endpoints.<br/>
         /// An `endpoint_id` has an `ep-` prefix. A `branch_id` has a `br-` prefix.<br/>
-        ///  For more information about compute endpoints, see [Manage computes](https://neon.tech/docs/manage/endpoints/).<br/>
+        /// For more information about compute endpoints, see [Manage computes](https://neon.com/docs/manage/endpoints/).<br/>
         /// If the returned list of operations is not empty, the compute endpoint is not ready to use.<br/>
         /// The client must wait for the last operation to finish before using the compute endpoint.<br/>
         /// If the compute endpoint was idle before the update, it becomes active for a short period of time,<br/>
@@ -507,10 +503,8 @@ namespace Neon
         /// <summary>
         /// Update compute endpoint<br/>
         /// Updates the specified compute endpoint.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain an `endpoint_id` and `branch_id` by listing your project's compute endpoints.<br/>
         /// An `endpoint_id` has an `ep-` prefix. A `branch_id` has a `br-` prefix.<br/>
-        ///  For more information about compute endpoints, see [Manage computes](https://neon.tech/docs/manage/endpoints/).<br/>
+        /// For more information about compute endpoints, see [Manage computes](https://neon.com/docs/manage/endpoints/).<br/>
         /// If the returned list of operations is not empty, the compute endpoint is not ready to use.<br/>
         /// The client must wait for the last operation to finish before using the compute endpoint.<br/>
         /// If the compute endpoint was idle before the update, it becomes active for a short period of time,<br/>

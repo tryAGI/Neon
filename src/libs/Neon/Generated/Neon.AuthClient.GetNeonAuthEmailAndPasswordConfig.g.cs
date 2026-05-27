@@ -44,8 +44,9 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Get email and password configuration<br/>
-        /// Gets the email and password authentication configuration for Neon Auth
+        /// Retrieve email and password configuration<br/>
+        /// Retrieves the email and password authentication configuration for the specified branch's Neon Auth integration,<br/>
+        /// including whether it is enabled and the email verification method.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -68,8 +69,9 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Get email and password configuration<br/>
-        /// Gets the email and password authentication configuration for Neon Auth
+        /// Retrieve email and password configuration<br/>
+        /// Retrieves the email and password authentication configuration for the specified branch's Neon Auth integration,<br/>
+        /// including whether it is enabled and the email verification method.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

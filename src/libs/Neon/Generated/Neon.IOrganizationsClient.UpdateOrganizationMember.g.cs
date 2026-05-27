@@ -6,7 +6,9 @@ namespace Neon
     {
         /// <summary>
         /// Update role for organization member<br/>
-        /// Only an admin can perform this action.
+        /// Updates the role of an existing member in the specified organization.<br/>
+        /// Supported roles are `admin` and `member`.<br/>
+        /// Only organization admins can call this endpoint.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="memberId"></param>
@@ -23,7 +25,9 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update role for organization member<br/>
-        /// Only an admin can perform this action.
+        /// Updates the role of an existing member in the specified organization.<br/>
+        /// Supported roles are `admin` and `member`.<br/>
+        /// Only organization admins can call this endpoint.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="memberId"></param>
@@ -40,7 +44,9 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update role for organization member<br/>
-        /// Only an admin can perform this action.
+        /// Updates the role of an existing member in the specified organization.<br/>
+        /// Supported roles are `admin` and `member`.<br/>
+        /// Only organization admins can call this endpoint.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="memberId"></param>

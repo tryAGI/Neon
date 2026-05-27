@@ -47,8 +47,9 @@ namespace Neon
 
         /// <summary>
         /// Update backup schedule<br/>
-        /// Update the backup schedule for the specified branch.<br/>
-        /// **Note** : This endpoint is currently in Beta.
+        /// Updates the backup schedule for the specified branch.<br/>
+        /// The schedule defines how often automatic snapshots are created (e.g., `hourly`, `daily`).<br/>
+        /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -77,8 +78,9 @@ namespace Neon
         }
         /// <summary>
         /// Update backup schedule<br/>
-        /// Update the backup schedule for the specified branch.<br/>
-        /// **Note** : This endpoint is currently in Beta.
+        /// Updates the backup schedule for the specified branch.<br/>
+        /// The schedule defines how often automatic snapshots are created (e.g., `hourly`, `daily`).<br/>
+        /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -492,8 +494,9 @@ namespace Neon
         }
         /// <summary>
         /// Update backup schedule<br/>
-        /// Update the backup schedule for the specified branch.<br/>
-        /// **Note** : This endpoint is currently in Beta.
+        /// Updates the backup schedule for the specified branch.<br/>
+        /// The schedule defines how often automatic snapshots are created (e.g., `hourly`, `daily`).<br/>
+        /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

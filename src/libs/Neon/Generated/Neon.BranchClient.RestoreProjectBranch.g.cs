@@ -46,8 +46,10 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Restore branch<br/>
-        /// Restores a branch to an earlier state in its own or another branch's history
+        /// Restore branch to a historical state<br/>
+        /// Restores a branch to an earlier state in its own or another branch's history<br/>
+        /// by specifying an LSN or timestamp.<br/>
+        /// Creates a new branch from the historical state.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -75,8 +77,10 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Restore branch<br/>
-        /// Restores a branch to an earlier state in its own or another branch's history
+        /// Restore branch to a historical state<br/>
+        /// Restores a branch to an earlier state in its own or another branch's history<br/>
+        /// by specifying an LSN or timestamp.<br/>
+        /// Creates a new branch from the historical state.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -489,8 +493,10 @@ namespace Neon
             }
         }
         /// <summary>
-        /// Restore branch<br/>
-        /// Restores a branch to an earlier state in its own or another branch's history
+        /// Restore branch to a historical state<br/>
+        /// Restores a branch to an earlier state in its own or another branch's history<br/>
+        /// by specifying an LSN or timestamp.<br/>
+        /// Creates a new branch from the historical state.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

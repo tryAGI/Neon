@@ -44,7 +44,7 @@ namespace Neon
         /// <summary>
         /// Retrieve project details<br/>
         /// Retrieves information about the specified project.<br/>
-        /// You can obtain a `project_id` by listing the projects for an organization.
+        /// Returned details include the project settings, compute configuration, history retention, owner information, and current usage metrics.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -66,7 +66,7 @@ namespace Neon
         /// <summary>
         /// Retrieve project details<br/>
         /// Retrieves information about the specified project.<br/>
-        /// You can obtain a `project_id` by listing the projects for an organization.
+        /// Returned details include the project settings, compute configuration, history retention, owner information, and current usage metrics.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

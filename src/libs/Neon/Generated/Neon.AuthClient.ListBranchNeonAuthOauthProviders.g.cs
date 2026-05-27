@@ -44,8 +44,8 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// List OAuth providers for neon auth for a branch<br/>
-        /// Lists the OAuth providers for the specified project and branch.
+        /// List OAuth providers for the branch<br/>
+        /// Lists the OAuth providers configured for the specified branch's Neon Auth integration.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -68,8 +68,8 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// List OAuth providers for neon auth for a branch<br/>
-        /// Lists the OAuth providers for the specified project and branch.
+        /// List OAuth providers for the branch<br/>
+        /// Lists the OAuth providers configured for the specified branch's Neon Auth integration.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

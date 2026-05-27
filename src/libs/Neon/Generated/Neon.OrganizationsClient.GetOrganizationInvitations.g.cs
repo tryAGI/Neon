@@ -42,8 +42,8 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Retrieve organization invitation details<br/>
-        /// Retrieves information about extended invitations for the specified organization
+        /// List organization invitations<br/>
+        /// Retrieves pending and accepted invitations for the specified organization.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -63,8 +63,8 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Retrieve organization invitation details<br/>
-        /// Retrieves information about extended invitations for the specified organization
+        /// List organization invitations<br/>
+        /// Retrieves pending and accepted invitations for the specified organization.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

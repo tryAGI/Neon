@@ -43,7 +43,7 @@ namespace Neon
 
         /// <summary>
         /// Retrieve organization details<br/>
-        /// Retrieves information about the specified organization.
+        /// Retrieves details for the specified organization, including its name, plan, and configuration.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -64,7 +64,7 @@ namespace Neon
         }
         /// <summary>
         /// Retrieve organization details<br/>
-        /// Retrieves information about the specified organization.
+        /// Retrieves details for the specified organization, including its name, plan, and configuration.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

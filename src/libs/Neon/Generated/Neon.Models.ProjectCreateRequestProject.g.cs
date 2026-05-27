@@ -51,7 +51,7 @@ namespace Neon
         public string? Provisioner { get; set; }
 
         /// <summary>
-        /// The region identifier. Refer to our [Regions](https://neon.tech/docs/introduction/regions) documentation for supported regions. Values are specified in this format: `aws-us-east-1`
+        /// The region identifier. Refer to our [Regions](https://neon.com/docs/introduction/regions) documentation for supported regions. Values are specified in this format: `aws-us-east-1`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("region_id")]
         public string? RegionId { get; set; }
@@ -115,7 +115,7 @@ namespace Neon
         /// Clients must expect, that any string value that is not documented in the description above should be treated as a error. UNKNOWN value if safe to treat as an error too.
         /// </param>
         /// <param name="regionId">
-        /// The region identifier. Refer to our [Regions](https://neon.tech/docs/introduction/regions) documentation for supported regions. Values are specified in this format: `aws-us-east-1`
+        /// The region identifier. Refer to our [Regions](https://neon.com/docs/introduction/regions) documentation for supported regions. Values are specified in this format: `aws-us-east-1`
         /// </param>
         /// <param name="defaultEndpointSettings">
         /// A collection of settings for a Neon endpoint

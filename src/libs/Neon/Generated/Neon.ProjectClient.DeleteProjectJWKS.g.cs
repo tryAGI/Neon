@@ -45,7 +45,8 @@ namespace Neon
 
         /// <summary>
         /// Delete JWKS URL<br/>
-        /// Deletes a JWKS URL from the specified project
+        /// Removes the specified JWKS URL from the project.<br/>
+        /// JWTs signed by keys from the removed URL can no longer authenticate to the project's endpoints.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="jwksId"></param>
@@ -69,7 +70,8 @@ namespace Neon
         }
         /// <summary>
         /// Delete JWKS URL<br/>
-        /// Deletes a JWKS URL from the specified project
+        /// Removes the specified JWKS URL from the project.<br/>
+        /// JWTs signed by keys from the removed URL can no longer authenticate to the project's endpoints.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="jwksId"></param>

@@ -41,7 +41,7 @@ namespace Neon
         /// The value `-1` means never suspend. The default value is `300` seconds (5 minutes).<br/>
         /// The minimum value is `60` seconds (1 minute).<br/>
         /// The maximum value is `604800` seconds (1 week). For more information, see<br/>
-        /// [Scale to zero configuration](https://neon.tech/docs/manage/endpoints#scale-to-zero-configuration).
+        /// [Scale to zero configuration](https://neon.com/docs/manage/endpoints#scale-to-zero-configuration).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("suspend_timeout_seconds")]
         public long? SuspendTimeoutSeconds { get; set; }
@@ -66,7 +66,7 @@ namespace Neon
         /// The value `-1` means never suspend. The default value is `300` seconds (5 minutes).<br/>
         /// The minimum value is `60` seconds (1 minute).<br/>
         /// The maximum value is `604800` seconds (1 week). For more information, see<br/>
-        /// [Scale to zero configuration](https://neon.tech/docs/manage/endpoints#scale-to-zero-configuration).
+        /// [Scale to zero configuration](https://neon.com/docs/manage/endpoints#scale-to-zero-configuration).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -7,12 +7,11 @@ namespace Neon
         /// <summary>
         /// List branches<br/>
         /// Retrieves a list of branches for the specified project.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
         /// Each Neon project has a root branch named `main`.<br/>
         /// A `branch_id` value has a `br-` prefix.<br/>
         /// A project may contain child branches that were branched from `main` or from another branch.<br/>
         /// A parent branch is identified by the `parent_id` value, which is the `id` of the parent branch.<br/>
-        /// For related information, see [Manage branches](https://neon.tech/docs/manage/branches/).
+        /// For related information, see [Manage branches](https://neon.com/docs/manage/branches/).
         /// </summary>
         /// <param name="search"></param>
         /// <param name="sortBy">
@@ -43,12 +42,11 @@ namespace Neon
         /// <summary>
         /// List branches<br/>
         /// Retrieves a list of branches for the specified project.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
         /// Each Neon project has a root branch named `main`.<br/>
         /// A `branch_id` value has a `br-` prefix.<br/>
         /// A project may contain child branches that were branched from `main` or from another branch.<br/>
         /// A parent branch is identified by the `parent_id` value, which is the `id` of the parent branch.<br/>
-        /// For related information, see [Manage branches](https://neon.tech/docs/manage/branches/).
+        /// For related information, see [Manage branches](https://neon.com/docs/manage/branches/).
         /// </summary>
         /// <param name="search"></param>
         /// <param name="sortBy">

@@ -46,8 +46,9 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Add a OAuth provider<br/>
-        /// Adds a OAuth provider to the specified project.
+        /// Add an OAuth provider<br/>
+        /// Adds an OAuth provider configuration to the specified branch's Neon Auth integration.<br/>
+        /// After adding, users can authenticate using the configured provider.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -75,8 +76,9 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Add a OAuth provider<br/>
-        /// Adds a OAuth provider to the specified project.
+        /// Add an OAuth provider<br/>
+        /// Adds an OAuth provider configuration to the specified branch's Neon Auth integration.<br/>
+        /// After adding, users can authenticate using the configured provider.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -489,8 +491,9 @@ namespace Neon
             }
         }
         /// <summary>
-        /// Add a OAuth provider<br/>
-        /// Adds a OAuth provider to the specified project.
+        /// Add an OAuth provider<br/>
+        /// Adds an OAuth provider configuration to the specified branch's Neon Auth integration.<br/>
+        /// After adding, users can authenticate using the configured provider.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

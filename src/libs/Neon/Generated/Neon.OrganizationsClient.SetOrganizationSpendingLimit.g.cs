@@ -44,11 +44,11 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Set the organization's monthly spending limit<br/>
-        /// Sets the spending limit for a V3 paid organization. To remove a<br/>
-        /// previously configured limit, send a DELETE request to this endpoint.<br/>
-        /// When a limit is configured, email notifications are sent at 80% and<br/>
-        /// 100% of the limit. Computes are not suspended by this feature.<br/>
+        /// Set organization spending limit<br/>
+        /// Sets the monthly spending limit for the specified organization.<br/>
+        /// To remove a previously configured limit, send a DELETE request to this endpoint.<br/>
+        /// When a limit is configured, email notifications are sent at 80% and 100% of the limit.<br/>
+        /// Computes are not suspended when the limit is reached.<br/>
         /// Available to organization admins on Launch and Scale plans only.
         /// </summary>
         /// <param name="orgId"></param>
@@ -74,11 +74,11 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Set the organization's monthly spending limit<br/>
-        /// Sets the spending limit for a V3 paid organization. To remove a<br/>
-        /// previously configured limit, send a DELETE request to this endpoint.<br/>
-        /// When a limit is configured, email notifications are sent at 80% and<br/>
-        /// 100% of the limit. Computes are not suspended by this feature.<br/>
+        /// Set organization spending limit<br/>
+        /// Sets the monthly spending limit for the specified organization.<br/>
+        /// To remove a previously configured limit, send a DELETE request to this endpoint.<br/>
+        /// When a limit is configured, email notifications are sent at 80% and 100% of the limit.<br/>
+        /// Computes are not suspended when the limit is reached.<br/>
         /// Available to organization admins on Launch and Scale plans only.
         /// </summary>
         /// <param name="orgId"></param>
@@ -488,11 +488,11 @@ namespace Neon
             }
         }
         /// <summary>
-        /// Set the organization's monthly spending limit<br/>
-        /// Sets the spending limit for a V3 paid organization. To remove a<br/>
-        /// previously configured limit, send a DELETE request to this endpoint.<br/>
-        /// When a limit is configured, email notifications are sent at 80% and<br/>
-        /// 100% of the limit. Computes are not suspended by this feature.<br/>
+        /// Set organization spending limit<br/>
+        /// Sets the monthly spending limit for the specified organization.<br/>
+        /// To remove a previously configured limit, send a DELETE request to this endpoint.<br/>
+        /// When a limit is configured, email notifications are sent at 80% and 100% of the limit.<br/>
+        /// Computes are not suspended when the limit is reached.<br/>
         /// Available to organization admins on Launch and Scale plans only.
         /// </summary>
         /// <param name="orgId"></param>

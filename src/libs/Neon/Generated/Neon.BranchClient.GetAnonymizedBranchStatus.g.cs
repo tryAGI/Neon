@@ -44,11 +44,9 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Get anonymized branch status<br/>
+        /// Retrieve anonymized branch status<br/>
         /// Retrieves the current status of an anonymized branch, including its state and progress information.<br/>
         /// This endpoint allows you to monitor the anonymization process from initialization through completion.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
         /// Only anonymized branches will have status information available.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
@@ -73,11 +71,9 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Get anonymized branch status<br/>
+        /// Retrieve anonymized branch status<br/>
         /// Retrieves the current status of an anonymized branch, including its state and progress information.<br/>
         /// This endpoint allows you to monitor the anonymization process from initialization through completion.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` by listing the project's branches.<br/>
         /// Only anonymized branches will have status information available.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>

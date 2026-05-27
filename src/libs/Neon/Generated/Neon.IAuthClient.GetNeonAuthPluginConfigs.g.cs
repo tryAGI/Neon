@@ -5,7 +5,7 @@ namespace Neon
     public partial interface IAuthClient
     {
         /// <summary>
-        /// Get all plugin configurations<br/>
+        /// Retrieve Neon Auth plugin configurations<br/>
         /// Returns all plugin configurations for Neon Auth in a single response.<br/>
         /// This endpoint aggregates organization, email provider, email and password,<br/>
         /// OAuth providers, and localhost settings.
@@ -21,7 +21,7 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get all plugin configurations<br/>
+        /// Retrieve Neon Auth plugin configurations<br/>
         /// Returns all plugin configurations for Neon Auth in a single response.<br/>
         /// This endpoint aggregates organization, email provider, email and password,<br/>
         /// OAuth providers, and localhost settings.

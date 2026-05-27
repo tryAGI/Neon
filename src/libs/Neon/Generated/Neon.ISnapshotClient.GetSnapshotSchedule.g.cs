@@ -5,8 +5,8 @@ namespace Neon
     public partial interface ISnapshotClient
     {
         /// <summary>
-        /// View backup schedule<br/>
-        /// View the backup schedule for the specified branch.<br/>
+        /// Retrieve backup schedule<br/>
+        /// Returns the backup schedule for the specified branch, including the configured snapshot frequencies.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
@@ -20,8 +20,8 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// View backup schedule<br/>
-        /// View the backup schedule for the specified branch.<br/>
+        /// Retrieve backup schedule<br/>
+        /// Returns the backup schedule for the specified branch, including the configured snapshot frequencies.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>

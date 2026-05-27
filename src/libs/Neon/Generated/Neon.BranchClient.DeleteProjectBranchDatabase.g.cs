@@ -48,9 +48,7 @@ namespace Neon
         /// <summary>
         /// Delete database<br/>
         /// Deletes the specified database from the branch.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` and `database_name` by listing the branch's databases.<br/>
-        /// For related information, see [Manage databases](https://neon.tech/docs/manage/databases/).
+        /// For related information, see [Manage databases](https://neon.com/docs/manage/databases/).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -78,9 +76,7 @@ namespace Neon
         /// <summary>
         /// Delete database<br/>
         /// Deletes the specified database from the branch.<br/>
-        /// You can obtain a `project_id` by listing the projects for your Neon account.<br/>
-        /// You can obtain the `branch_id` and `database_name` by listing the branch's databases.<br/>
-        /// For related information, see [Manage databases](https://neon.tech/docs/manage/databases/).
+        /// For related information, see [Manage databases](https://neon.com/docs/manage/databases/).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

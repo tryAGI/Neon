@@ -47,7 +47,8 @@ namespace Neon
 
         /// <summary>
         /// Update email and password configuration<br/>
-        /// Updates the email and password authentication configuration for Neon Auth
+        /// Updates the email and password authentication configuration for the specified branch's Neon Auth integration.<br/>
+        /// Only the fields provided in the request body are updated.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -76,7 +77,8 @@ namespace Neon
         }
         /// <summary>
         /// Update email and password configuration<br/>
-        /// Updates the email and password authentication configuration for Neon Auth
+        /// Updates the email and password authentication configuration for the specified branch's Neon Auth integration.<br/>
+        /// Only the fields provided in the request body are updated.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -490,7 +492,8 @@ namespace Neon
         }
         /// <summary>
         /// Update email and password configuration<br/>
-        /// Updates the email and password authentication configuration for Neon Auth
+        /// Updates the email and password authentication configuration for the specified branch's Neon Auth integration.<br/>
+        /// Only the fields provided in the request body are updated.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

@@ -5,8 +5,8 @@ namespace Neon
     public partial interface IAuthClient
     {
         /// <summary>
-        /// List OAuth providers for neon auth for a branch<br/>
-        /// Lists the OAuth providers for the specified project and branch.
+        /// List OAuth providers for the branch<br/>
+        /// Lists the OAuth providers configured for the specified branch's Neon Auth integration.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -19,8 +19,8 @@ namespace Neon
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List OAuth providers for neon auth for a branch<br/>
-        /// Lists the OAuth providers for the specified project and branch.
+        /// List OAuth providers for the branch<br/>
+        /// Lists the OAuth providers configured for the specified branch's Neon Auth integration.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

@@ -43,7 +43,7 @@ namespace Neon
 
         /// <summary>
         /// Transfer Neon-managed auth project to your own account<br/>
-        /// Transfer ownership of your Neon-managed auth project to your own auth provider account.
+        /// Transfers ownership of your Neon-managed auth project to your own auth provider account.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -66,7 +66,7 @@ namespace Neon
         }
         /// <summary>
         /// Transfer Neon-managed auth project to your own account<br/>
-        /// Transfer ownership of your Neon-managed auth project to your own auth provider account.
+        /// Transfers ownership of your Neon-managed auth project to your own auth provider account.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -472,7 +472,7 @@ namespace Neon
         }
         /// <summary>
         /// Transfer Neon-managed auth project to your own account<br/>
-        /// Transfer ownership of your Neon-managed auth project to your own auth provider account.
+        /// Transfers ownership of your Neon-managed auth project to your own auth provider account.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="authProvider"></param>
