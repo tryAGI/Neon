@@ -229,6 +229,8 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>),
 
+            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>),
+
             typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.OrganizationMembersResponse, global::Neon.CursorPaginationResponse>),
 
             typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>),
@@ -593,6 +595,11 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchSchemaJSONTableConstraint))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchSchemaJSONTableConstraintReferencedTable))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.SystemStatusSummaryResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Bucket))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketCreateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketsListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.Bucket>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CreateProjectTransferRequestRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AcceptProjectTransferRequestRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DisableNeonAuthRequest))]
@@ -618,6 +625,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.AnnotationResponse>), TypeInfoPropertyName = "AllOfBranchResponseAnnotationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectResponse, global::Neon.PaginationResponse>), TypeInfoPropertyName = "AllOfConsumptionHistoryPerProjectResponsePaginationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>), TypeInfoPropertyName = "AllOfConsumptionHistoryPerProjectV2ResponsePaginationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>), TypeInfoPropertyName = "AllOfConsumptionHistoryPerBranchV2ResponsePaginationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.OrgApiKeysListResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.OrganizationMembersResponse, global::Neon.CursorPaginationResponse>), TypeInfoPropertyName = "AllOfOrganizationMembersResponseCursorPaginationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CreateSnapshotResponse))]
@@ -680,6 +688,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.BranchSchemaJSONTable>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.BranchSchemaJSONTableColumn>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.BranchSchemaJSONTableConstraint>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.Bucket>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.AdvisorIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ApiKeysListResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.OrgApiKeysListResponseItem>))]
