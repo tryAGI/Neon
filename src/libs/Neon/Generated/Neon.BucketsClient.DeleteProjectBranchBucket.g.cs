@@ -3,11 +3,11 @@
 
 namespace Neon
 {
-    public partial class ConsumptionClient
+    public partial class BucketsClient
     {
 
 
-        private static readonly global::Neon.EndPointSecurityRequirement s_GetConsumptionHistoryPerProjectV2SecurityRequirement0 =
+        private static readonly global::Neon.EndPointSecurityRequirement s_DeleteProjectBranchBucketSecurityRequirement0 =
             new global::Neon.EndPointSecurityRequirement
             {
                 Authorizations = new global::Neon.EndPointAuthorizationRequirement[]
@@ -21,151 +21,80 @@ namespace Neon
                     },
                 },
             };
-        private static readonly global::Neon.EndPointSecurityRequirement[] s_GetConsumptionHistoryPerProjectV2SecurityRequirements =
+        private static readonly global::Neon.EndPointSecurityRequirement[] s_DeleteProjectBranchBucketSecurityRequirements =
             new global::Neon.EndPointSecurityRequirement[]
-            {                s_GetConsumptionHistoryPerProjectV2SecurityRequirement0,
+            {                s_DeleteProjectBranchBucketSecurityRequirement0,
             };
-        partial void PrepareGetConsumptionHistoryPerProjectV2Arguments(
+        partial void PrepareDeleteProjectBranchBucketArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? cursor,
-            ref int? limit,
-            global::System.Collections.Generic.IList<string>? projectIds,
-            ref global::System.DateTime from,
-            ref global::System.DateTime to,
-            ref global::Neon.ConsumptionHistoryGranularity granularity,
-            ref string orgId,
-            global::System.Collections.Generic.IList<string> metrics);
-        partial void PrepareGetConsumptionHistoryPerProjectV2Request(
+            ref string projectId,
+            ref string branchId,
+            ref string bucketName);
+        partial void PrepareDeleteProjectBranchBucketRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? cursor,
-            int? limit,
-            global::System.Collections.Generic.IList<string>? projectIds,
-            global::System.DateTime from,
-            global::System.DateTime to,
-            global::Neon.ConsumptionHistoryGranularity granularity,
-            string orgId,
-            global::System.Collections.Generic.IList<string> metrics);
-        partial void ProcessGetConsumptionHistoryPerProjectV2Response(
+            string projectId,
+            string branchId,
+            string bucketName);
+        partial void ProcessDeleteProjectBranchBucketResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetConsumptionHistoryPerProjectV2ResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
-        /// Retrieve project consumption metrics<br/>
-        /// Returns consumption metrics for up to `limit` projects per page. If `project_ids` is omitted,<br/>
-        /// projects in the organization are included across pages (use `cursor`). If `project_ids` is<br/>
-        /// provided, the response is limited to those projects (up to 100). Available for accounts on<br/>
-        /// Launch, Scale, Agent, Business, and Enterprise plans.<br/>
-        /// History starts when the account upgrades to an eligible plan.<br/>
-        /// The `metrics` query parameter is required. Supported values:<br/>
-        /// `compute_unit_seconds`, `root_branch_bytes_month`, `child_branch_bytes_month`,<br/>
-        /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`,<br/>
-        /// `extra_branches_month`, `snapshot_storage_bytes_month`.<br/>
-        /// Consumption metrics within each project are returned in ascending time order (oldest first).<br/>
-        /// This request does not wake project computes.
+        /// Delete a bucket on the branch<br/>
+        /// Deletes the named bucket from the specified branch.
         /// </summary>
-        /// <param name="cursor"></param>
-        /// <param name="limit">
-        /// Default Value: 10
-        /// </param>
-        /// <param name="projectIds"></param>
-        /// <param name="from"></param>
-        /// <param name="to"></param>
-        /// <param name="granularity"></param>
-        /// <param name="orgId"></param>
-        /// <param name="metrics"></param>
+        /// <param name="projectId"></param>
+        /// <param name="branchId"></param>
+        /// <param name="bucketName"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>> GetConsumptionHistoryPerProjectV2Async(
-            global::System.DateTime from,
-            global::System.DateTime to,
-            global::Neon.ConsumptionHistoryGranularity granularity,
-            string orgId,
-            global::System.Collections.Generic.IList<string> metrics,
-            string? cursor = default,
-            int? limit = default,
-            global::System.Collections.Generic.IList<string>? projectIds = default,
+        public async global::System.Threading.Tasks.Task DeleteProjectBranchBucketAsync(
+            string projectId,
+            string branchId,
+            string bucketName,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GetConsumptionHistoryPerProjectV2AsResponseAsync(
-                from: from,
-                to: to,
-                granularity: granularity,
-                orgId: orgId,
-                metrics: metrics,
-                cursor: cursor,
-                limit: limit,
-                projectIds: projectIds,
+            await DeleteProjectBranchBucketAsResponseAsync(
+                projectId: projectId,
+                branchId: branchId,
+                bucketName: bucketName,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
-
-            return __response.Body;
         }
         /// <summary>
-        /// Retrieve project consumption metrics<br/>
-        /// Returns consumption metrics for up to `limit` projects per page. If `project_ids` is omitted,<br/>
-        /// projects in the organization are included across pages (use `cursor`). If `project_ids` is<br/>
-        /// provided, the response is limited to those projects (up to 100). Available for accounts on<br/>
-        /// Launch, Scale, Agent, Business, and Enterprise plans.<br/>
-        /// History starts when the account upgrades to an eligible plan.<br/>
-        /// The `metrics` query parameter is required. Supported values:<br/>
-        /// `compute_unit_seconds`, `root_branch_bytes_month`, `child_branch_bytes_month`,<br/>
-        /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`,<br/>
-        /// `extra_branches_month`, `snapshot_storage_bytes_month`.<br/>
-        /// Consumption metrics within each project are returned in ascending time order (oldest first).<br/>
-        /// This request does not wake project computes.
+        /// Delete a bucket on the branch<br/>
+        /// Deletes the named bucket from the specified branch.
         /// </summary>
-        /// <param name="cursor"></param>
-        /// <param name="limit">
-        /// Default Value: 10
-        /// </param>
-        /// <param name="projectIds"></param>
-        /// <param name="from"></param>
-        /// <param name="to"></param>
-        /// <param name="granularity"></param>
-        /// <param name="orgId"></param>
-        /// <param name="metrics"></param>
+        /// <param name="projectId"></param>
+        /// <param name="branchId"></param>
+        /// <param name="bucketName"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>>> GetConsumptionHistoryPerProjectV2AsResponseAsync(
-            global::System.DateTime from,
-            global::System.DateTime to,
-            global::Neon.ConsumptionHistoryGranularity granularity,
-            string orgId,
-            global::System.Collections.Generic.IList<string> metrics,
-            string? cursor = default,
-            int? limit = default,
-            global::System.Collections.Generic.IList<string>? projectIds = default,
+        public async global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse> DeleteProjectBranchBucketAsResponseAsync(
+            string projectId,
+            string branchId,
+            string bucketName,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetConsumptionHistoryPerProjectV2Arguments(
+            PrepareDeleteProjectBranchBucketArguments(
                 httpClient: HttpClient,
-                cursor: ref cursor,
-                limit: ref limit,
-                projectIds: projectIds,
-                from: ref from,
-                to: ref to,
-                granularity: ref granularity,
-                orgId: ref orgId,
-                metrics: metrics);
+                projectId: ref projectId,
+                branchId: ref branchId,
+                bucketName: ref bucketName);
 
 
             var __authorizations = global::Neon.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetConsumptionHistoryPerProjectV2SecurityRequirements,
-                operationName: "GetConsumptionHistoryPerProjectV2Async");
+                securityRequirements: s_DeleteProjectBranchBucketSecurityRequirements,
+                operationName: "DeleteProjectBranchBucketAsync");
 
             using var __timeoutCancellationTokenSource = global::Neon.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -185,25 +114,15 @@ namespace Neon
             {
 
                             var __pathBuilder = new global::Neon.PathBuilder(
-                                path: "/consumption_history/v2/projects",
+                                path: $"/projects/{projectId}/branches/{branchId}/buckets/{bucketName}",
                                 baseUri: HttpClient.BaseAddress);
-                            __pathBuilder
-                                .AddOptionalParameter("cursor", cursor)
-                                .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("project_ids", projectIds, delimiter: ",", explode: true)
-                                .AddRequiredParameter("from", from.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                                .AddRequiredParameter("to", to.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                                .AddRequiredParameter("granularity", granularity.ToValueString())
-                                .AddRequiredParameter("org_id", orgId)
-                                .AddRequiredParameter("metrics", metrics, delimiter: ",", explode: true)
-                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Neon.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Get,
+                    method: global::System.Net.Http.HttpMethod.Delete,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -234,17 +153,12 @@ namespace Neon
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetConsumptionHistoryPerProjectV2Request(
+                PrepareDeleteProjectBranchBucketRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    cursor: cursor,
-                    limit: limit,
-                    projectIds: projectIds,
-                    from: from!,
-                    to: to!,
-                    granularity: granularity!,
-                    orgId: orgId!,
-                    metrics: metrics!);
+                    projectId: projectId!,
+                    branchId: branchId!,
+                    bucketName: bucketName!);
 
                 return __httpRequest;
             }
@@ -261,10 +175,10 @@ namespace Neon
                     await global::Neon.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetConsumptionHistoryPerProjectV2",
-                                methodName: "GetConsumptionHistoryPerProjectV2Async",
-                                pathTemplate: "\"/consumption_history/v2/projects\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteProjectBranchBucket",
+                                methodName: "DeleteProjectBranchBucketAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/buckets/{bucketName}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -295,10 +209,10 @@ namespace Neon
                         await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetConsumptionHistoryPerProjectV2",
-                                methodName: "GetConsumptionHistoryPerProjectV2Async",
-                                pathTemplate: "\"/consumption_history/v2/projects\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteProjectBranchBucket",
+                                methodName: "DeleteProjectBranchBucketAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/buckets/{bucketName}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -336,10 +250,10 @@ namespace Neon
                         await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetConsumptionHistoryPerProjectV2",
-                                methodName: "GetConsumptionHistoryPerProjectV2Async",
-                                pathTemplate: "\"/consumption_history/v2/projects\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteProjectBranchBucket",
+                                methodName: "DeleteProjectBranchBucketAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/buckets/{bucketName}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -376,7 +290,7 @@ namespace Neon
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetConsumptionHistoryPerProjectV2Response(
+                ProcessDeleteProjectBranchBucketResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -384,10 +298,10 @@ namespace Neon
                     await global::Neon.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetConsumptionHistoryPerProjectV2",
-                                methodName: "GetConsumptionHistoryPerProjectV2Async",
-                                pathTemplate: "\"/consumption_history/v2/projects\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteProjectBranchBucket",
+                                methodName: "DeleteProjectBranchBucketAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/buckets/{bucketName}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -406,10 +320,10 @@ namespace Neon
                     await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetConsumptionHistoryPerProjectV2",
-                                methodName: "GetConsumptionHistoryPerProjectV2Async",
-                                pathTemplate: "\"/consumption_history/v2/projects\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteProjectBranchBucket",
+                                methodName: "DeleteProjectBranchBucketAsync",
+                                pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/buckets/{bucketName}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -423,44 +337,7 @@ namespace Neon
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Not available for this account. Project consumption history requires a Launch, Scale, Agent, Business, or Enterprise plan. 
-                            if ((int)__response.StatusCode == 403)
-                            {
-                                string? __content_403 = null;
-                                global::System.Exception? __exception_403 = null;
-                                global::Neon.GeneralError? __value_403 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_403 = __ex;
-                                }
-
-
-                                throw global::Neon.ApiException<global::Neon.GeneralError>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_403,
-                                    responseBody: __content_403,
-                                    responseObject: __value_403,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Account is not a member of the organization specified by `org_id`.
+                            // Bucket not found
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -492,80 +369,6 @@ namespace Neon
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // The `from` and `to` range is not valid for the selected `granularity`. Adjust the range or choose a different granularity. 
-                            if ((int)__response.StatusCode == 406)
-                            {
-                                string? __content_406 = null;
-                                global::System.Exception? __exception_406 = null;
-                                global::Neon.GeneralError? __value_406 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_406 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_406 = global::Neon.GeneralError.FromJson(__content_406, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_406 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_406 = global::Neon.GeneralError.FromJson(__content_406, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_406 = __ex;
-                                }
-
-
-                                throw global::Neon.ApiException<global::Neon.GeneralError>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_406 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_406,
-                                    responseBody: __content_406,
-                                    responseObject: __value_406,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Too many requests
-                            if ((int)__response.StatusCode == 429)
-                            {
-                                string? __content_429 = null;
-                                global::System.Exception? __exception_429 = null;
-                                global::Neon.GeneralError? __value_429 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::Neon.GeneralError.FromJson(__content_429, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_429 = global::Neon.GeneralError.FromJson(__content_429, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_429 = __ex;
-                                }
-
-
-                                throw global::Neon.ApiException<global::Neon.GeneralError>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_429,
-                                    responseBody: __content_429,
-                                    responseObject: __value_429,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -621,22 +424,15 @@ namespace Neon
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetConsumptionHistoryPerProjectV2ResponseContent(
-                                    httpClient: HttpClient,
-                                    httpResponseMessage: __response,
-                                    content: ref __content);
 
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>.FromJson(__content, JsonSerializerContext) ??
-                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Neon.AutoSDKHttpResponse<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>>(
+                return new global::Neon.AutoSDKHttpResponse(
                                         statusCode: __response.StatusCode,
                                         headers: global::Neon.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -656,19 +452,10 @@ namespace Neon
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    using var __content = await __response.Content.ReadAsStreamAsync(
-                #if NET5_0_OR_GREATER
-                                        __effectiveCancellationToken
-                #endif
-                                    ).ConfigureAwait(false);
-
-                                    var __value = await global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Neon.AutoSDKHttpResponse<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>>(
+                                    return new global::Neon.AutoSDKHttpResponse(
                                         statusCode: __response.StatusCode,
                                         headers: global::Neon.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

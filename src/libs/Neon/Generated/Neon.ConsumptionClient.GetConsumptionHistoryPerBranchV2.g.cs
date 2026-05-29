@@ -7,7 +7,7 @@ namespace Neon
     {
 
 
-        private static readonly global::Neon.EndPointSecurityRequirement s_GetConsumptionHistoryPerProjectV2SecurityRequirement0 =
+        private static readonly global::Neon.EndPointSecurityRequirement s_GetConsumptionHistoryPerBranchV2SecurityRequirement0 =
             new global::Neon.EndPointSecurityRequirement
             {
                 Authorizations = new global::Neon.EndPointAuthorizationRequirement[]
@@ -21,59 +21,63 @@ namespace Neon
                     },
                 },
             };
-        private static readonly global::Neon.EndPointSecurityRequirement[] s_GetConsumptionHistoryPerProjectV2SecurityRequirements =
+        private static readonly global::Neon.EndPointSecurityRequirement[] s_GetConsumptionHistoryPerBranchV2SecurityRequirements =
             new global::Neon.EndPointSecurityRequirement[]
-            {                s_GetConsumptionHistoryPerProjectV2SecurityRequirement0,
+            {                s_GetConsumptionHistoryPerBranchV2SecurityRequirement0,
             };
-        partial void PrepareGetConsumptionHistoryPerProjectV2Arguments(
+        partial void PrepareGetConsumptionHistoryPerBranchV2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? cursor,
             ref int? limit,
-            global::System.Collections.Generic.IList<string>? projectIds,
+            global::System.Collections.Generic.IList<string> projectIds,
+            global::System.Collections.Generic.IList<string>? branchIds,
             ref global::System.DateTime from,
             ref global::System.DateTime to,
             ref global::Neon.ConsumptionHistoryGranularity granularity,
             ref string orgId,
             global::System.Collections.Generic.IList<string> metrics);
-        partial void PrepareGetConsumptionHistoryPerProjectV2Request(
+        partial void PrepareGetConsumptionHistoryPerBranchV2Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? cursor,
             int? limit,
-            global::System.Collections.Generic.IList<string>? projectIds,
+            global::System.Collections.Generic.IList<string> projectIds,
+            global::System.Collections.Generic.IList<string>? branchIds,
             global::System.DateTime from,
             global::System.DateTime to,
             global::Neon.ConsumptionHistoryGranularity granularity,
             string orgId,
             global::System.Collections.Generic.IList<string> metrics);
-        partial void ProcessGetConsumptionHistoryPerProjectV2Response(
+        partial void ProcessGetConsumptionHistoryPerBranchV2Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetConsumptionHistoryPerProjectV2ResponseContent(
+        partial void ProcessGetConsumptionHistoryPerBranchV2ResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Retrieve project consumption metrics<br/>
-        /// Returns consumption metrics for up to `limit` projects per page. If `project_ids` is omitted,<br/>
-        /// projects in the organization are included across pages (use `cursor`). If `project_ids` is<br/>
-        /// provided, the response is limited to those projects (up to 100). Available for accounts on<br/>
-        /// Launch, Scale, Agent, Business, and Enterprise plans.<br/>
-        /// History starts when the account upgrades to an eligible plan.<br/>
-        /// The `metrics` query parameter is required. Supported values:<br/>
+        /// Retrieve branch consumption metrics<br/>
+        /// Returns consumption metrics for each branch across one or more projects listed in<br/>
+        /// `project_ids` (1 to 100 projects). Available for accounts on paid usage-based Launch, Scale,<br/>
+        /// Agent, and Enterprise plans.<br/>
+        /// History starts when the account first ingests branch-level consumption data.<br/>
+        /// The `metrics` query parameter is required. Only these six values are supported on this<br/>
+        /// endpoint:<br/>
         /// `compute_unit_seconds`, `root_branch_bytes_month`, `child_branch_bytes_month`,<br/>
-        /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`,<br/>
-        /// `extra_branches_month`, `snapshot_storage_bytes_month`.<br/>
-        /// Consumption metrics within each project are returned in ascending time order (oldest first).<br/>
+        /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`.<br/>
+        /// This endpoint does not support `extra_branches_month` or `snapshot_storage_bytes_month`.<br/>
+        /// Use `GET /consumption_history/v2/projects` for those.<br/>
+        /// Consumption metrics within each branch are returned in ascending time order (oldest first).<br/>
         /// This request does not wake project computes.
         /// </summary>
         /// <param name="cursor"></param>
         /// <param name="limit">
-        /// Default Value: 10
+        /// Default Value: 100
         /// </param>
         /// <param name="projectIds"></param>
+        /// <param name="branchIds"></param>
         /// <param name="from"></param>
         /// <param name="to"></param>
         /// <param name="granularity"></param>
@@ -82,7 +86,8 @@ namespace Neon
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>> GetConsumptionHistoryPerProjectV2Async(
+        public async global::System.Threading.Tasks.Task<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>> GetConsumptionHistoryPerBranchV2Async(
+            global::System.Collections.Generic.IList<string> projectIds,
             global::System.DateTime from,
             global::System.DateTime to,
             global::Neon.ConsumptionHistoryGranularity granularity,
@@ -90,11 +95,12 @@ namespace Neon
             global::System.Collections.Generic.IList<string> metrics,
             string? cursor = default,
             int? limit = default,
-            global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::System.Collections.Generic.IList<string>? branchIds = default,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GetConsumptionHistoryPerProjectV2AsResponseAsync(
+            var __response = await GetConsumptionHistoryPerBranchV2AsResponseAsync(
+                projectIds: projectIds,
                 from: from,
                 to: to,
                 granularity: granularity,
@@ -102,7 +108,7 @@ namespace Neon
                 metrics: metrics,
                 cursor: cursor,
                 limit: limit,
-                projectIds: projectIds,
+                branchIds: branchIds,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -110,24 +116,26 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Retrieve project consumption metrics<br/>
-        /// Returns consumption metrics for up to `limit` projects per page. If `project_ids` is omitted,<br/>
-        /// projects in the organization are included across pages (use `cursor`). If `project_ids` is<br/>
-        /// provided, the response is limited to those projects (up to 100). Available for accounts on<br/>
-        /// Launch, Scale, Agent, Business, and Enterprise plans.<br/>
-        /// History starts when the account upgrades to an eligible plan.<br/>
-        /// The `metrics` query parameter is required. Supported values:<br/>
+        /// Retrieve branch consumption metrics<br/>
+        /// Returns consumption metrics for each branch across one or more projects listed in<br/>
+        /// `project_ids` (1 to 100 projects). Available for accounts on paid usage-based Launch, Scale,<br/>
+        /// Agent, and Enterprise plans.<br/>
+        /// History starts when the account first ingests branch-level consumption data.<br/>
+        /// The `metrics` query parameter is required. Only these six values are supported on this<br/>
+        /// endpoint:<br/>
         /// `compute_unit_seconds`, `root_branch_bytes_month`, `child_branch_bytes_month`,<br/>
-        /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`,<br/>
-        /// `extra_branches_month`, `snapshot_storage_bytes_month`.<br/>
-        /// Consumption metrics within each project are returned in ascending time order (oldest first).<br/>
+        /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`.<br/>
+        /// This endpoint does not support `extra_branches_month` or `snapshot_storage_bytes_month`.<br/>
+        /// Use `GET /consumption_history/v2/projects` for those.<br/>
+        /// Consumption metrics within each branch are returned in ascending time order (oldest first).<br/>
         /// This request does not wake project computes.
         /// </summary>
         /// <param name="cursor"></param>
         /// <param name="limit">
-        /// Default Value: 10
+        /// Default Value: 100
         /// </param>
         /// <param name="projectIds"></param>
+        /// <param name="branchIds"></param>
         /// <param name="from"></param>
         /// <param name="to"></param>
         /// <param name="granularity"></param>
@@ -136,7 +144,8 @@ namespace Neon
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>>> GetConsumptionHistoryPerProjectV2AsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>>> GetConsumptionHistoryPerBranchV2AsResponseAsync(
+            global::System.Collections.Generic.IList<string> projectIds,
             global::System.DateTime from,
             global::System.DateTime to,
             global::Neon.ConsumptionHistoryGranularity granularity,
@@ -144,17 +153,18 @@ namespace Neon
             global::System.Collections.Generic.IList<string> metrics,
             string? cursor = default,
             int? limit = default,
-            global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::System.Collections.Generic.IList<string>? branchIds = default,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetConsumptionHistoryPerProjectV2Arguments(
+            PrepareGetConsumptionHistoryPerBranchV2Arguments(
                 httpClient: HttpClient,
                 cursor: ref cursor,
                 limit: ref limit,
                 projectIds: projectIds,
+                branchIds: branchIds,
                 from: ref from,
                 to: ref to,
                 granularity: ref granularity,
@@ -164,8 +174,8 @@ namespace Neon
 
             var __authorizations = global::Neon.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetConsumptionHistoryPerProjectV2SecurityRequirements,
-                operationName: "GetConsumptionHistoryPerProjectV2Async");
+                securityRequirements: s_GetConsumptionHistoryPerBranchV2SecurityRequirements,
+                operationName: "GetConsumptionHistoryPerBranchV2Async");
 
             using var __timeoutCancellationTokenSource = global::Neon.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -185,12 +195,13 @@ namespace Neon
             {
 
                             var __pathBuilder = new global::Neon.PathBuilder(
-                                path: "/consumption_history/v2/projects",
+                                path: "/consumption_history/v2/branches",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("project_ids", projectIds, delimiter: ",", explode: true)
+                                .AddRequiredParameter("project_ids", projectIds, delimiter: ",", explode: true)
+                                .AddOptionalParameter("branch_ids", branchIds, delimiter: ",", explode: true)
                                 .AddRequiredParameter("from", from.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddRequiredParameter("to", to.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddRequiredParameter("granularity", granularity.ToValueString())
@@ -234,12 +245,13 @@ namespace Neon
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetConsumptionHistoryPerProjectV2Request(
+                PrepareGetConsumptionHistoryPerBranchV2Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     cursor: cursor,
                     limit: limit,
-                    projectIds: projectIds,
+                    projectIds: projectIds!,
+                    branchIds: branchIds,
                     from: from!,
                     to: to!,
                     granularity: granularity!,
@@ -261,9 +273,9 @@ namespace Neon
                     await global::Neon.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetConsumptionHistoryPerProjectV2",
-                                methodName: "GetConsumptionHistoryPerProjectV2Async",
-                                pathTemplate: "\"/consumption_history/v2/projects\"",
+                                operationId: "GetConsumptionHistoryPerBranchV2",
+                                methodName: "GetConsumptionHistoryPerBranchV2Async",
+                                pathTemplate: "\"/consumption_history/v2/branches\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -295,9 +307,9 @@ namespace Neon
                         await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetConsumptionHistoryPerProjectV2",
-                                methodName: "GetConsumptionHistoryPerProjectV2Async",
-                                pathTemplate: "\"/consumption_history/v2/projects\"",
+                                operationId: "GetConsumptionHistoryPerBranchV2",
+                                methodName: "GetConsumptionHistoryPerBranchV2Async",
+                                pathTemplate: "\"/consumption_history/v2/branches\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -336,9 +348,9 @@ namespace Neon
                         await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetConsumptionHistoryPerProjectV2",
-                                methodName: "GetConsumptionHistoryPerProjectV2Async",
-                                pathTemplate: "\"/consumption_history/v2/projects\"",
+                                operationId: "GetConsumptionHistoryPerBranchV2",
+                                methodName: "GetConsumptionHistoryPerBranchV2Async",
+                                pathTemplate: "\"/consumption_history/v2/branches\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -376,7 +388,7 @@ namespace Neon
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetConsumptionHistoryPerProjectV2Response(
+                ProcessGetConsumptionHistoryPerBranchV2Response(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -384,9 +396,9 @@ namespace Neon
                     await global::Neon.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetConsumptionHistoryPerProjectV2",
-                                methodName: "GetConsumptionHistoryPerProjectV2Async",
-                                pathTemplate: "\"/consumption_history/v2/projects\"",
+                                operationId: "GetConsumptionHistoryPerBranchV2",
+                                methodName: "GetConsumptionHistoryPerBranchV2Async",
+                                pathTemplate: "\"/consumption_history/v2/branches\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -406,9 +418,9 @@ namespace Neon
                     await global::Neon.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Neon.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetConsumptionHistoryPerProjectV2",
-                                methodName: "GetConsumptionHistoryPerProjectV2Async",
-                                pathTemplate: "\"/consumption_history/v2/projects\"",
+                                operationId: "GetConsumptionHistoryPerBranchV2",
+                                methodName: "GetConsumptionHistoryPerBranchV2Async",
+                                pathTemplate: "\"/consumption_history/v2/branches\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -423,7 +435,7 @@ namespace Neon
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Not available for this account. Project consumption history requires a Launch, Scale, Agent, Business, or Enterprise plan. 
+                            // Not available for this account. Branch consumption history requires a paid usage-based Launch, Scale, Agent, or Enterprise plan. 
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
@@ -621,7 +633,7 @@ namespace Neon
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetConsumptionHistoryPerProjectV2ResponseContent(
+                                ProcessGetConsumptionHistoryPerBranchV2ResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -630,9 +642,9 @@ namespace Neon
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Neon.AllOf<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Neon.AutoSDKHttpResponse<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>>(
+                                    return new global::Neon.AutoSDKHttpResponse<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Neon.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -662,9 +674,9 @@ namespace Neon
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Neon.AllOf<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Neon.AutoSDKHttpResponse<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>>(
+                                    return new global::Neon.AutoSDKHttpResponse<global::Neon.AllOf<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Neon.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

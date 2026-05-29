@@ -20,10 +20,6 @@ namespace Neon
         /// 
         /// </summary>
         Stack,
-        /// <summary>
-        /// 
-        /// </summary>
-        StackV2,
     }
 
     /// <summary>
@@ -41,7 +37,6 @@ namespace Neon
                 NeonAuthSupportedAuthProvider.BetterAuth => "better_auth",
                 NeonAuthSupportedAuthProvider.Mock => "mock",
                 NeonAuthSupportedAuthProvider.Stack => "stack",
-                NeonAuthSupportedAuthProvider.StackV2 => "stack_v2",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,7 +50,6 @@ namespace Neon
                 "better_auth" => NeonAuthSupportedAuthProvider.BetterAuth,
                 "mock" => NeonAuthSupportedAuthProvider.Mock,
                 "stack" => NeonAuthSupportedAuthProvider.Stack,
-                "stack_v2" => NeonAuthSupportedAuthProvider.StackV2,
                 _ => null,
             };
         }

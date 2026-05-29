@@ -68,6 +68,11 @@ namespace Neon
         public BranchClient Branch { get; }
 
         /// <summary>
+        /// These methods allow you to create, list, and delete branchable object-storage buckets for a Neon branch. Backed by the Neon Platform branchable-storage service.
+        /// </summary>
+        public BucketsClient Buckets { get; }
+
+        /// <summary>
         /// These methods allow you to view consumption details for your Neon account.
         /// </summary>
         public ConsumptionClient Consumption { get; }
