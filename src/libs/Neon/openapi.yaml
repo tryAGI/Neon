@@ -10615,6 +10615,11 @@
                                 "type": "integer",
                                 "format": "int64"
                             },
+                            "history_size_bytes": {
+                                "type": "integer",
+                                "format": "int64",
+                                "description": "Soft limit on PITR history size per project, in bytes. Display-only nudge \u2014\nnot enforced server-side. Value <= 0 means unlimited.\n"
+                            },
                             "suspend_default_branch": {
                                 "type": "boolean"
                             }
@@ -10623,6 +10628,7 @@
                             "compute_time_seconds",
                             "written_data_bytes",
                             "data_transfer_bytes",
+                            "history_size_bytes",
                             "suspend_default_branch"
                         ]
                     }
