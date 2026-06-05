@@ -37,6 +37,10 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.OperationStatusNullableJsonConverter),
 
+            typeof(global::Neon.JsonConverters.ProjectPermissionLevelJsonConverter),
+
+            typeof(global::Neon.JsonConverters.ProjectPermissionLevelNullableJsonConverter),
+
             typeof(global::Neon.JsonConverters.ConsumptionHistoryGranularityJsonConverter),
 
             typeof(global::Neon.JsonConverters.ConsumptionHistoryGranularityNullableJsonConverter),
@@ -296,6 +300,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectListItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DefaultEndpointSettings))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectSettingsData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectPermissionLevel), TypeInfoPropertyName = "ProjectPermissionLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Project))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectOwnerData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectCreateRequest))]
