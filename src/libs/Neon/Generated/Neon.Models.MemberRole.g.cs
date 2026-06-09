@@ -4,7 +4,8 @@
 namespace Neon
 {
     /// <summary>
-    /// The role of the organization member
+    /// The role of the organization member. Some role values may not be<br/>
+    /// available for all organizations.
     /// </summary>
     public enum MemberRole
     {
@@ -15,7 +16,19 @@ namespace Neon
         /// <summary>
         /// 
         /// </summary>
+        Collaborator,
+        /// <summary>
+        /// 
+        /// </summary>
+        Editor,
+        /// <summary>
+        /// 
+        /// </summary>
         Member,
+        /// <summary>
+        /// 
+        /// </summary>
+        Viewer,
     }
 
     /// <summary>
@@ -31,7 +44,10 @@ namespace Neon
             return value switch
             {
                 MemberRole.Admin => "admin",
+                MemberRole.Collaborator => "collaborator",
+                MemberRole.Editor => "editor",
                 MemberRole.Member => "member",
+                MemberRole.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,7 +59,10 @@ namespace Neon
             return value switch
             {
                 "admin" => MemberRole.Admin,
+                "collaborator" => MemberRole.Collaborator,
+                "editor" => MemberRole.Editor,
                 "member" => MemberRole.Member,
+                "viewer" => MemberRole.Viewer,
                 _ => null,
             };
         }
