@@ -16,7 +16,8 @@ namespace Neon
         public required string Email { get; set; }
 
         /// <summary>
-        /// The role of the organization member
+        /// The role of the organization member. Some role values may not be<br/>
+        /// available for all organizations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.MemberRoleJsonConverter))]
@@ -36,7 +37,8 @@ namespace Neon
         /// Email to invite
         /// </param>
         /// <param name="role">
-        /// The role of the organization member
+        /// The role of the organization member. Some role values may not be<br/>
+        /// available for all organizations.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

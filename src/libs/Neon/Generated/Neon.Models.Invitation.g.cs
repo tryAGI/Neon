@@ -44,7 +44,8 @@ namespace Neon
         public required global::System.DateTime InvitedAt { get; set; }
 
         /// <summary>
-        /// The role of the organization member
+        /// The role of the organization member. Some role values may not be<br/>
+        /// available for all organizations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.MemberRoleJsonConverter))]
@@ -74,7 +75,8 @@ namespace Neon
         /// Timestamp when the invitation was created
         /// </param>
         /// <param name="role">
-        /// The role of the organization member
+        /// The role of the organization member. Some role values may not be<br/>
+        /// available for all organizations.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

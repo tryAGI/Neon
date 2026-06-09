@@ -15,7 +15,8 @@ namespace Neon
         public string? Email { get; set; }
 
         /// <summary>
-        /// The role of the organization member
+        /// The role of the organization member. Some role values may not be<br/>
+        /// available for all organizations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.MemberRoleJsonConverter))]
@@ -38,7 +39,8 @@ namespace Neon
         /// </summary>
         /// <param name="email"></param>
         /// <param name="role">
-        /// The role of the organization member
+        /// The role of the organization member. Some role values may not be<br/>
+        /// available for all organizations.
         /// </param>
         /// <param name="resend"></param>
 #if NET7_0_OR_GREATER
