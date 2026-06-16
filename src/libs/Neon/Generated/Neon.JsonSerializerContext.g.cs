@@ -37,6 +37,10 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.OperationStatusNullableJsonConverter),
 
+            typeof(global::Neon.JsonConverters.ProjectPermissionLevelJsonConverter),
+
+            typeof(global::Neon.JsonConverters.ProjectPermissionLevelNullableJsonConverter),
+
             typeof(global::Neon.JsonConverters.ConsumptionHistoryGranularityJsonConverter),
 
             typeof(global::Neon.JsonConverters.ConsumptionHistoryGranularityNullableJsonConverter),
@@ -229,6 +233,8 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>),
 
+            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>),
+
             typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.OrganizationMembersResponse, global::Neon.CursorPaginationResponse>),
 
             typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>),
@@ -294,6 +300,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectListItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DefaultEndpointSettings))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectSettingsData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectPermissionLevel), TypeInfoPropertyName = "ProjectPermissionLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Project))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectOwnerData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectCreateRequest))]
@@ -618,6 +625,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.AnnotationResponse>), TypeInfoPropertyName = "AllOfBranchResponseAnnotationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectResponse, global::Neon.PaginationResponse>), TypeInfoPropertyName = "AllOfConsumptionHistoryPerProjectResponsePaginationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>), TypeInfoPropertyName = "AllOfConsumptionHistoryPerProjectV2ResponsePaginationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>), TypeInfoPropertyName = "AllOfConsumptionHistoryPerBranchV2ResponsePaginationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.OrgApiKeysListResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.OrganizationMembersResponse, global::Neon.CursorPaginationResponse>), TypeInfoPropertyName = "AllOfOrganizationMembersResponseCursorPaginationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CreateSnapshotResponse))]
