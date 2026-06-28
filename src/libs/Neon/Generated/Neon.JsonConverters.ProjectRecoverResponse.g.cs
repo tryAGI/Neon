@@ -49,6 +49,7 @@ namespace Neon.JsonConverters
             if (__jsonProps.Contains("project.data_storage_bytes_hour")) __score0++;
             if (__jsonProps.Contains("project.data_transfer_bytes")) __score0++;
             if (__jsonProps.Contains("project.default_endpoint_settings")) __score0++;
+            if (__jsonProps.Contains("project.effective_project_permission")) __score0++;
             if (__jsonProps.Contains("project.hipaa_enabled_at")) __score0++;
             if (__jsonProps.Contains("project.history_retention_seconds")) __score0++;
             if (__jsonProps.Contains("project.id")) __score0++;

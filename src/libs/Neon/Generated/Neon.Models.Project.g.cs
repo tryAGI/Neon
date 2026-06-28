@@ -251,6 +251,13 @@ namespace Neon
         public global::System.DateTime? HipaaEnabledAt { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("effective_project_permission")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.ProjectPermissionLevelJsonConverter))]
+        public global::Neon.ProjectPermissionLevel? EffectiveProjectPermission { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -364,6 +371,7 @@ namespace Neon
         /// <param name="hipaaEnabledAt">
         /// A timestamp indicating when HIPAA was enabled for this project
         /// </param>
+        /// <param name="effectiveProjectPermission"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -399,7 +407,8 @@ namespace Neon
             global::System.DateTime? computeLastActiveAt,
             string? orgId,
             global::System.DateTime? maintenanceScheduledFor,
-            global::System.DateTime? hipaaEnabledAt)
+            global::System.DateTime? hipaaEnabledAt,
+            global::Neon.ProjectPermissionLevel? effectiveProjectPermission)
         {
             this.DataStorageBytesHour = dataStorageBytesHour;
             this.DataTransferBytes = dataTransferBytes;
@@ -433,6 +442,7 @@ namespace Neon
             this.OrgId = orgId;
             this.MaintenanceScheduledFor = maintenanceScheduledFor;
             this.HipaaEnabledAt = hipaaEnabledAt;
+            this.EffectiveProjectPermission = effectiveProjectPermission;
         }
 
         /// <summary>
