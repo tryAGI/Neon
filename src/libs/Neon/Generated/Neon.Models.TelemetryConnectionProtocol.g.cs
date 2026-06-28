@@ -4,7 +4,8 @@
 namespace Neon
 {
     /// <summary>
-    /// Required. Communication protocol used to send telemetry data. Options: grpc, http.
+    /// Required. Communication protocol used to send telemetry data. Options: grpc, http.<br/>
+    /// For gRPC, the endpoint must include an explicit port.
     /// </summary>
     public enum TelemetryConnectionProtocol
     {

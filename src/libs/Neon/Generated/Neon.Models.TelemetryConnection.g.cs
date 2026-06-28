@@ -9,7 +9,8 @@ namespace Neon
     public sealed partial class TelemetryConnection
     {
         /// <summary>
-        /// Required. Communication protocol used to send telemetry data. Options: grpc, http.
+        /// Required. Communication protocol used to send telemetry data. Options: grpc, http.<br/>
+        /// For gRPC, the endpoint must include an explicit port.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("protocol")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.TelemetryConnectionProtocolJsonConverter))]
@@ -40,7 +41,8 @@ namespace Neon
         /// Initializes a new instance of the <see cref="TelemetryConnection" /> class.
         /// </summary>
         /// <param name="protocol">
-        /// Required. Communication protocol used to send telemetry data. Options: grpc, http.
+        /// Required. Communication protocol used to send telemetry data. Options: grpc, http.<br/>
+        /// For gRPC, the endpoint must include an explicit port.
         /// </param>
         /// <param name="endpoint">
         /// Required. URI of the OpenTelemetry Collector (e.g., https://collector.customer.com:4317).

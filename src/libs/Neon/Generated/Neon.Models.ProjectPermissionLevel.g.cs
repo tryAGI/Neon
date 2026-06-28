@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// The caller's effective permission for a project list item when<br/>
+    /// The caller's effective permission for a project when<br/>
     /// per-project permissions are enabled. Values correspond to viewer,<br/>
     /// editor, and admin/manage project access levels. Omitted for personal<br/>
     /// projects, flag-off organizations, and non-user subjects.
