@@ -48,6 +48,11 @@ namespace Neon
 
 
         /// <summary>
+        /// These methods allow you to inspect the AI Gateway endpoint for your Neon branches.
+        /// </summary>
+        public AiGatewayClient AiGateway { get; }
+
+        /// <summary>
         /// These methods allow you to create and manage API keys for your Neon account. For related information, see [Manage API keys](https://neon.com/docs/manage/api-keys).
         /// </summary>
         public ApiKeyClient ApiKey { get; }
@@ -68,9 +73,19 @@ namespace Neon
         public BranchClient Branch { get; }
 
         /// <summary>
+        /// These methods allow you to create and manage branchable object-storage buckets and their objects.
+        /// </summary>
+        public BucketsClient Buckets { get; }
+
+        /// <summary>
         /// These methods allow you to view consumption details for your Neon account.
         /// </summary>
         public ConsumptionClient Consumption { get; }
+
+        /// <summary>
+        /// These methods allow you to issue and manage scoped credentials on your Neon branches.
+        /// </summary>
+        public CredentialsClient Credentials { get; }
 
         /// <summary>
         /// 
@@ -81,6 +96,11 @@ namespace Neon
         /// These methods allow you to create and manage compute endpoints in your Neon project. For related information, see [Manage compute endpoints](https://neon.com/docs/manage/endpoints).
         /// </summary>
         public EndpointClient Endpoint { get; }
+
+        /// <summary>
+        /// These methods allow you to create and manage functions on your Neon branches.
+        /// </summary>
+        public FunctionsClient Functions { get; }
 
         /// <summary>
         /// These methods allow you to view operation details for your Neon project. For related information, see [Operations](https://neon.com/docs/manage/operations).
@@ -106,6 +126,11 @@ namespace Neon
         /// These methods allow you to create and manage snapshots.
         /// </summary>
         public SnapshotClient Snapshot { get; }
+
+        /// <summary>
+        /// These methods allow you to inspect branchable object-storage state for Neon branches.
+        /// </summary>
+        public StorageClient Storage { get; }
 
         /// <summary>
         /// These methods allow you to manage your Neon user account.

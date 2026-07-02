@@ -62,7 +62,9 @@ namespace Neon
         public string? Provisioner { get; set; }
 
         /// <summary>
-        /// Whether to enable connection pooling for the compute endpoint
+        /// DEPRECATED. Whether to enable connection pooling for the compute endpoint.<br/>
+        /// The recommended way to enable connection pooling is to append `-pooler` to the endpoint ID in the connection string.<br/>
+        /// See [How to use connection pooling](https://neon.com/docs/connect/connection-pooling#how-to-use-connection-pooling)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pooler_enabled")]
         [global::System.Obsolete("This property marked as deprecated.")]

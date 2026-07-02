@@ -208,10 +208,7 @@ namespace Neon
         public global::System.DateTime? RecoverableUntil { get; set; }
 
         /// <summary>
-        /// The caller's effective permission for a project list item when<br/>
-        /// per-project permissions are enabled. Values correspond to viewer,<br/>
-        /// editor, and admin/manage project access levels. Omitted for personal<br/>
-        /// projects, flag-off organizations, and non-user subjects.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effective_project_permission")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.ProjectPermissionLevelJsonConverter))]
@@ -313,12 +310,7 @@ namespace Neon
         /// <param name="recoverableUntil">
         /// A timestamp indicating the project will be recoverable until this date and time.
         /// </param>
-        /// <param name="effectiveProjectPermission">
-        /// The caller's effective permission for a project list item when<br/>
-        /// per-project permissions are enabled. Values correspond to viewer,<br/>
-        /// editor, and admin/manage project access levels. Omitted for personal<br/>
-        /// projects, flag-off organizations, and non-user subjects.
-        /// </param>
+        /// <param name="effectiveProjectPermission"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

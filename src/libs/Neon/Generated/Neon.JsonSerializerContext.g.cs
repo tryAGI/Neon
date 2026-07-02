@@ -13,14 +13,6 @@ namespace Neon
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::Neon.JsonConverters.TelemetryConnectionProtocolJsonConverter),
-
-            typeof(global::Neon.JsonConverters.TelemetryConnectionProtocolNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.TelemetryConfigTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.TelemetryConfigTypeNullableJsonConverter),
-
             typeof(global::Neon.JsonConverters.AdvisorCategoryJsonConverter),
 
             typeof(global::Neon.JsonConverters.AdvisorCategoryNullableJsonConverter),
@@ -85,10 +77,6 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.MemberRoleNullableJsonConverter),
 
-            typeof(global::Neon.JsonConverters.EnableOrganizationFeatureRequestFeatureJsonConverter),
-
-            typeof(global::Neon.JsonConverters.EnableOrganizationFeatureRequestFeatureNullableJsonConverter),
-
             typeof(global::Neon.JsonConverters.AuthDetailsResponseAuthMethodJsonConverter),
 
             typeof(global::Neon.JsonConverters.AuthDetailsResponseAuthMethodNullableJsonConverter),
@@ -96,14 +84,6 @@ namespace Neon
             typeof(global::Neon.JsonConverters.IdentityProviderIdJsonConverter),
 
             typeof(global::Neon.JsonConverters.IdentityProviderIdNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.UserDeletionConditionNameJsonConverter),
-
-            typeof(global::Neon.JsonConverters.UserDeletionConditionNameNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.OrgDeletionConditionNameJsonConverter),
-
-            typeof(global::Neon.JsonConverters.OrgDeletionConditionNameNullableJsonConverter),
 
             typeof(global::Neon.JsonConverters.DataAPICreateRequestAuthProviderJsonConverter),
 
@@ -149,13 +129,45 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.NeonAuthEmailVerificationMethodNullableJsonConverter),
 
-            typeof(global::Neon.JsonConverters.SupportTicketSeverityJsonConverter),
-
-            typeof(global::Neon.JsonConverters.SupportTicketSeverityNullableJsonConverter),
-
             typeof(global::Neon.JsonConverters.ApplicationTypeJsonConverter),
 
             typeof(global::Neon.JsonConverters.ApplicationTypeNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.BucketAccessLevelJsonConverter),
+
+            typeof(global::Neon.JsonConverters.BucketAccessLevelNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.BucketCreateRequestAccessLevelJsonConverter),
+
+            typeof(global::Neon.JsonConverters.BucketCreateRequestAccessLevelNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.BranchStorageNotEnabledReasonJsonConverter),
+
+            typeof(global::Neon.JsonConverters.BranchStorageNotEnabledReasonNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.BranchAiGatewayNotEnabledReasonJsonConverter),
+
+            typeof(global::Neon.JsonConverters.BranchAiGatewayNotEnabledReasonNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.PresignRequestOperationJsonConverter),
+
+            typeof(global::Neon.JsonConverters.PresignRequestOperationNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.CredentialScopeJsonConverter),
+
+            typeof(global::Neon.JsonConverters.CredentialScopeNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.CreateCredentialRequestPrincipalTypeJsonConverter),
+
+            typeof(global::Neon.JsonConverters.CreateCredentialRequestPrincipalTypeNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.NeonFunctionDeploymentStatusJsonConverter),
+
+            typeof(global::Neon.JsonConverters.NeonFunctionDeploymentStatusNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.FunctionDeployRequestRuntimeJsonConverter),
+
+            typeof(global::Neon.JsonConverters.FunctionDeployRequestRuntimeNullableJsonConverter),
 
             typeof(global::Neon.JsonConverters.GetProjectAdvisorSecurityIssuesMinSeverityJsonConverter),
 
@@ -207,8 +219,6 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.JWKSCreationOperationJsonConverter),
 
-            typeof(global::Neon.JsonConverters.OneOfJsonConverter<bool?, string>),
-
             typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchCreateRequest, global::Neon.AnnotationCreateValueRequest>),
 
             typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectsResponse, global::Neon.PaginationResponse, global::Neon.ProjectsApplicationsMapResponse, global::Neon.ProjectsIntegrationsMapResponse>),
@@ -239,26 +249,13 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>),
 
+            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.NeonFunctionsListResponse, global::Neon.CursorPaginationResponse>),
+
             typeof(global::Neon.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.JsonSerializerContextTypes))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, bool>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.FeatureFlags))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OneOf<bool?, string>), TypeInfoPropertyName = "OneOfBooleanString2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TelemetryConnection))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TelemetryConnectionProtocol), TypeInfoPropertyName = "TelemetryConnectionProtocol2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TelemetryAuthentication))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TelemetryAuthenticationBearerToken))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TelemetryAuthenticationBasic))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TelemetryAuthenticationApiKey))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TelemetryConfig))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.TelemetryConfigType>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TelemetryConfigType), TypeInfoPropertyName = "TelemetryConfigType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TelemetryResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.PaginationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Pagination))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EmptyResponse))]
@@ -267,6 +264,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AddProjectJWKSRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Jwks))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectJWKSResponse))]
@@ -306,6 +304,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectCreateRequestProject))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectCreateRequestProjectBranch))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectUpdateRequestProject))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectTransferRequestResponse))]
@@ -322,20 +321,18 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ProjectListItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectsCountResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectPermission))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectPermissions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ProjectPermission>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.GrantPermissionToProjectRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConsumptionHistoryPerAccountResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ConsumptionHistoryPerPeriod>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConsumptionHistoryPerPeriod))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConsumptionHistoryPerProjectResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ConsumptionHistoryPerProject>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConsumptionHistoryPerProject))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConsumptionHistoryPerProjectV2Response))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ConsumptionHistoryPerProjectV2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConsumptionHistoryPerProjectV2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ConsumptionHistoryPerPeriod>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConsumptionHistoryPerPeriod))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ConsumptionHistoryPerPeriodV2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConsumptionHistoryPerPeriodV2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConsumptionHistoryPerBranchV2Response))]
@@ -348,9 +345,6 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ConsumptionMetricValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConsumptionMetricValue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConsumptionHistoryGranularity), TypeInfoPropertyName = "ConsumptionHistoryGranularity2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectLimits))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Limits))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.LimitsPerProject))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AvailablePreloadLibrary))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AvailablePreloadLibraries))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.AvailablePreloadLibrary>))]
@@ -360,7 +354,6 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchRestrictedAction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchRecoveryInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchRecoveryInfoDeletionMethod), TypeInfoPropertyName = "BranchRecoveryInfoDeletionMethod2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchConsumption))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchCreateRequestEndpointOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointType), TypeInfoPropertyName = "EndpointType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointSettingsData))]
@@ -376,15 +369,11 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchUpdateRequestBranch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchRestoreRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchConsumptionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchSchemaResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchSchemaJSON))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchSchemaCompareResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.Branch>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchesCountResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectsBranchesCountResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Neon.ProjectsBranchesCountResponseProjects2>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectsBranchesCountResponseProjects2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.MaskingRulesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.MaskingRulesUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AnonymizedBranchStatusResponse))]
@@ -416,12 +405,6 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.Endpoint>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointsOptionalResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointPasswordlessSessionAuthRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.StatementResult))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.StatementData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ExplainData>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ExplainData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Role))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RoleCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RoleCreateRequestRole))]
@@ -453,54 +436,32 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.MemberUserInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.MemberWithUser))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Organization))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EnableOrganizationFeatureRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EnableOrganizationFeatureRequestFeature), TypeInfoPropertyName = "EnableOrganizationFeatureRequestFeature2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.Organization>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationMembership))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationMembershipsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.OrganizationMembership>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationsUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationInvitationsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.Invitation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationInviteCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationInvitesCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.OrganizationInviteCreateRequest>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationInviteUpdateRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.OrganizationGuest>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationGuest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationMemberUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationMembersResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.MemberWithUser>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.InvitationCreateRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationCreateRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrganizationCreateRequestOrganization))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.InvitationCreateRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ActiveRegionsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.RegionResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RegionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CurrentUserAuthAccount))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.IdentityProviderId), TypeInfoPropertyName = "IdentityProviderId2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.LinkedAuthAccount))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.UpdateUserInfoRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CurrentUserInfoResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.CurrentUserAuthAccount>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConvertUserToOrgRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CurrentUserInfoAuthResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.LinkedAuthAccount>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AuthDetailsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AuthDetailsResponseAuthMethod), TypeInfoPropertyName = "AuthDetailsResponseAuthMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TransferProjectsToOrganizationRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.VerifyUserPasswordRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.HealthCheck))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.LimitsUnsatisfiedResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.LimitsUnsatisfiedResponseLimit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.LimitsUnsatisfiedResponseLimit))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectsWithIntegrationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ProjectsWithIntegrationResponseProject>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectsWithIntegrationResponseProject))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.UserDeletionConditionName), TypeInfoPropertyName = "UserDeletionConditionName2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrgDeletionConditionName), TypeInfoPropertyName = "OrgDeletionConditionName2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPISettings))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPICreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPICreateRequestAuthProvider), TypeInfoPropertyName = "DataAPICreateRequestAuthProvider2")]
@@ -572,7 +533,6 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DatabaseOperations), TypeInfoPropertyName = "DatabaseOperations2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RoleOperations), TypeInfoPropertyName = "RoleOperations2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.JWKSCreationOperation), TypeInfoPropertyName = "JWKSCreationOperation2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.SupportTicketSeverity), TypeInfoPropertyName = "SupportTicketSeverity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AnnotationData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AnnotationObjectData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AnnotationResponse))]
@@ -591,7 +551,6 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BackupScheduleItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BackupSchedule))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.BackupScheduleItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.SupportTicket))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.BranchSchemaJSONTable>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchSchemaJSONTable))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.BranchSchemaJSONTableColumn>))]
@@ -599,7 +558,45 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.BranchSchemaJSONTableConstraint>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchSchemaJSONTableConstraint))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchSchemaJSONTableConstraintReferencedTable))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.SystemStatusSummaryResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketAccessLevel), TypeInfoPropertyName = "BucketAccessLevel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Bucket))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketCreateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketCreateRequestAccessLevel), TypeInfoPropertyName = "BucketCreateRequestAccessLevel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketsListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.Bucket>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchStorage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchStorageNotEnabled))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchStorageNotEnabledReason), TypeInfoPropertyName = "BranchStorageNotEnabledReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchAiGateway))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchAiGatewayNotEnabled))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchAiGatewayNotEnabledReason), TypeInfoPropertyName = "BranchAiGatewayNotEnabledReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketObject))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketObjectsListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.BucketObject>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketObjectsDeletePrefixResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.PresignRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.PresignRequestOperation), TypeInfoPropertyName = "PresignRequestOperation2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.PresignResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CredentialScope), TypeInfoPropertyName = "CredentialScope2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CreateCredentialRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.CredentialScope>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CreateCredentialRequestPrincipalType), TypeInfoPropertyName = "CreateCredentialRequestPrincipalType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CreateCredentialResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CredentialMeta))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ListCredentialsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.CredentialMeta>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunction))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionDeployment))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionDeploymentStatus), TypeInfoPropertyName = "NeonFunctionDeploymentStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionsListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.NeonFunction>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionUpdateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionDeploymentResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.FunctionDeployRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.FunctionDeployRequestRuntime), TypeInfoPropertyName = "FunctionDeployRequestRuntime2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CreateProjectTransferRequestRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AcceptProjectTransferRequestRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DisableNeonAuthRequest))]
@@ -633,9 +630,9 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.Snapshot>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.UpdateSnapshotResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>), TypeInfoPropertyName = "AllOfBranchResponseEndpointsOptionalResponseOperationsResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.NeonFunctionsListResponse, global::Neon.CursorPaginationResponse>), TypeInfoPropertyName = "AllOfNeonFunctionsListResponseCursorPaginationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>?), TypeInfoPropertyName = "EndpointsResponse_18e24691ef0e4f53")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>?), TypeInfoPropertyName = "ConnectionURIsOptionalResponse_dba8030245622754")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.TelemetryConfigType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.Jwks>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.AdvisorCategory>))]
@@ -643,9 +640,9 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.AcceptProjectTransferRequestSatisfiesPlanErrorReason>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ProjectListItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ProjectPermission>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ConsumptionHistoryPerPeriod>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ConsumptionHistoryPerProject>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ConsumptionHistoryPerProjectV2>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ConsumptionHistoryPerPeriod>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ConsumptionHistoryPerPeriodV2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ConsumptionHistoryPerBranchV2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ConsumptionHistoryPerTimeframe>))]
@@ -661,20 +658,14 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.VPCEndpoint>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.VPCEndpointWithRegion>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.Endpoint>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ExplainData>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.Role>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.Database>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.Organization>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.OrganizationMembership>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.Invitation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.OrganizationInviteCreateRequest>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.OrganizationGuest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.MemberWithUser>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.InvitationCreateRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.RegionResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.CurrentUserAuthAccount>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.LinkedAuthAccount>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.LimitsUnsatisfiedResponseLimit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ProjectsWithIntegrationResponseProject>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.NeonAuthRedirectURIWhitelistDomain>))]
@@ -688,6 +679,11 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.BranchSchemaJSONTable>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.BranchSchemaJSONTableColumn>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.BranchSchemaJSONTableConstraint>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.Bucket>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.BucketObject>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.CredentialScope>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.CredentialMeta>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.NeonFunction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.AdvisorIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ApiKeysListResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.OrgApiKeysListResponseItem>))]

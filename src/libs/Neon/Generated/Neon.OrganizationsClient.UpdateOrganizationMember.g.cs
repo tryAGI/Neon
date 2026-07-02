@@ -48,7 +48,7 @@ namespace Neon
         /// <summary>
         /// Update role for organization member<br/>
         /// Updates the role of an existing member in the specified organization.<br/>
-        /// Supported roles are `admin` and `member`.<br/>
+        /// The requested role must be valid for the organization.<br/>
         /// Only organization admins can call this endpoint.
         /// </summary>
         /// <param name="orgId"></param>
@@ -79,7 +79,7 @@ namespace Neon
         /// <summary>
         /// Update role for organization member<br/>
         /// Updates the role of an existing member in the specified organization.<br/>
-        /// Supported roles are `admin` and `member`.<br/>
+        /// The requested role must be valid for the organization.<br/>
         /// Only organization admins can call this endpoint.
         /// </summary>
         /// <param name="orgId"></param>
@@ -495,7 +495,7 @@ namespace Neon
         /// <summary>
         /// Update role for organization member<br/>
         /// Updates the role of an existing member in the specified organization.<br/>
-        /// Supported roles are `admin` and `member`.<br/>
+        /// The requested role must be valid for the organization.<br/>
         /// Only organization admins can call this endpoint.
         /// </summary>
         /// <param name="orgId"></param>
