@@ -43,6 +43,15 @@ namespace Neon
 
 
         /// <summary>
+        /// These methods allow you to inspect the AI Gateway endpoint for your Neon branches.
+        /// </summary>
+        public AiGatewayClient AiGateway => new AiGatewayClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// These methods allow you to create and manage API keys for your Neon account. For related information, see [Manage API keys](https://neon.com/docs/manage/api-keys).
         /// </summary>
         public ApiKeyClient ApiKey => new ApiKeyClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
@@ -79,9 +88,27 @@ namespace Neon
         };
 
         /// <summary>
+        /// These methods allow you to create and manage branchable object-storage buckets and their objects.
+        /// </summary>
+        public BucketsClient Buckets => new BucketsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// These methods allow you to view consumption details for your Neon account.
         /// </summary>
         public ConsumptionClient Consumption => new ConsumptionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// These methods allow you to issue and manage scoped credentials on your Neon branches.
+        /// </summary>
+        public CredentialsClient Credentials => new CredentialsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -100,6 +127,15 @@ namespace Neon
         /// These methods allow you to create and manage compute endpoints in your Neon project. For related information, see [Manage compute endpoints](https://neon.com/docs/manage/endpoints).
         /// </summary>
         public EndpointClient Endpoint => new EndpointClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// These methods allow you to create and manage functions on your Neon branches.
+        /// </summary>
+        public FunctionsClient Functions => new FunctionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -145,6 +181,15 @@ namespace Neon
         /// These methods allow you to create and manage snapshots.
         /// </summary>
         public SnapshotClient Snapshot => new SnapshotClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// These methods allow you to inspect branchable object-storage state for Neon branches.
+        /// </summary>
+        public StorageClient Storage => new StorageClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
