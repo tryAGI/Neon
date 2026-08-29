@@ -4,19 +4,19 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateSnapshotResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("snapshot")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Neon.Snapshot Snapshot { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operations")]
         [global::System.Text.Json.Serialization.JsonRequired]

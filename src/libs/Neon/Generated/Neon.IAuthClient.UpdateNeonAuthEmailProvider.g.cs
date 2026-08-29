@@ -7,7 +7,11 @@ namespace Neon
         /// <summary>
         /// Update email provider configuration<br/>
         /// Updates the email provider configuration for the specified branch's Neon Auth integration.<br/>
-        /// The email provider handles transactional messages such as verification emails and password reset links.
+        /// The email provider handles transactional messages such as verification emails and password reset links.<br/>
+        /// Partial `standard` updates — omitting fields to keep their stored values — are supported only for<br/>
+        /// Better Auth integrations, which merge omitted fields server-side. Legacy Stack Auth integrations do<br/>
+        /// not merge and require all six `standard` fields (`host`, `port`, `username`, `password`,<br/>
+        /// `sender_email`, `sender_name`) on every update; a partial `standard` body is rejected with 400.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -15,7 +19,7 @@ namespace Neon
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Neon.NeonAuthEmailServerConfig> UpdateNeonAuthEmailProviderAsync(
+        global::System.Threading.Tasks.Task<global::Neon.NeonAuthEmailServerConfigResponse> UpdateNeonAuthEmailProviderAsync(
             string projectId,
             string branchId,
 
@@ -25,7 +29,11 @@ namespace Neon
         /// <summary>
         /// Update email provider configuration<br/>
         /// Updates the email provider configuration for the specified branch's Neon Auth integration.<br/>
-        /// The email provider handles transactional messages such as verification emails and password reset links.
+        /// The email provider handles transactional messages such as verification emails and password reset links.<br/>
+        /// Partial `standard` updates — omitting fields to keep their stored values — are supported only for<br/>
+        /// Better Auth integrations, which merge omitted fields server-side. Legacy Stack Auth integrations do<br/>
+        /// not merge and require all six `standard` fields (`host`, `port`, `username`, `password`,<br/>
+        /// `sender_email`, `sender_name`) on every update; a partial `standard` body is rejected with 400.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -33,7 +41,7 @@ namespace Neon
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.NeonAuthEmailServerConfig>> UpdateNeonAuthEmailProviderAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.NeonAuthEmailServerConfigResponse>> UpdateNeonAuthEmailProviderAsResponseAsync(
             string projectId,
             string branchId,
 

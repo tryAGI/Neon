@@ -9,11 +9,11 @@ namespace Neon
     public enum ListProjectBranchesSortOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

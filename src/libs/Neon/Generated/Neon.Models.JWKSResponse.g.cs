@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class JWKSResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jwks")]
         [global::System.Text.Json.Serialization.JsonRequired]

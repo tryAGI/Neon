@@ -4,13 +4,13 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateProjectTransferRequestRequest
     {
         /// <summary>
-        /// Specifies the validity duration of the transfer request in seconds. If not provided,<br/>
-        /// the request will expire after 24 hours (86,400 seconds).
+        /// Number of seconds the transfer request stays valid before it expires. Defaults to 86400 (24 hours).<br/>
+        /// Default Value: 86400
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ttl_seconds")]
         public long? TtlSeconds { get; set; }
@@ -25,8 +25,8 @@ namespace Neon
         /// Initializes a new instance of the <see cref="CreateProjectTransferRequestRequest" /> class.
         /// </summary>
         /// <param name="ttlSeconds">
-        /// Specifies the validity duration of the transfer request in seconds. If not provided,<br/>
-        /// the request will expire after 24 hours (86,400 seconds).
+        /// Number of seconds the transfer request stays valid before it expires. Defaults to 86400 (24 hours).<br/>
+        /// Default Value: 86400
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

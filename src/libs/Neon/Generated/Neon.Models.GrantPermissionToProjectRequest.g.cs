@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GrantPermissionToProjectRequest
     {
         /// <summary>
-        /// 
+        /// Email address of the user to grant project access to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="GrantPermissionToProjectRequest" /> class.
         /// </summary>
-        /// <param name="email"></param>
+        /// <param name="email">
+        /// Email address of the user to grant project access to.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

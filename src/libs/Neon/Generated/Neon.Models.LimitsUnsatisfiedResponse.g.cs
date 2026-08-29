@@ -9,7 +9,7 @@ namespace Neon
     public sealed partial class LimitsUnsatisfiedResponse
     {
         /// <summary>
-        /// 
+        /// Plan limits that were not satisfied by the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limits")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="LimitsUnsatisfiedResponse" /> class.
         /// </summary>
-        /// <param name="limits"></param>
+        /// <param name="limits">
+        /// Plan limits that were not satisfied by the request.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

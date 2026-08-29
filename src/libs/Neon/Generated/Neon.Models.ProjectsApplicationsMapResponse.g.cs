@@ -10,7 +10,7 @@ namespace Neon
     public sealed partial class ProjectsApplicationsMapResponse
     {
         /// <summary>
-        /// 
+        /// Map of project IDs to their installed applications. Each key is a project ID; each value is an array of application types (for example, `vercel`, `github`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("applications")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,7 +25,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectsApplicationsMapResponse" /> class.
         /// </summary>
-        /// <param name="applications"></param>
+        /// <param name="applications">
+        /// Map of project IDs to their installed applications. Each key is a project ID; each value is an array of application types (for example, `vercel`, `github`).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

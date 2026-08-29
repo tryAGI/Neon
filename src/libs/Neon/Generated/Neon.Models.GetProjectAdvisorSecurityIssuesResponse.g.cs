@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetProjectAdvisorSecurityIssuesResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issues")]
         [global::System.Text.Json.Serialization.JsonRequired]

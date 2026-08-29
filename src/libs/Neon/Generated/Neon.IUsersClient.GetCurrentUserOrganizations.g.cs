@@ -6,7 +6,9 @@ namespace Neon
     {
         /// <summary>
         /// List organizations for the current user<br/>
-        /// Retrieves the organizations that the currently authenticated user belongs to.
+        /// Retrieves the organizations that the currently authenticated user belongs to.<br/>
+        /// When called with an organization- or project-scoped API key (which is not<br/>
+        /// tied to a user), this returns the single organization that owns the key.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -16,7 +18,9 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List organizations for the current user<br/>
-        /// Retrieves the organizations that the currently authenticated user belongs to.
+        /// Retrieves the organizations that the currently authenticated user belongs to.<br/>
+        /// When called with an organization- or project-scoped API key (which is not<br/>
+        /// tied to a user), this returns the single organization that owns the key.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

@@ -4,19 +4,19 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PlanVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("major")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Major { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("minor")]
         [global::System.Text.Json.Serialization.JsonRequired]

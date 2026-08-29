@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ProjectSettingsData
     {
@@ -64,14 +64,14 @@ namespace Neon
         public bool? BlockVpcConnections { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audit_log_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.ProjectAuditLogLevelJsonConverter))]
         public global::Neon.ProjectAuditLogLevel? AuditLogLevel { get; set; }
 
         /// <summary>
-        /// 
+        /// Enables HIPAA compliance mode for the project, including audit logging.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hipaa")]
         public bool? Hipaa { get; set; }
@@ -129,7 +129,9 @@ namespace Neon
         /// This parameter is under active development and its semantics may change in the future.
         /// </param>
         /// <param name="auditLogLevel"></param>
-        /// <param name="hipaa"></param>
+        /// <param name="hipaa">
+        /// Enables HIPAA compliance mode for the project, including audit logging.
+        /// </param>
         /// <param name="preloadLibraries">
         /// The shared libraries to preload into the project's compute instances.
         /// </param>

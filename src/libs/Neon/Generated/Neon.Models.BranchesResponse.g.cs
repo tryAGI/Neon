@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BranchesResponse
     {
         /// <summary>
-        /// 
+        /// Branches in the project. Each includes `id`, `name`, `current_state`, and `created_at`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branches")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="BranchesResponse" /> class.
         /// </summary>
-        /// <param name="branches"></param>
+        /// <param name="branches">
+        /// Branches in the project. Each includes `id`, `name`, `current_state`, and `created_at`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

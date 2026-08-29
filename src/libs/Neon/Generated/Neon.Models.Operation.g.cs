@@ -4,6 +4,7 @@
 namespace Neon
 {
     /// <summary>
+    /// An asynchronous action Neon performs on your resources (for example, starting a compute or creating a branch). Fields such as `action`, `status`, and `total_duration_ms` describe the operation and its progress.<br/>
     /// Example: {"id":"d8ac46eb-a757-42b1-9907-f78322ee394e","project_id":"spring-example-302709","branch_id":"br-wispy-meadow-118737","endpoint_id":"ep-silent-smoke-806639","action":"start_compute","status":"finished","failures_count":0,"created_at":"2022-11-15T20:02:00Z","updated_at":"2022-11-15T20:02:02Z","total_duration_ms":200}
     /// </summary>
     public sealed partial class Operation
@@ -16,20 +17,20 @@ namespace Neon
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
-        /// The Neon project ID
+        /// The ID of the project this operation ran on.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectId { get; set; }
 
         /// <summary>
-        /// The branch ID
+        /// The ID of the branch this operation ran on.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branch_id")]
         public string? BranchId { get; set; }
 
         /// <summary>
-        /// The endpoint ID
+        /// The ID of the compute endpoint this operation ran on.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint_id")]
         public string? EndpointId { get; set; }
@@ -43,7 +44,7 @@ namespace Neon
         public required global::Neon.OperationAction Action { get; set; }
 
         /// <summary>
-        /// The status of the operation
+        /// Lifecycle state of the operation. `scheduling`: queued, not yet started. `running`: actively executing. `finished`: completed successfully. `failed`: ended with a failure. `error`: ended with a terminal error. `cancelling`: cancellation requested but not yet complete. `cancelled`: stopped before completion. `skipped`: bypassed without executing.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.OperationStatusJsonConverter))]
@@ -51,7 +52,7 @@ namespace Neon
         public required global::Neon.OperationStatus Status { get; set; }
 
         /// <summary>
-        /// The error that occurred
+        /// Human-readable message describing why the operation failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public string? Error { get; set; }
@@ -103,13 +104,13 @@ namespace Neon
         /// The operation ID
         /// </param>
         /// <param name="projectId">
-        /// The Neon project ID
+        /// The ID of the project this operation ran on.
         /// </param>
         /// <param name="action">
         /// The action performed by the operation
         /// </param>
         /// <param name="status">
-        /// The status of the operation
+        /// Lifecycle state of the operation. `scheduling`: queued, not yet started. `running`: actively executing. `finished`: completed successfully. `failed`: ended with a failure. `error`: ended with a terminal error. `cancelling`: cancellation requested but not yet complete. `cancelled`: stopped before completion. `skipped`: bypassed without executing.
         /// </param>
         /// <param name="failuresCount">
         /// The number of times the operation failed
@@ -124,13 +125,13 @@ namespace Neon
         /// The total duration of the operation in milliseconds
         /// </param>
         /// <param name="branchId">
-        /// The branch ID
+        /// The ID of the branch this operation ran on.
         /// </param>
         /// <param name="endpointId">
-        /// The endpoint ID
+        /// The ID of the compute endpoint this operation ran on.
         /// </param>
         /// <param name="error">
-        /// The error that occurred
+        /// Human-readable message describing why the operation failed.
         /// </param>
         /// <param name="retryAt">
         /// A timestamp indicating when the operation was last retried

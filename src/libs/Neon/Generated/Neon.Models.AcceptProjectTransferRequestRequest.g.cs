@@ -4,14 +4,16 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AcceptProjectTransferRequestRequest
     {
         /// <summary>
         /// The Neon organization ID to transfer the project to. If not provided, the project will be<br/>
-        /// transferred to the current user or organization account.
+        /// transferred to the current user or organization account.<br/>
+        /// Example: org-cool-darkness-12345678
         /// </summary>
+        /// <example>org-cool-darkness-12345678</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("org_id")]
         public string? OrgId { get; set; }
 
@@ -26,7 +28,8 @@ namespace Neon
         /// </summary>
         /// <param name="orgId">
         /// The Neon organization ID to transfer the project to. If not provided, the project will be<br/>
-        /// transferred to the current user or organization account.
+        /// transferred to the current user or organization account.<br/>
+        /// Example: org-cool-darkness-12345678
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

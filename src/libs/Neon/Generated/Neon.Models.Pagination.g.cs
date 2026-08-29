@@ -4,15 +4,13 @@
 namespace Neon
 {
     /// <summary>
-    /// Cursor based pagination is used. The user must pass the cursor as is to the backend.<br/>
-    /// For more information about cursor based pagination, see<br/>
-    /// https://learn.microsoft.com/en-us/ef/core/querying/pagination#keyset-pagination<br/>
+    /// Cursor-based pagination. The `cursor` value reflects the endpoint's sort field (for example, an ID or timestamp), so pass it back unchanged.<br/>
     /// Example: {"cursor":"2022-12-07T00:45:05.262011Z"}
     /// </summary>
     public sealed partial class Pagination
     {
         /// <summary>
-        /// 
+        /// Cursor marking the last item in this response. Pass it unchanged as the `cursor` query parameter to fetch the next page.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursor")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -27,7 +25,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="Pagination" /> class.
         /// </summary>
-        /// <param name="cursor"></param>
+        /// <param name="cursor">
+        /// Cursor marking the last item in this response. Pass it unchanged as the `cursor` query parameter to fetch the next page.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

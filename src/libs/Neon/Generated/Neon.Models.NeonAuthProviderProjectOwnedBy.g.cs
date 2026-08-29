@@ -4,16 +4,16 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum NeonAuthProviderProjectOwnedBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Neon,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

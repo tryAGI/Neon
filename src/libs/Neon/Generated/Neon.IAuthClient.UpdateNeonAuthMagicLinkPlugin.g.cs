@@ -48,13 +48,13 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="enabled">
-        /// Whether the magic link plugin is enabled
+        /// Whether to enable the magic link plugin.
         /// </param>
         /// <param name="expiresIn">
-        /// Time in minutes before the magic link expires
+        /// Minutes until the magic link expires.
         /// </param>
         /// <param name="disableSignUp">
-        /// Whether to disable sign-up via magic link
+        /// When true, sign-up via magic link is disabled.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

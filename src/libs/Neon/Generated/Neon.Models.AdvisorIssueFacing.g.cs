@@ -10,11 +10,11 @@ namespace Neon
     public enum AdvisorIssueFacing
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         External,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Internal,
     }

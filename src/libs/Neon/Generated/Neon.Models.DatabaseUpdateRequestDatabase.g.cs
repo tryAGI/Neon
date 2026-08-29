@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    /// Properties to update on the database.
     /// </summary>
     public sealed partial class DatabaseUpdateRequestDatabase
     {
         /// <summary>
-        /// The name of the database
+        /// Name of the database to update.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
@@ -30,7 +30,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="DatabaseUpdateRequestDatabase" /> class.
         /// </summary>
         /// <param name="name">
-        /// The name of the database
+        /// Name of the database to update.
         /// </param>
         /// <param name="ownerName">
         /// The name of the role that owns the database

@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    /// Configuration for the initial branch created with the project.
     /// </summary>
     public sealed partial class ProjectCreateRequestProjectBranch
     {
@@ -27,7 +27,7 @@ namespace Neon
         public string? DatabaseName { get; set; }
 
         /// <summary>
-        /// Annotation properties.<br/>
+        /// A free-form map of string key-value pairs for attaching metadata to a resource (for example, a git commit reference). Maximum 50 entries.<br/>
         /// Example: {"github-commit-ref":"github-branch-name"}
         /// </summary>
         /// <example>{"github-commit-ref":"github-branch-name"}</example>
@@ -53,7 +53,7 @@ namespace Neon
         /// The database name. If not specified, the default database name, `neondb`, will be used.
         /// </param>
         /// <param name="annotations">
-        /// Annotation properties.<br/>
+        /// A free-form map of string key-value pairs for attaching metadata to a resource (for example, a git commit reference). Maximum 50 entries.<br/>
         /// Example: {"github-commit-ref":"github-branch-name"}
         /// </param>
 #if NET7_0_OR_GREATER

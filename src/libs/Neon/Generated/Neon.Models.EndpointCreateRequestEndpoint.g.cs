@@ -6,7 +6,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    /// Configuration for the compute endpoint to create.
     /// </summary>
     public sealed partial class EndpointCreateRequestEndpoint
     {
@@ -24,7 +24,7 @@ namespace Neon
         public string? RegionId { get; set; }
 
         /// <summary>
-        /// The compute endpoint type. Either `read_write` or `read_only`.
+        /// Compute endpoint type. `read_write`: the primary read-write endpoint (one per branch). `read_only`: a read replica endpoint (multiple allowed per branch).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.EndpointTypeJsonConverter))]
@@ -38,38 +38,34 @@ namespace Neon
         public global::Neon.EndpointSettingsData? Settings { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("autoscaling_limit_min_cu")]
         public double? AutoscalingLimitMinCu { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("autoscaling_limit_max_cu")]
         public double? AutoscalingLimitMaxCu { get; set; }
 
         /// <summary>
-        /// The Neon compute provisioner.<br/>
-        /// Specify the `k8s-neonvm` provisioner to create a compute endpoint that supports Autoscaling.<br/>
-        /// Provisioner can be one of the following values:<br/>
-        /// * k8s-pod<br/>
-        /// * k8s-neonvm<br/>
-        /// * serverless-platform<br/>
-        /// Clients must expect, that any string value that is not documented in the description above should be treated as a error. UNKNOWN value if safe to treat as an error too.
+        /// Example: k8s-neonvm
         /// </summary>
+        /// <example>k8s-neonvm</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("provisioner")]
         public string? Provisioner { get; set; }
 
         /// <summary>
-        /// Whether to enable connection pooling for the compute endpoint
+        /// Deprecated. To enable connection pooling, append `-pooler` to the endpoint ID in the connection string.<br/>
+        /// See [How to use connection pooling](https://neon.com/docs/connect/connection-pooling#how-to-use-connection-pooling)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pooler_enabled")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public bool? PoolerEnabled { get; set; }
 
         /// <summary>
-        /// DEPRECATED. The connection pooler mode. Neon supports PgBouncer in `transaction` mode only. This schema is deprecated and will be removed after 2026-06-20.
+        /// Deprecated. The connection pooler mode. Neon supports PgBouncer in `transaction` mode only. Removal scheduled for June 20, 2026.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pooler_mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.EndpointPoolerModeJsonConverter))]
@@ -122,7 +118,7 @@ namespace Neon
         /// The ID of the branch the compute endpoint will be associated with
         /// </param>
         /// <param name="type">
-        /// The compute endpoint type. Either `read_write` or `read_only`.
+        /// Compute endpoint type. `read_write`: the primary read-write endpoint (one per branch). `read_only`: a read replica endpoint (multiple allowed per branch).
         /// </param>
         /// <param name="regionId">
         /// The region where the compute endpoint will be created. Only the project's `region_id` is permitted.
@@ -133,13 +129,7 @@ namespace Neon
         /// <param name="autoscalingLimitMinCu"></param>
         /// <param name="autoscalingLimitMaxCu"></param>
         /// <param name="provisioner">
-        /// The Neon compute provisioner.<br/>
-        /// Specify the `k8s-neonvm` provisioner to create a compute endpoint that supports Autoscaling.<br/>
-        /// Provisioner can be one of the following values:<br/>
-        /// * k8s-pod<br/>
-        /// * k8s-neonvm<br/>
-        /// * serverless-platform<br/>
-        /// Clients must expect, that any string value that is not documented in the description above should be treated as a error. UNKNOWN value if safe to treat as an error too.
+        /// Example: k8s-neonvm
         /// </param>
         /// <param name="disabled">
         /// Whether to restrict connections to the compute endpoint.<br/>

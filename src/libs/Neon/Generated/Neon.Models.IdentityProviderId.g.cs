@@ -9,31 +9,31 @@ namespace Neon
     public enum IdentityProviderId
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Github,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Google,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hasura,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Keycloak,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Microsoft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Microsoftv2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vercelmp,
     }

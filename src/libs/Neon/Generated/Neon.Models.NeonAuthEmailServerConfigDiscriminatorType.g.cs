@@ -4,16 +4,16 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum NeonAuthEmailServerConfigDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shared,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Standard,
     }

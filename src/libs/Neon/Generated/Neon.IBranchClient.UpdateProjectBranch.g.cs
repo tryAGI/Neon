@@ -47,7 +47,9 @@ namespace Neon
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
-        /// <param name="branch"></param>
+        /// <param name="branch">
+        /// Branch attributes to update. Supply only the fields you want to change, for example `name` or `protected`.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

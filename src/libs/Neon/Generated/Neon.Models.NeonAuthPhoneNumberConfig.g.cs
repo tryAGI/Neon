@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NeonAuthPhoneNumberConfig
     {
         /// <summary>
-        /// Whether the phone number plugin is enabled<br/>
+        /// Whether the phone number plugin is enabled.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
@@ -33,7 +33,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="NeonAuthPhoneNumberConfig" /> class.
         /// </summary>
         /// <param name="enabled">
-        /// Whether the phone number plugin is enabled<br/>
+        /// Whether the phone number plugin is enabled.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="otpExpiresIn">

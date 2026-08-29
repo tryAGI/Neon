@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NeonAuthPhoneNumberConfigUpdate
     {
         /// <summary>
-        /// Whether the phone number plugin is enabled
+        /// Whether the phone number plugin is enabled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
@@ -30,7 +30,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="NeonAuthPhoneNumberConfigUpdate" /> class.
         /// </summary>
         /// <param name="enabled">
-        /// Whether the phone number plugin is enabled
+        /// Whether the phone number plugin is enabled.
         /// </param>
         /// <param name="otpExpiresIn">
         /// Time in seconds before the OTP expires

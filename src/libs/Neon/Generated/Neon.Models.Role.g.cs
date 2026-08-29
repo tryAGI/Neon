@@ -9,14 +9,14 @@ namespace Neon
     public sealed partial class Role
     {
         /// <summary>
-        /// The ID of the branch to which the role belongs
+        /// The ID of the branch this role belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branch_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BranchId { get; set; }
 
         /// <summary>
-        /// The role name
+        /// Postgres role name within the branch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,8 +35,10 @@ namespace Neon
         public bool? Protected { get; set; }
 
         /// <summary>
-        /// Authentication method configured for this role. Valid options: `password`, `oauth`, `no_login`
+        /// Authentication method configured for this role: `password`, `oauth`, or `no_login`.<br/>
+        /// Example: password
         /// </summary>
+        /// <example>password</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("authentication_method")]
         public string? AuthenticationMethod { get; set; }
 
@@ -64,10 +66,10 @@ namespace Neon
         /// Initializes a new instance of the <see cref="Role" /> class.
         /// </summary>
         /// <param name="branchId">
-        /// The ID of the branch to which the role belongs
+        /// The ID of the branch this role belongs to.
         /// </param>
         /// <param name="name">
-        /// The role name
+        /// Postgres role name within the branch.
         /// </param>
         /// <param name="createdAt">
         /// A timestamp indicating when the role was created
@@ -82,7 +84,8 @@ namespace Neon
         /// Whether or not the role is system-protected
         /// </param>
         /// <param name="authenticationMethod">
-        /// Authentication method configured for this role. Valid options: `password`, `oauth`, `no_login`
+        /// Authentication method configured for this role: `password`, `oauth`, or `no_login`.<br/>
+        /// Example: password
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

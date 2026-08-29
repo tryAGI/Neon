@@ -9,7 +9,7 @@ namespace Neon
     public sealed partial class ProjectJWKSResponse
     {
         /// <summary>
-        /// 
+        /// JWKS configurations associated with the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jwks")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectJWKSResponse" /> class.
         /// </summary>
-        /// <param name="jwks"></param>
+        /// <param name="jwks">
+        /// JWKS configurations associated with the project.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

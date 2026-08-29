@@ -48,9 +48,15 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="id"></param>
-        /// <param name="clientId"></param>
-        /// <param name="clientSecret"></param>
-        /// <param name="microsoftTenantId"></param>
+        /// <param name="clientId">
+        /// The client ID issued by the OAuth provider for your application. Used to identify the application during the OAuth flow.
+        /// </param>
+        /// <param name="clientSecret">
+        /// OAuth client secret for the provider.
+        /// </param>
+        /// <param name="microsoftTenantId">
+        /// Tenant ID for the Microsoft OAuth provider. Only relevant when the OAuth provider is Microsoft; omit or leave blank for other providers.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

@@ -9,7 +9,7 @@ namespace Neon
     public sealed partial class DataAPICreateResponse
     {
         /// <summary>
-        /// 
+        /// URL of the created Data API endpoint.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="DataAPICreateResponse" /> class.
         /// </summary>
-        /// <param name="url"></param>
+        /// <param name="url">
+        /// URL of the created Data API endpoint.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

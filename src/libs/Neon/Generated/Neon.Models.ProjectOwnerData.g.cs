@@ -4,26 +4,26 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ProjectOwnerData
     {
         /// <summary>
-        /// 
+        /// Email address of the project owner.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Email { get; set; }
 
         /// <summary>
-        /// 
+        /// Display name of the project owner.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Maximum number of branches the owner is allowed to create across their projects.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branches_limit")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -47,9 +47,15 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectOwnerData" /> class.
         /// </summary>
-        /// <param name="email"></param>
-        /// <param name="name"></param>
-        /// <param name="branchesLimit"></param>
+        /// <param name="email">
+        /// Email address of the project owner.
+        /// </param>
+        /// <param name="name">
+        /// Display name of the project owner.
+        /// </param>
+        /// <param name="branchesLimit">
+        /// Maximum number of branches the owner is allowed to create across their projects.
+        /// </param>
         /// <param name="subscriptionType">
         /// Type of subscription to Neon Cloud.<br/>
         /// Notice that for users without billing account this will be "UNKNOWN"

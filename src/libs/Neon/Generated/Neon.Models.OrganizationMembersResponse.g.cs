@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OrganizationMembersResponse
     {
         /// <summary>
-        /// 
+        /// Members of the organization, each combining membership details (role, status) with the associated user's identity.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="OrganizationMembersResponse" /> class.
         /// </summary>
-        /// <param name="members"></param>
+        /// <param name="members">
+        /// Members of the organization, each combining membership details (role, status) with the associated user's identity.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -20,7 +20,7 @@ namespace Neon.JsonConverters
                     {
                         return global::Neon.ProjectPermissionLevelExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

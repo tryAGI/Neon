@@ -7,8 +7,7 @@ namespace Neon
         /// <summary>
         /// List project snapshots<br/>
         /// Lists the snapshots for the specified project.<br/>
-        /// Each snapshot represents a point-in-time backup of the project data.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// Each snapshot represents a point-in-time backup of the project data.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -21,8 +20,7 @@ namespace Neon
         /// <summary>
         /// List project snapshots<br/>
         /// Lists the snapshots for the specified project.<br/>
-        /// Each snapshot represents a point-in-time backup of the project data.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// Each snapshot represents a point-in-time backup of the project data.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

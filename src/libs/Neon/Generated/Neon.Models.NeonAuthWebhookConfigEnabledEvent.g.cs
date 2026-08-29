@@ -4,36 +4,36 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum NeonAuthWebhookConfigEnabledEvent
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationInvitationAccepted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationInvitationCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PhoneNumberVerified,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SendMagicLink,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SendOtp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserBeforeCreate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserCreated,
     }

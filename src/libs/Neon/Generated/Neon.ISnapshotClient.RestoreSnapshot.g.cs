@@ -7,8 +7,7 @@ namespace Neon
         /// <summary>
         /// Restore snapshot<br/>
         /// Restores the specified snapshot to a new branch,<br/>
-        /// and optionally finalizes the restore operation to replace the original branch.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// and optionally finalizes the restore operation to replace the original branch.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="projectId"></param>
@@ -28,8 +27,7 @@ namespace Neon
         /// <summary>
         /// Restore snapshot<br/>
         /// Restores the specified snapshot to a new branch,<br/>
-        /// and optionally finalizes the restore operation to replace the original branch.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// and optionally finalizes the restore operation to replace the original branch.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="projectId"></param>
@@ -49,20 +47,16 @@ namespace Neon
         /// <summary>
         /// Restore snapshot<br/>
         /// Restores the specified snapshot to a new branch,<br/>
-        /// and optionally finalizes the restore operation to replace the original branch.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// and optionally finalizes the restore operation to replace the original branch.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="projectId"></param>
         /// <param name="snapshotId"></param>
         /// <param name="requestName">
-        /// A name for the newly restored branch.<br/>
-        /// If omitted, a default name will be generated.
+        /// A name for the newly restored branch. If not provided, the server generates a unique name for the branch automatically.
         /// </param>
         /// <param name="targetBranchId">
-        /// The ID of the branch to restore the snapshot into.<br/>
-        /// If not specified, the branch from which the snapshot was originally<br/>
-        /// created (`snapshot.source_branch_id`) will be used.
+        /// ID of the branch to restore the snapshot into. Defaults to the snapshot's source branch (`snapshot.source_branch_id`); fails if that cannot be determined.
         /// </param>
         /// <param name="finalizeRestore">
         /// Set to `true` to finalize the restore operation immediately.<br/>

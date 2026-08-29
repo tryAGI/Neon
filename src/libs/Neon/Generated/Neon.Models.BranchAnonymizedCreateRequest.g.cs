@@ -5,12 +5,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BranchAnonymizedCreateRequest : global::System.IEquatable<BranchAnonymizedCreateRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.AnnotationCreateValueRequest? AnnotationValue { get; init; }
@@ -19,7 +19,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnnotationValue))]
@@ -27,7 +27,7 @@ namespace Neon
         public bool IsAnnotationValue => AnnotationValue != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnnotationValue(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.AnnotationCreateValueRequest PickAnnotationValue() => IsAnnotationValue
             ? AnnotationValue!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnnotationValue' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.BranchAnonymizedCreateRequestVariant2? BranchAnonymizedCreateRequestVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BranchAnonymizedCreateRequestVariant2))]
@@ -64,7 +64,7 @@ namespace Neon
         public bool IsBranchAnonymizedCreateRequestVariant2 => BranchAnonymizedCreateRequestVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBranchAnonymizedCreateRequestVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.BranchAnonymizedCreateRequestVariant2 PickBranchAnonymizedCreateRequestVariant2() => IsBranchAnonymizedCreateRequestVariant2
             ? BranchAnonymizedCreateRequestVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BranchAnonymizedCreateRequestVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BranchAnonymizedCreateRequest(global::Neon.AnnotationCreateValueRequest value) => new BranchAnonymizedCreateRequest((global::Neon.AnnotationCreateValueRequest?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.AnnotationCreateValueRequest?(BranchAnonymizedCreateRequest @this) => @this.AnnotationValue;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BranchAnonymizedCreateRequest(global::Neon.AnnotationCreateValueRequest? value)
         {
@@ -101,22 +101,22 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BranchAnonymizedCreateRequest FromAnnotationValue(global::Neon.AnnotationCreateValueRequest? value) => new BranchAnonymizedCreateRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BranchAnonymizedCreateRequest(global::Neon.BranchAnonymizedCreateRequestVariant2 value) => new BranchAnonymizedCreateRequest((global::Neon.BranchAnonymizedCreateRequestVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.BranchAnonymizedCreateRequestVariant2?(BranchAnonymizedCreateRequest @this) => @this.BranchAnonymizedCreateRequestVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BranchAnonymizedCreateRequest(global::Neon.BranchAnonymizedCreateRequestVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BranchAnonymizedCreateRequest FromBranchAnonymizedCreateRequestVariant2(global::Neon.BranchAnonymizedCreateRequestVariant2? value) => new BranchAnonymizedCreateRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BranchAnonymizedCreateRequest(
             global::Neon.AnnotationCreateValueRequest? annotationValue,
@@ -141,23 +141,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BranchAnonymizedCreateRequestVariant2 as object ??
-            AnnotationValue as object 
+            AnnotationValue as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AnnotationValue?.ToString() ??
-            BranchAnonymizedCreateRequestVariant2?.ToString() 
+            BranchAnonymizedCreateRequestVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Neon.AnnotationCreateValueRequest, TResult>? annotationValue = null,
@@ -190,7 +190,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Neon.AnnotationCreateValueRequest>? annotationValue = null,
@@ -214,7 +214,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Neon.AnnotationCreateValueRequest>? annotationValue = null,
@@ -237,7 +237,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BranchAnonymizedCreateRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Neon.AnnotationCreateValueRequest?>.Default.Equals(AnnotationValue, other.AnnotationValue) &&
-                global::System.Collections.Generic.EqualityComparer<global::Neon.BranchAnonymizedCreateRequestVariant2?>.Default.Equals(BranchAnonymizedCreateRequestVariant2, other.BranchAnonymizedCreateRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Neon.BranchAnonymizedCreateRequestVariant2?>.Default.Equals(BranchAnonymizedCreateRequestVariant2, other.BranchAnonymizedCreateRequestVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BranchAnonymizedCreateRequest obj1, BranchAnonymizedCreateRequest obj2)
         {
@@ -277,7 +277,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BranchAnonymizedCreateRequest obj1, BranchAnonymizedCreateRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

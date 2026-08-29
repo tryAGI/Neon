@@ -4,14 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PaginationResponse
     {
         /// <summary>
-        /// Cursor based pagination is used. The user must pass the cursor as is to the backend.<br/>
-        /// For more information about cursor based pagination, see<br/>
-        /// https://learn.microsoft.com/en-us/ef/core/querying/pagination#keyset-pagination<br/>
+        /// Cursor-based pagination. The `cursor` value reflects the endpoint's sort field (for example, an ID or timestamp), so pass it back unchanged.<br/>
         /// Example: {"cursor":"2022-12-07T00:45:05.262011Z"}
         /// </summary>
         /// <example>{"cursor":"2022-12-07T00:45:05.262011Z"}</example>
@@ -28,9 +26,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="PaginationResponse" /> class.
         /// </summary>
         /// <param name="pagination">
-        /// Cursor based pagination is used. The user must pass the cursor as is to the backend.<br/>
-        /// For more information about cursor based pagination, see<br/>
-        /// https://learn.microsoft.com/en-us/ef/core/querying/pagination#keyset-pagination<br/>
+        /// Cursor-based pagination. The `cursor` value reflects the endpoint's sort field (for example, an ID or timestamp), so pass it back unchanged.<br/>
         /// Example: {"cursor":"2022-12-07T00:45:05.262011Z"}
         /// </param>
 #if NET7_0_OR_GREATER

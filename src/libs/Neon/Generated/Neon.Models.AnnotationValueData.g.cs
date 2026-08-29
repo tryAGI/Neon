@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// Annotation properties.<br/>
+    /// A free-form map of string key-value pairs for attaching metadata to a resource (for example, a git commit reference). Maximum 50 entries.<br/>
     /// Example: {"github-commit-ref":"github-branch-name"}
     /// </summary>
     public sealed partial class AnnotationValueData

@@ -9,133 +9,149 @@ namespace Neon
     public enum OperationAction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplyConfig,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplySchemaFromBranch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplyStorageConfig,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CheckAvailability,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateBranch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateCompute,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateTimeline,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteTimeline,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DetachParentBranch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DisableMaintenance,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        EpcSync,
+        /// <summary>
+        ///
         /// </summary>
         FinalizeMigration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImportData,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MarkMigrationPrepared,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PrepareSecondaryPageserver,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PrewarmReplica,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromoteReplica,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReplaceSafekeeper,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SetStorageNonDirty,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StartCompute,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StartReservedCompute,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SuspendCompute,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SwapBindingId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SwitchPageserver,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SyncDbsAndRolesFromCompute,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantAttach,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        TenantAttachSafekeepers,
+        /// <summary>
+        ///
         /// </summary>
         TenantDetach,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        TenantDetachSafekeepers,
+        /// <summary>
+        ///
         /// </summary>
         TenantIgnore,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantReattach,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TimelineArchive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TimelineMarkInvisible,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TimelineUnarchive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TimelineUpdateProtectedConfig,
+        /// <summary>
+        ///
+        /// </summary>
+        UpdateCatalog,
     }
 
     /// <summary>
@@ -160,6 +176,7 @@ namespace Neon
                 OperationAction.DeleteTimeline => "delete_timeline",
                 OperationAction.DetachParentBranch => "detach_parent_branch",
                 OperationAction.DisableMaintenance => "disable_maintenance",
+                OperationAction.EpcSync => "epc_sync",
                 OperationAction.FinalizeMigration => "finalize_migration",
                 OperationAction.ImportData => "import_data",
                 OperationAction.MarkMigrationPrepared => "mark_migration_prepared",
@@ -175,13 +192,16 @@ namespace Neon
                 OperationAction.SwitchPageserver => "switch_pageserver",
                 OperationAction.SyncDbsAndRolesFromCompute => "sync_dbs_and_roles_from_compute",
                 OperationAction.TenantAttach => "tenant_attach",
+                OperationAction.TenantAttachSafekeepers => "tenant_attach_safekeepers",
                 OperationAction.TenantDetach => "tenant_detach",
+                OperationAction.TenantDetachSafekeepers => "tenant_detach_safekeepers",
                 OperationAction.TenantIgnore => "tenant_ignore",
                 OperationAction.TenantReattach => "tenant_reattach",
                 OperationAction.TimelineArchive => "timeline_archive",
                 OperationAction.TimelineMarkInvisible => "timeline_mark_invisible",
                 OperationAction.TimelineUnarchive => "timeline_unarchive",
                 OperationAction.TimelineUpdateProtectedConfig => "timeline_update_protected_config",
+                OperationAction.UpdateCatalog => "update_catalog",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -202,6 +222,7 @@ namespace Neon
                 "delete_timeline" => OperationAction.DeleteTimeline,
                 "detach_parent_branch" => OperationAction.DetachParentBranch,
                 "disable_maintenance" => OperationAction.DisableMaintenance,
+                "epc_sync" => OperationAction.EpcSync,
                 "finalize_migration" => OperationAction.FinalizeMigration,
                 "import_data" => OperationAction.ImportData,
                 "mark_migration_prepared" => OperationAction.MarkMigrationPrepared,
@@ -217,13 +238,16 @@ namespace Neon
                 "switch_pageserver" => OperationAction.SwitchPageserver,
                 "sync_dbs_and_roles_from_compute" => OperationAction.SyncDbsAndRolesFromCompute,
                 "tenant_attach" => OperationAction.TenantAttach,
+                "tenant_attach_safekeepers" => OperationAction.TenantAttachSafekeepers,
                 "tenant_detach" => OperationAction.TenantDetach,
+                "tenant_detach_safekeepers" => OperationAction.TenantDetachSafekeepers,
                 "tenant_ignore" => OperationAction.TenantIgnore,
                 "tenant_reattach" => OperationAction.TenantReattach,
                 "timeline_archive" => OperationAction.TimelineArchive,
                 "timeline_mark_invisible" => OperationAction.TimelineMarkInvisible,
                 "timeline_unarchive" => OperationAction.TimelineUnarchive,
                 "timeline_update_protected_config" => OperationAction.TimelineUpdateProtectedConfig,
+                "update_catalog" => OperationAction.UpdateCatalog,
                 _ => null,
             };
         }

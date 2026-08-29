@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListNeonAuthIntegrationsResponse
     {
         /// <summary>
-        /// 
+        /// Neon Auth integrations configured for the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="ListNeonAuthIntegrationsResponse" /> class.
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="data">
+        /// Neon Auth integrations configured for the project.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

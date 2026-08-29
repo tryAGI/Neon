@@ -4,32 +4,32 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Jwks
     {
         /// <summary>
-        /// JWKS ID
+        /// The JWKS configuration's ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// Project ID
+        /// The Neon project ID. Returned as `id` from `GET /projects`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectId { get; set; }
 
         /// <summary>
-        /// Branch ID
+        /// The Neon branch ID. Returned as `id` from `GET /projects/{project_id}/branches`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branch_id")]
         public string? BranchId { get; set; }
 
         /// <summary>
-        /// The URL that lists the JWKS
+        /// URL of the provider's JWKS endpoint used to verify JWTs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jwks_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -57,13 +57,13 @@ namespace Neon
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// The name of the required JWT Audience to be used
+        /// Expected JWT `aud` claim value configured for this JWKS.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jwt_audience")]
         public string? JwtAudience { get; set; }
 
         /// <summary>
-        /// 
+        /// Database role names that are permitted to authenticate using this JWKS configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_names")]
         public global::System.Collections.Generic.IList<string>? RoleNames { get; set; }
@@ -78,13 +78,13 @@ namespace Neon
         /// Initializes a new instance of the <see cref="Jwks" /> class.
         /// </summary>
         /// <param name="id">
-        /// JWKS ID
+        /// The JWKS configuration's ID.
         /// </param>
         /// <param name="projectId">
-        /// Project ID
+        /// The Neon project ID. Returned as `id` from `GET /projects`.
         /// </param>
         /// <param name="jwksUrl">
-        /// The URL that lists the JWKS
+        /// URL of the provider's JWKS endpoint used to verify JWTs.
         /// </param>
         /// <param name="providerName">
         /// The name of the authentication provider (e.g., Clerk, Stytch, Auth0)
@@ -96,12 +96,14 @@ namespace Neon
         /// The date and time when the JWKS was last modified
         /// </param>
         /// <param name="branchId">
-        /// Branch ID
+        /// The Neon branch ID. Returned as `id` from `GET /projects/{project_id}/branches`.
         /// </param>
         /// <param name="jwtAudience">
-        /// The name of the required JWT Audience to be used
+        /// Expected JWT `aud` claim value configured for this JWKS.
         /// </param>
-        /// <param name="roleNames"></param>
+        /// <param name="roleNames">
+        /// Database role names that are permitted to authenticate using this JWKS configuration.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

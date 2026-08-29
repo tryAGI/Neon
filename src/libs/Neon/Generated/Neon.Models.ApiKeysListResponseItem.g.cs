@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ApiKeysListResponseItem
     {
         /// <summary>
-        /// The API key ID
+        /// The API key's unique numeric ID. Distinct from the API key token (`key`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -59,7 +59,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="ApiKeysListResponseItem" /> class.
         /// </summary>
         /// <param name="id">
-        /// The API key ID
+        /// The API key's unique numeric ID. Distinct from the API key token (`key`).
         /// </param>
         /// <param name="name">
         /// The user-specified API key name

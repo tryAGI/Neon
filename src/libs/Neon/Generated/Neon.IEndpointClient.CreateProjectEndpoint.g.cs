@@ -54,7 +54,9 @@ namespace Neon
         /// For more information about compute endpoints, see [Manage computes](https://neon.com/docs/manage/endpoints/).
         /// </summary>
         /// <param name="projectId"></param>
-        /// <param name="endpoint"></param>
+        /// <param name="endpoint">
+        /// Configuration for the compute endpoint to create.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

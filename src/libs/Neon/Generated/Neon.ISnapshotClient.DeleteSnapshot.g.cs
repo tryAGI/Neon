@@ -6,8 +6,7 @@ namespace Neon
     {
         /// <summary>
         /// Delete snapshot<br/>
-        /// Deletes the specified snapshot.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// Deletes the specified snapshot.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="snapshotId"></param>
@@ -21,8 +20,7 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete snapshot<br/>
-        /// Deletes the specified snapshot.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// Deletes the specified snapshot.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="snapshotId"></param>

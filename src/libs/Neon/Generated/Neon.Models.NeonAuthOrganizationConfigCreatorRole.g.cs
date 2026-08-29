@@ -4,17 +4,17 @@
 namespace Neon
 {
     /// <summary>
-    /// The role assigned to the user who creates an organization<br/>
+    /// Role of the organization's creator. `owner`: full control, including deleting the org and transferring ownership. `admin`: manage members and settings only.<br/>
     /// Default Value: owner
     /// </summary>
     public enum NeonAuthOrganizationConfigCreatorRole
     {
         /// <summary>
-        /// 
+        /// full control, including deleting the org and transferring ownership. `admin`: manage members and settings only.
         /// </summary>
         Admin,
         /// <summary>
-        /// 
+        /// full control, including deleting the org and transferring ownership. `admin`: manage members and settings only.
         /// </summary>
         Owner,
     }

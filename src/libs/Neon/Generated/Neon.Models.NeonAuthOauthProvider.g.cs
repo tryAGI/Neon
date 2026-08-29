@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NeonAuthOauthProvider
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthOauthProviderIdJsonConverter))]
@@ -17,7 +17,7 @@ namespace Neon
         public required global::Neon.NeonAuthOauthProviderId Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthOauthProviderTypeJsonConverter))]
@@ -25,13 +25,13 @@ namespace Neon
         public required global::Neon.NeonAuthOauthProviderType Type { get; set; }
 
         /// <summary>
-        /// 
+        /// Public identifier for the OAuth application, issued by the provider when the application is registered.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_id")]
         public string? ClientId { get; set; }
 
         /// <summary>
-        /// 
+        /// OAuth client secret for the provider.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         public string? ClientSecret { get; set; }
@@ -47,8 +47,12 @@ namespace Neon
         /// </summary>
         /// <param name="id"></param>
         /// <param name="type"></param>
-        /// <param name="clientId"></param>
-        /// <param name="clientSecret"></param>
+        /// <param name="clientId">
+        /// Public identifier for the OAuth application, issued by the provider when the application is registered.
+        /// </param>
+        /// <param name="clientSecret">
+        /// OAuth client secret for the provider.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

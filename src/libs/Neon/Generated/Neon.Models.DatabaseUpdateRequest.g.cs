@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DatabaseUpdateRequest
     {
         /// <summary>
-        /// 
+        /// Properties to update on the database.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("database")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="DatabaseUpdateRequest" /> class.
         /// </summary>
-        /// <param name="database"></param>
+        /// <param name="database">
+        /// Properties to update on the database.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PaymentSourceBankCard
     {
@@ -16,7 +16,7 @@ namespace Neon
         public required string Last4 { get; set; }
 
         /// <summary>
-        /// Brand of credit card.
+        /// Card network reported by the payment processor. Set to `unknown` when the network cannot be determined.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("brand")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.PaymentSourceBankCardBrandJsonConverter))]
@@ -47,7 +47,7 @@ namespace Neon
         /// Last 4 digits of the card.
         /// </param>
         /// <param name="brand">
-        /// Brand of credit card.
+        /// Card network reported by the payment processor. Set to `unknown` when the network cannot be determined.
         /// </param>
         /// <param name="expMonth">
         /// Credit card expiration month

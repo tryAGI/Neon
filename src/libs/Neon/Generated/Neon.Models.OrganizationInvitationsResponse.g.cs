@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OrganizationInvitationsResponse
     {
         /// <summary>
-        /// 
+        /// List of pending invitations for the organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invitations")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="OrganizationInvitationsResponse" /> class.
         /// </summary>
-        /// <param name="invitations"></param>
+        /// <param name="invitations">
+        /// List of pending invitations for the organization.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

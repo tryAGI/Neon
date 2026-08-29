@@ -4,16 +4,16 @@
 namespace Neon
 {
     /// <summary>
-    /// The compute endpoint type. Either `read_write` or `read_only`.
+    /// Compute endpoint type. `read_write`: the primary read-write endpoint (one per branch). `read_only`: a read replica endpoint (multiple allowed per branch).
     /// </summary>
     public enum EndpointType
     {
         /// <summary>
-        /// 
+        /// the primary read-write endpoint (one per branch). `read_only`: a read replica endpoint (multiple allowed per branch).
         /// </summary>
         ReadOnly,
         /// <summary>
-        /// 
+        /// the primary read-write endpoint (one per branch). `read_only`: a read replica endpoint (multiple allowed per branch).
         /// </summary>
         ReadWrite,
     }

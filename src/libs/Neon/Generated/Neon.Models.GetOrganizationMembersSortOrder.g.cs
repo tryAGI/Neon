@@ -9,11 +9,11 @@ namespace Neon
     public enum GetOrganizationMembersSortOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

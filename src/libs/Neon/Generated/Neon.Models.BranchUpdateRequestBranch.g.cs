@@ -4,18 +4,18 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    /// Branch attributes to update. Supply only the fields you want to change, for example `name` or `protected`.
     /// </summary>
     public sealed partial class BranchUpdateRequestBranch
     {
         /// <summary>
-        /// 
+        /// New display name for the branch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Whether the branch is protected. Protected branches (and their computes) cannot be deleted, archived, or reset, and block deletion of the project. Can be gated by `protected_branches_only` in the IP allowlist. Paid plans only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("protected")]
         public bool? Protected { get; set; }
@@ -38,8 +38,12 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="BranchUpdateRequestBranch" /> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="protected"></param>
+        /// <param name="name">
+        /// New display name for the branch.
+        /// </param>
+        /// <param name="protected">
+        /// Whether the branch is protected. Protected branches (and their computes) cannot be deleted, archived, or reset, and block deletion of the project. Can be gated by `protected_branches_only` in the IP allowlist. Paid plans only.
+        /// </param>
         /// <param name="expiresAt">
         /// The timestamp when the branch is scheduled to expire and be automatically deleted. Must be set by the client following the [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6) format with precision up to seconds (such as 2025-06-09T18:02:16Z). Deletion is performed by a background job and may not occur exactly at the specified time. If this field is set to null, the expiration timestamp is removed.<br/>
         /// Access to this feature is currently limited to participants in the Early Access Program.<br/>

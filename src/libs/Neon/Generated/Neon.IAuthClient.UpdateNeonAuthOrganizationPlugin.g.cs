@@ -48,19 +48,19 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="enabled">
-        /// Whether the organization plugin is enabled
+        /// Controls whether the organization plugin is active for the organization.
         /// </param>
         /// <param name="organizationLimit">
-        /// Maximum number of organizations a user can create
+        /// Maximum organizations a user can belong to (created or joined). At the limit, the user cannot create or join more.
         /// </param>
         /// <param name="membershipLimit">
-        /// Maximum number of members per organization
+        /// Maximum members per organization.
         /// </param>
         /// <param name="creatorRole">
-        /// The role assigned to the user who creates an organization
+        /// Role of the organization's creator. `owner`: full control, including deleting the org and transferring ownership. `admin`: manage members and settings only.
         /// </param>
         /// <param name="sendInvitationEmail">
-        /// Whether to send invitation emails when inviting members to an organization
+        /// When true, invited users receive an email containing an accept link. Requires that the invited user has a verified email address.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

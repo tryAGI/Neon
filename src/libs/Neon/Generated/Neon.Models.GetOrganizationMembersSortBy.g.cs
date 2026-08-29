@@ -9,15 +9,15 @@ namespace Neon
     public enum GetOrganizationMembersSortBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Email,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JoinedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Role,
     }

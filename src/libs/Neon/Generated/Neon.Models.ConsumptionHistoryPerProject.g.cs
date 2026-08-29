@@ -4,19 +4,19 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConsumptionHistoryPerProject
     {
         /// <summary>
-        /// The project ID
+        /// The Neon project ID. Returned as `id` from `GET /projects`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// Consumption periods for the project, each covering a discrete billing interval.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("periods")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,9 +32,11 @@ namespace Neon
         /// Initializes a new instance of the <see cref="ConsumptionHistoryPerProject" /> class.
         /// </summary>
         /// <param name="projectId">
-        /// The project ID
+        /// The Neon project ID. Returned as `id` from `GET /projects`.
         /// </param>
-        /// <param name="periods"></param>
+        /// <param name="periods">
+        /// Consumption periods for the project, each covering a discrete billing interval.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

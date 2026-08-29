@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NeonAuthDeleteDomainFromRedirectURIWhitelistItem
     {
         /// <summary>
-        /// 
+        /// URI to remove from the redirect URI whitelist.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="NeonAuthDeleteDomainFromRedirectURIWhitelistItem" /> class.
         /// </summary>
-        /// <param name="domain"></param>
+        /// <param name="domain">
+        /// URI to remove from the redirect URI whitelist.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

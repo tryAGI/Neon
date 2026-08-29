@@ -9,19 +9,19 @@ namespace Neon
     public enum ApplicationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Datadog,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Github,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Opentelemetry,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vercel,
     }

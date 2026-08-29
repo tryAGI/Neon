@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class EndpointsOptionalResponse
     {
         /// <summary>
-        /// 
+        /// Compute endpoints associated with the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoints")]
         public global::System.Collections.Generic.IList<global::Neon.Endpoint>? Endpoints { get; set; }
@@ -23,7 +23,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="EndpointsOptionalResponse" /> class.
         /// </summary>
-        /// <param name="endpoints"></param>
+        /// <param name="endpoints">
+        /// Compute endpoints associated with the project.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -159,7 +159,7 @@ namespace Neon
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -359,7 +359,7 @@ namespace Neon
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // General Error.  The request may or may not be safe to retry, depending on the HTTP method, response status code, and whether a response was received.  - If no response is returned from the API, a network error or timeout likely occurred. - In some cases, the request may have reached the server and been successfully processed, but the response failed to reach the client. As a result, retrying non-idempotent requests can lead to unintended results.  The following HTTP methods are considered non-idempotent: `POST`, `PATCH`, `DELETE`, and `PUT`. Retrying these methods is generally **not safe**. The following methods are considered idempotent: `GET`, `HEAD`, and `OPTIONS`. Retrying these methods is **safe** in the event of a network error or timeout.  Any request that returns a `503 Service Unavailable` response is always safe to retry.  Any request that returns a `423 Locked` response is safe to retry. `423 Locked` indicates that the resource is temporarily locked, for example, due to another operation in progress. 
+                            // General Error.  The request may or may not be safe to retry, depending on the HTTP method, response status code, and whether a response was received.  - If no response is returned from the API, a network error or timeout likely occurred. - In some cases, the request may have reached the server and been successfully processed, but the response failed to reach the client. As a result, retrying non-idempotent requests can lead to unintended results.  The following HTTP methods are considered non-idempotent: `POST`, `PATCH`, `DELETE`, and `PUT`. Retrying these methods is generally **not safe**. The following methods are considered idempotent: `GET`, `HEAD`, and `OPTIONS`. Retrying these methods is **safe** in the event of a network error or timeout.  Any request that returns a `503 Service Unavailable` response is always safe to retry.  Any request that returns a `423 Locked` response is safe to retry. `423 Locked` indicates that the resource is temporarily locked, for example, due to another operation in progress.
                             if (!__response.IsSuccessStatusCode)
                             {
                                 string? __content_default = null;
@@ -506,15 +506,15 @@ namespace Neon
         /// If `source_branch_id` is equal to the branch's id, `source_timestamp` or `source_lsn` is required.
         /// </param>
         /// <param name="sourceLsn">
-        /// A Log Sequence Number (LSN) on the source branch. The branch will be restored with data from this LSN.
+        /// A Postgres LSN (for example, `0/1A2B3C4`) on the source branch to restore from.<br/>
+        /// Mutually exclusive with `source_timestamp`. Omit both to restore to head.
         /// </param>
         /// <param name="sourceTimestamp">
-        /// A timestamp identifying a point in time on the source branch. The branch will be restored with data starting from this point in time.<br/>
-        /// The timestamp must be provided in ISO 8601 format; for example: `2024-02-26T12:00:00Z`.
+        /// A point in time on the source branch to restore from, in RFC 3339 format. When omitted alongside `source_lsn`, the branch is restored to the latest available state of the source branch.<br/>
+        /// Example: 2024-02-26T12:00:00Z
         /// </param>
         /// <param name="preserveUnderName">
-        /// If not empty, the previous state of the branch will be saved to a branch with this name.<br/>
-        /// If the branch has children or the `source_branch_id` is equal to the branch id, this field is required. All existing child branches will be moved to the newly created branch under the name `preserve_under_name`.
+        /// Name under which to save the current branch state before restoring. Required when the branch has children or when `source_branch_id` equals the branch being restored; in those cases all existing child branches are moved to the newly created branch. If omitted and not required, the previous state is not preserved.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

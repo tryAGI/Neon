@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class VPCEndpoint
     {
         /// <summary>
-        /// The VPC endpoint ID
+        /// Cloud provider identifier for the VPC endpoint.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vpc_endpoint_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="VPCEndpoint" /> class.
         /// </summary>
         /// <param name="vpcEndpointId">
-        /// The VPC endpoint ID
+        /// Cloud provider identifier for the VPC endpoint.
         /// </param>
         /// <param name="label">
         /// A descriptive label for the VPC endpoint

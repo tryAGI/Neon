@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListNeonAuthOauthProvidersResponse
     {
         /// <summary>
-        /// 
+        /// OAuth providers configured for Neon Auth on the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providers")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="ListNeonAuthOauthProvidersResponse" /> class.
         /// </summary>
-        /// <param name="providers"></param>
+        /// <param name="providers">
+        /// OAuth providers configured for Neon Auth on the project.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

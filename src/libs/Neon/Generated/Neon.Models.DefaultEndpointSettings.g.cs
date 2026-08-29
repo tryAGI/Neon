@@ -17,20 +17,20 @@ namespace Neon
         public global::System.Collections.Generic.Dictionary<string, string>? PgSettings { get; set; }
 
         /// <summary>
-        /// DEPRECATED. A raw representation of PgBouncer settings. This schema is deprecated and will be removed after 2026-06-20.
+        /// Deprecated. A raw representation of PgBouncer settings. Removal scheduled for June 20, 2026.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pgbouncer_settings")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.Dictionary<string, string>? PgbouncerSettings { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("autoscaling_limit_min_cu")]
         public double? AutoscalingLimitMinCu { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("autoscaling_limit_max_cu")]
         public double? AutoscalingLimitMaxCu { get; set; }

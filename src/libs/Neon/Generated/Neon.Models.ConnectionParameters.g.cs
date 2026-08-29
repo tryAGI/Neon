@@ -4,40 +4,40 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConnectionParameters
     {
         /// <summary>
-        /// Database name
+        /// Name of the Postgres database used in the connection URI.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("database")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Database { get; set; }
 
         /// <summary>
-        /// Password for the role
+        /// Authentication password for the role, used in the connection URI.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("password")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Password { get; set; }
 
         /// <summary>
-        /// Role name
+        /// Postgres role used to authenticate the database connection.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Role { get; set; }
 
         /// <summary>
-        /// Hostname
+        /// Hostname of the compute endpoint. Use `pooler_host` for the pooled connection hostname.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("host")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Host { get; set; }
 
         /// <summary>
-        /// Pooler hostname
+        /// PgBouncer (transaction mode) pooled host, the `-pooler` variant of `host`. Connect through it to work around the Postgres `max_connections` limit for serverless or connection-per-request workloads.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pooler_host")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,19 +53,19 @@ namespace Neon
         /// Initializes a new instance of the <see cref="ConnectionParameters" /> class.
         /// </summary>
         /// <param name="database">
-        /// Database name
+        /// Name of the Postgres database used in the connection URI.
         /// </param>
         /// <param name="password">
-        /// Password for the role
+        /// Authentication password for the role, used in the connection URI.
         /// </param>
         /// <param name="role">
-        /// Role name
+        /// Postgres role used to authenticate the database connection.
         /// </param>
         /// <param name="host">
-        /// Hostname
+        /// Hostname of the compute endpoint. Use `pooler_host` for the pooled connection hostname.
         /// </param>
         /// <param name="poolerHost">
-        /// Pooler hostname
+        /// PgBouncer (transaction mode) pooled host, the `-pooler` variant of `host`. Connect through it to work around the Postgres `max_connections` limit for serverless or connection-per-request workloads.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

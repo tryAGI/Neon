@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateNeonAuthUserRoleRequest
     {
         /// <summary>
-        /// Array of roles to assign to the user<br/>
+        /// Roles to assign to the user in the Neon Auth (Better Auth) directory. `user` and `admin` are the built-in roles; custom role strings are also supported.<br/>
         /// Example: [admin]
         /// </summary>
         /// <example>[admin]</example>
@@ -27,7 +27,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="UpdateNeonAuthUserRoleRequest" /> class.
         /// </summary>
         /// <param name="roles">
-        /// Array of roles to assign to the user<br/>
+        /// Roles to assign to the user in the Neon Auth (Better Auth) directory. `user` and `admin` are the built-in roles; custom role strings are also supported.<br/>
         /// Example: [admin]
         /// </param>
 #if NET7_0_OR_GREATER

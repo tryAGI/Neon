@@ -4,20 +4,20 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ProjectAuditLogLevel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Base,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Extended,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Full,
     }

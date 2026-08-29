@@ -4,20 +4,20 @@
 namespace Neon
 {
     /// <summary>
-    /// The state of the compute endpoint
+    /// Lifecycle state of the compute endpoint. `init`: being initialized. `active`: running and accepting connections. `idle`: suspended (scaled to zero).
     /// </summary>
     public enum EndpointState
     {
         /// <summary>
-        /// 
+        /// being initialized. `active`: running and accepting connections. `idle`: suspended (scaled to zero).
         /// </summary>
         Active,
         /// <summary>
-        /// 
+        /// being initialized. `active`: running and accepting connections. `idle`: suspended (scaled to zero).
         /// </summary>
         Idle,
         /// <summary>
-        /// 
+        /// being initialized. `active`: running and accepting connections. `idle`: suspended (scaled to zero).
         /// </summary>
         Init,
     }

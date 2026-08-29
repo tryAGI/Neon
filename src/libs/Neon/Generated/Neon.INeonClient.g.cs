@@ -4,9 +4,8 @@
 namespace Neon
 {
     /// <summary>
-    /// The Neon API allows you to access and manage Neon programmatically. You can use the Neon API to manage API keys, projects, branches, compute endpoints, databases, roles, and operations. For information about these features, refer to the [Neon documentation](https://neon.com/docs/manage/overview/).<br/>
-    /// You can run Neon API requests from this API reference using the **Try It** feature. Enter your API key as a **Bearer** token in the **Authorization** section of the page.<br/>
-    /// You can create and manage API keys in the Neon Console. See [Manage API keys](https://neon.com/docs/manage/api-keys/) for instructions.<br/>
+    /// The Neon API is the management API for Neon. Use it to provision, configure, and manage resources such as projects, branches, databases, roles, functions, and object storage.<br/>
+    /// See the [Neon API reference](https://neon.com/docs/reference/api) for details, and [Manage API keys](https://neon.com/docs/manage/api-keys/) to create and use API keys.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -42,10 +41,15 @@ namespace Neon
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
+
+        /// <summary>
+        /// These methods allow you to inspect the AI Gateway endpoint for your Neon branches.
+        /// </summary>
+        public AiGatewayClient AiGateway { get; }
 
         /// <summary>
         /// These methods allow you to create and manage API keys for your Neon account. For related information, see [Manage API keys](https://neon.com/docs/manage/api-keys).
@@ -68,12 +72,22 @@ namespace Neon
         public BranchClient Branch { get; }
 
         /// <summary>
+        /// These methods allow you to create and manage branchable object storage buckets and their objects.
+        /// </summary>
+        public BucketsClient Buckets { get; }
+
+        /// <summary>
         /// These methods allow you to view consumption details for your Neon account.
         /// </summary>
         public ConsumptionClient Consumption { get; }
 
         /// <summary>
-        /// 
+        /// These methods allow you to issue and manage scoped credentials on your Neon branches.
+        /// </summary>
+        public CredentialsClient Credentials { get; }
+
+        /// <summary>
+        ///
         /// </summary>
         public DataAPIClient DataAPI { get; }
 
@@ -81,6 +95,16 @@ namespace Neon
         /// These methods allow you to create and manage compute endpoints in your Neon project. For related information, see [Manage compute endpoints](https://neon.com/docs/manage/endpoints).
         /// </summary>
         public EndpointClient Endpoint { get; }
+
+        /// <summary>
+        /// These methods allow you to create and manage functions on your Neon branches.
+        /// </summary>
+        public FunctionsClient Functions { get; }
+
+        /// <summary>
+        /// These methods allow you to query logs emitted by services running on your Neon branches.
+        /// </summary>
+        public LogsClient Logs { get; }
 
         /// <summary>
         /// These methods allow you to view operation details for your Neon project. For related information, see [Operations](https://neon.com/docs/manage/operations).
@@ -106,6 +130,11 @@ namespace Neon
         /// These methods allow you to create and manage snapshots.
         /// </summary>
         public SnapshotClient Snapshot { get; }
+
+        /// <summary>
+        /// These methods allow you to inspect branchable object storage state for Neon branches.
+        /// </summary>
+        public StorageClient Storage { get; }
 
         /// <summary>
         /// These methods allow you to manage your Neon user account.

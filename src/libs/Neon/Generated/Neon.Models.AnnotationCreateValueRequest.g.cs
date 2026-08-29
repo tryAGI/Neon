@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AnnotationCreateValueRequest
     {
         /// <summary>
-        /// Annotation properties.<br/>
+        /// A free-form map of string key-value pairs for attaching metadata to a resource (for example, a git commit reference). Maximum 50 entries.<br/>
         /// Example: {"github-commit-ref":"github-branch-name"}
         /// </summary>
         /// <example>{"github-commit-ref":"github-branch-name"}</example>
@@ -26,7 +26,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="AnnotationCreateValueRequest" /> class.
         /// </summary>
         /// <param name="annotationValue">
-        /// Annotation properties.<br/>
+        /// A free-form map of string key-value pairs for attaching metadata to a resource (for example, a git commit reference). Maximum 50 entries.<br/>
         /// Example: {"github-commit-ref":"github-branch-name"}
         /// </param>
 #if NET7_0_OR_GREATER

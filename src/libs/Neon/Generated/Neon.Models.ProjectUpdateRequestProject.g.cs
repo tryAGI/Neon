@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ProjectUpdateRequestProject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
         public global::Neon.ProjectSettingsData? Settings { get; set; }
@@ -27,8 +27,7 @@ namespace Neon
         public global::Neon.DefaultEndpointSettings? DefaultEndpointSettings { get; set; }
 
         /// <summary>
-        /// The number of seconds to retain the shared history for all branches in this project.<br/>
-        /// The default is 1 day (604800 seconds).
+        /// History window (point-in-time restore range) for all branches, in seconds. `0` disables it. Default 1 day (Free: 6 hours). Maximum depends on plan: Free 6 hours (21600), Launch 7 days (604800), Scale 30 days (2592000).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("history_retention_seconds")]
         public int? HistoryRetentionSeconds { get; set; }
@@ -50,8 +49,7 @@ namespace Neon
         /// A collection of settings for a Neon endpoint
         /// </param>
         /// <param name="historyRetentionSeconds">
-        /// The number of seconds to retain the shared history for all branches in this project.<br/>
-        /// The default is 1 day (604800 seconds).
+        /// History window (point-in-time restore range) for all branches, in seconds. `0` disables it. Default 1 day (Free: 6 hours). Maximum depends on plan: Free 6 hours (21600), Launch 7 days (604800), Scale 30 days (2592000).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -9,19 +9,19 @@ namespace Neon
     public sealed partial class CursorPagination
     {
         /// <summary>
-        /// 
+        /// Cursor for the next page of results. Pass it as the `cursor` query parameter on the next request. Absent on the last page.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next")]
         public string? Next { get; set; }
 
         /// <summary>
-        /// 
+        /// Field by which the results were sorted, echoing the request's sort_by parameter.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sort_by")]
         public string? SortBy { get; set; }
 
         /// <summary>
-        /// 
+        /// Sort order active for this page. Pass back as `sort_order` in the next request to maintain consistent ordering. Valid values are `asc` and `desc`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sort_order")]
         public string? SortOrder { get; set; }
@@ -35,9 +35,15 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="CursorPagination" /> class.
         /// </summary>
-        /// <param name="next"></param>
-        /// <param name="sortBy"></param>
-        /// <param name="sortOrder"></param>
+        /// <param name="next">
+        /// Cursor for the next page of results. Pass it as the `cursor` query parameter on the next request. Absent on the last page.
+        /// </param>
+        /// <param name="sortBy">
+        /// Field by which the results were sorted, echoing the request's sort_by parameter.
+        /// </param>
+        /// <param name="sortOrder">
+        /// Sort order active for this page. Pass back as `sort_order` in the next request to maintain consistent ordering. Valid values are `asc` and `desc`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

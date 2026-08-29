@@ -4,19 +4,19 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BranchSchemaJSONTableColumn
     {
         /// <summary>
-        /// 
+        /// Name of the column.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Postgres data type of the column, for example "integer" or "text".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -43,8 +43,12 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="BranchSchemaJSONTableColumn" /> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="type"></param>
+        /// <param name="name">
+        /// Name of the column.
+        /// </param>
+        /// <param name="type">
+        /// Postgres data type of the column, for example "integer" or "text".
+        /// </param>
         /// <param name="nullable">
         /// Whether the column allows NULL values
         /// </param>

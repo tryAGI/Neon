@@ -6,7 +6,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CurrentUserInfoResponse
     {
@@ -18,69 +18,69 @@ namespace Neon
         public required long ActiveSecondsLimit { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billing_account")]
         public global::Neon.BillingAccount? BillingAccount { get; set; }
 
         /// <summary>
-        /// 
+        /// Authentication provider accounts linked to the current user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auth_accounts")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::Neon.CurrentUserAuthAccount> AuthAccounts { get; set; }
 
         /// <summary>
-        /// 
+        /// Email address of the authenticated user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Email { get; set; }
 
         /// <summary>
-        /// 
+        /// The Neon user ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// URL of the user's profile avatar image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Image { get; set; }
 
         /// <summary>
-        /// DEPRECATED. Use `email` field.
+        /// Deprecated. Use the `email` field.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("login")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Login { get; set; }
 
         /// <summary>
-        /// 
+        /// First name of the current user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Last name of the current user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string LastName { get; set; }
 
         /// <summary>
-        /// 
+        /// Maximum number of projects the account is allowed to create under the current plan.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projects_limit")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long ProjectsLimit { get; set; }
 
         /// <summary>
-        /// 
+        /// Maximum number of branches allowed for the account under the current plan.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branches_limit")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -95,13 +95,13 @@ namespace Neon
         public required double MaxAutoscalingLimit { get; set; }
 
         /// <summary>
-        /// 
+        /// Maximum Postgres compute time, in seconds, allowed under the account's current plan.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compute_seconds_limit")]
         public long? ComputeSecondsLimit { get; set; }
 
         /// <summary>
-        /// 
+        /// Current billing plan for the user's account.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -119,24 +119,44 @@ namespace Neon
         /// <param name="activeSecondsLimit">
         /// Control plane observes active endpoints of a user this amount of wall-clock time.
         /// </param>
-        /// <param name="authAccounts"></param>
-        /// <param name="email"></param>
-        /// <param name="id"></param>
-        /// <param name="image"></param>
-        /// <param name="login">
-        /// DEPRECATED. Use `email` field.
+        /// <param name="authAccounts">
+        /// Authentication provider accounts linked to the current user.
         /// </param>
-        /// <param name="name"></param>
-        /// <param name="lastName"></param>
-        /// <param name="projectsLimit"></param>
-        /// <param name="branchesLimit"></param>
+        /// <param name="email">
+        /// Email address of the authenticated user.
+        /// </param>
+        /// <param name="id">
+        /// The Neon user ID.
+        /// </param>
+        /// <param name="image">
+        /// URL of the user's profile avatar image.
+        /// </param>
+        /// <param name="login">
+        /// Deprecated. Use the `email` field.
+        /// </param>
+        /// <param name="name">
+        /// First name of the current user.
+        /// </param>
+        /// <param name="lastName">
+        /// Last name of the current user.
+        /// </param>
+        /// <param name="projectsLimit">
+        /// Maximum number of projects the account is allowed to create under the current plan.
+        /// </param>
+        /// <param name="branchesLimit">
+        /// Maximum number of branches allowed for the account under the current plan.
+        /// </param>
         /// <param name="maxAutoscalingLimit">
         /// The maximum autoscaling limit in Compute Units.<br/>
         /// A value of 0 indicates no limit is configured.
         /// </param>
-        /// <param name="plan"></param>
+        /// <param name="plan">
+        /// Current billing plan for the user's account.
+        /// </param>
         /// <param name="billingAccount"></param>
-        /// <param name="computeSecondsLimit"></param>
+        /// <param name="computeSecondsLimit">
+        /// Maximum Postgres compute time, in seconds, allowed under the account's current plan.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

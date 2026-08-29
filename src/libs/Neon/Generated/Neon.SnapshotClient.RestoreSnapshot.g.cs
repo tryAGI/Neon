@@ -50,8 +50,7 @@ namespace Neon
         /// <summary>
         /// Restore snapshot<br/>
         /// Restores the specified snapshot to a new branch,<br/>
-        /// and optionally finalizes the restore operation to replace the original branch.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// and optionally finalizes the restore operation to replace the original branch.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="projectId"></param>
@@ -84,8 +83,7 @@ namespace Neon
         /// <summary>
         /// Restore snapshot<br/>
         /// Restores the specified snapshot to a new branch,<br/>
-        /// and optionally finalizes the restore operation to replace the original branch.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// and optionally finalizes the restore operation to replace the original branch.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="projectId"></param>
@@ -170,7 +168,7 @@ namespace Neon
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -371,7 +369,7 @@ namespace Neon
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // General Error.  The request may or may not be safe to retry, depending on the HTTP method, response status code, and whether a response was received.  - If no response is returned from the API, a network error or timeout likely occurred. - In some cases, the request may have reached the server and been successfully processed, but the response failed to reach the client. As a result, retrying non-idempotent requests can lead to unintended results.  The following HTTP methods are considered non-idempotent: `POST`, `PATCH`, `DELETE`, and `PUT`. Retrying these methods is generally **not safe**. The following methods are considered idempotent: `GET`, `HEAD`, and `OPTIONS`. Retrying these methods is **safe** in the event of a network error or timeout.  Any request that returns a `503 Service Unavailable` response is always safe to retry.  Any request that returns a `423 Locked` response is safe to retry. `423 Locked` indicates that the resource is temporarily locked, for example, due to another operation in progress. 
+                            // General Error.  The request may or may not be safe to retry, depending on the HTTP method, response status code, and whether a response was received.  - If no response is returned from the API, a network error or timeout likely occurred. - In some cases, the request may have reached the server and been successfully processed, but the response failed to reach the client. As a result, retrying non-idempotent requests can lead to unintended results.  The following HTTP methods are considered non-idempotent: `POST`, `PATCH`, `DELETE`, and `PUT`. Retrying these methods is generally **not safe**. The following methods are considered idempotent: `GET`, `HEAD`, and `OPTIONS`. Retrying these methods is **safe** in the event of a network error or timeout.  Any request that returns a `503 Service Unavailable` response is always safe to retry.  Any request that returns a `423 Locked` response is safe to retry. `423 Locked` indicates that the resource is temporarily locked, for example, due to another operation in progress.
                             if (!__response.IsSuccessStatusCode)
                             {
                                 string? __content_default = null;
@@ -507,20 +505,16 @@ namespace Neon
         /// <summary>
         /// Restore snapshot<br/>
         /// Restores the specified snapshot to a new branch,<br/>
-        /// and optionally finalizes the restore operation to replace the original branch.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// and optionally finalizes the restore operation to replace the original branch.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="projectId"></param>
         /// <param name="snapshotId"></param>
         /// <param name="requestName">
-        /// A name for the newly restored branch.<br/>
-        /// If omitted, a default name will be generated.
+        /// A name for the newly restored branch. If not provided, the server generates a unique name for the branch automatically.
         /// </param>
         /// <param name="targetBranchId">
-        /// The ID of the branch to restore the snapshot into.<br/>
-        /// If not specified, the branch from which the snapshot was originally<br/>
-        /// created (`snapshot.source_branch_id`) will be used.
+        /// ID of the branch to restore the snapshot into. Defaults to the snapshot's source branch (`snapshot.source_branch_id`); fails if that cannot be determined.
         /// </param>
         /// <param name="finalizeRestore">
         /// Set to `true` to finalize the restore operation immediately.<br/>

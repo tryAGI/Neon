@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ProjectsResponse
     {
         /// <summary>
-        /// 
+        /// List of projects accessible to the caller. Projects that exist but could not be retrieved are identified in `unavailable_project_ids`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -31,7 +31,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectsResponse" /> class.
         /// </summary>
-        /// <param name="projects"></param>
+        /// <param name="projects">
+        /// List of projects accessible to the caller. Projects that exist but could not be retrieved are identified in `unavailable_project_ids`.
+        /// </param>
         /// <param name="unavailableProjectIds">
         /// A list of project IDs indicating which projects are known to exist, but whose details could not<br/>
         /// be fetched within the requested (or implicit) time limit

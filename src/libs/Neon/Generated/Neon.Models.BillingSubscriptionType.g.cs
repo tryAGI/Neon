@@ -10,51 +10,51 @@ namespace Neon
     public enum BillingSubscriptionType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AwsMarketplace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Business,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DirectSales,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DirectSalesV3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FreeV2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FreeV3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Launch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LaunchV3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Scale,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ScaleV3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VercelPgLegacy,
     }

@@ -20,7 +20,7 @@ namespace Neon.JsonConverters
                     {
                         return global::Neon.IdentityProviderIdExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

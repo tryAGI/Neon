@@ -50,8 +50,12 @@ namespace Neon
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
-        /// <param name="email"></param>
-        /// <param name="name"></param>
+        /// <param name="email">
+        /// Email address of the new Neon Auth user to create.
+        /// </param>
+        /// <param name="name">
+        /// Display name for the new user. Optional. Pair with the required email field when creating a new user.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

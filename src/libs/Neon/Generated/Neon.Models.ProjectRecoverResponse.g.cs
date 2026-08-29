@@ -5,12 +5,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ProjectRecoverResponse : global::System.IEquatable<ProjectRecoverResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.ProjectResponse? ProjectResponse { get; init; }
@@ -19,7 +19,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProjectResponse))]
@@ -27,7 +27,7 @@ namespace Neon
         public bool IsProjectResponse => ProjectResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProjectResponse(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.ProjectResponse PickProjectResponse() => IsProjectResponse
             ? ProjectResponse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProjectResponse' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.BranchesResponse? Branches { get; init; }
@@ -56,7 +56,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Branches))]
@@ -64,7 +64,7 @@ namespace Neon
         public bool IsBranches => Branches != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBranches(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.BranchesResponse PickBranches() => IsBranches
             ? Branches!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Branches' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ProjectRecoverResponse(global::Neon.ProjectResponse value) => new ProjectRecoverResponse((global::Neon.ProjectResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.ProjectResponse?(ProjectRecoverResponse @this) => @this.ProjectResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProjectRecoverResponse(global::Neon.ProjectResponse? value)
         {
@@ -101,22 +101,22 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ProjectRecoverResponse FromProjectResponse(global::Neon.ProjectResponse? value) => new ProjectRecoverResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ProjectRecoverResponse(global::Neon.BranchesResponse value) => new ProjectRecoverResponse((global::Neon.BranchesResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.BranchesResponse?(ProjectRecoverResponse @this) => @this.Branches;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProjectRecoverResponse(global::Neon.BranchesResponse? value)
         {
@@ -124,12 +124,12 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ProjectRecoverResponse FromBranches(global::Neon.BranchesResponse? value) => new ProjectRecoverResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProjectRecoverResponse(
             global::Neon.ProjectResponse? projectResponse,
@@ -141,23 +141,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Branches as object ??
-            ProjectResponse as object 
+            ProjectResponse as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ProjectResponse?.ToString() ??
-            Branches?.ToString() 
+            Branches?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Neon.ProjectResponse, TResult>? projectResponse = null,
@@ -190,7 +190,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Neon.ProjectResponse>? projectResponse = null,
@@ -214,7 +214,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Neon.ProjectResponse>? projectResponse = null,
@@ -237,7 +237,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ProjectRecoverResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Neon.ProjectResponse?>.Default.Equals(ProjectResponse, other.ProjectResponse) &&
-                global::System.Collections.Generic.EqualityComparer<global::Neon.BranchesResponse?>.Default.Equals(Branches, other.Branches) 
+                global::System.Collections.Generic.EqualityComparer<global::Neon.BranchesResponse?>.Default.Equals(Branches, other.Branches)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ProjectRecoverResponse obj1, ProjectRecoverResponse obj2)
         {
@@ -277,7 +277,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ProjectRecoverResponse obj1, ProjectRecoverResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

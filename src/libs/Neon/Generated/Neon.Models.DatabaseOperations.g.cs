@@ -5,12 +5,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct DatabaseOperations : global::System.IEquatable<DatabaseOperations>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.DatabaseResponse? Response1 { get; init; }
@@ -19,7 +19,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Response1))]
@@ -27,7 +27,7 @@ namespace Neon
         public bool IsResponse1 => Response1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponse1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.DatabaseResponse PickResponse1() => IsResponse1
             ? Response1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Response1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.OperationsResponse? Response2 { get; init; }
@@ -56,7 +56,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Response2))]
@@ -64,7 +64,7 @@ namespace Neon
         public bool IsResponse2 => Response2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponse2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.OperationsResponse PickResponse2() => IsResponse2
             ? Response2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Response2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DatabaseOperations(global::Neon.DatabaseResponse value) => new DatabaseOperations((global::Neon.DatabaseResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.DatabaseResponse?(DatabaseOperations @this) => @this.Response1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DatabaseOperations(global::Neon.DatabaseResponse? value)
         {
@@ -101,22 +101,22 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DatabaseOperations FromResponse1(global::Neon.DatabaseResponse? value) => new DatabaseOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DatabaseOperations(global::Neon.OperationsResponse value) => new DatabaseOperations((global::Neon.OperationsResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.OperationsResponse?(DatabaseOperations @this) => @this.Response2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DatabaseOperations(global::Neon.OperationsResponse? value)
         {
@@ -124,12 +124,12 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DatabaseOperations FromResponse2(global::Neon.OperationsResponse? value) => new DatabaseOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DatabaseOperations(
             global::Neon.DatabaseResponse? response1,
@@ -141,23 +141,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Response2 as object ??
-            Response1 as object 
+            Response1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Response1?.ToString() ??
-            Response2?.ToString() 
+            Response2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Neon.DatabaseResponse, TResult>? response1 = null,
@@ -190,7 +190,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Neon.DatabaseResponse>? response1 = null,
@@ -214,7 +214,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Neon.DatabaseResponse>? response1 = null,
@@ -237,7 +237,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DatabaseOperations other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Neon.DatabaseResponse?>.Default.Equals(Response1, other.Response1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Neon.OperationsResponse?>.Default.Equals(Response2, other.Response2) 
+                global::System.Collections.Generic.EqualityComparer<global::Neon.OperationsResponse?>.Default.Equals(Response2, other.Response2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DatabaseOperations obj1, DatabaseOperations obj2)
         {
@@ -277,7 +277,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DatabaseOperations obj1, DatabaseOperations obj2)
         {
@@ -285,7 +285,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -47,8 +47,12 @@ namespace Neon
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
-        /// <param name="domain"></param>
-        /// <param name="authProvider"></param>
+        /// <param name="domain">
+        /// URI to add to the redirect URI allowlist for the auth provider.
+        /// </param>
+        /// <param name="authProvider">
+        /// Authentication provider integrated with this Neon Auth configuration. `better_auth` integrates with Better Auth (the current, recommended provider). `stack` integrates with Stack Auth (deprecated). `mock` is a simulated provider for local development and testing only.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

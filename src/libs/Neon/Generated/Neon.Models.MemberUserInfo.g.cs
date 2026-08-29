@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class MemberUserInfo
     {
         /// <summary>
-        /// 
+        /// Email address of the organization member's user account.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -38,7 +38,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="MemberUserInfo" /> class.
         /// </summary>
-        /// <param name="email"></param>
+        /// <param name="email">
+        /// Email address of the organization member's user account.
+        /// </param>
         /// <param name="hasMfa">
         /// Whether the member has MFA (TOTP) enabled
         /// </param>

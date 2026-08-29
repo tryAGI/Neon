@@ -6,7 +6,7 @@ namespace Neon
     {
         /// <summary>
         /// Update OAuth provider<br/>
-        /// Updates a OAuth provider for the specified project.
+        /// Updates an OAuth provider for the specified project.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -25,7 +25,7 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update OAuth provider<br/>
-        /// Updates a OAuth provider for the specified project.
+        /// Updates an OAuth provider for the specified project.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -44,14 +44,20 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update OAuth provider<br/>
-        /// Updates a OAuth provider for the specified project.
+        /// Updates an OAuth provider for the specified project.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="oauthProviderId"></param>
-        /// <param name="clientId"></param>
-        /// <param name="clientSecret"></param>
-        /// <param name="microsoftTenantId"></param>
+        /// <param name="clientId">
+        /// The OAuth client ID registered with the provider. Omit to keep the currently configured value.
+        /// </param>
+        /// <param name="clientSecret">
+        /// OAuth client secret for the provider. Omit to leave the existing secret unchanged.
+        /// </param>
+        /// <param name="microsoftTenantId">
+        /// The tenant ID scoping the Microsoft OAuth provider. Supply this field when the provider type is microsoft; it has no effect for other provider types.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

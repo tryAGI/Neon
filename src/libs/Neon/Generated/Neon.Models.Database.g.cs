@@ -16,7 +16,7 @@ namespace Neon
         public required long Id { get; set; }
 
         /// <summary>
-        /// The ID of the branch to which the database belongs
+        /// The ID of the branch this database belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branch_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -63,7 +63,7 @@ namespace Neon
         /// The database ID
         /// </param>
         /// <param name="branchId">
-        /// The ID of the branch to which the database belongs
+        /// The ID of the branch this database belongs to.
         /// </param>
         /// <param name="name">
         /// The database name

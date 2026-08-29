@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BillingAccount
     {
@@ -17,7 +17,7 @@ namespace Neon
         public required global::Neon.BillingAccountState State { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payment_source")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -41,7 +41,7 @@ namespace Neon
         public required global::Neon.BillingPaymentMethod PaymentMethod { get; set; }
 
         /// <summary>
-        /// The last time the quota was reset. Defaults to the date-time the account is created.
+        /// Timestamp of the last quota reset. Set to the account creation time when the account is first created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quota_reset_at_last")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -128,7 +128,7 @@ namespace Neon
         public string? TaxIdType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan_details")]
         public global::Neon.PlanDetails? PlanDetails { get; set; }
@@ -162,7 +162,7 @@ namespace Neon
         /// Indicates whether and how an account makes payments.
         /// </param>
         /// <param name="quotaResetAtLast">
-        /// The last time the quota was reset. Defaults to the date-time the account is created.
+        /// Timestamp of the last quota reset. Set to the account creation time when the account is first created.
         /// </param>
         /// <param name="name">
         /// The full name of the individual or entity that owns the billing account. This name appears on invoices.

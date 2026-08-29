@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BranchCreateRequestEndpointOptions
     {
         /// <summary>
-        /// The compute endpoint type. Either `read_write` or `read_only`.
+        /// Compute endpoint type. `read_write`: the primary read-write endpoint (one per branch). `read_only`: a read replica endpoint (multiple allowed per branch).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.EndpointTypeJsonConverter))]
@@ -23,26 +23,21 @@ namespace Neon
         public global::Neon.EndpointSettingsData? Settings { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("autoscaling_limit_min_cu")]
         public double? AutoscalingLimitMinCu { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("autoscaling_limit_max_cu")]
         public double? AutoscalingLimitMaxCu { get; set; }
 
         /// <summary>
-        /// The Neon compute provisioner.<br/>
-        /// Specify the `k8s-neonvm` provisioner to create a compute endpoint that supports Autoscaling.<br/>
-        /// Provisioner can be one of the following values:<br/>
-        /// * k8s-pod<br/>
-        /// * k8s-neonvm<br/>
-        /// * serverless-platform<br/>
-        /// Clients must expect, that any string value that is not documented in the description above should be treated as a error. UNKNOWN value if safe to treat as an error too.
+        /// Example: k8s-neonvm
         /// </summary>
+        /// <example>k8s-neonvm</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("provisioner")]
         public string? Provisioner { get; set; }
 
@@ -67,7 +62,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="BranchCreateRequestEndpointOptions" /> class.
         /// </summary>
         /// <param name="type">
-        /// The compute endpoint type. Either `read_write` or `read_only`.
+        /// Compute endpoint type. `read_write`: the primary read-write endpoint (one per branch). `read_only`: a read replica endpoint (multiple allowed per branch).
         /// </param>
         /// <param name="settings">
         /// A collection of settings for a compute endpoint
@@ -75,13 +70,7 @@ namespace Neon
         /// <param name="autoscalingLimitMinCu"></param>
         /// <param name="autoscalingLimitMaxCu"></param>
         /// <param name="provisioner">
-        /// The Neon compute provisioner.<br/>
-        /// Specify the `k8s-neonvm` provisioner to create a compute endpoint that supports Autoscaling.<br/>
-        /// Provisioner can be one of the following values:<br/>
-        /// * k8s-pod<br/>
-        /// * k8s-neonvm<br/>
-        /// * serverless-platform<br/>
-        /// Clients must expect, that any string value that is not documented in the description above should be treated as a error. UNKNOWN value if safe to treat as an error too.
+        /// Example: k8s-neonvm
         /// </param>
         /// <param name="suspendTimeoutSeconds">
         /// Duration of inactivity in seconds after which the compute endpoint is<br/>

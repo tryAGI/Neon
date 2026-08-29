@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConnectionDetails
     {
@@ -18,7 +18,7 @@ namespace Neon
         public required string ConnectionUri { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connection_parameters")]
         [global::System.Text.Json.Serialization.JsonRequired]

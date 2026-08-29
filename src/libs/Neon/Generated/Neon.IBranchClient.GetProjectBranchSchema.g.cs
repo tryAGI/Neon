@@ -6,7 +6,7 @@ namespace Neon
     {
         /// <summary>
         /// Retrieve database schema<br/>
-        /// Retrieves the schema from the specified database. The `lsn` and `timestamp` values cannot be specified at the same time. If both are omitted, the database schema is retrieved from database's head.
+        /// Retrieves the database schema. Specify `lsn` or `timestamp` (not both) to read at a point in time; omit both to read from the database's head.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -30,7 +30,7 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Retrieve database schema<br/>
-        /// Retrieves the schema from the specified database. The `lsn` and `timestamp` values cannot be specified at the same time. If both are omitted, the database schema is retrieved from database's head.
+        /// Retrieves the database schema. Specify `lsn` or `timestamp` (not both) to read at a point in time; omit both to read from the database's head.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

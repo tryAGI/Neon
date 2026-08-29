@@ -5,12 +5,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BranchRecoverResponse : global::System.IEquatable<BranchRecoverResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.BranchResponse? BranchResponse { get; init; }
@@ -19,7 +19,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BranchResponse))]
@@ -27,7 +27,7 @@ namespace Neon
         public bool IsBranchResponse => BranchResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBranchResponse(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.BranchResponse PickBranchResponse() => IsBranchResponse
             ? BranchResponse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BranchResponse' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.EndpointsOptionalResponse? EndpointsOptional { get; init; }
@@ -56,7 +56,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EndpointsOptional))]
@@ -64,7 +64,7 @@ namespace Neon
         public bool IsEndpointsOptional => EndpointsOptional != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEndpointsOptional(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.EndpointsOptionalResponse PickEndpointsOptional() => IsEndpointsOptional
             ? EndpointsOptional!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EndpointsOptional' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BranchRecoverResponse(global::Neon.BranchResponse value) => new BranchRecoverResponse((global::Neon.BranchResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.BranchResponse?(BranchRecoverResponse @this) => @this.BranchResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BranchRecoverResponse(global::Neon.BranchResponse? value)
         {
@@ -101,22 +101,22 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BranchRecoverResponse FromBranchResponse(global::Neon.BranchResponse? value) => new BranchRecoverResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BranchRecoverResponse(global::Neon.EndpointsOptionalResponse value) => new BranchRecoverResponse((global::Neon.EndpointsOptionalResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.EndpointsOptionalResponse?(BranchRecoverResponse @this) => @this.EndpointsOptional;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BranchRecoverResponse(global::Neon.EndpointsOptionalResponse? value)
         {
@@ -124,12 +124,12 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BranchRecoverResponse FromEndpointsOptional(global::Neon.EndpointsOptionalResponse? value) => new BranchRecoverResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BranchRecoverResponse(
             global::Neon.BranchResponse? branchResponse,
@@ -141,23 +141,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EndpointsOptional as object ??
-            BranchResponse as object 
+            BranchResponse as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BranchResponse?.ToString() ??
-            EndpointsOptional?.ToString() 
+            EndpointsOptional?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Neon.BranchResponse, TResult>? branchResponse = null,
@@ -190,7 +190,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Neon.BranchResponse>? branchResponse = null,
@@ -214,7 +214,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Neon.BranchResponse>? branchResponse = null,
@@ -237,7 +237,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BranchRecoverResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Neon.BranchResponse?>.Default.Equals(BranchResponse, other.BranchResponse) &&
-                global::System.Collections.Generic.EqualityComparer<global::Neon.EndpointsOptionalResponse?>.Default.Equals(EndpointsOptional, other.EndpointsOptional) 
+                global::System.Collections.Generic.EqualityComparer<global::Neon.EndpointsOptionalResponse?>.Default.Equals(EndpointsOptional, other.EndpointsOptional)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BranchRecoverResponse obj1, BranchRecoverResponse obj2)
         {
@@ -277,7 +277,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BranchRecoverResponse obj1, BranchRecoverResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

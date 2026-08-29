@@ -4,29 +4,28 @@
 namespace Neon
 {
     /// <summary>
-    /// The role of the organization member. Some role values may not be<br/>
-    /// available for all organizations.
+    /// Organization member's role. `admin`: full administrative access. `editor` (and its legacy alias `member`): standard access governed by project permissions. `viewer` and `collaborator`: additional scoped project roles. Some values may not be available for all organizations.
     /// </summary>
     public enum MemberRole
     {
         /// <summary>
-        /// 
+        /// full administrative access. `editor` (and its legacy alias `member`): standard access governed by project permissions. `viewer` and `collaborator`: additional scoped project roles. Some values may not be available for all organizations.
         /// </summary>
         Admin,
         /// <summary>
-        /// 
+        /// full administrative access. `editor` (and its legacy alias `member`): standard access governed by project permissions. `viewer` and `collaborator`: additional scoped project roles. Some values may not be available for all organizations.
         /// </summary>
         Collaborator,
         /// <summary>
-        /// 
+        /// full administrative access. `editor` (and its legacy alias `member`): standard access governed by project permissions. `viewer` and `collaborator`: additional scoped project roles. Some values may not be available for all organizations.
         /// </summary>
         Editor,
         /// <summary>
-        /// 
+        /// full administrative access. `editor` (and its legacy alias `member`): standard access governed by project permissions. `viewer` and `collaborator`: additional scoped project roles. Some values may not be available for all organizations.
         /// </summary>
         Member,
         /// <summary>
-        /// 
+        /// full administrative access. `editor` (and its legacy alias `member`): standard access governed by project permissions. `viewer` and `collaborator`: additional scoped project roles. Some values may not be available for all organizations.
         /// </summary>
         Viewer,
     }

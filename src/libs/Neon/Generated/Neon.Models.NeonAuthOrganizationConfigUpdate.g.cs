@@ -4,37 +4,37 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NeonAuthOrganizationConfigUpdate
     {
         /// <summary>
-        /// Whether the organization plugin is enabled
+        /// Controls whether the organization plugin is active for the organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// Maximum number of organizations a user can create
+        /// Maximum organizations a user can belong to (created or joined). At the limit, the user cannot create or join more.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_limit")]
         public int? OrganizationLimit { get; set; }
 
         /// <summary>
-        /// Maximum number of members per organization
+        /// Maximum members per organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("membership_limit")]
         public int? MembershipLimit { get; set; }
 
         /// <summary>
-        /// The role assigned to the user who creates an organization
+        /// Role of the organization's creator. `owner`: full control, including deleting the org and transferring ownership. `admin`: manage members and settings only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator_role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthOrganizationConfigUpdateCreatorRoleJsonConverter))]
         public global::Neon.NeonAuthOrganizationConfigUpdateCreatorRole? CreatorRole { get; set; }
 
         /// <summary>
-        /// Whether to send invitation emails when inviting members to an organization
+        /// When true, invited users receive an email containing an accept link. Requires that the invited user has a verified email address.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("send_invitation_email")]
         public bool? SendInvitationEmail { get; set; }
@@ -49,19 +49,19 @@ namespace Neon
         /// Initializes a new instance of the <see cref="NeonAuthOrganizationConfigUpdate" /> class.
         /// </summary>
         /// <param name="enabled">
-        /// Whether the organization plugin is enabled
+        /// Controls whether the organization plugin is active for the organization.
         /// </param>
         /// <param name="organizationLimit">
-        /// Maximum number of organizations a user can create
+        /// Maximum organizations a user can belong to (created or joined). At the limit, the user cannot create or join more.
         /// </param>
         /// <param name="membershipLimit">
-        /// Maximum number of members per organization
+        /// Maximum members per organization.
         /// </param>
         /// <param name="creatorRole">
-        /// The role assigned to the user who creates an organization
+        /// Role of the organization's creator. `owner`: full control, including deleting the org and transferring ownership. `admin`: manage members and settings only.
         /// </param>
         /// <param name="sendInvitationEmail">
-        /// Whether to send invitation emails when inviting members to an organization
+        /// When true, invited users receive an email containing an accept link. Requires that the invited user has a verified email address.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -7,7 +7,7 @@ namespace Neon
         /// <summary>
         /// Update role for organization member<br/>
         /// Updates the role of an existing member in the specified organization.<br/>
-        /// Supported roles are `admin` and `member`.<br/>
+        /// The requested role must be valid for the organization.<br/>
         /// Only organization admins can call this endpoint.
         /// </summary>
         /// <param name="orgId"></param>
@@ -26,7 +26,7 @@ namespace Neon
         /// <summary>
         /// Update role for organization member<br/>
         /// Updates the role of an existing member in the specified organization.<br/>
-        /// Supported roles are `admin` and `member`.<br/>
+        /// The requested role must be valid for the organization.<br/>
         /// Only organization admins can call this endpoint.
         /// </summary>
         /// <param name="orgId"></param>
@@ -45,14 +45,13 @@ namespace Neon
         /// <summary>
         /// Update role for organization member<br/>
         /// Updates the role of an existing member in the specified organization.<br/>
-        /// Supported roles are `admin` and `member`.<br/>
+        /// The requested role must be valid for the organization.<br/>
         /// Only organization admins can call this endpoint.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="memberId"></param>
         /// <param name="role">
-        /// The role of the organization member. Some role values may not be<br/>
-        /// available for all organizations.
+        /// Organization member's role. `admin`: full administrative access. `editor` (and its legacy alias `member`): standard access governed by project permissions. `viewer` and `collaborator`: additional scoped project roles. Some values may not be available for all organizations.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

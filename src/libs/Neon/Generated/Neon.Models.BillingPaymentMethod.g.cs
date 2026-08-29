@@ -9,47 +9,47 @@ namespace Neon
     public enum BillingPaymentMethod
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AwsMp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureMp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DirectPayment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SharedPaymentToken,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sponsorship,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Staff,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stripe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trial,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VercelMp,
     }
