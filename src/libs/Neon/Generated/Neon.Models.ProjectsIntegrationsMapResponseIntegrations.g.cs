@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    /// Map of project IDs to their associated integration details.
     /// </summary>
     public sealed partial class ProjectsIntegrationsMapResponseIntegrations
     {

@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class EndpointsResponse
     {
         /// <summary>
-        /// 
+        /// Compute endpoints in the project. Each includes `id`, `branch_id`, `host`, and `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoints")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="EndpointsResponse" /> class.
         /// </summary>
-        /// <param name="endpoints"></param>
+        /// <param name="endpoints">
+        /// Compute endpoints in the project. Each includes `id`, `branch_id`, `host`, and `type`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

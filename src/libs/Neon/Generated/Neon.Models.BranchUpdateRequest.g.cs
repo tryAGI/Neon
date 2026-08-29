@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BranchUpdateRequest
     {
         /// <summary>
-        /// 
+        /// Branch attributes to update. Supply only the fields you want to change, for example `name` or `protected`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branch")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="BranchUpdateRequest" /> class.
         /// </summary>
-        /// <param name="branch"></param>
+        /// <param name="branch">
+        /// Branch attributes to update. Supply only the fields you want to change, for example `name` or `protected`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

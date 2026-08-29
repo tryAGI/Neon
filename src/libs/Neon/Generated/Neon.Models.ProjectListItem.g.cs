@@ -6,13 +6,13 @@
 namespace Neon
 {
     /// <summary>
-    /// Essential data about the project. Full data is available at the getProject endpoint.<br/>
+    /// Essential data about the project. Full data is available at `GET /projects/{project_id}`.<br/>
     /// Example: {"active_time":750111,"branch_logical_size_limit":10,"branch_logical_size_limit_bytes":10485760,"cpu_used_sec":523011,"id":"spring-example-302709","owner_id":"629982cc-de05-43db-ae16-28f2399c4910","platform_id":"aws","region_id":"aws-us-east-2","name":"spring-example-302709","provisioner":"k8s-pod","pg_version":15,"proxy_host":"us-east-2.aws.neon.tech","store_passwords":true,"creation_source":"console","created_at":"2022-12-13T01:30:55Z","updated_at":"2022-12-13T01:30:55Z"}
     /// </summary>
     public sealed partial class ProjectListItem
     {
         /// <summary>
-        /// The project ID
+        /// The Neon project ID. Use as the `project_id` path parameter in other endpoints.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -26,8 +26,10 @@ namespace Neon
         public required string PlatformId { get; set; }
 
         /// <summary>
-        /// The region identifier
+        /// Cloud region where the project's Postgres compute and storage reside (for example, `aws-us-east-2`). Valid values are returned by `GET /regions`.<br/>
+        /// Example: aws-us-east-2
         /// </summary>
+        /// <example>aws-us-east-2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("region_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RegionId { get; set; }
@@ -40,14 +42,9 @@ namespace Neon
         public required string Name { get; set; }
 
         /// <summary>
-        /// The Neon compute provisioner.<br/>
-        /// Specify the `k8s-neonvm` provisioner to create a compute endpoint that supports Autoscaling.<br/>
-        /// Provisioner can be one of the following values:<br/>
-        /// * k8s-pod<br/>
-        /// * k8s-neonvm<br/>
-        /// * serverless-platform<br/>
-        /// Clients must expect, that any string value that is not documented in the description above should be treated as a error. UNKNOWN value if safe to treat as an error too.
+        /// Example: k8s-neonvm
         /// </summary>
+        /// <example>k8s-neonvm</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("provisioner")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Provisioner { get; set; }
@@ -59,15 +56,17 @@ namespace Neon
         public global::Neon.DefaultEndpointSettings? DefaultEndpointSettings { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
         public global::Neon.ProjectSettingsData? Settings { get; set; }
 
         /// <summary>
-        /// The major Postgres version number. Currently supported versions are `14`, `15`, `16`, `17`, and `18`.<br/>
-        /// Default Value: 17
+        /// The major Postgres version number. Supported versions are `14`, `15`, `16`, `17`, and `18`. `19` is rolling out and is accepted only in regions where it is enabled; requesting it elsewhere returns an error.<br/>
+        /// Default Value: 18<br/>
+        /// Example: 18
         /// </summary>
+        /// <example>18</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pg_version")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PgVersion { get; set; }
@@ -108,7 +107,7 @@ namespace Neon
         public required long ActiveTime { get; set; }
 
         /// <summary>
-        /// DEPRECATED. Use data from the getProject endpoint instead.
+        /// Deprecated. Use `compute_time_seconds` from `GET /projects/{project_id}` instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpu_used_sec")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -142,21 +141,20 @@ namespace Neon
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// The current space occupied by the project in storage, in bytes. Synthetic storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches in a project.
+        /// The current space occupied by the project in Postgres storage, in bytes. Synthetic Postgres storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches in a project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("synthetic_storage_size")]
         public long? SyntheticStorageSize { get; set; }
 
         /// <summary>
-        /// DEPRECATED. Use `consumption_period_end` from the getProject endpoint instead.<br/>
-        /// A timestamp indicating when the project quota resets
+        /// Deprecated. Use `consumption_period_end` from `GET /projects/{project_id}` instead. A timestamp indicating when the project quota resets.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quota_reset_at")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.DateTime? QuotaResetAt { get; set; }
 
         /// <summary>
-        /// 
+        /// ID of the organization that owns the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -170,15 +168,13 @@ namespace Neon
         public global::System.DateTime? ComputeLastActiveAt { get; set; }
 
         /// <summary>
-        /// Organization id if the project belongs to an organization.<br/>
-        /// Permissions for the project will be given to organization members as defined by the organization admins.<br/>
-        /// The permissions of the project do not depend on the user that created the project if a project belongs to an organization.
+        /// ID of the organization that owns the project. Project permissions are granted to organization members as configured by the organization's admins, independent of which member created the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("org_id")]
         public string? OrgId { get; set; }
 
         /// <summary>
-        /// Organization name if the project belongs to an organization.
+        /// Name of the organization that owns the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("org_name")]
         public string? OrgName { get; set; }
@@ -208,10 +204,7 @@ namespace Neon
         public global::System.DateTime? RecoverableUntil { get; set; }
 
         /// <summary>
-        /// The caller's effective permission for a project list item when<br/>
-        /// per-project permissions are enabled. Values correspond to viewer,<br/>
-        /// editor, and admin/manage project access levels. Omitted for personal<br/>
-        /// projects, flag-off organizations, and non-user subjects.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effective_project_permission")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.ProjectPermissionLevelJsonConverter))]
@@ -227,29 +220,25 @@ namespace Neon
         /// Initializes a new instance of the <see cref="ProjectListItem" /> class.
         /// </summary>
         /// <param name="id">
-        /// The project ID
+        /// The Neon project ID. Use as the `project_id` path parameter in other endpoints.
         /// </param>
         /// <param name="platformId">
         /// The cloud platform identifier. Currently, only AWS is supported, for which the identifier is `aws`.
         /// </param>
         /// <param name="regionId">
-        /// The region identifier
+        /// Cloud region where the project's Postgres compute and storage reside (for example, `aws-us-east-2`). Valid values are returned by `GET /regions`.<br/>
+        /// Example: aws-us-east-2
         /// </param>
         /// <param name="name">
         /// The project name
         /// </param>
         /// <param name="provisioner">
-        /// The Neon compute provisioner.<br/>
-        /// Specify the `k8s-neonvm` provisioner to create a compute endpoint that supports Autoscaling.<br/>
-        /// Provisioner can be one of the following values:<br/>
-        /// * k8s-pod<br/>
-        /// * k8s-neonvm<br/>
-        /// * serverless-platform<br/>
-        /// Clients must expect, that any string value that is not documented in the description above should be treated as a error. UNKNOWN value if safe to treat as an error too.
+        /// Example: k8s-neonvm
         /// </param>
         /// <param name="pgVersion">
-        /// The major Postgres version number. Currently supported versions are `14`, `15`, `16`, `17`, and `18`.<br/>
-        /// Default Value: 17
+        /// The major Postgres version number. Supported versions are `14`, `15`, `16`, `17`, and `18`. `19` is rolling out and is accepted only in regions where it is enabled; requesting it elsewhere returns an error.<br/>
+        /// Default Value: 18<br/>
+        /// Example: 18
         /// </param>
         /// <param name="proxyHost">
         /// The proxy host for the project. This value combines the `region_id`, the `platform_id`, and the Neon domain (`neon.tech`).
@@ -267,7 +256,7 @@ namespace Neon
         /// Control plane observed endpoints of this project being active this amount of wall-clock time.
         /// </param>
         /// <param name="cpuUsedSec">
-        /// DEPRECATED. Use data from the getProject endpoint instead.
+        /// Deprecated. Use `compute_time_seconds` from `GET /projects/{project_id}` instead.
         /// </param>
         /// <param name="creationSource">
         /// The project creation source
@@ -278,7 +267,9 @@ namespace Neon
         /// <param name="updatedAt">
         /// A timestamp indicating when the project was last updated
         /// </param>
-        /// <param name="ownerId"></param>
+        /// <param name="ownerId">
+        /// ID of the organization that owns the project.
+        /// </param>
         /// <param name="defaultEndpointSettings">
         /// A collection of settings for a Neon endpoint
         /// </param>
@@ -287,19 +278,17 @@ namespace Neon
         /// A timestamp indicating when project maintenance begins. If set, the project is placed into maintenance mode at this time.
         /// </param>
         /// <param name="syntheticStorageSize">
-        /// The current space occupied by the project in storage, in bytes. Synthetic storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches in a project.
+        /// The current space occupied by the project in Postgres storage, in bytes. Synthetic Postgres storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches in a project.
         /// </param>
         /// <param name="computeLastActiveAt">
         /// The most recent time when any endpoint of this project was active.<br/>
         /// Omitted when observed no activity for endpoints of this project.
         /// </param>
         /// <param name="orgId">
-        /// Organization id if the project belongs to an organization.<br/>
-        /// Permissions for the project will be given to organization members as defined by the organization admins.<br/>
-        /// The permissions of the project do not depend on the user that created the project if a project belongs to an organization.
+        /// ID of the organization that owns the project. Project permissions are granted to organization members as configured by the organization's admins, independent of which member created the project.
         /// </param>
         /// <param name="orgName">
-        /// Organization name if the project belongs to an organization.
+        /// Name of the organization that owns the project.
         /// </param>
         /// <param name="historyRetentionSeconds">
         /// The number of seconds to retain the shared history for all branches in this project.
@@ -313,12 +302,7 @@ namespace Neon
         /// <param name="recoverableUntil">
         /// A timestamp indicating the project will be recoverable until this date and time.
         /// </param>
-        /// <param name="effectiveProjectPermission">
-        /// The caller's effective permission for a project list item when<br/>
-        /// per-project permissions are enabled. Values correspond to viewer,<br/>
-        /// editor, and admin/manage project access levels. Omitted for personal<br/>
-        /// projects, flag-off organizations, and non-user subjects.
-        /// </param>
+        /// <param name="effectiveProjectPermission"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

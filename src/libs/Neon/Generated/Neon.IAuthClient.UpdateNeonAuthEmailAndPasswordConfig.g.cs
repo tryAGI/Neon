@@ -48,7 +48,7 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="enabled">
-        /// Whether email and password authentication is enabled
+        /// Controls whether email and password authentication is enabled for this project. When omitted from an update request, the current value is unchanged.
         /// </param>
         /// <param name="emailVerificationMethod">
         /// The email verification method to use.<br/>
@@ -56,19 +56,19 @@ namespace Neon
         /// - `otp`: Sends a one-time password (OTP) via email
         /// </param>
         /// <param name="requireEmailVerification">
-        /// Whether email verification is required before users can sign in
+        /// When true, users must verify their email address before they can sign in. Omitting this field from an update request leaves the current value unchanged.
         /// </param>
         /// <param name="autoSignInAfterVerification">
         /// Whether users are automatically signed in after verifying their email
         /// </param>
         /// <param name="sendVerificationEmailOnSignUp">
-        /// Whether to send a verification email when users sign up
+        /// Whether to send a verification email when users sign up.
         /// </param>
         /// <param name="sendVerificationEmailOnSignIn">
-        /// Whether to send a verification email when users sign in
+        /// Whether to send a verification email when a user with an unverified email signs in.
         /// </param>
         /// <param name="disableSignUp">
-        /// Whether to disable new user sign ups
+        /// Whether to disable new user sign ups. When omitted, the current setting is not changed.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

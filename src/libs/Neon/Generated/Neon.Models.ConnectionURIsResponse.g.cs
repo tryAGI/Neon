@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConnectionURIsResponse
     {
         /// <summary>
-        /// 
+        /// Connection URIs for the project. Each entry contains credentials and should be treated as sensitive.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connection_uris")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionURIsResponse" /> class.
         /// </summary>
-        /// <param name="connectionUris"></param>
+        /// <param name="connectionUris">
+        /// Connection URIs for the project. Each entry contains credentials and should be treated as sensitive.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

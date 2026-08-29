@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    /// Map of project IDs to their installed applications. Each key is a project ID; each value is an array of application types (for example, `vercel`, `github`).
     /// </summary>
     public sealed partial class ProjectsApplicationsMapResponseApplications
     {

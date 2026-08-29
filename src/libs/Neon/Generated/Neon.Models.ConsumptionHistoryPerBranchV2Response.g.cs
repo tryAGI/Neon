@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConsumptionHistoryPerBranchV2Response
     {
         /// <summary>
-        /// 
+        /// Per-branch consumption history records returned for the requested time range.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branches")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsumptionHistoryPerBranchV2Response" /> class.
         /// </summary>
-        /// <param name="branches"></param>
+        /// <param name="branches">
+        /// Per-branch consumption history records returned for the requested time range.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

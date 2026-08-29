@@ -53,18 +53,16 @@ namespace Neon
         /// <param name="branchId"></param>
         /// <param name="databaseName"></param>
         /// <param name="authProvider">
-        /// The authentication provider to use for the Neon Data API
+        /// Authentication provider for the Neon Data API. `neon_auth`: use Neon's built-in managed authentication (no JWKS configuration required). `external`: use an external JWT provider, which requires `jwks_url`. When omitted, no auth provider is configured (existing setup is kept).
         /// </param>
         /// <param name="jwksUrl">
-        /// The URL that lists the JWKS
+        /// URL of the JWKS endpoint used to verify JWTs for this Data API. Required when configuring JWT-based authentication; omit when using a non-JWT auth provider.
         /// </param>
         /// <param name="providerName">
-        /// The name of the authentication provider (e.g., Clerk, Stytch, Auth0)
+        /// Display name for the authentication provider. Accepted values include "Clerk", "Stytch", and "Auth0", but any non-empty string is valid. Optional field.
         /// </param>
         /// <param name="jwtAudience">
-        /// WARNING - using this setting will only reject tokens with a<br/>
-        /// different audience claim. Tokens without audience claim will still<br/>
-        /// be accepted.
+        /// Expected `aud` claim in incoming JWTs. When set, tokens with a different audience are rejected; tokens with no audience are still accepted. Omit to skip audience validation.
         /// </param>
         /// <param name="addDefaultGrants">
         /// Grant all permissions to the tables in the public schema to authenticated users<br/>

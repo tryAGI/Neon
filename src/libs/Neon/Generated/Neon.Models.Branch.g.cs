@@ -18,7 +18,7 @@ namespace Neon
         public required string Id { get; set; }
 
         /// <summary>
-        /// The ID of the project to which the branch belongs
+        /// The ID of the project this branch belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -59,7 +59,7 @@ namespace Neon
         ///   * 'init' - the branch is being created but is not available for querying.<br/>
         ///   * 'resetting' - the branch is being reset to a specific point in time or LSN and is not yet available for querying.<br/>
         ///   * 'ready' - the branch is fully operational and ready for querying. Expect normal query response times.<br/>
-        ///   * 'archived' - the branch is stored in cost-effective archival storage. Expect slow query response times.
+        ///   * 'archived' - the branch is stored in cost-effective archival Postgres storage. Expect slow query response times.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_state")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -70,7 +70,7 @@ namespace Neon
         ///   * 'init' - the branch is being created but is not available for querying.<br/>
         ///   * 'resetting' - the branch is being reset to a specific point in time or LSN and is not yet available for querying.<br/>
         ///   * 'ready' - the branch is fully operational and ready for querying. Expect normal query response times.<br/>
-        ///   * 'archived' - the branch is stored in cost-effective archival storage. Expect slow query response times.
+        ///   * 'archived' - the branch is stored in cost-effective archival Postgres storage. Expect slow query response times.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pending_state")]
         public string? PendingState { get; set; }
@@ -96,8 +96,7 @@ namespace Neon
         public required string CreationSource { get; set; }
 
         /// <summary>
-        /// DEPRECATED. Use `default` field.<br/>
-        /// Whether the branch is the project's primary branch
+        /// Deprecated. Use the `default` field. Whether the branch is the project's primary branch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("primary")]
         [global::System.Obsolete("This property marked as deprecated.")]
@@ -111,46 +110,42 @@ namespace Neon
         public required bool Default { get; set; }
 
         /// <summary>
-        /// Whether the branch is protected
+        /// Whether the branch is protected. Protected branches (and their computes) cannot be deleted, archived, or reset, and block deletion of the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("protected")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Protected { get; set; }
 
         /// <summary>
-        /// CPU seconds used by all of the branch's compute endpoints, including deleted ones.<br/>
-        /// This value is reset at the beginning of each billing period.<br/>
-        /// Examples:<br/>
-        /// 1. A branch that uses 1 CPU for 1 second is equal to `cpu_used_sec=1`.<br/>
-        /// 2. A branch that uses 2 CPUs simultaneously for 1 second is equal to `cpu_used_sec=2`.
+        /// Deprecated. Use `compute_time_seconds` instead. CPU seconds used by all of the branch's compute endpoints, including deleted ones. This value is reset at the beginning of each billing period.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpu_used_sec")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long CpuUsedSec { get; set; }
 
         /// <summary>
-        /// 
+        /// Total Postgres compute time consumed by this branch during the current billing period, in CU-seconds (weighted by compute size). Divide by 3600 for CU-hours.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compute_time_seconds")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long ComputeTimeSeconds { get; set; }
 
         /// <summary>
-        /// 
+        /// Total time this branch's compute has been active during the current billing period, in seconds (not weighted by compute size). Distinct from `compute_time_seconds`, which is CU-weighted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_time_seconds")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long ActiveTimeSeconds { get; set; }
 
         /// <summary>
-        /// 
+        /// Data written by this branch during the current billing period, in bytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("written_data_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long WrittenDataBytes { get; set; }
 
         /// <summary>
-        /// 
+        /// Total data transferred out of the branch, in bytes. Used as a consumption metric.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_transfer_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -201,10 +196,10 @@ namespace Neon
         public global::Neon.BranchCreatedBy? CreatedBy { get; set; }
 
         /// <summary>
-        /// The source of initialization for the branch. Valid values are `schema-only` and `parent-data` (default).<br/>
-        ///   * `schema-only` - creates a new root branch containing only the schema. Use `parent_id` to specify the source branch. Optionally, you can provide `parent_lsn` or `parent_timestamp` to branch from a specific point in time or LSN. These fields define which branch to copy the schema from and at what point—they do not establish a parent-child relationship between the `parent_id` branch and the new schema-only branch.<br/>
-        ///   * `parent-data` - creates the branch with both schema and data from the parent.
+        /// Source of initialization for the branch. `parent-data` (default) copies schema and data from the parent. `parent-schema` copies schema only from the parent. `schema-only` creates a root branch with schema only. `import` initializes from an external import.<br/>
+        /// Example: parent-data
         /// </summary>
+        /// <example>parent-data</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("init_source")]
         public string? InitSource { get; set; }
 
@@ -255,7 +250,7 @@ namespace Neon
         /// The branch ID. This value is generated when a branch is created. A `branch_id` value has a `br` prefix. For example: `br-small-term-683261`.
         /// </param>
         /// <param name="projectId">
-        /// The ID of the project to which the branch belongs
+        /// The ID of the project this branch belongs to.
         /// </param>
         /// <param name="name">
         /// The branch name
@@ -265,7 +260,7 @@ namespace Neon
         ///   * 'init' - the branch is being created but is not available for querying.<br/>
         ///   * 'resetting' - the branch is being reset to a specific point in time or LSN and is not yet available for querying.<br/>
         ///   * 'ready' - the branch is fully operational and ready for querying. Expect normal query response times.<br/>
-        ///   * 'archived' - the branch is stored in cost-effective archival storage. Expect slow query response times.
+        ///   * 'archived' - the branch is stored in cost-effective archival Postgres storage. Expect slow query response times.
         /// </param>
         /// <param name="stateChangedAt">
         /// A UTC timestamp indicating when the `current_state` began
@@ -277,19 +272,23 @@ namespace Neon
         /// Whether the branch is the project's default branch
         /// </param>
         /// <param name="protected">
-        /// Whether the branch is protected
+        /// Whether the branch is protected. Protected branches (and their computes) cannot be deleted, archived, or reset, and block deletion of the project.
         /// </param>
         /// <param name="cpuUsedSec">
-        /// CPU seconds used by all of the branch's compute endpoints, including deleted ones.<br/>
-        /// This value is reset at the beginning of each billing period.<br/>
-        /// Examples:<br/>
-        /// 1. A branch that uses 1 CPU for 1 second is equal to `cpu_used_sec=1`.<br/>
-        /// 2. A branch that uses 2 CPUs simultaneously for 1 second is equal to `cpu_used_sec=2`.
+        /// Deprecated. Use `compute_time_seconds` instead. CPU seconds used by all of the branch's compute endpoints, including deleted ones. This value is reset at the beginning of each billing period.
         /// </param>
-        /// <param name="computeTimeSeconds"></param>
-        /// <param name="activeTimeSeconds"></param>
-        /// <param name="writtenDataBytes"></param>
-        /// <param name="dataTransferBytes"></param>
+        /// <param name="computeTimeSeconds">
+        /// Total Postgres compute time consumed by this branch during the current billing period, in CU-seconds (weighted by compute size). Divide by 3600 for CU-hours.
+        /// </param>
+        /// <param name="activeTimeSeconds">
+        /// Total time this branch's compute has been active during the current billing period, in seconds (not weighted by compute size). Distinct from `compute_time_seconds`, which is CU-weighted.
+        /// </param>
+        /// <param name="writtenDataBytes">
+        /// Data written by this branch during the current billing period, in bytes.
+        /// </param>
+        /// <param name="dataTransferBytes">
+        /// Total data transferred out of the branch, in bytes. Used as a consumption metric.
+        /// </param>
         /// <param name="createdAt">
         /// A timestamp indicating when the branch was created
         /// </param>
@@ -315,7 +314,7 @@ namespace Neon
         ///   * 'init' - the branch is being created but is not available for querying.<br/>
         ///   * 'resetting' - the branch is being reset to a specific point in time or LSN and is not yet available for querying.<br/>
         ///   * 'ready' - the branch is fully operational and ready for querying. Expect normal query response times.<br/>
-        ///   * 'archived' - the branch is stored in cost-effective archival storage. Expect slow query response times.
+        ///   * 'archived' - the branch is stored in cost-effective archival Postgres storage. Expect slow query response times.
         /// </param>
         /// <param name="logicalSize">
         /// The logical size of the branch, in bytes
@@ -337,9 +336,8 @@ namespace Neon
         /// The resolved user model that contains details of the user/org/integration/api_key used for branch creation. This field is filled only in listing/get/create/get/update/delete methods, if it is empty when calling other handlers, it does not mean that it is empty in the system.
         /// </param>
         /// <param name="initSource">
-        /// The source of initialization for the branch. Valid values are `schema-only` and `parent-data` (default).<br/>
-        ///   * `schema-only` - creates a new root branch containing only the schema. Use `parent_id` to specify the source branch. Optionally, you can provide `parent_lsn` or `parent_timestamp` to branch from a specific point in time or LSN. These fields define which branch to copy the schema from and at what point—they do not establish a parent-child relationship between the `parent_id` branch and the new schema-only branch.<br/>
-        ///   * `parent-data` - creates the branch with both schema and data from the parent.
+        /// Source of initialization for the branch. `parent-data` (default) copies schema and data from the parent. `parent-schema` copies schema only from the parent. `schema-only` creates a root branch with schema only. `import` initializes from an external import.<br/>
+        /// Example: parent-data
         /// </param>
         /// <param name="restoreStatus">
         /// Could be `restored`, `finalized` or `detaching`.<br/>

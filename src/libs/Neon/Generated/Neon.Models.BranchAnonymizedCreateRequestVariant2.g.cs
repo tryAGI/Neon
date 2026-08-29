@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BranchAnonymizedCreateRequestVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branch_create")]
         public global::Neon.BranchCreateRequest? BranchCreate { get; set; }
@@ -22,7 +22,8 @@ namespace Neon
 
         /// <summary>
         /// If true, automatically start anonymization after the branch is created.<br/>
-        /// Defaults to false.
+        /// Defaults to false.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_anonymization")]
         public bool? StartAnonymization { get; set; }
@@ -42,7 +43,8 @@ namespace Neon
         /// </param>
         /// <param name="startAnonymization">
         /// If true, automatically start anonymization after the branch is created.<br/>
-        /// Defaults to false.
+        /// Defaults to false.<br/>
+        /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

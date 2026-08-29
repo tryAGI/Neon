@@ -5,12 +5,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OrgApiKeyCreateRequest : global::System.IEquatable<OrgApiKeyCreateRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.ApiKeyCreateRequest? ApiKeyCreateRequest { get; init; }
@@ -19,7 +19,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiKeyCreateRequest))]
@@ -27,7 +27,7 @@ namespace Neon
         public bool IsApiKeyCreateRequest => ApiKeyCreateRequest != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApiKeyCreateRequest(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.ApiKeyCreateRequest PickApiKeyCreateRequest() => IsApiKeyCreateRequest
             ? ApiKeyCreateRequest!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKeyCreateRequest' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.OrgApiKeyCreateRequestVariant2? OrgApiKeyCreateRequestVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrgApiKeyCreateRequestVariant2))]
@@ -64,7 +64,7 @@ namespace Neon
         public bool IsOrgApiKeyCreateRequestVariant2 => OrgApiKeyCreateRequestVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrgApiKeyCreateRequestVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.OrgApiKeyCreateRequestVariant2 PickOrgApiKeyCreateRequestVariant2() => IsOrgApiKeyCreateRequestVariant2
             ? OrgApiKeyCreateRequestVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrgApiKeyCreateRequestVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OrgApiKeyCreateRequest(global::Neon.ApiKeyCreateRequest value) => new OrgApiKeyCreateRequest((global::Neon.ApiKeyCreateRequest?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.ApiKeyCreateRequest?(OrgApiKeyCreateRequest @this) => @this.ApiKeyCreateRequest;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrgApiKeyCreateRequest(global::Neon.ApiKeyCreateRequest? value)
         {
@@ -101,22 +101,22 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OrgApiKeyCreateRequest FromApiKeyCreateRequest(global::Neon.ApiKeyCreateRequest? value) => new OrgApiKeyCreateRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OrgApiKeyCreateRequest(global::Neon.OrgApiKeyCreateRequestVariant2 value) => new OrgApiKeyCreateRequest((global::Neon.OrgApiKeyCreateRequestVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.OrgApiKeyCreateRequestVariant2?(OrgApiKeyCreateRequest @this) => @this.OrgApiKeyCreateRequestVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrgApiKeyCreateRequest(global::Neon.OrgApiKeyCreateRequestVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OrgApiKeyCreateRequest FromOrgApiKeyCreateRequestVariant2(global::Neon.OrgApiKeyCreateRequestVariant2? value) => new OrgApiKeyCreateRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrgApiKeyCreateRequest(
             global::Neon.ApiKeyCreateRequest? apiKeyCreateRequest,
@@ -141,23 +141,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OrgApiKeyCreateRequestVariant2 as object ??
-            ApiKeyCreateRequest as object 
+            ApiKeyCreateRequest as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ApiKeyCreateRequest?.ToString() ??
-            OrgApiKeyCreateRequestVariant2?.ToString() 
+            OrgApiKeyCreateRequestVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Neon.ApiKeyCreateRequest, TResult>? apiKeyCreateRequest = null,
@@ -190,7 +190,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Neon.ApiKeyCreateRequest>? apiKeyCreateRequest = null,
@@ -214,7 +214,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Neon.ApiKeyCreateRequest>? apiKeyCreateRequest = null,
@@ -237,7 +237,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OrgApiKeyCreateRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Neon.ApiKeyCreateRequest?>.Default.Equals(ApiKeyCreateRequest, other.ApiKeyCreateRequest) &&
-                global::System.Collections.Generic.EqualityComparer<global::Neon.OrgApiKeyCreateRequestVariant2?>.Default.Equals(OrgApiKeyCreateRequestVariant2, other.OrgApiKeyCreateRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Neon.OrgApiKeyCreateRequestVariant2?>.Default.Equals(OrgApiKeyCreateRequestVariant2, other.OrgApiKeyCreateRequestVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OrgApiKeyCreateRequest obj1, OrgApiKeyCreateRequest obj2)
         {
@@ -277,7 +277,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OrgApiKeyCreateRequest obj1, OrgApiKeyCreateRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

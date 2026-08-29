@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class LimitsUnsatisfiedResponseLimit
     {
@@ -19,14 +19,14 @@ namespace Neon
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Required value for the limit named by `name`. Compare with `actual` to determine the shortfall.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expected")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Expected { get; set; }
 
         /// <summary>
-        /// 
+        /// Current value of the named limit, which does not satisfy the required `expected` value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actual")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -47,8 +47,12 @@ namespace Neon
         /// - projects_count<br/>
         /// - project_region
         /// </param>
-        /// <param name="expected"></param>
-        /// <param name="actual"></param>
+        /// <param name="expected">
+        /// Required value for the limit named by `name`. Compare with `actual` to determine the shortfall.
+        /// </param>
+        /// <param name="actual">
+        /// Current value of the named limit, which does not satisfy the required `expected` value.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

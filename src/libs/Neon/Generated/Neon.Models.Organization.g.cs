@@ -4,33 +4,33 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Organization
     {
         /// <summary>
-        /// 
+        /// The Neon organization ID. Use as the `org_id` path parameter in other endpoints.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// Human-readable display name of the organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// URL-safe identifier for the organization, used in API paths. Distinct from the display name.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("handle")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Handle { get; set; }
 
         /// <summary>
-        /// 
+        /// Billing plan for the organization, for example `free`, `launch`, or `scale`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -79,10 +79,18 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="Organization" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <param name="handle"></param>
-        /// <param name="plan"></param>
+        /// <param name="id">
+        /// The Neon organization ID. Use as the `org_id` path parameter in other endpoints.
+        /// </param>
+        /// <param name="name">
+        /// Human-readable display name of the organization.
+        /// </param>
+        /// <param name="handle">
+        /// URL-safe identifier for the organization, used in API paths. Distinct from the display name.
+        /// </param>
+        /// <param name="plan">
+        /// Billing plan for the organization, for example `free`, `launch`, or `scale`.
+        /// </param>
         /// <param name="createdAt">
         /// A timestamp indicting when the organization was created
         /// </param>

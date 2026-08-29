@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AnnotationsMapResponse
     {
         /// <summary>
-        /// 
+        /// Map of annotations keyed by resource identifier, where each value contains the annotation data for that resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="AnnotationsMapResponse" /> class.
         /// </summary>
-        /// <param name="annotations"></param>
+        /// <param name="annotations">
+        /// Map of annotations keyed by resource identifier, where each value contains the annotation data for that resource.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

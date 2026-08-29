@@ -29,7 +29,7 @@ namespace Neon
         public string? DbExtraSearchPath { get; set; }
 
         /// <summary>
-        /// Maximum number of rows that can be returned in a single request
+        /// Hard limit on the number of rows returned in a single Data API response. No limit when unset.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("db_max_rows")]
         public int? DbMaxRows { get; set; }
@@ -48,7 +48,7 @@ namespace Neon
         public string? JwtRoleClaimKey { get; set; }
 
         /// <summary>
-        /// Maximum lifetime for JWT cache in seconds
+        /// Maximum lifetime of the Data API's JWT cache, in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jwt_cache_max_lifetime")]
         public int? JwtCacheMaxLifetime { get; set; }
@@ -67,7 +67,7 @@ namespace Neon
         public string? ServerCorsAllowedOrigins { get; set; }
 
         /// <summary>
-        /// Enable server timing headers
+        /// When enabled, the Data API adds `Server-Timing` headers to each response showing database execution and internal processing time. Default: disabled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_timing_enabled")]
         public bool? ServerTimingEnabled { get; set; }
@@ -93,7 +93,7 @@ namespace Neon
         /// Extra schemas to add to the search path
         /// </param>
         /// <param name="dbMaxRows">
-        /// Maximum number of rows that can be returned in a single request
+        /// Hard limit on the number of rows returned in a single Data API response. No limit when unset.
         /// </param>
         /// <param name="dbSchemas">
         /// List of schemas to expose via the API. Default: ["public"]
@@ -103,7 +103,7 @@ namespace Neon
         /// Default Value: .role
         /// </param>
         /// <param name="jwtCacheMaxLifetime">
-        /// Maximum lifetime for JWT cache in seconds
+        /// Maximum lifetime of the Data API's JWT cache, in seconds.
         /// </param>
         /// <param name="openapiMode">
         /// OpenAPI specification mode (ignore-privileges, disabled)<br/>
@@ -113,7 +113,7 @@ namespace Neon
         /// CORS allowed origins
         /// </param>
         /// <param name="serverTimingEnabled">
-        /// Enable server timing headers
+        /// When enabled, the Data API adds `Server-Timing` headers to each response showing database execution and internal processing time. Default: disabled.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

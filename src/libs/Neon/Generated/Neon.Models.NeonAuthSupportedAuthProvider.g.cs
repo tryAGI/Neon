@@ -4,20 +4,20 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    /// Authentication provider integrated with this Neon Auth configuration. `better_auth` integrates with Better Auth (the current, recommended provider). `stack` integrates with Stack Auth (deprecated). `mock` is a simulated provider for local development and testing only.
     /// </summary>
     public enum NeonAuthSupportedAuthProvider
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BetterAuth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mock,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stack,
     }

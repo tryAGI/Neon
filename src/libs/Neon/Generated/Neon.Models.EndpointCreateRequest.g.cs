@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class EndpointCreateRequest
     {
         /// <summary>
-        /// 
+        /// Configuration for the compute endpoint to create.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="EndpointCreateRequest" /> class.
         /// </summary>
-        /// <param name="endpoint"></param>
+        /// <param name="endpoint">
+        /// Configuration for the compute endpoint to create.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

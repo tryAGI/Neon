@@ -11,7 +11,7 @@ namespace Neon
     public sealed partial class Project
     {
         /// <summary>
-        /// Bytes-Hour. Project consumed that much storage hourly during the billing period. The value has some lag.<br/>
+        /// Bytes-Hour. Project consumed that much Postgres storage hourly during the billing period. The value has some lag.<br/>
         /// The value is reset at the beginning of each billing period.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_storage_bytes_hour")]
@@ -27,7 +27,7 @@ namespace Neon
         public required long DataTransferBytes { get; set; }
 
         /// <summary>
-        /// Bytes. Amount of WAL that travelled through storage for given project across all branches.<br/>
+        /// Bytes. Amount of WAL that travelled through Postgres storage for given project across all branches.<br/>
         /// The value has some lag. The value is reset at the beginning of each billing period.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("written_data_bytes")]
@@ -55,14 +55,14 @@ namespace Neon
         public required long ActiveTimeSeconds { get; set; }
 
         /// <summary>
-        /// DEPRECATED, use compute_time instead.
+        /// Deprecated. Use `compute_time_seconds` instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpu_used_sec")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long CpuUsedSec { get; set; }
 
         /// <summary>
-        /// The project ID
+        /// The Neon project ID. Use as the `project_id` path parameter in other endpoints.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -76,8 +76,10 @@ namespace Neon
         public required string PlatformId { get; set; }
 
         /// <summary>
-        /// The region identifier
+        /// Cloud region where the resource's Postgres compute and storage reside (for example, `aws-us-east-1`). Valid values are returned by `GET /regions`.<br/>
+        /// Example: aws-us-east-1
         /// </summary>
+        /// <example>aws-us-east-1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("region_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RegionId { get; set; }
@@ -90,14 +92,9 @@ namespace Neon
         public required string Name { get; set; }
 
         /// <summary>
-        /// The Neon compute provisioner.<br/>
-        /// Specify the `k8s-neonvm` provisioner to create a compute endpoint that supports Autoscaling.<br/>
-        /// Provisioner can be one of the following values:<br/>
-        /// * k8s-pod<br/>
-        /// * k8s-neonvm<br/>
-        /// * serverless-platform<br/>
-        /// Clients must expect, that any string value that is not documented in the description above should be treated as a error. UNKNOWN value if safe to treat as an error too.
+        /// Example: k8s-neonvm
         /// </summary>
+        /// <example>k8s-neonvm</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("provisioner")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Provisioner { get; set; }
@@ -109,15 +106,17 @@ namespace Neon
         public global::Neon.DefaultEndpointSettings? DefaultEndpointSettings { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
         public global::Neon.ProjectSettingsData? Settings { get; set; }
 
         /// <summary>
-        /// The major Postgres version number. Currently supported versions are `14`, `15`, `16`, `17`, and `18`.<br/>
-        /// Default Value: 17
+        /// The major Postgres version number. Supported versions are `14`, `15`, `16`, `17`, and `18`. `19` is rolling out and is accepted only in regions where it is enabled; requesting it elsewhere returns an error.<br/>
+        /// Default Value: 18<br/>
+        /// Example: 18
         /// </summary>
+        /// <example>18</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pg_version")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PgVersion { get; set; }
@@ -185,7 +184,7 @@ namespace Neon
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// The current space occupied by the project in storage, in bytes. Synthetic storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches in a project.
+        /// The current space occupied by the project in Postgres storage, in bytes. Synthetic Postgres storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches in a project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("synthetic_storage_size")]
         public long? SyntheticStorageSize { get; set; }
@@ -205,22 +204,23 @@ namespace Neon
         public required global::System.DateTime ConsumptionPeriodEnd { get; set; }
 
         /// <summary>
-        /// DEPRECATED. Use `consumption_period_end` from the getProject endpoint instead.<br/>
-        /// A timestamp indicating when the project quota resets.
+        /// Deprecated. Use the `consumption_period_end` field instead. A timestamp indicating when the project quota resets.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quota_reset_at")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.DateTime? QuotaResetAt { get; set; }
 
         /// <summary>
-        /// 
+        /// ID of the organization that owns the project.<br/>
+        /// Example: org-cool-darkness-12345678
         /// </summary>
+        /// <example>org-cool-darkness-12345678</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OwnerId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         public global::Neon.ProjectOwnerData? Owner { get; set; }
@@ -233,8 +233,10 @@ namespace Neon
         public global::System.DateTime? ComputeLastActiveAt { get; set; }
 
         /// <summary>
-        /// 
+        /// The Neon organization ID. Returned as `id` from `GET /users/me/organizations`.<br/>
+        /// Example: org-cool-darkness-12345678
         /// </summary>
+        /// <example>org-cool-darkness-12345678</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("org_id")]
         public string? OrgId { get; set; }
 
@@ -251,6 +253,13 @@ namespace Neon
         public global::System.DateTime? HipaaEnabledAt { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("effective_project_permission")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.ProjectPermissionLevelJsonConverter))]
+        public global::Neon.ProjectPermissionLevel? EffectiveProjectPermission { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -260,7 +269,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="Project" /> class.
         /// </summary>
         /// <param name="dataStorageBytesHour">
-        /// Bytes-Hour. Project consumed that much storage hourly during the billing period. The value has some lag.<br/>
+        /// Bytes-Hour. Project consumed that much Postgres storage hourly during the billing period. The value has some lag.<br/>
         /// The value is reset at the beginning of each billing period.
         /// </param>
         /// <param name="dataTransferBytes">
@@ -268,7 +277,7 @@ namespace Neon
         /// Includes deleted endpoints. The value has some lag. The value is reset at the beginning of each billing period.
         /// </param>
         /// <param name="writtenDataBytes">
-        /// Bytes. Amount of WAL that travelled through storage for given project across all branches.<br/>
+        /// Bytes. Amount of WAL that travelled through Postgres storage for given project across all branches.<br/>
         /// The value has some lag. The value is reset at the beginning of each billing period.
         /// </param>
         /// <param name="computeTimeSeconds">
@@ -284,32 +293,28 @@ namespace Neon
         /// The value is reset at the beginning of each billing period.
         /// </param>
         /// <param name="cpuUsedSec">
-        /// DEPRECATED, use compute_time instead.
+        /// Deprecated. Use `compute_time_seconds` instead.
         /// </param>
         /// <param name="id">
-        /// The project ID
+        /// The Neon project ID. Use as the `project_id` path parameter in other endpoints.
         /// </param>
         /// <param name="platformId">
         /// The cloud platform identifier. Currently, only AWS is supported, for which the identifier is `aws`.
         /// </param>
         /// <param name="regionId">
-        /// The region identifier
+        /// Cloud region where the resource's Postgres compute and storage reside (for example, `aws-us-east-1`). Valid values are returned by `GET /regions`.<br/>
+        /// Example: aws-us-east-1
         /// </param>
         /// <param name="name">
         /// The project name
         /// </param>
         /// <param name="provisioner">
-        /// The Neon compute provisioner.<br/>
-        /// Specify the `k8s-neonvm` provisioner to create a compute endpoint that supports Autoscaling.<br/>
-        /// Provisioner can be one of the following values:<br/>
-        /// * k8s-pod<br/>
-        /// * k8s-neonvm<br/>
-        /// * serverless-platform<br/>
-        /// Clients must expect, that any string value that is not documented in the description above should be treated as a error. UNKNOWN value if safe to treat as an error too.
+        /// Example: k8s-neonvm
         /// </param>
         /// <param name="pgVersion">
-        /// The major Postgres version number. Currently supported versions are `14`, `15`, `16`, `17`, and `18`.<br/>
-        /// Default Value: 17
+        /// The major Postgres version number. Supported versions are `14`, `15`, `16`, `17`, and `18`. `19` is rolling out and is accepted only in regions where it is enabled; requesting it elsewhere returns an error.<br/>
+        /// Default Value: 18<br/>
+        /// Example: 18
         /// </param>
         /// <param name="proxyHost">
         /// The proxy host for the project. This value combines the `region_id`, the `platform_id`, and the Neon domain (`neon.tech`).
@@ -341,7 +346,10 @@ namespace Neon
         /// <param name="consumptionPeriodEnd">
         /// A date-time indicating when Neon Cloud plans to stop measuring consumption for current consumption period.
         /// </param>
-        /// <param name="ownerId"></param>
+        /// <param name="ownerId">
+        /// ID of the organization that owns the project.<br/>
+        /// Example: org-cool-darkness-12345678
+        /// </param>
         /// <param name="defaultEndpointSettings">
         /// A collection of settings for a Neon endpoint
         /// </param>
@@ -350,20 +358,24 @@ namespace Neon
         /// A timestamp indicating when project maintenance begins. If set, the project is placed into maintenance mode at this time.
         /// </param>
         /// <param name="syntheticStorageSize">
-        /// The current space occupied by the project in storage, in bytes. Synthetic storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches in a project.
+        /// The current space occupied by the project in Postgres storage, in bytes. Synthetic Postgres storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches in a project.
         /// </param>
         /// <param name="owner"></param>
         /// <param name="computeLastActiveAt">
         /// The most recent time when any endpoint of this project was active.<br/>
         /// Omitted when observed no activity for endpoints of this project.
         /// </param>
-        /// <param name="orgId"></param>
+        /// <param name="orgId">
+        /// The Neon organization ID. Returned as `id` from `GET /users/me/organizations`.<br/>
+        /// Example: org-cool-darkness-12345678
+        /// </param>
         /// <param name="maintenanceScheduledFor">
         /// A timestamp indicating when project update begins. If set, computes might experience a brief restart around this time.
         /// </param>
         /// <param name="hipaaEnabledAt">
         /// A timestamp indicating when HIPAA was enabled for this project
         /// </param>
+        /// <param name="effectiveProjectPermission"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -399,7 +411,8 @@ namespace Neon
             global::System.DateTime? computeLastActiveAt,
             string? orgId,
             global::System.DateTime? maintenanceScheduledFor,
-            global::System.DateTime? hipaaEnabledAt)
+            global::System.DateTime? hipaaEnabledAt,
+            global::Neon.ProjectPermissionLevel? effectiveProjectPermission)
         {
             this.DataStorageBytesHour = dataStorageBytesHour;
             this.DataTransferBytes = dataTransferBytes;
@@ -433,6 +446,7 @@ namespace Neon
             this.OrgId = orgId;
             this.MaintenanceScheduledFor = maintenanceScheduledFor;
             this.HipaaEnabledAt = hipaaEnabledAt;
+            this.EffectiveProjectPermission = effectiveProjectPermission;
         }
 
         /// <summary>

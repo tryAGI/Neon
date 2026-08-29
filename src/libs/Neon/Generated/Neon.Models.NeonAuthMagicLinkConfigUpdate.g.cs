@@ -4,24 +4,24 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NeonAuthMagicLinkConfigUpdate
     {
         /// <summary>
-        /// Whether the magic link plugin is enabled
+        /// Whether to enable the magic link plugin.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// Time in minutes before the magic link expires
+        /// Minutes until the magic link expires.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_in")]
         public int? ExpiresIn { get; set; }
 
         /// <summary>
-        /// Whether to disable sign-up via magic link
+        /// When true, sign-up via magic link is disabled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disable_sign_up")]
         public bool? DisableSignUp { get; set; }
@@ -36,13 +36,13 @@ namespace Neon
         /// Initializes a new instance of the <see cref="NeonAuthMagicLinkConfigUpdate" /> class.
         /// </summary>
         /// <param name="enabled">
-        /// Whether the magic link plugin is enabled
+        /// Whether to enable the magic link plugin.
         /// </param>
         /// <param name="expiresIn">
-        /// Time in minutes before the magic link expires
+        /// Minutes until the magic link expires.
         /// </param>
         /// <param name="disableSignUp">
-        /// Whether to disable sign-up via magic link
+        /// When true, sign-up via magic link is disabled.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

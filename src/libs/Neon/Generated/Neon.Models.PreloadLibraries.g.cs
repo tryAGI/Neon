@@ -9,13 +9,13 @@ namespace Neon
     public sealed partial class PreloadLibraries
     {
         /// <summary>
-        /// 
+        /// When true, the project's preload libraries include the platform default set in addition to any libraries listed in `enabled_libraries`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_defaults")]
         public bool? UseDefaults { get; set; }
 
         /// <summary>
-        /// 
+        /// Names of shared preload libraries to enable for the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled_libraries")]
         public global::System.Collections.Generic.IList<string>? EnabledLibraries { get; set; }
@@ -29,8 +29,12 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="PreloadLibraries" /> class.
         /// </summary>
-        /// <param name="useDefaults"></param>
-        /// <param name="enabledLibraries"></param>
+        /// <param name="useDefaults">
+        /// When true, the project's preload libraries include the platform default set in addition to any libraries listed in `enabled_libraries`.
+        /// </param>
+        /// <param name="enabledLibraries">
+        /// Names of shared preload libraries to enable for the project.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

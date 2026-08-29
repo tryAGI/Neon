@@ -4,34 +4,35 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Member
     {
         /// <summary>
-        /// 
+        /// The organization member's ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
-        /// 
+        /// The Neon user ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid UserId { get; set; }
 
         /// <summary>
-        /// 
+        /// The Neon organization ID. Returned as `id` from `GET /users/me/organizations`.<br/>
+        /// Example: org-cool-darkness-12345678
         /// </summary>
+        /// <example>org-cool-darkness-12345678</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("org_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OrgId { get; set; }
 
         /// <summary>
-        /// The role of the organization member. Some role values may not be<br/>
-        /// available for all organizations.
+        /// Organization member's role. `admin`: full administrative access. `editor` (and its legacy alias `member`): standard access governed by project permissions. `viewer` and `collaborator`: additional scoped project roles. Some values may not be available for all organizations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.MemberRoleJsonConverter))]
@@ -39,7 +40,7 @@ namespace Neon
         public required global::Neon.MemberRole Role { get; set; }
 
         /// <summary>
-        /// 
+        /// Timestamp when the user joined the organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("joined_at")]
         public global::System.DateTime? JoinedAt { get; set; }
@@ -53,14 +54,22 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="Member" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="userId"></param>
-        /// <param name="orgId"></param>
-        /// <param name="role">
-        /// The role of the organization member. Some role values may not be<br/>
-        /// available for all organizations.
+        /// <param name="id">
+        /// The organization member's ID.
         /// </param>
-        /// <param name="joinedAt"></param>
+        /// <param name="userId">
+        /// The Neon user ID.
+        /// </param>
+        /// <param name="orgId">
+        /// The Neon organization ID. Returned as `id` from `GET /users/me/organizations`.<br/>
+        /// Example: org-cool-darkness-12345678
+        /// </param>
+        /// <param name="role">
+        /// Organization member's role. `admin`: full administrative access. `editor` (and its legacy alias `member`): standard access governed by project permissions. `viewer` and `collaborator`: additional scoped project roles. Some values may not be available for all organizations.
+        /// </param>
+        /// <param name="joinedAt">
+        /// Timestamp when the user joined the organization.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

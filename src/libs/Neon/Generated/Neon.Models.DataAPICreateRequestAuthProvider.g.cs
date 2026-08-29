@@ -4,16 +4,16 @@
 namespace Neon
 {
     /// <summary>
-    /// The authentication provider to use for the Neon Data API
+    /// Authentication provider for the Neon Data API. `neon_auth`: use Neon's built-in managed authentication (no JWKS configuration required). `external`: use an external JWT provider, which requires `jwks_url`. When omitted, no auth provider is configured (existing setup is kept).
     /// </summary>
     public enum DataAPICreateRequestAuthProvider
     {
         /// <summary>
-        /// 
+        /// use Neon's built-in managed authentication (no JWKS configuration required). `external`: use an external JWT provider, which requires `jwks_url`. When omitted, no auth provider is configured (existing setup is kept).
         /// </summary>
         External,
         /// <summary>
-        /// 
+        /// use Neon's built-in managed authentication (no JWKS configuration required). `external`: use an external JWT provider, which requires `jwks_url`. When omitted, no auth provider is configured (existing setup is kept).
         /// </summary>
         NeonAuth,
     }

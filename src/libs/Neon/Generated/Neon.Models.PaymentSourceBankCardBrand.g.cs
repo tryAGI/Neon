@@ -4,40 +4,40 @@
 namespace Neon
 {
     /// <summary>
-    /// Brand of credit card.
+    /// Card network reported by the payment processor. Set to `unknown` when the network cannot be determined.
     /// </summary>
     public enum PaymentSourceBankCardBrand
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Amex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Diners,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Discover,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jcb,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mastercard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unionpay,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Visa,
     }

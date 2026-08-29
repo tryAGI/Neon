@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NeonAuthAddOAuthProviderRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthOauthProviderIdJsonConverter))]
@@ -17,19 +17,19 @@ namespace Neon
         public required global::Neon.NeonAuthOauthProviderId Id { get; set; }
 
         /// <summary>
-        /// 
+        /// The client ID issued by the OAuth provider for your application. Used to identify the application during the OAuth flow.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_id")]
         public string? ClientId { get; set; }
 
         /// <summary>
-        /// 
+        /// OAuth client secret for the provider.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         public string? ClientSecret { get; set; }
 
         /// <summary>
-        /// 
+        /// Tenant ID for the Microsoft OAuth provider. Only relevant when the OAuth provider is Microsoft; omit or leave blank for other providers.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("microsoft_tenant_id")]
         public string? MicrosoftTenantId { get; set; }
@@ -44,9 +44,15 @@ namespace Neon
         /// Initializes a new instance of the <see cref="NeonAuthAddOAuthProviderRequest" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="clientId"></param>
-        /// <param name="clientSecret"></param>
-        /// <param name="microsoftTenantId"></param>
+        /// <param name="clientId">
+        /// The client ID issued by the OAuth provider for your application. Used to identify the application during the OAuth flow.
+        /// </param>
+        /// <param name="clientSecret">
+        /// OAuth client secret for the provider.
+        /// </param>
+        /// <param name="microsoftTenantId">
+        /// Tenant ID for the Microsoft OAuth provider. Only relevant when the OAuth provider is Microsoft; omit or leave blank for other providers.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

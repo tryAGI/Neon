@@ -4,18 +4,18 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BranchSchemaResponse
     {
         /// <summary>
-        /// 
+        /// Branch schema expressed as SQL DDL statements.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sql")]
         public string? Sql { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("json")]
         public global::Neon.BranchSchemaJSON? Json { get; set; }
@@ -29,7 +29,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="BranchSchemaResponse" /> class.
         /// </summary>
-        /// <param name="sql"></param>
+        /// <param name="sql">
+        /// Branch schema expressed as SQL DDL statements.
+        /// </param>
         /// <param name="json"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -9,7 +9,7 @@ namespace Neon
     public sealed partial class ProjectsWithIntegrationResponse
     {
         /// <summary>
-        /// 
+        /// Projects that have the requested integration, each including the project details and associated integration metadata.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectsWithIntegrationResponse" /> class.
         /// </summary>
-        /// <param name="projects"></param>
+        /// <param name="projects">
+        /// Projects that have the requested integration, each including the project details and associated integration metadata.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -36,7 +36,7 @@ namespace Neon
         public global::System.DateTime? PeriodEnd { get; set; }
 
         /// <summary>
-        /// 
+        /// Consumption metric records for the billing period.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("consumption")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -60,7 +60,9 @@ namespace Neon
         /// <param name="periodStart">
         /// The start date-time of the billing period.
         /// </param>
-        /// <param name="consumption"></param>
+        /// <param name="consumption">
+        /// Consumption metric records for the billing period.
+        /// </param>
         /// <param name="periodEnd">
         /// The end date-time of the billing period, available for the past periods only.
         /// </param>

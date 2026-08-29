@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BranchSchemaJSON
     {
         /// <summary>
-        /// 
+        /// Tables present in the branch schema.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tables")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="BranchSchemaJSON" /> class.
         /// </summary>
-        /// <param name="tables"></param>
+        /// <param name="tables">
+        /// Tables present in the branch schema.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

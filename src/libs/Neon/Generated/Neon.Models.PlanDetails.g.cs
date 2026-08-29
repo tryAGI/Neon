@@ -4,19 +4,19 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PlanDetails
     {
         /// <summary>
-        /// 
+        /// Plan name, for example `free`, `launch`, or `scale`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         public global::Neon.PlanVersion? Version { get; set; }
@@ -30,7 +30,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="PlanDetails" /> class.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">
+        /// Plan name, for example `free`, `launch`, or `scale`.
+        /// </param>
         /// <param name="version"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

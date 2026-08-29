@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DatabasesResponse
     {
         /// <summary>
-        /// 
+        /// Databases on the branch. Each includes `id`, `name`, `owner_name`, and `created_at`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("databases")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="DatabasesResponse" /> class.
         /// </summary>
-        /// <param name="databases"></param>
+        /// <param name="databases">
+        /// Databases on the branch. Each includes `id`, `name`, `owner_name`, and `created_at`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

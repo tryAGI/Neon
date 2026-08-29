@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class VPCEndpointDetails
     {
         /// <summary>
-        /// The VPC endpoint ID
+        /// Cloud provider identifier for the VPC endpoint.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vpc_endpoint_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -23,10 +23,10 @@ namespace Neon
         public required string Label { get; set; }
 
         /// <summary>
-        /// The current state of the VPC endpoint. Possible values are<br/>
-        /// `new` (just configured, pending acceptance) or `accepted`<br/>
-        /// (VPC connection was accepted by Neon).
+        /// The current state of the VPC endpoint. `new` means the endpoint has just been configured and is pending acceptance by Neon. `accepted` means the VPC connection has been accepted by Neon.<br/>
+        /// Example: new
         /// </summary>
+        /// <example>new</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string State { get; set; }
@@ -56,15 +56,14 @@ namespace Neon
         /// Initializes a new instance of the <see cref="VPCEndpointDetails" /> class.
         /// </summary>
         /// <param name="vpcEndpointId">
-        /// The VPC endpoint ID
+        /// Cloud provider identifier for the VPC endpoint.
         /// </param>
         /// <param name="label">
         /// A descriptive label for the VPC endpoint
         /// </param>
         /// <param name="state">
-        /// The current state of the VPC endpoint. Possible values are<br/>
-        /// `new` (just configured, pending acceptance) or `accepted`<br/>
-        /// (VPC connection was accepted by Neon).
+        /// The current state of the VPC endpoint. `new` means the endpoint has just been configured and is pending acceptance by Neon. `accepted` means the VPC connection has been accepted by Neon.<br/>
+        /// Example: new
         /// </param>
         /// <param name="numRestrictedProjects">
         /// The number of projects that are restricted to use this VPC endpoint.

@@ -9,7 +9,7 @@ namespace Neon
     public sealed partial class BranchCreatedBy
     {
         /// <summary>
-        /// The name of the user.
+        /// Display name of the user who created the branch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
@@ -30,7 +30,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="BranchCreatedBy" /> class.
         /// </summary>
         /// <param name="name">
-        /// The name of the user.
+        /// Display name of the user who created the branch.
         /// </param>
         /// <param name="image">
         /// The URL to the user's avatar image.

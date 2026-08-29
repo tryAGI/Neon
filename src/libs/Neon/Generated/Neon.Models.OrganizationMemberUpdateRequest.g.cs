@@ -4,13 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OrganizationMemberUpdateRequest
     {
         /// <summary>
-        /// The role of the organization member. Some role values may not be<br/>
-        /// available for all organizations.
+        /// Organization member's role. `admin`: full administrative access. `editor` (and its legacy alias `member`): standard access governed by project permissions. `viewer` and `collaborator`: additional scoped project roles. Some values may not be available for all organizations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.MemberRoleJsonConverter))]
@@ -27,8 +26,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="OrganizationMemberUpdateRequest" /> class.
         /// </summary>
         /// <param name="role">
-        /// The role of the organization member. Some role values may not be<br/>
-        /// available for all organizations.
+        /// Organization member's role. `admin`: full administrative access. `editor` (and its legacy alias `member`): standard access governed by project permissions. `viewer` and `collaborator`: additional scoped project roles. Some values may not be available for all organizations.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

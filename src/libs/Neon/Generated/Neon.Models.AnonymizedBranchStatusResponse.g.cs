@@ -9,22 +9,24 @@ namespace Neon
     public sealed partial class AnonymizedBranchStatusResponse
     {
         /// <summary>
-        /// The ID of the project
+        /// The ID of the project this branch belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectId { get; set; }
 
         /// <summary>
-        /// The ID of the anonymized branch
+        /// The ID of the anonymized branch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branch_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BranchId { get; set; }
 
         /// <summary>
-        /// The current state of the anonymized branch. Possible values: created, initialized, initialization_error, anonymizing, anonymized, error
+        /// The current state of the anonymized branch. `created`: branch record exists but setup has not started. `initialized`: setup is complete and the branch is ready for anonymization. `initialization_error`: an error occurred during setup. `anonymizing`: the anonymization process is currently running. `anonymized`: anonymization completed successfully. `error`: an error occurred during anonymization.<br/>
+        /// Example: created
         /// </summary>
+        /// <example>created</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string State { get; set; }
@@ -71,13 +73,14 @@ namespace Neon
         /// Initializes a new instance of the <see cref="AnonymizedBranchStatusResponse" /> class.
         /// </summary>
         /// <param name="projectId">
-        /// The ID of the project
+        /// The ID of the project this branch belongs to.
         /// </param>
         /// <param name="branchId">
-        /// The ID of the anonymized branch
+        /// The ID of the anonymized branch.
         /// </param>
         /// <param name="state">
-        /// The current state of the anonymized branch. Possible values: created, initialized, initialization_error, anonymizing, anonymized, error
+        /// The current state of the anonymized branch. `created`: branch record exists but setup has not started. `initialized`: setup is complete and the branch is ready for anonymization. `initialization_error`: an error occurred during setup. `anonymizing`: the anonymization process is currently running. `anonymized`: anonymization completed successfully. `error`: an error occurred during anonymization.<br/>
+        /// Example: created
         /// </param>
         /// <param name="createdAt">
         /// A timestamp indicating when the anonymized branch was created

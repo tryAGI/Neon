@@ -9,11 +9,11 @@ namespace Neon
     public enum AdvisorCategory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Performance,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Security,
     }

@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class VPCEndpointAssignment
     {
         /// <summary>
-        /// 
+        /// Human-readable name for the VPC endpoint assignment, used to identify it within the organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="VPCEndpointAssignment" /> class.
         /// </summary>
-        /// <param name="label"></param>
+        /// <param name="label">
+        /// Human-readable name for the VPC endpoint assignment, used to identify it within the organization.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

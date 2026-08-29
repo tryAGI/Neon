@@ -6,7 +6,7 @@ namespace Neon
     {
         /// <summary>
         /// Delete OAuth provider<br/>
-        /// Deletes a OAuth provider from the specified project.
+        /// Deletes an OAuth provider from the specified project.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -22,7 +22,7 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete OAuth provider<br/>
-        /// Deletes a OAuth provider from the specified project.
+        /// Deletes an OAuth provider from the specified project.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

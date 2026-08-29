@@ -57,7 +57,7 @@ namespace Neon
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="enabled">
-        /// Whether the phone number plugin is enabled
+        /// Whether the phone number plugin is enabled.
         /// </param>
         /// <param name="otpExpiresIn">
         /// Time in seconds before the OTP expires

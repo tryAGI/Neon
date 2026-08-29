@@ -47,10 +47,17 @@ namespace Neon
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
-        /// <param name="enabled"></param>
-        /// <param name="webhookUrl"></param>
-        /// <param name="enabledEvents"></param>
+        /// <param name="enabled">
+        /// Whether the webhook is active.
+        /// </param>
+        /// <param name="webhookUrl">
+        /// Destination URL that receives webhook event payloads.
+        /// </param>
+        /// <param name="enabledEvents">
+        /// Event types that trigger this webhook. Covers user lifecycle, email/OTP delivery, organization invitations, and phone verification events; see the enum for exact values.
+        /// </param>
         /// <param name="timeoutSeconds">
+        /// Maximum time, in seconds, to wait for a response from the webhook endpoint.<br/>
         /// Default Value: 5
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

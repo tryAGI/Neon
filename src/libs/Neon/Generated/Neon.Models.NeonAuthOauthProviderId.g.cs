@@ -4,24 +4,24 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum NeonAuthOauthProviderId
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Github,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Google,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Microsoft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vercel,
     }

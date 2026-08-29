@@ -4,19 +4,19 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NeonAuthCreateNewUserRequest
     {
         /// <summary>
-        /// 
+        /// The Neon project ID. Returned as `id` from `GET /projects`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// Authentication provider integrated with this Neon Auth configuration. `better_auth` integrates with Better Auth (the current, recommended provider). `stack` integrates with Stack Auth (deprecated). `mock` is a simulated provider for local development and testing only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auth_provider")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthSupportedAuthProviderJsonConverter))]
@@ -24,14 +24,14 @@ namespace Neon
         public required global::Neon.NeonAuthSupportedAuthProvider AuthProvider { get; set; }
 
         /// <summary>
-        /// 
+        /// Email address of the new user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Email { get; set; }
 
         /// <summary>
-        /// 
+        /// Display name for the new user. When omitted, the created user has no display name.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
@@ -45,10 +45,18 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="NeonAuthCreateNewUserRequest" /> class.
         /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="authProvider"></param>
-        /// <param name="email"></param>
-        /// <param name="name"></param>
+        /// <param name="projectId">
+        /// The Neon project ID. Returned as `id` from `GET /projects`.
+        /// </param>
+        /// <param name="authProvider">
+        /// Authentication provider integrated with this Neon Auth configuration. `better_auth` integrates with Better Auth (the current, recommended provider). `stack` integrates with Stack Auth (deprecated). `mock` is a simulated provider for local development and testing only.
+        /// </param>
+        /// <param name="email">
+        /// Email address of the new user.
+        /// </param>
+        /// <param name="name">
+        /// Display name for the new user. When omitted, the created user has no display name.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -5,17 +5,17 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct NeonAuthEmailServerConfig : global::System.IEquatable<NeonAuthEmailServerConfig>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.NeonAuthEmailServerConfigDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.StandardEmailServer? Standard { get; init; }
@@ -24,7 +24,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Standard))]
@@ -32,7 +32,7 @@ namespace Neon
         public bool IsStandard => Standard != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStandard(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.StandardEmailServer PickStandard() => IsStandard
             ? Standard!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Standard' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.SharedEmailServer? Shared { get; init; }
@@ -61,7 +61,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Shared))]
@@ -69,7 +69,7 @@ namespace Neon
         public bool IsShared => Shared != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShared(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.SharedEmailServer PickShared() => IsShared
             ? Shared!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator NeonAuthEmailServerConfig(global::Neon.StandardEmailServer value) => new NeonAuthEmailServerConfig((global::Neon.StandardEmailServer?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.StandardEmailServer?(NeonAuthEmailServerConfig @this) => @this.Standard;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NeonAuthEmailServerConfig(global::Neon.StandardEmailServer? value)
         {
@@ -106,22 +106,22 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static NeonAuthEmailServerConfig FromStandard(global::Neon.StandardEmailServer? value) => new NeonAuthEmailServerConfig(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator NeonAuthEmailServerConfig(global::Neon.SharedEmailServer value) => new NeonAuthEmailServerConfig((global::Neon.SharedEmailServer?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.SharedEmailServer?(NeonAuthEmailServerConfig @this) => @this.Shared;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NeonAuthEmailServerConfig(global::Neon.SharedEmailServer? value)
         {
@@ -129,12 +129,12 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static NeonAuthEmailServerConfig FromShared(global::Neon.SharedEmailServer? value) => new NeonAuthEmailServerConfig(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NeonAuthEmailServerConfig(
             global::Neon.NeonAuthEmailServerConfigDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Shared as object ??
-            Standard as object 
+            Standard as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Standard?.ToString() ??
-            Shared?.ToString() 
+            Shared?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Neon.StandardEmailServer, TResult>? standard = null,
@@ -198,7 +198,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Neon.StandardEmailServer>? standard = null,
@@ -222,7 +222,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Neon.StandardEmailServer>? standard = null,
@@ -245,7 +245,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(NeonAuthEmailServerConfig other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Neon.StandardEmailServer?>.Default.Equals(Standard, other.Standard) &&
-                global::System.Collections.Generic.EqualityComparer<global::Neon.SharedEmailServer?>.Default.Equals(Shared, other.Shared) 
+                global::System.Collections.Generic.EqualityComparer<global::Neon.SharedEmailServer?>.Default.Equals(Shared, other.Shared)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(NeonAuthEmailServerConfig obj1, NeonAuthEmailServerConfig obj2)
         {
@@ -285,7 +285,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(NeonAuthEmailServerConfig obj1, NeonAuthEmailServerConfig obj2)
         {
@@ -293,7 +293,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

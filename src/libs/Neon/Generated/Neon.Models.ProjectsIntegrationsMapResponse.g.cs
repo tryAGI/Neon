@@ -10,7 +10,7 @@ namespace Neon
     public sealed partial class ProjectsIntegrationsMapResponse
     {
         /// <summary>
-        /// 
+        /// Map of project IDs to their associated integration details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,7 +25,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectsIntegrationsMapResponse" /> class.
         /// </summary>
-        /// <param name="integrations"></param>
+        /// <param name="integrations">
+        /// Map of project IDs to their associated integration details.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

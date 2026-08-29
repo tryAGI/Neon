@@ -9,44 +9,44 @@ namespace Neon
     public sealed partial class NeonAuthPluginConfigs
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
         public global::Neon.NeonAuthOrganizationConfig? Organization { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("magic_link")]
         public global::Neon.NeonAuthMagicLinkConfig? MagicLink { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phone_number")]
         public global::Neon.NeonAuthPhoneNumberConfig? PhoneNumber { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email_provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthEmailServerConfigJsonConverter))]
-        public global::Neon.NeonAuthEmailServerConfig? EmailProvider { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthEmailServerConfigResponseJsonConverter))]
+        public global::Neon.NeonAuthEmailServerConfigResponse? EmailProvider { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email_and_password")]
         public global::Neon.NeonAuthEmailAndPasswordConfig? EmailAndPassword { get; set; }
 
         /// <summary>
-        /// 
+        /// OAuth provider configurations enabled for this auth setup.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("oauth_providers")]
         public global::System.Collections.Generic.IList<global::Neon.NeonAuthOauthProvider>? OauthProviders { get; set; }
 
         /// <summary>
-        /// 
+        /// Permits authentication requests from localhost origins when true. Intended for local development; disable in production environments.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_localhost")]
         public bool? AllowLocalhost { get; set; }
@@ -65,8 +65,12 @@ namespace Neon
         /// <param name="phoneNumber"></param>
         /// <param name="emailProvider"></param>
         /// <param name="emailAndPassword"></param>
-        /// <param name="oauthProviders"></param>
-        /// <param name="allowLocalhost"></param>
+        /// <param name="oauthProviders">
+        /// OAuth provider configurations enabled for this auth setup.
+        /// </param>
+        /// <param name="allowLocalhost">
+        /// Permits authentication requests from localhost origins when true. Intended for local development; disable in production environments.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,7 +78,7 @@ namespace Neon
             global::Neon.NeonAuthOrganizationConfig? organization,
             global::Neon.NeonAuthMagicLinkConfig? magicLink,
             global::Neon.NeonAuthPhoneNumberConfig? phoneNumber,
-            global::Neon.NeonAuthEmailServerConfig? emailProvider,
+            global::Neon.NeonAuthEmailServerConfigResponse? emailProvider,
             global::Neon.NeonAuthEmailAndPasswordConfig? emailAndPassword,
             global::System.Collections.Generic.IList<global::Neon.NeonAuthOauthProvider>? oauthProviders,
             bool? allowLocalhost)

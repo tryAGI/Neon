@@ -7,13 +7,16 @@ namespace Neon
         /// <summary>
         /// Create snapshot<br/>
         /// Creates a snapshot from the specified branch.<br/>
-        /// This operation may initiate an asynchronous process.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// This operation may initiate an asynchronous process.
         /// </summary>
         /// <param name="lsn"></param>
-        /// <param name="timestamp"></param>
+        /// <param name="timestamp">
+        /// Example: 2025-08-05T22:00:00Z
+        /// </param>
         /// <param name="name"></param>
-        /// <param name="expiresAt"></param>
+        /// <param name="expiresAt">
+        /// Example: 2025-08-05T22:00:00Z
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,13 +34,16 @@ namespace Neon
         /// <summary>
         /// Create snapshot<br/>
         /// Creates a snapshot from the specified branch.<br/>
-        /// This operation may initiate an asynchronous process.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// This operation may initiate an asynchronous process.
         /// </summary>
         /// <param name="lsn"></param>
-        /// <param name="timestamp"></param>
+        /// <param name="timestamp">
+        /// Example: 2025-08-05T22:00:00Z
+        /// </param>
         /// <param name="name"></param>
-        /// <param name="expiresAt"></param>
+        /// <param name="expiresAt">
+        /// Example: 2025-08-05T22:00:00Z
+        /// </param>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

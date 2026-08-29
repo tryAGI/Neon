@@ -5,12 +5,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct JWKSCreationOperation : global::System.IEquatable<JWKSCreationOperation>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.JWKSResponse? Response { get; init; }
@@ -19,7 +19,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Response))]
@@ -27,7 +27,7 @@ namespace Neon
         public bool IsResponse => Response != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponse(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.JWKSResponse PickResponse() => IsResponse
             ? Response!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Response' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.OperationsResponse? OperationsResponse { get; init; }
@@ -56,7 +56,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OperationsResponse))]
@@ -64,7 +64,7 @@ namespace Neon
         public bool IsOperationsResponse => OperationsResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOperationsResponse(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.OperationsResponse PickOperationsResponse() => IsOperationsResponse
             ? OperationsResponse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OperationsResponse' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator JWKSCreationOperation(global::Neon.JWKSResponse value) => new JWKSCreationOperation((global::Neon.JWKSResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.JWKSResponse?(JWKSCreationOperation @this) => @this.Response;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JWKSCreationOperation(global::Neon.JWKSResponse? value)
         {
@@ -101,22 +101,22 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static JWKSCreationOperation FromResponse(global::Neon.JWKSResponse? value) => new JWKSCreationOperation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator JWKSCreationOperation(global::Neon.OperationsResponse value) => new JWKSCreationOperation((global::Neon.OperationsResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.OperationsResponse?(JWKSCreationOperation @this) => @this.OperationsResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JWKSCreationOperation(global::Neon.OperationsResponse? value)
         {
@@ -124,12 +124,12 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static JWKSCreationOperation FromOperationsResponse(global::Neon.OperationsResponse? value) => new JWKSCreationOperation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JWKSCreationOperation(
             global::Neon.JWKSResponse? response,
@@ -141,23 +141,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OperationsResponse as object ??
-            Response as object 
+            Response as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Response?.ToString() ??
-            OperationsResponse?.ToString() 
+            OperationsResponse?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Neon.JWKSResponse, TResult>? response = null,
@@ -190,7 +190,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Neon.JWKSResponse>? response = null,
@@ -214,7 +214,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Neon.JWKSResponse>? response = null,
@@ -237,7 +237,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(JWKSCreationOperation other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Neon.JWKSResponse?>.Default.Equals(Response, other.Response) &&
-                global::System.Collections.Generic.EqualityComparer<global::Neon.OperationsResponse?>.Default.Equals(OperationsResponse, other.OperationsResponse) 
+                global::System.Collections.Generic.EqualityComparer<global::Neon.OperationsResponse?>.Default.Equals(OperationsResponse, other.OperationsResponse)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(JWKSCreationOperation obj1, JWKSCreationOperation obj2)
         {
@@ -277,7 +277,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(JWKSCreationOperation obj1, JWKSCreationOperation obj2)
         {
@@ -285,7 +285,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

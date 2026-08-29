@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConsumptionHistoryPerTimeframeV2
     {
@@ -21,7 +21,7 @@ namespace Neon
         public global::System.DateTime? TimeframeEnd { get; set; }
 
         /// <summary>
-        /// 
+        /// Consumption metric values recorded for the timeframe.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metrics")]
         public global::System.Collections.Generic.IList<global::Neon.ConsumptionMetricValue>? Metrics { get; set; }
@@ -41,7 +41,9 @@ namespace Neon
         /// <param name="timeframeEnd">
         /// The specified end date-time for the reported consumption.
         /// </param>
-        /// <param name="metrics"></param>
+        /// <param name="metrics">
+        /// Consumption metric values recorded for the timeframe.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

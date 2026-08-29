@@ -49,8 +49,8 @@ namespace Neon
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="ttlSeconds">
-        /// Specifies the validity duration of the transfer request in seconds. If not provided,<br/>
-        /// the request will expire after 24 hours (86,400 seconds).
+        /// Number of seconds the transfer request stays valid before it expires. Defaults to 86400 (24 hours).<br/>
+        /// Default Value: 86400
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

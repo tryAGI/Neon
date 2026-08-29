@@ -4,19 +4,19 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AnnotationData
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Neon.AnnotationObjectData Object { get; set; }
 
         /// <summary>
-        /// Annotation properties.<br/>
+        /// A free-form map of string key-value pairs for attaching metadata to a resource (for example, a git commit reference). Maximum 50 entries.<br/>
         /// Example: {"github-commit-ref":"github-branch-name"}
         /// </summary>
         /// <example>{"github-commit-ref":"github-branch-name"}</example>
@@ -25,14 +25,18 @@ namespace Neon
         public required global::System.Collections.Generic.Dictionary<string, string> Value { get; set; }
 
         /// <summary>
-        /// 
+        /// Timestamp when the annotation was created, in RFC 3339 format (UTC).<br/>
+        /// Example: 2025-01-15T10:30:00Z
         /// </summary>
+        /// <example>2025-01-15T10:30:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Timestamp of the most recent update to the annotation, in RFC 3339 format (UTC).<br/>
+        /// Example: 2025-01-15T10:30:00Z
         /// </summary>
+        /// <example>2025-01-15T10:30:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
@@ -47,11 +51,17 @@ namespace Neon
         /// </summary>
         /// <param name="object"></param>
         /// <param name="value">
-        /// Annotation properties.<br/>
+        /// A free-form map of string key-value pairs for attaching metadata to a resource (for example, a git commit reference). Maximum 50 entries.<br/>
         /// Example: {"github-commit-ref":"github-branch-name"}
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
+        /// <param name="createdAt">
+        /// Timestamp when the annotation was created, in RFC 3339 format (UTC).<br/>
+        /// Example: 2025-01-15T10:30:00Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Timestamp of the most recent update to the annotation, in RFC 3339 format (UTC).<br/>
+        /// Example: 2025-01-15T10:30:00Z
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SnapshotUpdateRequest
     {
         /// <summary>
-        /// 
+        /// Fields to update on the snapshot. Updatable fields include `name` and `expires_at`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("snapshot")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="SnapshotUpdateRequest" /> class.
         /// </summary>
-        /// <param name="snapshot"></param>
+        /// <param name="snapshot">
+        /// Fields to update on the snapshot. Updatable fields include `name` and `expires_at`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

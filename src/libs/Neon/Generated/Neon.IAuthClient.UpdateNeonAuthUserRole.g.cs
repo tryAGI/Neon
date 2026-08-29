@@ -53,7 +53,7 @@ namespace Neon
         /// <param name="branchId"></param>
         /// <param name="authUserId"></param>
         /// <param name="roles">
-        /// Array of roles to assign to the user<br/>
+        /// Roles to assign to the user in the Neon Auth (Better Auth) directory. `user` and `admin` are the built-in roles; custom role strings are also supported.<br/>
         /// Example: [admin]
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

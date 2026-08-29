@@ -4,13 +4,15 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RegionResponse
     {
         /// <summary>
-        /// The region ID as used in other API endpoints
+        /// Cloud region where the resource's Postgres compute and storage reside (for example, `aws-us-east-1`). Valid values are returned by `GET /regions`.<br/>
+        /// Example: aws-us-east-1
         /// </summary>
+        /// <example>aws-us-east-1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("region_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RegionId { get; set; }
@@ -23,7 +25,7 @@ namespace Neon
         public required string Name { get; set; }
 
         /// <summary>
-        /// Whether this region is used by default in new projects.
+        /// True if this region is selected by default when no region is specified during project creation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,13 +55,14 @@ namespace Neon
         /// Initializes a new instance of the <see cref="RegionResponse" /> class.
         /// </summary>
         /// <param name="regionId">
-        /// The region ID as used in other API endpoints
+        /// Cloud region where the resource's Postgres compute and storage reside (for example, `aws-us-east-1`). Valid values are returned by `GET /regions`.<br/>
+        /// Example: aws-us-east-1
         /// </param>
         /// <param name="name">
         /// A short description of the region.
         /// </param>
         /// <param name="default">
-        /// Whether this region is used by default in new projects.
+        /// True if this region is selected by default when no region is specified during project creation.
         /// </param>
         /// <param name="geoLat">
         /// The geographical latitude (approximate) for the region. Empty if unknown.

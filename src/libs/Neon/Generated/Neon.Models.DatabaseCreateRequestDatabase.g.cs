@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    /// Configuration for the new Postgres database.
     /// </summary>
     public sealed partial class DatabaseCreateRequestDatabase
     {
         /// <summary>
-        /// The name of the database
+        /// Name of the database to create.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="DatabaseCreateRequestDatabase" /> class.
         /// </summary>
         /// <param name="name">
-        /// The name of the database
+        /// Name of the database to create.
         /// </param>
         /// <param name="ownerName">
         /// The name of the role that owns the database

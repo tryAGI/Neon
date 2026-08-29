@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BackupSchedule
     {
         /// <summary>
-        /// 
+        /// List of schedule entries defining the backup frequency. At least one entry is required.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schedule")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="BackupSchedule" /> class.
         /// </summary>
-        /// <param name="schedule"></param>
+        /// <param name="schedule">
+        /// List of schedule entries defining the backup frequency. At least one entry is required.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

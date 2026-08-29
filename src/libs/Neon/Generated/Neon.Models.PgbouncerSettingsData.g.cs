@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// DEPRECATED. A raw representation of PgBouncer settings. This schema is deprecated and will be removed after 2026-06-20.
+    /// Deprecated. A raw representation of PgBouncer settings. Removal scheduled for June 20, 2026.
     /// </summary>
     [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class PgbouncerSettingsData

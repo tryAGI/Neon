@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NeonAuthRedirectURIWhitelistResponse
     {
         /// <summary>
-        /// 
+        /// Domains permitted as redirect URI targets in the whitelist.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domains")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="NeonAuthRedirectURIWhitelistResponse" /> class.
         /// </summary>
-        /// <param name="domains"></param>
+        /// <param name="domains">
+        /// Domains permitted as redirect URI targets in the whitelist.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

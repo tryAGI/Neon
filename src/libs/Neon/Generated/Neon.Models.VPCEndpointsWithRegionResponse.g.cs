@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class VPCEndpointsWithRegionResponse
     {
         /// <summary>
-        /// 
+        /// VPC endpoints associated with the region.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoints")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="VPCEndpointsWithRegionResponse" /> class.
         /// </summary>
-        /// <param name="endpoints"></param>
+        /// <param name="endpoints">
+        /// VPC endpoints associated with the region.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

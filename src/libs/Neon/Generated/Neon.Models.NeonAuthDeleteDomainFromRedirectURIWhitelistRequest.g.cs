@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NeonAuthDeleteDomainFromRedirectURIWhitelistRequest
     {
         /// <summary>
-        /// 
+        /// Authentication provider integrated with this Neon Auth configuration. `better_auth` integrates with Better Auth (the current, recommended provider). `stack` integrates with Stack Auth (deprecated). `mock` is a simulated provider for local development and testing only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auth_provider")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthSupportedAuthProviderJsonConverter))]
@@ -17,7 +17,7 @@ namespace Neon
         public required global::Neon.NeonAuthSupportedAuthProvider AuthProvider { get; set; }
 
         /// <summary>
-        /// 
+        /// Domain names to remove from the redirect URI whitelist for the specified auth provider.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domains")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,8 +32,12 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="NeonAuthDeleteDomainFromRedirectURIWhitelistRequest" /> class.
         /// </summary>
-        /// <param name="authProvider"></param>
-        /// <param name="domains"></param>
+        /// <param name="authProvider">
+        /// Authentication provider integrated with this Neon Auth configuration. `better_auth` integrates with Better Auth (the current, recommended provider). `stack` integrates with Stack Auth (deprecated). `mock` is a simulated provider for local development and testing only.
+        /// </param>
+        /// <param name="domains">
+        /// Domain names to remove from the redirect URI whitelist for the specified auth provider.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -9,8 +9,10 @@ namespace Neon
     public sealed partial class BranchRestrictedAction
     {
         /// <summary>
-        /// The name of a restricted action. Possible values include `restore`, `delete-rw-endpoint`.
+        /// The name of a restricted action on a branch. `restore`: the branch cannot be used as a restore target. `delete-rw-endpoint`: the read-write endpoint for the branch cannot be deleted.<br/>
+        /// Example: restore
         /// </summary>
+        /// <example>restore</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -32,7 +34,8 @@ namespace Neon
         /// Initializes a new instance of the <see cref="BranchRestrictedAction" /> class.
         /// </summary>
         /// <param name="name">
-        /// The name of a restricted action. Possible values include `restore`, `delete-rw-endpoint`.
+        /// The name of a restricted action on a branch. `restore`: the branch cannot be used as a restore target. `delete-rw-endpoint`: the read-write endpoint for the branch cannot be deleted.<br/>
+        /// Example: restore
         /// </param>
         /// <param name="reason">
         /// A human-readable explanation of why the action is restricted.

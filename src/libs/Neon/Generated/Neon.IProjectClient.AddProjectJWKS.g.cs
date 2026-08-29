@@ -57,19 +57,19 @@ namespace Neon
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="jwksUrl">
-        /// The URL that lists the JWKS
+        /// URL of the provider's JWKS endpoint used to verify JWTs.
         /// </param>
         /// <param name="providerName">
         /// The name of the authentication provider (e.g., Clerk, Stytch, Auth0)
         /// </param>
         /// <param name="branchId">
-        /// Branch ID
+        /// The Neon branch ID. Returned as `id` from `GET /projects/{project_id}/branches`.
         /// </param>
         /// <param name="jwtAudience">
-        /// The name of the required JWT Audience to be used
+        /// Expected `aud` claim in incoming JWTs. When set, tokens with a different audience are rejected; tokens with no audience are still accepted. Omit to skip audience validation.
         /// </param>
         /// <param name="skipRoleCreation">
-        /// DEPRECATED. This field should only be used when using Neon RLS. If true, the role creation will be skipped.<br/>
+        /// Deprecated. Only used with Neon RLS. If true, role creation is skipped.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

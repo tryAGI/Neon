@@ -16,7 +16,7 @@ namespace Neon
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
-        /// The name of the user.
+        /// Display name of the user who created the API key.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -42,7 +42,7 @@ namespace Neon
         /// ID of the user who created this API key
         /// </param>
         /// <param name="name">
-        /// The name of the user.
+        /// Display name of the user who created the API key.
         /// </param>
         /// <param name="image">
         /// The URL to the user's avatar image.

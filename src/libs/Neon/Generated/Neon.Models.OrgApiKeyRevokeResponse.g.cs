@@ -5,12 +5,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OrgApiKeyRevokeResponse : global::System.IEquatable<OrgApiKeyRevokeResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.ApiKeyRevokeResponse? ApiKeyRevokeResponse { get; init; }
@@ -19,7 +19,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiKeyRevokeResponse))]
@@ -27,7 +27,7 @@ namespace Neon
         public bool IsApiKeyRevokeResponse => ApiKeyRevokeResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApiKeyRevokeResponse(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.ApiKeyRevokeResponse PickApiKeyRevokeResponse() => IsApiKeyRevokeResponse
             ? ApiKeyRevokeResponse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKeyRevokeResponse' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Neon.OrgApiKeyRevokeResponseVariant2? OrgApiKeyRevokeResponseVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Neon
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrgApiKeyRevokeResponseVariant2))]
@@ -64,7 +64,7 @@ namespace Neon
         public bool IsOrgApiKeyRevokeResponseVariant2 => OrgApiKeyRevokeResponseVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrgApiKeyRevokeResponseVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Neon.OrgApiKeyRevokeResponseVariant2 PickOrgApiKeyRevokeResponseVariant2() => IsOrgApiKeyRevokeResponseVariant2
             ? OrgApiKeyRevokeResponseVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrgApiKeyRevokeResponseVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OrgApiKeyRevokeResponse(global::Neon.ApiKeyRevokeResponse value) => new OrgApiKeyRevokeResponse((global::Neon.ApiKeyRevokeResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.ApiKeyRevokeResponse?(OrgApiKeyRevokeResponse @this) => @this.ApiKeyRevokeResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrgApiKeyRevokeResponse(global::Neon.ApiKeyRevokeResponse? value)
         {
@@ -101,22 +101,22 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OrgApiKeyRevokeResponse FromApiKeyRevokeResponse(global::Neon.ApiKeyRevokeResponse? value) => new OrgApiKeyRevokeResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OrgApiKeyRevokeResponse(global::Neon.OrgApiKeyRevokeResponseVariant2 value) => new OrgApiKeyRevokeResponse((global::Neon.OrgApiKeyRevokeResponseVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Neon.OrgApiKeyRevokeResponseVariant2?(OrgApiKeyRevokeResponse @this) => @this.OrgApiKeyRevokeResponseVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrgApiKeyRevokeResponse(global::Neon.OrgApiKeyRevokeResponseVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OrgApiKeyRevokeResponse FromOrgApiKeyRevokeResponseVariant2(global::Neon.OrgApiKeyRevokeResponseVariant2? value) => new OrgApiKeyRevokeResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrgApiKeyRevokeResponse(
             global::Neon.ApiKeyRevokeResponse? apiKeyRevokeResponse,
@@ -141,23 +141,23 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OrgApiKeyRevokeResponseVariant2 as object ??
-            ApiKeyRevokeResponse as object 
+            ApiKeyRevokeResponse as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ApiKeyRevokeResponse?.ToString() ??
-            OrgApiKeyRevokeResponseVariant2?.ToString() 
+            OrgApiKeyRevokeResponseVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Neon.ApiKeyRevokeResponse, TResult>? apiKeyRevokeResponse = null,
@@ -190,7 +190,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Neon.ApiKeyRevokeResponse>? apiKeyRevokeResponse = null,
@@ -214,7 +214,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Neon.ApiKeyRevokeResponse>? apiKeyRevokeResponse = null,
@@ -237,7 +237,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OrgApiKeyRevokeResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Neon.ApiKeyRevokeResponse?>.Default.Equals(ApiKeyRevokeResponse, other.ApiKeyRevokeResponse) &&
-                global::System.Collections.Generic.EqualityComparer<global::Neon.OrgApiKeyRevokeResponseVariant2?>.Default.Equals(OrgApiKeyRevokeResponseVariant2, other.OrgApiKeyRevokeResponseVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Neon.OrgApiKeyRevokeResponseVariant2?>.Default.Equals(OrgApiKeyRevokeResponseVariant2, other.OrgApiKeyRevokeResponseVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OrgApiKeyRevokeResponse obj1, OrgApiKeyRevokeResponse obj2)
         {
@@ -277,7 +277,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OrgApiKeyRevokeResponse obj1, OrgApiKeyRevokeResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace Neon
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

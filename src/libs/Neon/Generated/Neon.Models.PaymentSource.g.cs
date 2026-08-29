@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PaymentSource
     {
@@ -16,7 +16,7 @@ namespace Neon
         public required string Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("card")]
         public global::Neon.PaymentSourceBankCard? Card { get; set; }

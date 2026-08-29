@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConsumptionHistoryPerProjectV2Response
     {
         /// <summary>
-        /// 
+        /// Per-project consumption history entries for the requested time range.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsumptionHistoryPerProjectV2Response" /> class.
         /// </summary>
-        /// <param name="projects"></param>
+        /// <param name="projects">
+        /// Per-project consumption history entries for the requested time range.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

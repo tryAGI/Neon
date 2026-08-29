@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    /// Properties of the role to create.
     /// </summary>
     public sealed partial class RoleCreateRequestRole
     {

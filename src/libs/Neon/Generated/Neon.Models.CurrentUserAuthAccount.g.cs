@@ -6,33 +6,33 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CurrentUserAuthAccount
     {
         /// <summary>
-        /// 
+        /// Email address associated with this auth account.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Email { get; set; }
 
         /// <summary>
-        /// 
+        /// URL of the user's profile picture as provided by the identity provider.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Image { get; set; }
 
         /// <summary>
-        /// DEPRECATED. Use `email` field.
+        /// Deprecated. Use the `email` field.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("login")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Login { get; set; }
 
         /// <summary>
-        /// 
+        /// Display name of the account as provided by the identity provider.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -55,12 +55,18 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="CurrentUserAuthAccount" /> class.
         /// </summary>
-        /// <param name="email"></param>
-        /// <param name="image"></param>
-        /// <param name="login">
-        /// DEPRECATED. Use `email` field.
+        /// <param name="email">
+        /// Email address associated with this auth account.
         /// </param>
-        /// <param name="name"></param>
+        /// <param name="image">
+        /// URL of the user's profile picture as provided by the identity provider.
+        /// </param>
+        /// <param name="login">
+        /// Deprecated. Use the `email` field.
+        /// </param>
+        /// <param name="name">
+        /// Display name of the account as provided by the identity provider.
+        /// </param>
         /// <param name="provider">
         /// Identity provider id from keycloak
         /// </param>

@@ -1,295 +1,119 @@
-#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public readonly partial struct SendNeonAuthTestEmailRequest : global::System.IEquatable<SendNeonAuthTestEmailRequest>
+    public sealed partial class SendNeonAuthTestEmailRequest
     {
         /// <summary>
-        /// 
+        /// Hostname of the email server.
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Neon.StandardEmailServer? StandardServer { get; init; }
-#else
-        public global::Neon.StandardEmailServer? StandardServer { get; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("host")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Host { get; set; }
+
+        /// <summary>
+        /// TCP port of the SMTP server. Common values: 25 (SMTP), 465 (SMTPS), 587 (submission).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("port")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Port { get; set; }
+
+        /// <summary>
+        /// Username for authenticating with the SMTP server.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("username")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Username { get; set; }
+
+        /// <summary>
+        /// Password for authenticating with the SMTP server.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("password")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Password { get; set; }
+
+        /// <summary>
+        /// Email address used as the From address on outgoing auth emails.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sender_email")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string SenderEmail { get; set; }
+
+        /// <summary>
+        /// Display name shown as the sender in outgoing emails.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sender_name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string SenderName { get; set; }
+
+        /// <summary>
+        /// The email address to send the test email to.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("recipient_email")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string RecipientEmail { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SendNeonAuthTestEmailRequest" /> class.
+        /// </summary>
+        /// <param name="host">
+        /// Hostname of the email server.
+        /// </param>
+        /// <param name="port">
+        /// TCP port of the SMTP server. Common values: 25 (SMTP), 465 (SMTPS), 587 (submission).
+        /// </param>
+        /// <param name="username">
+        /// Username for authenticating with the SMTP server.
+        /// </param>
+        /// <param name="password">
+        /// Password for authenticating with the SMTP server.
+        /// </param>
+        /// <param name="senderEmail">
+        /// Email address used as the From address on outgoing auth emails.
+        /// </param>
+        /// <param name="senderName">
+        /// Display name shown as the sender in outgoing emails.
+        /// </param>
+        /// <param name="recipientEmail">
+        /// The email address to send the test email to.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StandardServer))]
-#endif
-        public bool IsStandardServer => StandardServer != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickStandardServer(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::Neon.StandardEmailServer? value)
-        {
-            value = StandardServer;
-            return IsStandardServer;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Neon.StandardEmailServer PickStandardServer() => IsStandardServer
-            ? StandardServer!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'StandardServer' but the value was {ToString()}.");
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Neon.SendNeonAuthTestEmailRequestVariant2? SendNeonAuthTestEmailRequestVariant2 { get; init; }
-#else
-        public global::Neon.SendNeonAuthTestEmailRequestVariant2? SendNeonAuthTestEmailRequestVariant2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SendNeonAuthTestEmailRequestVariant2))]
-#endif
-        public bool IsSendNeonAuthTestEmailRequestVariant2 => SendNeonAuthTestEmailRequestVariant2 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickSendNeonAuthTestEmailRequestVariant2(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::Neon.SendNeonAuthTestEmailRequestVariant2? value)
-        {
-            value = SendNeonAuthTestEmailRequestVariant2;
-            return IsSendNeonAuthTestEmailRequestVariant2;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Neon.SendNeonAuthTestEmailRequestVariant2 PickSendNeonAuthTestEmailRequestVariant2() => IsSendNeonAuthTestEmailRequestVariant2
-            ? SendNeonAuthTestEmailRequestVariant2!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'SendNeonAuthTestEmailRequestVariant2' but the value was {ToString()}.");
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator SendNeonAuthTestEmailRequest(global::Neon.StandardEmailServer value) => new SendNeonAuthTestEmailRequest((global::Neon.StandardEmailServer?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Neon.StandardEmailServer?(SendNeonAuthTestEmailRequest @this) => @this.StandardServer;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SendNeonAuthTestEmailRequest(global::Neon.StandardEmailServer? value)
-        {
-            StandardServer = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static SendNeonAuthTestEmailRequest FromStandardServer(global::Neon.StandardEmailServer? value) => new SendNeonAuthTestEmailRequest(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator SendNeonAuthTestEmailRequest(global::Neon.SendNeonAuthTestEmailRequestVariant2 value) => new SendNeonAuthTestEmailRequest((global::Neon.SendNeonAuthTestEmailRequestVariant2?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Neon.SendNeonAuthTestEmailRequestVariant2?(SendNeonAuthTestEmailRequest @this) => @this.SendNeonAuthTestEmailRequestVariant2;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SendNeonAuthTestEmailRequest(global::Neon.SendNeonAuthTestEmailRequestVariant2? value)
-        {
-            SendNeonAuthTestEmailRequestVariant2 = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static SendNeonAuthTestEmailRequest FromSendNeonAuthTestEmailRequestVariant2(global::Neon.SendNeonAuthTestEmailRequestVariant2? value) => new SendNeonAuthTestEmailRequest(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
         public SendNeonAuthTestEmailRequest(
-            global::Neon.StandardEmailServer? standardServer,
-            global::Neon.SendNeonAuthTestEmailRequestVariant2? sendNeonAuthTestEmailRequestVariant2
-            )
+            string host,
+            int port,
+            string username,
+            string password,
+            string senderEmail,
+            string senderName,
+            string recipientEmail)
         {
-            StandardServer = standardServer;
-            SendNeonAuthTestEmailRequestVariant2 = sendNeonAuthTestEmailRequestVariant2;
+            this.Host = host ?? throw new global::System.ArgumentNullException(nameof(host));
+            this.Port = port;
+            this.Username = username ?? throw new global::System.ArgumentNullException(nameof(username));
+            this.Password = password ?? throw new global::System.ArgumentNullException(nameof(password));
+            this.SenderEmail = senderEmail ?? throw new global::System.ArgumentNullException(nameof(senderEmail));
+            this.SenderName = senderName ?? throw new global::System.ArgumentNullException(nameof(senderName));
+            this.RecipientEmail = recipientEmail ?? throw new global::System.ArgumentNullException(nameof(recipientEmail));
         }
 
         /// <summary>
-        /// 
+        /// Initializes a new instance of the <see cref="SendNeonAuthTestEmailRequest" /> class.
         /// </summary>
-        public object? Object =>
-            SendNeonAuthTestEmailRequestVariant2 as object ??
-            StandardServer as object 
-            ;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public override string? ToString() =>
-            StandardServer?.ToString() ??
-            SendNeonAuthTestEmailRequestVariant2?.ToString() 
-            ;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool Validate()
+        public SendNeonAuthTestEmailRequest()
         {
-            return IsStandardServer && IsSendNeonAuthTestEmailRequestVariant2;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public TResult? Match<TResult>(
-            global::System.Func<global::Neon.StandardEmailServer, TResult>? standardServer = null,
-            global::System.Func<global::Neon.SendNeonAuthTestEmailRequestVariant2, TResult>? sendNeonAuthTestEmailRequestVariant2 = null,
-            bool validate = true)
-        {
-            if (validate)
-            {
-                Validate();
-            }
-
-            if (IsStandardServer && standardServer != null)
-            {
-                return standardServer(StandardServer!);
-            }
-            else if (IsSendNeonAuthTestEmailRequestVariant2 && sendNeonAuthTestEmailRequestVariant2 != null)
-            {
-                return sendNeonAuthTestEmailRequestVariant2(SendNeonAuthTestEmailRequestVariant2!);
-            }
-
-            return default(TResult);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public void Match(
-            global::System.Action<global::Neon.StandardEmailServer>? standardServer = null,
-
-            global::System.Action<global::Neon.SendNeonAuthTestEmailRequestVariant2>? sendNeonAuthTestEmailRequestVariant2 = null,
-            bool validate = true)
-        {
-            if (validate)
-            {
-                Validate();
-            }
-
-            if (IsStandardServer)
-            {
-                standardServer?.Invoke(StandardServer!);
-            }
-            else if (IsSendNeonAuthTestEmailRequestVariant2)
-            {
-                sendNeonAuthTestEmailRequestVariant2?.Invoke(SendNeonAuthTestEmailRequestVariant2!);
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public void Switch(
-            global::System.Action<global::Neon.StandardEmailServer>? standardServer = null,
-            global::System.Action<global::Neon.SendNeonAuthTestEmailRequestVariant2>? sendNeonAuthTestEmailRequestVariant2 = null,
-            bool validate = true)
-        {
-            if (validate)
-            {
-                Validate();
-            }
-
-            if (IsStandardServer)
-            {
-                standardServer?.Invoke(StandardServer!);
-            }
-            else if (IsSendNeonAuthTestEmailRequestVariant2)
-            {
-                sendNeonAuthTestEmailRequestVariant2?.Invoke(SendNeonAuthTestEmailRequestVariant2!);
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public override int GetHashCode()
-        {
-            var fields = new object?[]
-            {
-                StandardServer,
-                typeof(global::Neon.StandardEmailServer),
-                SendNeonAuthTestEmailRequestVariant2,
-                typeof(global::Neon.SendNeonAuthTestEmailRequestVariant2),
-            };
-            const int offset = unchecked((int)2166136261);
-            const int prime = 16777619;
-            static int HashCodeAggregator(int hashCode, object? value) => value == null
-                ? (hashCode ^ 0) * prime
-                : (hashCode ^ value.GetHashCode()) * prime;
-
-            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool Equals(SendNeonAuthTestEmailRequest other)
-        {
-            return
-                global::System.Collections.Generic.EqualityComparer<global::Neon.StandardEmailServer?>.Default.Equals(StandardServer, other.StandardServer) &&
-                global::System.Collections.Generic.EqualityComparer<global::Neon.SendNeonAuthTestEmailRequestVariant2?>.Default.Equals(SendNeonAuthTestEmailRequestVariant2, other.SendNeonAuthTestEmailRequestVariant2) 
-                ;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static bool operator ==(SendNeonAuthTestEmailRequest obj1, SendNeonAuthTestEmailRequest obj2)
-        {
-            return global::System.Collections.Generic.EqualityComparer<SendNeonAuthTestEmailRequest>.Default.Equals(obj1, obj2);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static bool operator !=(SendNeonAuthTestEmailRequest obj1, SendNeonAuthTestEmailRequest obj2)
-        {
-            return !(obj1 == obj2);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public override bool Equals(object? obj)
-        {
-            return obj is SendNeonAuthTestEmailRequest o && Equals(o);
-        }
     }
 }

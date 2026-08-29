@@ -48,7 +48,11 @@ namespace Neon
         /// <summary>
         /// Update email provider configuration<br/>
         /// Updates the email provider configuration for the specified branch's Neon Auth integration.<br/>
-        /// The email provider handles transactional messages such as verification emails and password reset links.
+        /// The email provider handles transactional messages such as verification emails and password reset links.<br/>
+        /// Partial `standard` updates — omitting fields to keep their stored values — are supported only for<br/>
+        /// Better Auth integrations, which merge omitted fields server-side. Legacy Stack Auth integrations do<br/>
+        /// not merge and require all six `standard` fields (`host`, `port`, `username`, `password`,<br/>
+        /// `sender_email`, `sender_name`) on every update; a partial `standard` body is rejected with 400.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -56,7 +60,7 @@ namespace Neon
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Neon.NeonAuthEmailServerConfig> UpdateNeonAuthEmailProviderAsync(
+        public async global::System.Threading.Tasks.Task<global::Neon.NeonAuthEmailServerConfigResponse> UpdateNeonAuthEmailProviderAsync(
             string projectId,
             string branchId,
 
@@ -78,7 +82,11 @@ namespace Neon
         /// <summary>
         /// Update email provider configuration<br/>
         /// Updates the email provider configuration for the specified branch's Neon Auth integration.<br/>
-        /// The email provider handles transactional messages such as verification emails and password reset links.
+        /// The email provider handles transactional messages such as verification emails and password reset links.<br/>
+        /// Partial `standard` updates — omitting fields to keep their stored values — are supported only for<br/>
+        /// Better Auth integrations, which merge omitted fields server-side. Legacy Stack Auth integrations do<br/>
+        /// not merge and require all six `standard` fields (`host`, `port`, `username`, `password`,<br/>
+        /// `sender_email`, `sender_name`) on every update; a partial `standard` body is rejected with 400.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -86,7 +94,7 @@ namespace Neon
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Neon.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.NeonAuthEmailServerConfig>> UpdateNeonAuthEmailProviderAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Neon.AutoSDKHttpResponse<global::Neon.NeonAuthEmailServerConfigResponse>> UpdateNeonAuthEmailProviderAsResponseAsync(
             string projectId,
             string branchId,
 
@@ -155,7 +163,7 @@ namespace Neon
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -355,7 +363,7 @@ namespace Neon
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // General Error.  The request may or may not be safe to retry, depending on the HTTP method, response status code, and whether a response was received.  - If no response is returned from the API, a network error or timeout likely occurred. - In some cases, the request may have reached the server and been successfully processed, but the response failed to reach the client. As a result, retrying non-idempotent requests can lead to unintended results.  The following HTTP methods are considered non-idempotent: `POST`, `PATCH`, `DELETE`, and `PUT`. Retrying these methods is generally **not safe**. The following methods are considered idempotent: `GET`, `HEAD`, and `OPTIONS`. Retrying these methods is **safe** in the event of a network error or timeout.  Any request that returns a `503 Service Unavailable` response is always safe to retry.  Any request that returns a `423 Locked` response is safe to retry. `423 Locked` indicates that the resource is temporarily locked, for example, due to another operation in progress. 
+                            // General Error.  The request may or may not be safe to retry, depending on the HTTP method, response status code, and whether a response was received.  - If no response is returned from the API, a network error or timeout likely occurred. - In some cases, the request may have reached the server and been successfully processed, but the response failed to reach the client. As a result, retrying non-idempotent requests can lead to unintended results.  The following HTTP methods are considered non-idempotent: `POST`, `PATCH`, `DELETE`, and `PUT`. Retrying these methods is generally **not safe**. The following methods are considered idempotent: `GET`, `HEAD`, and `OPTIONS`. Retrying these methods is **safe** in the event of a network error or timeout.  Any request that returns a `503 Service Unavailable` response is always safe to retry.  Any request that returns a `423 Locked` response is safe to retry. `423 Locked` indicates that the resource is temporarily locked, for example, due to another operation in progress.
                             if (!__response.IsSuccessStatusCode)
                             {
                                 string? __content_default = null;
@@ -414,9 +422,9 @@ namespace Neon
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Neon.NeonAuthEmailServerConfig.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Neon.NeonAuthEmailServerConfigResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Neon.AutoSDKHttpResponse<global::Neon.NeonAuthEmailServerConfig>(
+                                    return new global::Neon.AutoSDKHttpResponse<global::Neon.NeonAuthEmailServerConfigResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Neon.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -446,9 +454,9 @@ namespace Neon
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Neon.NeonAuthEmailServerConfig.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Neon.NeonAuthEmailServerConfigResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Neon.AutoSDKHttpResponse<global::Neon.NeonAuthEmailServerConfig>(
+                                    return new global::Neon.AutoSDKHttpResponse<global::Neon.NeonAuthEmailServerConfigResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Neon.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

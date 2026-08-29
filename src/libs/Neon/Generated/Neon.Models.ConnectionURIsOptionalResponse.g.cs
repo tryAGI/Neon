@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConnectionURIsOptionalResponse
     {
         /// <summary>
-        /// 
+        /// Connection URIs for the compute endpoint, including credentials.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connection_uris")]
         public global::System.Collections.Generic.IList<global::Neon.ConnectionDetails>? ConnectionUris { get; set; }
@@ -23,7 +23,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionURIsOptionalResponse" /> class.
         /// </summary>
-        /// <param name="connectionUris"></param>
+        /// <param name="connectionUris">
+        /// Connection URIs for the compute endpoint, including credentials.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

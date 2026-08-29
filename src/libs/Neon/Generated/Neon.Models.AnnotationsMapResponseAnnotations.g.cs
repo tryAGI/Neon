@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    /// Map of annotations keyed by resource identifier, where each value contains the annotation data for that resource.
     /// </summary>
     public sealed partial class AnnotationsMapResponseAnnotations
     {

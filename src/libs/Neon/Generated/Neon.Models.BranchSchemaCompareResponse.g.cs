@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BranchSchemaCompareResponse
     {
         /// <summary>
-        /// 
+        /// Unified diff of the SQL schema changes between the compared branches.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("diff")]
         public string? Diff { get; set; }
@@ -23,7 +23,9 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="BranchSchemaCompareResponse" /> class.
         /// </summary>
-        /// <param name="diff"></param>
+        /// <param name="diff">
+        /// Unified diff of the SQL schema changes between the compared branches.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

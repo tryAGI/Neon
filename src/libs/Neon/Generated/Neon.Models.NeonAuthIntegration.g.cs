@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NeonAuthIntegration
     {
         /// <summary>
-        /// 
+        /// Authentication provider integrated with this Neon Auth configuration. `better_auth` integrates with Better Auth (the current, recommended provider). `stack` integrates with Stack Auth (deprecated). `mock` is a simulated provider for local development and testing only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auth_provider")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthSupportedAuthProviderJsonConverter))]
@@ -17,35 +17,39 @@ namespace Neon
         public required global::Neon.NeonAuthSupportedAuthProvider AuthProvider { get; set; }
 
         /// <summary>
-        /// 
+        /// Project identifier assigned by the auth provider for this integration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auth_provider_project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AuthProviderProjectId { get; set; }
 
         /// <summary>
-        /// 
+        /// The Neon branch ID. Returned as `id` from `GET /projects/{project_id}/branches`.<br/>
+        /// Example: br-cool-darkness-12345678
         /// </summary>
+        /// <example>br-cool-darkness-12345678</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("branch_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BranchId { get; set; }
 
         /// <summary>
-        /// 
+        /// Name of the database used by the Neon Auth integration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("db_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DbName { get; set; }
 
         /// <summary>
-        /// 
+        /// Timestamp when the Neon Auth integration was created, in RFC 3339 format (UTC).<br/>
+        /// Example: 2025-01-15T10:30:00Z
         /// </summary>
+        /// <example>2025-01-15T10:30:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owned_by")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthProviderProjectOwnedByJsonConverter))]
@@ -53,27 +57,27 @@ namespace Neon
         public required global::Neon.NeonAuthProviderProjectOwnedBy OwnedBy { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transfer_status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthProviderProjectTransferStatusJsonConverter))]
         public global::Neon.NeonAuthProviderProjectTransferStatus? TransferStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// URL of the provider's JWKS endpoint used to verify JWTs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jwks_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string JwksUrl { get; set; }
 
         /// <summary>
-        /// 
+        /// Base URL of the Neon Auth service endpoint for this integration. Injected into the project environment as `NEON_AUTH_BASE_URL`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("base_url")]
         public string? BaseUrl { get; set; }
 
         /// <summary>
-        /// The application name used in auth emails and communications. Defaults to the Neon project name.
+        /// Application name shown in auth emails and communications. Defaults to the project name.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
@@ -87,17 +91,33 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="NeonAuthIntegration" /> class.
         /// </summary>
-        /// <param name="authProvider"></param>
-        /// <param name="authProviderProjectId"></param>
-        /// <param name="branchId"></param>
-        /// <param name="dbName"></param>
-        /// <param name="createdAt"></param>
+        /// <param name="authProvider">
+        /// Authentication provider integrated with this Neon Auth configuration. `better_auth` integrates with Better Auth (the current, recommended provider). `stack` integrates with Stack Auth (deprecated). `mock` is a simulated provider for local development and testing only.
+        /// </param>
+        /// <param name="authProviderProjectId">
+        /// Project identifier assigned by the auth provider for this integration.
+        /// </param>
+        /// <param name="branchId">
+        /// The Neon branch ID. Returned as `id` from `GET /projects/{project_id}/branches`.<br/>
+        /// Example: br-cool-darkness-12345678
+        /// </param>
+        /// <param name="dbName">
+        /// Name of the database used by the Neon Auth integration.
+        /// </param>
+        /// <param name="createdAt">
+        /// Timestamp when the Neon Auth integration was created, in RFC 3339 format (UTC).<br/>
+        /// Example: 2025-01-15T10:30:00Z
+        /// </param>
         /// <param name="ownedBy"></param>
-        /// <param name="jwksUrl"></param>
+        /// <param name="jwksUrl">
+        /// URL of the provider's JWKS endpoint used to verify JWTs.
+        /// </param>
         /// <param name="transferStatus"></param>
-        /// <param name="baseUrl"></param>
+        /// <param name="baseUrl">
+        /// Base URL of the Neon Auth service endpoint for this integration. Injected into the project environment as `NEON_AUTH_BASE_URL`.
+        /// </param>
         /// <param name="name">
-        /// The application name used in auth emails and communications. Defaults to the Neon project name.
+        /// Application name shown in auth emails and communications. Defaults to the project name.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

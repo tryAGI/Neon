@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConsumptionHistoryPerTimeframe
     {
@@ -44,14 +44,14 @@ namespace Neon
         public required int WrittenDataBytes { get; set; }
 
         /// <summary>
-        /// Bytes. The space occupied in storage. Synthetic storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches.
+        /// Bytes. The space occupied in Postgres storage. Synthetic Postgres storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("synthetic_storage_size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int SyntheticStorageSizeBytes { get; set; }
 
         /// <summary>
-        /// Bytes-Hour. The amount of storage consumed hourly.
+        /// Bytes-Hour. The amount of Postgres storage consumed hourly.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_storage_bytes_hour")]
         public int? DataStorageBytesHour { get; set; }
@@ -93,10 +93,10 @@ namespace Neon
         /// Bytes. The amount of written data for all branches.
         /// </param>
         /// <param name="syntheticStorageSizeBytes">
-        /// Bytes. The space occupied in storage. Synthetic storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches.
+        /// Bytes. The space occupied in Postgres storage. Synthetic Postgres storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches.
         /// </param>
         /// <param name="dataStorageBytesHour">
-        /// Bytes-Hour. The amount of storage consumed hourly.
+        /// Bytes-Hour. The amount of Postgres storage consumed hourly.
         /// </param>
         /// <param name="logicalSizeBytes">
         /// Bytes. The amount of logical size consumed.

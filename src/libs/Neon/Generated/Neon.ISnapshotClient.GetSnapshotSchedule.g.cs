@@ -6,8 +6,7 @@ namespace Neon
     {
         /// <summary>
         /// Retrieve backup schedule<br/>
-        /// Returns the backup schedule for the specified branch, including the configured snapshot frequencies.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// Returns the backup schedule for the specified branch, including the configured snapshot frequencies.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -21,8 +20,7 @@ namespace Neon
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Retrieve backup schedule<br/>
-        /// Returns the backup schedule for the specified branch, including the configured snapshot frequencies.<br/>
-        /// **Note**: This endpoint is currently in Beta.
+        /// Returns the backup schedule for the specified branch, including the configured snapshot frequencies.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

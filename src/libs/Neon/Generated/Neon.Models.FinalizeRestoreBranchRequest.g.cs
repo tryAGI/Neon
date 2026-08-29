@@ -4,12 +4,12 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class FinalizeRestoreBranchRequest
     {
         /// <summary>
-        /// used to rename the existing branch when it is replaced. if omitted, a default name is generated and used
+        /// Name for the replaced branch. If omitted, a unique name is generated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
@@ -24,7 +24,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="FinalizeRestoreBranchRequest" /> class.
         /// </summary>
         /// <param name="name">
-        /// used to rename the existing branch when it is replaced. if omitted, a default name is generated and used
+        /// Name for the replaced branch. If omitted, a unique name is generated.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

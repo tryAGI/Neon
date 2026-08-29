@@ -4,7 +4,7 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BranchRestoreRequest
     {
@@ -18,21 +18,22 @@ namespace Neon
         public required string SourceBranchId { get; set; }
 
         /// <summary>
-        /// A Log Sequence Number (LSN) on the source branch. The branch will be restored with data from this LSN.
+        /// A Postgres LSN (for example, `0/1A2B3C4`) on the source branch to restore from.<br/>
+        /// Mutually exclusive with `source_timestamp`. Omit both to restore to head.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_lsn")]
         public string? SourceLsn { get; set; }
 
         /// <summary>
-        /// A timestamp identifying a point in time on the source branch. The branch will be restored with data starting from this point in time.<br/>
-        /// The timestamp must be provided in ISO 8601 format; for example: `2024-02-26T12:00:00Z`.
+        /// A point in time on the source branch to restore from, in RFC 3339 format. When omitted alongside `source_lsn`, the branch is restored to the latest available state of the source branch.<br/>
+        /// Example: 2024-02-26T12:00:00Z
         /// </summary>
+        /// <example>2024-02-26T12:00:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_timestamp")]
         public global::System.DateTime? SourceTimestamp { get; set; }
 
         /// <summary>
-        /// If not empty, the previous state of the branch will be saved to a branch with this name.<br/>
-        /// If the branch has children or the `source_branch_id` is equal to the branch id, this field is required. All existing child branches will be moved to the newly created branch under the name `preserve_under_name`.
+        /// Name under which to save the current branch state before restoring. Required when the branch has children or when `source_branch_id` equals the branch being restored; in those cases all existing child branches are moved to the newly created branch. If omitted and not required, the previous state is not preserved.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preserve_under_name")]
         public string? PreserveUnderName { get; set; }
@@ -52,15 +53,15 @@ namespace Neon
         /// If `source_branch_id` is equal to the branch's id, `source_timestamp` or `source_lsn` is required.
         /// </param>
         /// <param name="sourceLsn">
-        /// A Log Sequence Number (LSN) on the source branch. The branch will be restored with data from this LSN.
+        /// A Postgres LSN (for example, `0/1A2B3C4`) on the source branch to restore from.<br/>
+        /// Mutually exclusive with `source_timestamp`. Omit both to restore to head.
         /// </param>
         /// <param name="sourceTimestamp">
-        /// A timestamp identifying a point in time on the source branch. The branch will be restored with data starting from this point in time.<br/>
-        /// The timestamp must be provided in ISO 8601 format; for example: `2024-02-26T12:00:00Z`.
+        /// A point in time on the source branch to restore from, in RFC 3339 format. When omitted alongside `source_lsn`, the branch is restored to the latest available state of the source branch.<br/>
+        /// Example: 2024-02-26T12:00:00Z
         /// </param>
         /// <param name="preserveUnderName">
-        /// If not empty, the previous state of the branch will be saved to a branch with this name.<br/>
-        /// If the branch has children or the `source_branch_id` is equal to the branch id, this field is required. All existing child branches will be moved to the newly created branch under the name `preserve_under_name`.
+        /// Name under which to save the current branch state before restoring. Required when the branch has children or when `source_branch_id` equals the branch being restored; in those cases all existing child branches are moved to the newly created branch. If omitted and not required, the previous state is not preserved.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

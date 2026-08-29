@@ -4,25 +4,26 @@
 namespace Neon
 {
     /// <summary>
-    /// The caller's effective permission for a project list item when<br/>
-    /// per-project permissions are enabled. Values correspond to viewer,<br/>
-    /// editor, and admin/manage project access levels. Omitted for personal<br/>
-    /// projects, flag-off organizations, and non-user subjects.
+    /// The caller's effective permission for a project when<br/>
+    /// per-project permissions are enabled. `VIEWER` grants read access,<br/>
+    /// `EDITOR` adds update access, and `ADMIN` grants full management.<br/>
+    /// Omitted for personal projects, flag-off organizations, and non-user<br/>
+    /// subjects.
     /// </summary>
     public enum ProjectPermissionLevel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        CanEdit,
+        Admin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        CanManage,
+        Editor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        CanView,
+        Viewer,
     }
 
     /// <summary>
@@ -37,9 +38,9 @@ namespace Neon
         {
             return value switch
             {
-                ProjectPermissionLevel.CanEdit => "CAN_EDIT",
-                ProjectPermissionLevel.CanManage => "CAN_MANAGE",
-                ProjectPermissionLevel.CanView => "CAN_VIEW",
+                ProjectPermissionLevel.Admin => "ADMIN",
+                ProjectPermissionLevel.Editor => "EDITOR",
+                ProjectPermissionLevel.Viewer => "VIEWER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,9 +51,9 @@ namespace Neon
         {
             return value switch
             {
-                "CAN_EDIT" => ProjectPermissionLevel.CanEdit,
-                "CAN_MANAGE" => ProjectPermissionLevel.CanManage,
-                "CAN_VIEW" => ProjectPermissionLevel.CanView,
+                "ADMIN" => ProjectPermissionLevel.Admin,
+                "EDITOR" => ProjectPermissionLevel.Editor,
+                "VIEWER" => ProjectPermissionLevel.Viewer,
                 _ => null,
             };
         }

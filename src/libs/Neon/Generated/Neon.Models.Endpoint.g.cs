@@ -31,42 +31,44 @@ namespace Neon
         public string? Name { get; set; }
 
         /// <summary>
-        /// The ID of the project to which the compute endpoint belongs
+        /// The ID of the project this compute endpoint belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectId { get; set; }
 
         /// <summary>
-        /// The ID of the branch that the compute endpoint is associated with
+        /// The ID of the branch this compute endpoint belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branch_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BranchId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("autoscaling_limit_min_cu")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double AutoscalingLimitMinCu { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("autoscaling_limit_max_cu")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double AutoscalingLimitMaxCu { get; set; }
 
         /// <summary>
-        /// The region identifier
+        /// Cloud region where the resource's Postgres compute and storage reside (for example, `aws-us-east-1`). Valid values are returned by `GET /regions`.<br/>
+        /// Example: aws-us-east-1
         /// </summary>
+        /// <example>aws-us-east-1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("region_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RegionId { get; set; }
 
         /// <summary>
-        /// The compute endpoint type. Either `read_write` or `read_only`.
+        /// Compute endpoint type. `read_write`: the primary read-write endpoint (one per branch). `read_only`: a read replica endpoint (multiple allowed per branch).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.EndpointTypeJsonConverter))]
@@ -74,7 +76,7 @@ namespace Neon
         public required global::Neon.EndpointType Type { get; set; }
 
         /// <summary>
-        /// The state of the compute endpoint
+        /// Lifecycle state of the compute endpoint. `init`: being initialized. `active`: running and accepting connections. `idle`: suspended (scaled to zero).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.EndpointStateJsonConverter))]
@@ -82,7 +84,7 @@ namespace Neon
         public required global::Neon.EndpointState CurrentState { get; set; }
 
         /// <summary>
-        /// The state of the compute endpoint
+        /// Lifecycle state of the compute endpoint. `init`: being initialized. `active`: running and accepting connections. `idle`: suspended (scaled to zero).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pending_state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.EndpointStateJsonConverter))]
@@ -96,14 +98,14 @@ namespace Neon
         public required global::Neon.EndpointSettingsData Settings { get; set; }
 
         /// <summary>
-        /// Whether connection pooling is enabled for the compute endpoint
+        /// Deprecated. To use connection pooling, append `-pooler` to the endpoint ID in the connection string.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pooler_enabled")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool PoolerEnabled { get; set; }
 
         /// <summary>
-        /// DEPRECATED. The connection pooler mode. Neon supports PgBouncer in `transaction` mode only. This schema is deprecated and will be removed after 2026-06-20.
+        /// Deprecated. The connection pooler mode. Neon supports PgBouncer in `transaction` mode only. Removal scheduled for June 20, 2026.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pooler_mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.EndpointPoolerModeJsonConverter))]
@@ -167,7 +169,7 @@ namespace Neon
         public global::System.DateTime? SuspendedAt { get; set; }
 
         /// <summary>
-        /// DEPRECATED. Use the "host" property instead.
+        /// Deprecated. Use the `host` property instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("proxy_host")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -186,14 +188,9 @@ namespace Neon
         public required long SuspendTimeoutSeconds { get; set; }
 
         /// <summary>
-        /// The Neon compute provisioner.<br/>
-        /// Specify the `k8s-neonvm` provisioner to create a compute endpoint that supports Autoscaling.<br/>
-        /// Provisioner can be one of the following values:<br/>
-        /// * k8s-pod<br/>
-        /// * k8s-neonvm<br/>
-        /// * serverless-platform<br/>
-        /// Clients must expect, that any string value that is not documented in the description above should be treated as a error. UNKNOWN value if safe to treat as an error too.
+        /// Example: k8s-neonvm
         /// </summary>
+        /// <example>k8s-neonvm</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("provisioner")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Provisioner { get; set; }
@@ -220,27 +217,28 @@ namespace Neon
         /// The compute endpoint ID. Compute endpoint IDs have an `ep-` prefix. For example: `ep-little-smoke-851426`
         /// </param>
         /// <param name="projectId">
-        /// The ID of the project to which the compute endpoint belongs
+        /// The ID of the project this compute endpoint belongs to.
         /// </param>
         /// <param name="branchId">
-        /// The ID of the branch that the compute endpoint is associated with
+        /// The ID of the branch this compute endpoint belongs to.
         /// </param>
         /// <param name="autoscalingLimitMinCu"></param>
         /// <param name="autoscalingLimitMaxCu"></param>
         /// <param name="regionId">
-        /// The region identifier
+        /// Cloud region where the resource's Postgres compute and storage reside (for example, `aws-us-east-1`). Valid values are returned by `GET /regions`.<br/>
+        /// Example: aws-us-east-1
         /// </param>
         /// <param name="type">
-        /// The compute endpoint type. Either `read_write` or `read_only`.
+        /// Compute endpoint type. `read_write`: the primary read-write endpoint (one per branch). `read_only`: a read replica endpoint (multiple allowed per branch).
         /// </param>
         /// <param name="currentState">
-        /// The state of the compute endpoint
+        /// Lifecycle state of the compute endpoint. `init`: being initialized. `active`: running and accepting connections. `idle`: suspended (scaled to zero).
         /// </param>
         /// <param name="settings">
         /// A collection of settings for a compute endpoint
         /// </param>
         /// <param name="poolerEnabled">
-        /// Whether connection pooling is enabled for the compute endpoint
+        /// Deprecated. To use connection pooling, append `-pooler` to the endpoint ID in the connection string.
         /// </param>
         /// <param name="disabled">
         /// Whether to restrict connections to the compute endpoint.<br/>
@@ -261,7 +259,7 @@ namespace Neon
         /// A timestamp indicating when the compute endpoint was last updated
         /// </param>
         /// <param name="proxyHost">
-        /// DEPRECATED. Use the "host" property instead.
+        /// Deprecated. Use the `host` property instead.
         /// </param>
         /// <param name="suspendTimeoutSeconds">
         /// Duration of inactivity in seconds after which the compute endpoint is<br/>
@@ -272,19 +270,13 @@ namespace Neon
         /// [Scale to zero configuration](https://neon.com/docs/manage/endpoints#scale-to-zero-configuration).
         /// </param>
         /// <param name="provisioner">
-        /// The Neon compute provisioner.<br/>
-        /// Specify the `k8s-neonvm` provisioner to create a compute endpoint that supports Autoscaling.<br/>
-        /// Provisioner can be one of the following values:<br/>
-        /// * k8s-pod<br/>
-        /// * k8s-neonvm<br/>
-        /// * serverless-platform<br/>
-        /// Clients must expect, that any string value that is not documented in the description above should be treated as a error. UNKNOWN value if safe to treat as an error too.
+        /// Example: k8s-neonvm
         /// </param>
         /// <param name="name">
         /// Optional name of the compute endpoint
         /// </param>
         /// <param name="pendingState">
-        /// The state of the compute endpoint
+        /// Lifecycle state of the compute endpoint. `init`: being initialized. `active`: running and accepting connections. `idle`: suspended (scaled to zero).
         /// </param>
         /// <param name="lastActive">
         /// A timestamp indicating when the compute endpoint was last active

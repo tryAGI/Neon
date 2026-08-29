@@ -49,7 +49,8 @@ namespace Neon
         /// <param name="requestId"></param>
         /// <param name="orgId">
         /// The Neon organization ID to transfer the project to. If not provided, the project will be<br/>
-        /// transferred to the current user or organization account.
+        /// transferred to the current user or organization account.<br/>
+        /// Example: org-cool-darkness-12345678
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

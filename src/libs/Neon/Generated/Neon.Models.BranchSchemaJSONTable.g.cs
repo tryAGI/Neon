@@ -4,33 +4,33 @@
 namespace Neon
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BranchSchemaJSONTable
     {
         /// <summary>
-        /// 
+        /// Postgres schema (namespace) that contains the table, for example `public`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Schema { get; set; }
 
         /// <summary>
-        /// 
+        /// Name of the table within the schema.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Columns belonging to this table, each describing a column's name and attributes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("columns")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::Neon.BranchSchemaJSONTableColumn> Columns { get; set; }
 
         /// <summary>
-        /// 
+        /// Table constraints defined in the branch schema, such as primary key, foreign key, unique, and check constraints.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("constraints")]
         public global::System.Collections.Generic.IList<global::Neon.BranchSchemaJSONTableConstraint>? Constraints { get; set; }
@@ -44,10 +44,18 @@ namespace Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="BranchSchemaJSONTable" /> class.
         /// </summary>
-        /// <param name="schema"></param>
-        /// <param name="name"></param>
-        /// <param name="columns"></param>
-        /// <param name="constraints"></param>
+        /// <param name="schema">
+        /// Postgres schema (namespace) that contains the table, for example `public`.
+        /// </param>
+        /// <param name="name">
+        /// Name of the table within the schema.
+        /// </param>
+        /// <param name="columns">
+        /// Columns belonging to this table, each describing a column's name and attributes.
+        /// </param>
+        /// <param name="constraints">
+        /// Table constraints defined in the branch schema, such as primary key, foreign key, unique, and check constraints.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
