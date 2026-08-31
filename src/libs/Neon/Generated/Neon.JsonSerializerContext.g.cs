@@ -287,6 +287,8 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.NeonFunctionsListResponse, global::Neon.CursorPaginationResponse>),
 
+            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.CustomDomainsListResponse, global::Neon.CursorPaginationResponse>),
+
             typeof(global::Neon.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.JsonSerializerContextTypes))]
@@ -654,6 +656,10 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionsListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.NeonFunction>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CustomDomain))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CustomDomainRegisterRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CustomDomainsListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.CustomDomain>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionDeploymentResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.FunctionDeployRequest))]
@@ -693,6 +699,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.UpdateSnapshotResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>), TypeInfoPropertyName = "AllOfBranchResponseEndpointsOptionalResponseOperationsResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.NeonFunctionsListResponse, global::Neon.CursorPaginationResponse>), TypeInfoPropertyName = "AllOfNeonFunctionsListResponseCursorPaginationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.CustomDomainsListResponse, global::Neon.CursorPaginationResponse>), TypeInfoPropertyName = "AllOfCustomDomainsListResponseCursorPaginationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>?), TypeInfoPropertyName = "EndpointsResponse_18e24691ef0e4f53")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>?), TypeInfoPropertyName = "ConnectionURIsOptionalResponse_dba8030245622754")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
@@ -748,6 +755,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.CredentialScope>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.CredentialMeta>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.NeonFunction>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.CustomDomain>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.AdvisorIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ApiKeysListResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.OrgApiKeysListResponseItem>))]
