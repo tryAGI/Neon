@@ -193,9 +193,17 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.CredentialScopeNullableJsonConverter),
 
+            typeof(global::Neon.JsonConverters.GrantedCredentialScopeJsonConverter),
+
+            typeof(global::Neon.JsonConverters.GrantedCredentialScopeNullableJsonConverter),
+
             typeof(global::Neon.JsonConverters.CreateCredentialRequestPrincipalTypeJsonConverter),
 
             typeof(global::Neon.JsonConverters.CreateCredentialRequestPrincipalTypeNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.RotateCredentialResponsePrincipalTypeJsonConverter),
+
+            typeof(global::Neon.JsonConverters.RotateCredentialResponsePrincipalTypeNullableJsonConverter),
 
             typeof(global::Neon.JsonConverters.NeonFunctionDeploymentStatusJsonConverter),
 
@@ -643,10 +651,15 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.PresignRequestOperation), TypeInfoPropertyName = "PresignRequestOperation2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.PresignResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CredentialScope), TypeInfoPropertyName = "CredentialScope2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.GrantedCredentialScope), TypeInfoPropertyName = "GrantedCredentialScope2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CreateCredentialRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.CredentialScope>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CreateCredentialRequestPrincipalType), TypeInfoPropertyName = "CreateCredentialRequestPrincipalType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CreateCredentialResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.GrantedCredentialScope>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CredentialSecret))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RotateCredentialResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RotateCredentialResponsePrincipalType), TypeInfoPropertyName = "RotateCredentialResponsePrincipalType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CredentialMeta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ListCredentialsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.CredentialMeta>))]
@@ -753,6 +766,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ProjectBranchLogRecord>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.BucketObject>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.CredentialScope>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.GrantedCredentialScope>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.CredentialMeta>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.NeonFunction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.CustomDomain>))]
