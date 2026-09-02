@@ -4,9 +4,13 @@
 namespace Neon
 {
     /// <summary>
-    /// A single capability a credential may exercise. A credential is granted<br/>
-    /// a set of these; it may only perform actions explicitly listed in its<br/>
-    /// scopes.
+    /// A single capability you may request when issuing a credential. A<br/>
+    /// credential is granted a set of these; it may only perform actions<br/>
+    /// explicitly listed in its scopes.<br/>
+    /// This is the *requestable* set. Responses describing an existing<br/>
+    /// credential use `GrantedCredentialScope`, which is deliberately wider:<br/>
+    /// a credential may have been granted a scope that this endpoint does not<br/>
+    /// offer, and a response must be able to report it.
     /// </summary>
     public enum CredentialScope
     {

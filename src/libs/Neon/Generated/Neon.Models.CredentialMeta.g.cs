@@ -33,7 +33,7 @@ namespace Neon
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scopes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Neon.CredentialScope> Scopes { get; set; }
+        public required global::System.Collections.Generic.IList<global::Neon.GrantedCredentialScope> Scopes { get; set; }
 
         /// <summary>
         ///
@@ -113,7 +113,7 @@ namespace Neon
         public CredentialMeta(
             string tokenId,
             string tokenIdShort,
-            global::System.Collections.Generic.IList<global::Neon.CredentialScope> scopes,
+            global::System.Collections.Generic.IList<global::Neon.GrantedCredentialScope> scopes,
             string principalType,
             global::System.DateTime createdAt,
             string? name,
