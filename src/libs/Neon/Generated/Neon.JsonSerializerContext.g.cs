@@ -209,6 +209,30 @@ namespace Neon
 
             typeof(global::Neon.JsonConverters.NeonFunctionDeploymentStatusNullableJsonConverter),
 
+            typeof(global::Neon.JsonConverters.TriggerCreateRequestDiscriminatorTypeJsonConverter),
+
+            typeof(global::Neon.JsonConverters.TriggerCreateRequestDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.ScheduleTriggerCreateRequestTypeJsonConverter),
+
+            typeof(global::Neon.JsonConverters.ScheduleTriggerCreateRequestTypeNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.TriggerUpdateRequestDiscriminatorTypeJsonConverter),
+
+            typeof(global::Neon.JsonConverters.TriggerUpdateRequestDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.ScheduleTriggerUpdateRequestTypeJsonConverter),
+
+            typeof(global::Neon.JsonConverters.ScheduleTriggerUpdateRequestTypeNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.TriggerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Neon.JsonConverters.TriggerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Neon.JsonConverters.ScheduleTriggerTypeJsonConverter),
+
+            typeof(global::Neon.JsonConverters.ScheduleTriggerTypeNullableJsonConverter),
+
             typeof(global::Neon.JsonConverters.FunctionDeployRequestRuntimeJsonConverter),
 
             typeof(global::Neon.JsonConverters.FunctionDeployRequestRuntimeNullableJsonConverter),
@@ -262,6 +286,12 @@ namespace Neon
             typeof(global::Neon.JsonConverters.RoleOperationsJsonConverter),
 
             typeof(global::Neon.JsonConverters.JWKSCreationOperationJsonConverter),
+
+            typeof(global::Neon.JsonConverters.TriggerCreateRequestJsonConverter),
+
+            typeof(global::Neon.JsonConverters.TriggerUpdateRequestJsonConverter),
+
+            typeof(global::Neon.JsonConverters.TriggerJsonConverter),
 
             typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchCreateRequest, global::Neon.AnnotationCreateValueRequest>),
 
@@ -669,6 +699,25 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionsListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.NeonFunction>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.FunctionTriggerSchedule))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerCreateRequest), TypeInfoPropertyName = "TriggerCreateRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerCreateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerCreateRequestDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerCreateRequestDiscriminatorType), TypeInfoPropertyName = "TriggerCreateRequestDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerCreateRequestType), TypeInfoPropertyName = "ScheduleTriggerCreateRequestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerUpdateRequest), TypeInfoPropertyName = "TriggerUpdateRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerUpdateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerUpdateRequestDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerUpdateRequestDiscriminatorType), TypeInfoPropertyName = "TriggerUpdateRequestDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerUpdateRequestType), TypeInfoPropertyName = "ScheduleTriggerUpdateRequestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Trigger), TypeInfoPropertyName = "Trigger2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTrigger))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerDiscriminatorType), TypeInfoPropertyName = "TriggerDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerType), TypeInfoPropertyName = "ScheduleTriggerType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggersListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.Trigger>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CustomDomain))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CustomDomainRegisterRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CustomDomainsListResponse))]
@@ -769,6 +818,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.GrantedCredentialScope>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.CredentialMeta>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.NeonFunction>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.Trigger>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.CustomDomain>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.AdvisorIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ApiKeysListResponseItem>))]
