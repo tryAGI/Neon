@@ -1,0 +1,49 @@
+
+#nullable enable
+
+namespace Neon
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class TriggerResponse
+    {
+        /// <summary>
+        /// A branch-effective trigger discriminated by `type`. The only currently<br/>
+        /// supported trigger type is `schedule`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trigger")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Neon.ScheduleTrigger Trigger { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerResponse" /> class.
+        /// </summary>
+        /// <param name="trigger">
+        /// A branch-effective trigger discriminated by `type`. The only currently<br/>
+        /// supported trigger type is `schedule`.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public TriggerResponse(
+            global::Neon.ScheduleTrigger trigger)
+        {
+            this.Trigger = trigger ?? throw new global::System.ArgumentNullException(nameof(trigger));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerResponse" /> class.
+        /// </summary>
+        public TriggerResponse()
+        {
+        }
+
+    }
+}
