@@ -34,7 +34,7 @@ namespace Neon
         public string? FunctionPath { get; set; }
 
         /// <summary>
-        ///
+        /// A numeric five-field cron schedule interpreted in UTC.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schedule")]
         public global::Neon.FunctionTriggerSchedule? Schedule { get; set; }
@@ -62,7 +62,9 @@ namespace Neon
         /// </param>
         /// <param name="name"></param>
         /// <param name="functionPath"></param>
-        /// <param name="schedule"></param>
+        /// <param name="schedule">
+        /// A numeric five-field cron schedule interpreted in UTC.
+        /// </param>
         /// <param name="enabled">
         /// True enables and false disables future scheduling.
         /// </param>

@@ -44,7 +44,7 @@ namespace Neon
         public required string FunctionPath { get; set; }
 
         /// <summary>
-        ///
+        /// A numeric five-field cron schedule interpreted in UTC.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schedule")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -106,7 +106,9 @@ namespace Neon
         /// <param name="functionPath">
         /// Path passed to the target Function.
         /// </param>
-        /// <param name="schedule"></param>
+        /// <param name="schedule">
+        /// A numeric five-field cron schedule interpreted in UTC.
+        /// </param>
         /// <param name="enabled"></param>
         /// <param name="version">
         /// Monotonic configuration version.

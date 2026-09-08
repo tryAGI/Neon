@@ -50,7 +50,7 @@ namespace Neon
         /// Creates a trigger for a Function visible on the branch. The required<br/>
         /// `type` discriminator selects the trigger-specific configuration. The<br/>
         /// only currently supported type is `schedule`, whose cron is a numeric<br/>
-        /// five-field expression and timezone is an IANA timezone name.<br/>
+        /// five-field expression interpreted in UTC.<br/>
         /// The name must be unique among triggers visible on the branch, including<br/>
         /// inherited triggers.<br/>
         /// **Note**: This endpoint is currently in Beta.
@@ -85,7 +85,7 @@ namespace Neon
         /// Creates a trigger for a Function visible on the branch. The required<br/>
         /// `type` discriminator selects the trigger-specific configuration. The<br/>
         /// only currently supported type is `schedule`, whose cron is a numeric<br/>
-        /// five-field expression and timezone is an IANA timezone name.<br/>
+        /// five-field expression interpreted in UTC.<br/>
         /// The name must be unique among triggers visible on the branch, including<br/>
         /// inherited triggers.<br/>
         /// **Note**: This endpoint is currently in Beta.
