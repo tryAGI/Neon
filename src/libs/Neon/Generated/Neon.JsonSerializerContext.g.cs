@@ -13,324 +13,14 @@ namespace Neon
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::Neon.JsonConverters.AdvisorCategoryJsonConverter),
-
-            typeof(global::Neon.JsonConverters.AdvisorCategoryNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.AdvisorIssueFacingJsonConverter),
-
-            typeof(global::Neon.JsonConverters.AdvisorIssueFacingNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.OperationActionJsonConverter),
-
-            typeof(global::Neon.JsonConverters.OperationActionNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.OperationStatusJsonConverter),
-
-            typeof(global::Neon.JsonConverters.OperationStatusNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectRoleJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectRoleNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectPermissionLevelJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectPermissionLevelNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectMemberGrantSourceJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectMemberGrantSourceNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectMemberOrgRoleJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectMemberOrgRoleNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ConsumptionHistoryGranularityJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ConsumptionHistoryGranularityNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectAuditLogLevelJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectAuditLogLevelNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BranchRecoveryInfoDeletionMethodJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BranchRecoveryInfoDeletionMethodNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.EndpointStateJsonConverter),
-
-            typeof(global::Neon.JsonConverters.EndpointStateNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.EndpointTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.EndpointTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.EndpointPoolerModeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.EndpointPoolerModeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.PaymentSourceBankCardBrandJsonConverter),
-
-            typeof(global::Neon.JsonConverters.PaymentSourceBankCardBrandNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BillingAccountStateJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BillingAccountStateNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BillingSubscriptionTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BillingSubscriptionTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BillingPaymentMethodJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BillingPaymentMethodNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.MemberRoleJsonConverter),
-
-            typeof(global::Neon.JsonConverters.MemberRoleNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.AuthDetailsResponseAuthMethodJsonConverter),
-
-            typeof(global::Neon.JsonConverters.AuthDetailsResponseAuthMethodNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.IdentityProviderIdJsonConverter),
-
-            typeof(global::Neon.JsonConverters.IdentityProviderIdNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.DataAPICreateRequestAuthProviderJsonConverter),
-
-            typeof(global::Neon.JsonConverters.DataAPICreateRequestAuthProviderNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthSupportedAuthProviderJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthSupportedAuthProviderNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthProviderProjectOwnedByJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthProviderProjectOwnedByNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthProviderProjectTransferStatusJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthProviderProjectTransferStatusNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthOrganizationConfigCreatorRoleJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthOrganizationConfigCreatorRoleNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthOrganizationConfigUpdateCreatorRoleJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthOrganizationConfigUpdateCreatorRoleNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthWebhookConfigEnabledEventJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthWebhookConfigEnabledEventNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthOauthProviderIdJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthOauthProviderIdNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthOauthProviderTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthOauthProviderTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthEmailServerConfigDiscriminatorTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthEmailServerConfigDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthEmailServerConfigResponseDiscriminatorTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthEmailServerConfigResponseDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthEmailVerificationMethodJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthEmailVerificationMethodNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ApplicationTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ApplicationTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BucketAccessLevelJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BucketAccessLevelNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BucketCreateRequestAccessLevelJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BucketCreateRequestAccessLevelNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BranchStorageNotEnabledReasonJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BranchStorageNotEnabledReasonNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectBranchLogSourceJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectBranchLogSourceNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectBranchLogSeverityJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectBranchLogSeverityNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectBranchLogsNotAvailableReasonJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectBranchLogsNotAvailableReasonNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectBranchLogsInvalidQueryReasonJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectBranchLogsInvalidQueryReasonNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectBranchLogsQueryRequestSortOrderJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectBranchLogsQueryRequestSortOrderNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BranchAiGatewayNotEnabledReasonJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BranchAiGatewayNotEnabledReasonNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.PresignRequestOperationJsonConverter),
-
-            typeof(global::Neon.JsonConverters.PresignRequestOperationNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.CredentialScopeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.CredentialScopeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.GrantedCredentialScopeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.GrantedCredentialScopeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.CreateCredentialRequestPrincipalTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.CreateCredentialRequestPrincipalTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.RotateCredentialResponsePrincipalTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.RotateCredentialResponsePrincipalTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonFunctionDeploymentStatusJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonFunctionDeploymentStatusNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.TriggerCreateRequestDiscriminatorTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.TriggerCreateRequestDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ScheduleTriggerCreateRequestTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ScheduleTriggerCreateRequestTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.TriggerUpdateRequestDiscriminatorTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.TriggerUpdateRequestDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ScheduleTriggerUpdateRequestTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ScheduleTriggerUpdateRequestTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.TriggerDiscriminatorTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.TriggerDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ScheduleTriggerTypeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ScheduleTriggerTypeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.FunctionDeployRequestRuntimeJsonConverter),
-
-            typeof(global::Neon.JsonConverters.FunctionDeployRequestRuntimeNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.GetProjectAdvisorSecurityIssuesMinSeverityJsonConverter),
-
-            typeof(global::Neon.JsonConverters.GetProjectAdvisorSecurityIssuesMinSeverityNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ListProjectBranchesSortByJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ListProjectBranchesSortByNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ListProjectBranchesSortOrderJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ListProjectBranchesSortOrderNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.GetOrganizationMembersSortByJsonConverter),
-
-            typeof(global::Neon.JsonConverters.GetOrganizationMembersSortByNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.GetOrganizationMembersSortOrderJsonConverter),
-
-            typeof(global::Neon.JsonConverters.GetOrganizationMembersSortOrderNullableJsonConverter),
-
-            typeof(global::Neon.JsonConverters.OrgApiKeyCreateRequestJsonConverter),
-
-            typeof(global::Neon.JsonConverters.OrgApiKeyCreateResponseJsonConverter),
-
-            typeof(global::Neon.JsonConverters.OrgApiKeyRevokeResponseJsonConverter),
-
-            typeof(global::Neon.JsonConverters.OrgApiKeysListResponseItemJsonConverter),
-
-            typeof(global::Neon.JsonConverters.ProjectRecoverResponseJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BranchAnonymizedCreateRequestJsonConverter),
-
-            typeof(global::Neon.JsonConverters.VPCEndpointWithRegionJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthEmailServerConfigJsonConverter),
-
-            typeof(global::Neon.JsonConverters.NeonAuthEmailServerConfigResponseJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BranchOperationsJsonConverter),
-
-            typeof(global::Neon.JsonConverters.BranchRecoverResponseJsonConverter),
-
-            typeof(global::Neon.JsonConverters.EndpointOperationsJsonConverter),
-
-            typeof(global::Neon.JsonConverters.DatabaseOperationsJsonConverter),
-
-            typeof(global::Neon.JsonConverters.RoleOperationsJsonConverter),
-
-            typeof(global::Neon.JsonConverters.JWKSCreationOperationJsonConverter),
-
-            typeof(global::Neon.JsonConverters.TriggerCreateRequestJsonConverter),
-
-            typeof(global::Neon.JsonConverters.TriggerUpdateRequestJsonConverter),
-
-            typeof(global::Neon.JsonConverters.TriggerJsonConverter),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchCreateRequest, global::Neon.AnnotationCreateValueRequest>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectsResponse, global::Neon.PaginationResponse, global::Neon.ProjectsApplicationsMapResponse, global::Neon.ProjectsIntegrationsMapResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectsResponse, global::Neon.PaginationResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectResponse, global::Neon.OperationsResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.OperationsResponse, global::Neon.PaginationResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchesResponse, global::Neon.AnnotationsMapResponse, global::Neon.CursorPaginationResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.AnnotationResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ConsumptionHistoryPerProjectResponse, global::Neon.PaginationResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.OrganizationMembersResponse, global::Neon.CursorPaginationResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.NeonFunctionsListResponse, global::Neon.CursorPaginationResponse>),
-
-            typeof(global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.CustomDomainsListResponse, global::Neon.CursorPaginationResponse>),
-
-            typeof(global::Neon.JsonConverters.UnixTimestampJsonConverter),
         })]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.JsonSerializerContextTypes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>), TypeInfoPropertyName = "EndpointsResponse_94af327886d2127e")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>?), TypeInfoPropertyName = "EndpointsResponse_18e24691ef0e4f53")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>?), TypeInfoPropertyName = "ConnectionURIsOptionalResponse_dba8030245622754")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.PaginationResponse))]
@@ -381,7 +71,6 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectCreateRequestProject))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectCreateRequestProjectBranch))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectUpdateRequestProject))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectTransferRequestResponse))]
@@ -700,21 +389,28 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionsListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.NeonFunction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.FunctionTriggerSchedule))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.FunctionTriggerStorageObjectCreated))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerCreateRequest), TypeInfoPropertyName = "TriggerCreateRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerCreateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.StorageObjectCreatedTriggerCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerCreateRequestDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerCreateRequestDiscriminatorType), TypeInfoPropertyName = "TriggerCreateRequestDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerCreateRequestType), TypeInfoPropertyName = "ScheduleTriggerCreateRequestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.StorageObjectCreatedTriggerCreateRequestType), TypeInfoPropertyName = "StorageObjectCreatedTriggerCreateRequestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerUpdateRequest), TypeInfoPropertyName = "TriggerUpdateRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerUpdateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.StorageObjectCreatedTriggerUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerUpdateRequestDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerUpdateRequestDiscriminatorType), TypeInfoPropertyName = "TriggerUpdateRequestDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerUpdateRequestType), TypeInfoPropertyName = "ScheduleTriggerUpdateRequestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.StorageObjectCreatedTriggerUpdateRequestType), TypeInfoPropertyName = "StorageObjectCreatedTriggerUpdateRequestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Trigger), TypeInfoPropertyName = "Trigger2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTrigger))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.StorageObjectCreatedTrigger))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerDiscriminatorType), TypeInfoPropertyName = "TriggerDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerType), TypeInfoPropertyName = "ScheduleTriggerType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.StorageObjectCreatedTriggerType), TypeInfoPropertyName = "StorageObjectCreatedTriggerType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggersListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.Trigger>))]
@@ -743,7 +439,6 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.AdvisorIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ApiKeysListResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectsResponse, global::Neon.PaginationResponse, global::Neon.ProjectsApplicationsMapResponse, global::Neon.ProjectsIntegrationsMapResponse>), TypeInfoPropertyName = "AllOfProjectsResponsePaginationResponseProjectsApplicationsMapResponseProjectsIntegrationsMapResponse2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>), TypeInfoPropertyName = "EndpointsResponse_94af327886d2127e")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectsResponse, global::Neon.PaginationResponse>), TypeInfoPropertyName = "AllOfProjectsResponsePaginationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.OperationsResponse>), TypeInfoPropertyName = "AllOfProjectResponseOperationsResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.OperationsResponse, global::Neon.PaginationResponse>), TypeInfoPropertyName = "AllOfOperationsResponsePaginationResponse2")]
@@ -762,8 +457,123 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>), TypeInfoPropertyName = "AllOfBranchResponseEndpointsOptionalResponseOperationsResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.NeonFunctionsListResponse, global::Neon.CursorPaginationResponse>), TypeInfoPropertyName = "AllOfNeonFunctionsListResponseCursorPaginationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.CustomDomainsListResponse, global::Neon.CursorPaginationResponse>), TypeInfoPropertyName = "AllOfCustomDomainsListResponseCursorPaginationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AdvisorCategory?), TypeInfoPropertyName = "NullableAdvisorCategory2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AdvisorIssueFacing?), TypeInfoPropertyName = "NullableAdvisorIssueFacing2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrgApiKeyCreateRequest?), TypeInfoPropertyName = "NullableOrgApiKeyCreateRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrgApiKeyCreateResponse?), TypeInfoPropertyName = "NullableOrgApiKeyCreateResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrgApiKeyRevokeResponse?), TypeInfoPropertyName = "NullableOrgApiKeyRevokeResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OrgApiKeysListResponseItem?), TypeInfoPropertyName = "NullableOrgApiKeysListResponseItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OperationAction?), TypeInfoPropertyName = "NullableOperationAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OperationStatus?), TypeInfoPropertyName = "NullableOperationStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectPermissionLevel?), TypeInfoPropertyName = "NullableProjectPermissionLevel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectAuditLogLevel?), TypeInfoPropertyName = "NullableProjectAuditLogLevel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectRecoverResponse?), TypeInfoPropertyName = "NullableProjectRecoverResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectRole?), TypeInfoPropertyName = "NullableProjectRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectMemberGrantSource?), TypeInfoPropertyName = "NullableProjectMemberGrantSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectMemberOrgRole?), TypeInfoPropertyName = "NullableProjectMemberOrgRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ConsumptionHistoryGranularity?), TypeInfoPropertyName = "NullableConsumptionHistoryGranularity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchRecoveryInfoDeletionMethod?), TypeInfoPropertyName = "NullableBranchRecoveryInfoDeletionMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointType?), TypeInfoPropertyName = "NullableEndpointType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchAnonymizedCreateRequest?), TypeInfoPropertyName = "NullableBranchAnonymizedCreateRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointState?), TypeInfoPropertyName = "NullableEndpointState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointPoolerMode?), TypeInfoPropertyName = "NullableEndpointPoolerMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.VPCEndpointWithRegion?), TypeInfoPropertyName = "NullableVPCEndpointWithRegion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.PaymentSourceBankCardBrand?), TypeInfoPropertyName = "NullablePaymentSourceBankCardBrand2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BillingAccountState?), TypeInfoPropertyName = "NullableBillingAccountState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BillingSubscriptionType?), TypeInfoPropertyName = "NullableBillingSubscriptionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BillingPaymentMethod?), TypeInfoPropertyName = "NullableBillingPaymentMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.MemberRole?), TypeInfoPropertyName = "NullableMemberRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.IdentityProviderId?), TypeInfoPropertyName = "NullableIdentityProviderId2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AuthDetailsResponseAuthMethod?), TypeInfoPropertyName = "NullableAuthDetailsResponseAuthMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPICreateRequestAuthProvider?), TypeInfoPropertyName = "NullableDataAPICreateRequestAuthProvider2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthSupportedAuthProvider?), TypeInfoPropertyName = "NullableNeonAuthSupportedAuthProvider2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthProviderProjectOwnedBy?), TypeInfoPropertyName = "NullableNeonAuthProviderProjectOwnedBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthProviderProjectTransferStatus?), TypeInfoPropertyName = "NullableNeonAuthProviderProjectTransferStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOrganizationConfigCreatorRole?), TypeInfoPropertyName = "NullableNeonAuthOrganizationConfigCreatorRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOrganizationConfigUpdateCreatorRole?), TypeInfoPropertyName = "NullableNeonAuthOrganizationConfigUpdateCreatorRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthEmailServerConfigResponse?), TypeInfoPropertyName = "NullableNeonAuthEmailServerConfigResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthWebhookConfigEnabledEvent?), TypeInfoPropertyName = "NullableNeonAuthWebhookConfigEnabledEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOauthProviderId?), TypeInfoPropertyName = "NullableNeonAuthOauthProviderId2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOauthProviderType?), TypeInfoPropertyName = "NullableNeonAuthOauthProviderType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthEmailServerConfig?), TypeInfoPropertyName = "NullableNeonAuthEmailServerConfig2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthEmailServerConfigDiscriminatorType?), TypeInfoPropertyName = "NullableNeonAuthEmailServerConfigDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthEmailServerConfigResponseDiscriminatorType?), TypeInfoPropertyName = "NullableNeonAuthEmailServerConfigResponseDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthEmailVerificationMethod?), TypeInfoPropertyName = "NullableNeonAuthEmailVerificationMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchOperations?), TypeInfoPropertyName = "NullableBranchOperations2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchRecoverResponse?), TypeInfoPropertyName = "NullableBranchRecoverResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointOperations?), TypeInfoPropertyName = "NullableEndpointOperations2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DatabaseOperations?), TypeInfoPropertyName = "NullableDatabaseOperations2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RoleOperations?), TypeInfoPropertyName = "NullableRoleOperations2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.JWKSCreationOperation?), TypeInfoPropertyName = "NullableJWKSCreationOperation2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ApplicationType?), TypeInfoPropertyName = "NullableApplicationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketAccessLevel?), TypeInfoPropertyName = "NullableBucketAccessLevel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketCreateRequestAccessLevel?), TypeInfoPropertyName = "NullableBucketCreateRequestAccessLevel2")]
+    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    ///
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>), TypeInfoPropertyName = "EndpointsResponse_94af327886d2127e")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>?), TypeInfoPropertyName = "EndpointsResponse_18e24691ef0e4f53")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>?), TypeInfoPropertyName = "ConnectionURIsOptionalResponse_dba8030245622754")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchStorageNotEnabledReason?), TypeInfoPropertyName = "NullableBranchStorageNotEnabledReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectBranchLogSource?), TypeInfoPropertyName = "NullableProjectBranchLogSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectBranchLogSeverity?), TypeInfoPropertyName = "NullableProjectBranchLogSeverity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectBranchLogsNotAvailableReason?), TypeInfoPropertyName = "NullableProjectBranchLogsNotAvailableReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectBranchLogsInvalidQueryReason?), TypeInfoPropertyName = "NullableProjectBranchLogsInvalidQueryReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectBranchLogsQueryRequestSortOrder?), TypeInfoPropertyName = "NullableProjectBranchLogsQueryRequestSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchAiGatewayNotEnabledReason?), TypeInfoPropertyName = "NullableBranchAiGatewayNotEnabledReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.PresignRequestOperation?), TypeInfoPropertyName = "NullablePresignRequestOperation2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CredentialScope?), TypeInfoPropertyName = "NullableCredentialScope2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.GrantedCredentialScope?), TypeInfoPropertyName = "NullableGrantedCredentialScope2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CreateCredentialRequestPrincipalType?), TypeInfoPropertyName = "NullableCreateCredentialRequestPrincipalType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RotateCredentialResponsePrincipalType?), TypeInfoPropertyName = "NullableRotateCredentialResponsePrincipalType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonFunctionDeploymentStatus?), TypeInfoPropertyName = "NullableNeonFunctionDeploymentStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerCreateRequest?), TypeInfoPropertyName = "NullableTriggerCreateRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerCreateRequestDiscriminatorType?), TypeInfoPropertyName = "NullableTriggerCreateRequestDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerCreateRequestType?), TypeInfoPropertyName = "NullableScheduleTriggerCreateRequestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.StorageObjectCreatedTriggerCreateRequestType?), TypeInfoPropertyName = "NullableStorageObjectCreatedTriggerCreateRequestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerUpdateRequest?), TypeInfoPropertyName = "NullableTriggerUpdateRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerUpdateRequestDiscriminatorType?), TypeInfoPropertyName = "NullableTriggerUpdateRequestDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerUpdateRequestType?), TypeInfoPropertyName = "NullableScheduleTriggerUpdateRequestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.StorageObjectCreatedTriggerUpdateRequestType?), TypeInfoPropertyName = "NullableStorageObjectCreatedTriggerUpdateRequestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Trigger?), TypeInfoPropertyName = "NullableTrigger2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.TriggerDiscriminatorType?), TypeInfoPropertyName = "NullableTriggerDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ScheduleTriggerType?), TypeInfoPropertyName = "NullableScheduleTriggerType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.StorageObjectCreatedTriggerType?), TypeInfoPropertyName = "NullableStorageObjectCreatedTriggerType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.FunctionDeployRequestRuntime?), TypeInfoPropertyName = "NullableFunctionDeployRequestRuntime2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchCreateRequest, global::Neon.AnnotationCreateValueRequest>?), TypeInfoPropertyName = "NullableAllOfBranchCreateRequestAnnotationCreateValueRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.GetProjectAdvisorSecurityIssuesMinSeverity?), TypeInfoPropertyName = "NullableGetProjectAdvisorSecurityIssuesMinSeverity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ListProjectBranchesSortBy?), TypeInfoPropertyName = "NullableListProjectBranchesSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ListProjectBranchesSortOrder?), TypeInfoPropertyName = "NullableListProjectBranchesSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.GetOrganizationMembersSortBy?), TypeInfoPropertyName = "NullableGetOrganizationMembersSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.GetOrganizationMembersSortOrder?), TypeInfoPropertyName = "NullableGetOrganizationMembersSortOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectsResponse, global::Neon.PaginationResponse, global::Neon.ProjectsApplicationsMapResponse, global::Neon.ProjectsIntegrationsMapResponse>?), TypeInfoPropertyName = "NullableAllOfProjectsResponsePaginationResponseProjectsApplicationsMapResponseProjectsIntegrationsMapResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectsResponse, global::Neon.PaginationResponse>?), TypeInfoPropertyName = "NullableAllOfProjectsResponsePaginationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.OperationsResponse>?), TypeInfoPropertyName = "NullableAllOfProjectResponseOperationsResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.OperationsResponse, global::Neon.PaginationResponse>?), TypeInfoPropertyName = "NullableAllOfOperationsResponsePaginationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchesResponse, global::Neon.AnnotationsMapResponse, global::Neon.CursorPaginationResponse>?), TypeInfoPropertyName = "NullableAllOfBranchesResponseAnnotationsMapResponseCursorPaginationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.AnnotationResponse>?), TypeInfoPropertyName = "NullableAllOfBranchResponseAnnotationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectResponse, global::Neon.PaginationResponse>?), TypeInfoPropertyName = "NullableAllOfConsumptionHistoryPerProjectResponsePaginationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>?), TypeInfoPropertyName = "NullableAllOfConsumptionHistoryPerProjectV2ResponsePaginationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>?), TypeInfoPropertyName = "NullableAllOfConsumptionHistoryPerBranchV2ResponsePaginationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.OrganizationMembersResponse, global::Neon.CursorPaginationResponse>?), TypeInfoPropertyName = "NullableAllOfOrganizationMembersResponseCursorPaginationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>?), TypeInfoPropertyName = "NullableAllOfBranchResponseEndpointsOptionalResponseOperationsResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.NeonFunctionsListResponse, global::Neon.CursorPaginationResponse>?), TypeInfoPropertyName = "NullableAllOfNeonFunctionsListResponseCursorPaginationResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.CustomDomainsListResponse, global::Neon.CursorPaginationResponse>?), TypeInfoPropertyName = "NullableAllOfCustomDomainsListResponseCursorPaginationResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.Jwks>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.AdvisorCategory>))]
@@ -824,7 +634,1046 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ApiKeysListResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.OrgApiKeysListResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.Snapshot>))]
+    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+    /// <summary>
+    ///
+    /// </summary>
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
+
+
+        private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static SourceGenerationContext Default { get; } = new(DefaultOptions);
+
+        private SourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options)
+            : base(options)
+        {
+        }
+
+        /// <inheritdoc />
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultOptions;
+
+        /// <inheritdoc />
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
+        {
+            return Resolver.GetTypeInfo(type, Options);
+        }
+
+         static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
+        {
+            options.Converters.Add(new global::Neon.JsonConverters.OrgApiKeyCreateRequestJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.OrgApiKeyCreateResponseJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.OrgApiKeyRevokeResponseJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.OrgApiKeysListResponseItemJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.ProjectRecoverResponseJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.BranchAnonymizedCreateRequestJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.VPCEndpointWithRegionJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.NeonAuthEmailServerConfigJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.NeonAuthEmailServerConfigResponseJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.BranchOperationsJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.BranchRecoverResponseJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.EndpointOperationsJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.DatabaseOperationsJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.RoleOperationsJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.JWKSCreationOperationJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.TriggerCreateRequestJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.TriggerUpdateRequestJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.TriggerJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchCreateRequest, global::Neon.AnnotationCreateValueRequest>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectsResponse, global::Neon.PaginationResponse, global::Neon.ProjectsApplicationsMapResponse, global::Neon.ProjectsIntegrationsMapResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectsResponse, global::Neon.PaginationResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ProjectResponse, global::Neon.OperationsResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.OperationsResponse, global::Neon.PaginationResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchesResponse, global::Neon.AnnotationsMapResponse, global::Neon.CursorPaginationResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.AnnotationResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ConsumptionHistoryPerProjectResponse, global::Neon.PaginationResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.OrganizationMembersResponse, global::Neon.CursorPaginationResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.NeonFunctionsListResponse, global::Neon.CursorPaginationResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.AllOfJsonConverter<global::Neon.CustomDomainsListResponse, global::Neon.CursorPaginationResponse>());
+            options.Converters.Add(new global::Neon.JsonConverters.UnixTimestampJsonConverter());
+            options.Converters.Add(new LazyEnumJsonConverterFactory());
+        }
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                TypeInfoResolver = Resolver,
+            };
+            AddConverters(options);
+
+            return options;
+        }
+
+
+        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
+        {
+            public override bool CanConvert(global::System.Type typeToConvert)
+            {
+                return
+                    typeToConvert == typeof(global::Neon.AdvisorCategory)
+
+                    || typeToConvert == typeof(global::Neon.AdvisorCategory?)
+
+                    || typeToConvert == typeof(global::Neon.AdvisorIssueFacing)
+
+                    || typeToConvert == typeof(global::Neon.AdvisorIssueFacing?)
+
+                    || typeToConvert == typeof(global::Neon.OperationAction)
+
+                    || typeToConvert == typeof(global::Neon.OperationAction?)
+
+                    || typeToConvert == typeof(global::Neon.OperationStatus)
+
+                    || typeToConvert == typeof(global::Neon.OperationStatus?)
+
+                    || typeToConvert == typeof(global::Neon.ProjectRole)
+
+                    || typeToConvert == typeof(global::Neon.ProjectRole?)
+
+                    || typeToConvert == typeof(global::Neon.ProjectPermissionLevel)
+
+                    || typeToConvert == typeof(global::Neon.ProjectPermissionLevel?)
+
+                    || typeToConvert == typeof(global::Neon.ProjectMemberGrantSource)
+
+                    || typeToConvert == typeof(global::Neon.ProjectMemberGrantSource?)
+
+                    || typeToConvert == typeof(global::Neon.ProjectMemberOrgRole)
+
+                    || typeToConvert == typeof(global::Neon.ProjectMemberOrgRole?)
+
+                    || typeToConvert == typeof(global::Neon.ConsumptionHistoryGranularity)
+
+                    || typeToConvert == typeof(global::Neon.ConsumptionHistoryGranularity?)
+
+                    || typeToConvert == typeof(global::Neon.ProjectAuditLogLevel)
+
+                    || typeToConvert == typeof(global::Neon.ProjectAuditLogLevel?)
+
+                    || typeToConvert == typeof(global::Neon.BranchRecoveryInfoDeletionMethod)
+
+                    || typeToConvert == typeof(global::Neon.BranchRecoveryInfoDeletionMethod?)
+
+                    || typeToConvert == typeof(global::Neon.EndpointState)
+
+                    || typeToConvert == typeof(global::Neon.EndpointState?)
+
+                    || typeToConvert == typeof(global::Neon.EndpointType)
+
+                    || typeToConvert == typeof(global::Neon.EndpointType?)
+
+                    || typeToConvert == typeof(global::Neon.EndpointPoolerMode)
+
+                    || typeToConvert == typeof(global::Neon.EndpointPoolerMode?)
+
+                    || typeToConvert == typeof(global::Neon.PaymentSourceBankCardBrand)
+
+                    || typeToConvert == typeof(global::Neon.PaymentSourceBankCardBrand?)
+
+                    || typeToConvert == typeof(global::Neon.BillingAccountState)
+
+                    || typeToConvert == typeof(global::Neon.BillingAccountState?)
+
+                    || typeToConvert == typeof(global::Neon.BillingSubscriptionType)
+
+                    || typeToConvert == typeof(global::Neon.BillingSubscriptionType?)
+
+                    || typeToConvert == typeof(global::Neon.BillingPaymentMethod)
+
+                    || typeToConvert == typeof(global::Neon.BillingPaymentMethod?)
+
+                    || typeToConvert == typeof(global::Neon.MemberRole)
+
+                    || typeToConvert == typeof(global::Neon.MemberRole?)
+
+                    || typeToConvert == typeof(global::Neon.AuthDetailsResponseAuthMethod)
+
+                    || typeToConvert == typeof(global::Neon.AuthDetailsResponseAuthMethod?)
+
+                    || typeToConvert == typeof(global::Neon.IdentityProviderId)
+
+                    || typeToConvert == typeof(global::Neon.IdentityProviderId?)
+
+                    || typeToConvert == typeof(global::Neon.DataAPICreateRequestAuthProvider)
+
+                    || typeToConvert == typeof(global::Neon.DataAPICreateRequestAuthProvider?)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthSupportedAuthProvider)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthSupportedAuthProvider?)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthProviderProjectOwnedBy)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthProviderProjectOwnedBy?)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthProviderProjectTransferStatus)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthProviderProjectTransferStatus?)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthOrganizationConfigCreatorRole)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthOrganizationConfigCreatorRole?)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthOrganizationConfigUpdateCreatorRole)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthOrganizationConfigUpdateCreatorRole?)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthWebhookConfigEnabledEvent)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthWebhookConfigEnabledEvent?)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthOauthProviderId)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthOauthProviderId?)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthOauthProviderType)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthOauthProviderType?)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthEmailServerConfigDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthEmailServerConfigDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthEmailServerConfigResponseDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthEmailServerConfigResponseDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthEmailVerificationMethod)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthEmailVerificationMethod?)
+
+                    || typeToConvert == typeof(global::Neon.ApplicationType)
+
+                    || typeToConvert == typeof(global::Neon.ApplicationType?)
+
+                    || typeToConvert == typeof(global::Neon.BucketAccessLevel)
+
+                    || typeToConvert == typeof(global::Neon.BucketAccessLevel?)
+
+                    || typeToConvert == typeof(global::Neon.BucketCreateRequestAccessLevel)
+
+                    || typeToConvert == typeof(global::Neon.BucketCreateRequestAccessLevel?)
+
+                    || typeToConvert == typeof(global::Neon.BranchStorageNotEnabledReason)
+
+                    || typeToConvert == typeof(global::Neon.BranchStorageNotEnabledReason?)
+
+                    || typeToConvert == typeof(global::Neon.ProjectBranchLogSource)
+
+                    || typeToConvert == typeof(global::Neon.ProjectBranchLogSource?)
+
+                    || typeToConvert == typeof(global::Neon.ProjectBranchLogSeverity)
+
+                    || typeToConvert == typeof(global::Neon.ProjectBranchLogSeverity?)
+
+                    || typeToConvert == typeof(global::Neon.ProjectBranchLogsNotAvailableReason)
+
+                    || typeToConvert == typeof(global::Neon.ProjectBranchLogsNotAvailableReason?)
+
+                    || typeToConvert == typeof(global::Neon.ProjectBranchLogsInvalidQueryReason)
+
+                    || typeToConvert == typeof(global::Neon.ProjectBranchLogsInvalidQueryReason?)
+
+                    || typeToConvert == typeof(global::Neon.ProjectBranchLogsQueryRequestSortOrder)
+
+                    || typeToConvert == typeof(global::Neon.ProjectBranchLogsQueryRequestSortOrder?)
+
+                    || typeToConvert == typeof(global::Neon.BranchAiGatewayNotEnabledReason)
+
+                    || typeToConvert == typeof(global::Neon.BranchAiGatewayNotEnabledReason?)
+
+                    || typeToConvert == typeof(global::Neon.PresignRequestOperation)
+
+                    || typeToConvert == typeof(global::Neon.PresignRequestOperation?)
+
+                    || typeToConvert == typeof(global::Neon.CredentialScope)
+
+                    || typeToConvert == typeof(global::Neon.CredentialScope?)
+
+                    || typeToConvert == typeof(global::Neon.GrantedCredentialScope)
+
+                    || typeToConvert == typeof(global::Neon.GrantedCredentialScope?)
+
+                    || typeToConvert == typeof(global::Neon.CreateCredentialRequestPrincipalType)
+
+                    || typeToConvert == typeof(global::Neon.CreateCredentialRequestPrincipalType?)
+
+                    || typeToConvert == typeof(global::Neon.RotateCredentialResponsePrincipalType)
+
+                    || typeToConvert == typeof(global::Neon.RotateCredentialResponsePrincipalType?)
+
+                    || typeToConvert == typeof(global::Neon.NeonFunctionDeploymentStatus)
+
+                    || typeToConvert == typeof(global::Neon.NeonFunctionDeploymentStatus?)
+
+                    || typeToConvert == typeof(global::Neon.TriggerCreateRequestDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Neon.TriggerCreateRequestDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Neon.ScheduleTriggerCreateRequestType)
+
+                    || typeToConvert == typeof(global::Neon.ScheduleTriggerCreateRequestType?)
+
+                    || typeToConvert == typeof(global::Neon.StorageObjectCreatedTriggerCreateRequestType)
+
+                    || typeToConvert == typeof(global::Neon.StorageObjectCreatedTriggerCreateRequestType?)
+
+                    || typeToConvert == typeof(global::Neon.TriggerUpdateRequestDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Neon.TriggerUpdateRequestDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Neon.ScheduleTriggerUpdateRequestType)
+
+                    || typeToConvert == typeof(global::Neon.ScheduleTriggerUpdateRequestType?)
+
+                    || typeToConvert == typeof(global::Neon.StorageObjectCreatedTriggerUpdateRequestType)
+
+                    || typeToConvert == typeof(global::Neon.StorageObjectCreatedTriggerUpdateRequestType?)
+
+                    || typeToConvert == typeof(global::Neon.TriggerDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Neon.TriggerDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Neon.ScheduleTriggerType)
+
+                    || typeToConvert == typeof(global::Neon.ScheduleTriggerType?)
+
+                    || typeToConvert == typeof(global::Neon.StorageObjectCreatedTriggerType)
+
+                    || typeToConvert == typeof(global::Neon.StorageObjectCreatedTriggerType?)
+
+                    || typeToConvert == typeof(global::Neon.FunctionDeployRequestRuntime)
+
+                    || typeToConvert == typeof(global::Neon.FunctionDeployRequestRuntime?)
+
+                    || typeToConvert == typeof(global::Neon.GetProjectAdvisorSecurityIssuesMinSeverity)
+
+                    || typeToConvert == typeof(global::Neon.GetProjectAdvisorSecurityIssuesMinSeverity?)
+
+                    || typeToConvert == typeof(global::Neon.ListProjectBranchesSortBy)
+
+                    || typeToConvert == typeof(global::Neon.ListProjectBranchesSortBy?)
+
+                    || typeToConvert == typeof(global::Neon.ListProjectBranchesSortOrder)
+
+                    || typeToConvert == typeof(global::Neon.ListProjectBranchesSortOrder?)
+
+                    || typeToConvert == typeof(global::Neon.GetOrganizationMembersSortBy)
+
+                    || typeToConvert == typeof(global::Neon.GetOrganizationMembersSortBy?)
+
+                    || typeToConvert == typeof(global::Neon.GetOrganizationMembersSortOrder)
+
+                    || typeToConvert == typeof(global::Neon.GetOrganizationMembersSortOrder?);
+            }
+
+            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
+                global::System.Type typeToConvert,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                if (typeToConvert == typeof(global::Neon.AdvisorCategory))
+                {
+                    return new global::Neon.JsonConverters.AdvisorCategoryJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.AdvisorCategory?))
+                {
+                    return new global::Neon.JsonConverters.AdvisorCategoryNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.AdvisorIssueFacing))
+                {
+                    return new global::Neon.JsonConverters.AdvisorIssueFacingJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.AdvisorIssueFacing?))
+                {
+                    return new global::Neon.JsonConverters.AdvisorIssueFacingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.OperationAction))
+                {
+                    return new global::Neon.JsonConverters.OperationActionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.OperationAction?))
+                {
+                    return new global::Neon.JsonConverters.OperationActionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.OperationStatus))
+                {
+                    return new global::Neon.JsonConverters.OperationStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.OperationStatus?))
+                {
+                    return new global::Neon.JsonConverters.OperationStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectRole))
+                {
+                    return new global::Neon.JsonConverters.ProjectRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectRole?))
+                {
+                    return new global::Neon.JsonConverters.ProjectRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectPermissionLevel))
+                {
+                    return new global::Neon.JsonConverters.ProjectPermissionLevelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectPermissionLevel?))
+                {
+                    return new global::Neon.JsonConverters.ProjectPermissionLevelNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectMemberGrantSource))
+                {
+                    return new global::Neon.JsonConverters.ProjectMemberGrantSourceJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectMemberGrantSource?))
+                {
+                    return new global::Neon.JsonConverters.ProjectMemberGrantSourceNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectMemberOrgRole))
+                {
+                    return new global::Neon.JsonConverters.ProjectMemberOrgRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectMemberOrgRole?))
+                {
+                    return new global::Neon.JsonConverters.ProjectMemberOrgRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ConsumptionHistoryGranularity))
+                {
+                    return new global::Neon.JsonConverters.ConsumptionHistoryGranularityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ConsumptionHistoryGranularity?))
+                {
+                    return new global::Neon.JsonConverters.ConsumptionHistoryGranularityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectAuditLogLevel))
+                {
+                    return new global::Neon.JsonConverters.ProjectAuditLogLevelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectAuditLogLevel?))
+                {
+                    return new global::Neon.JsonConverters.ProjectAuditLogLevelNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BranchRecoveryInfoDeletionMethod))
+                {
+                    return new global::Neon.JsonConverters.BranchRecoveryInfoDeletionMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BranchRecoveryInfoDeletionMethod?))
+                {
+                    return new global::Neon.JsonConverters.BranchRecoveryInfoDeletionMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.EndpointState))
+                {
+                    return new global::Neon.JsonConverters.EndpointStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.EndpointState?))
+                {
+                    return new global::Neon.JsonConverters.EndpointStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.EndpointType))
+                {
+                    return new global::Neon.JsonConverters.EndpointTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.EndpointType?))
+                {
+                    return new global::Neon.JsonConverters.EndpointTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.EndpointPoolerMode))
+                {
+                    return new global::Neon.JsonConverters.EndpointPoolerModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.EndpointPoolerMode?))
+                {
+                    return new global::Neon.JsonConverters.EndpointPoolerModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.PaymentSourceBankCardBrand))
+                {
+                    return new global::Neon.JsonConverters.PaymentSourceBankCardBrandJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.PaymentSourceBankCardBrand?))
+                {
+                    return new global::Neon.JsonConverters.PaymentSourceBankCardBrandNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BillingAccountState))
+                {
+                    return new global::Neon.JsonConverters.BillingAccountStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BillingAccountState?))
+                {
+                    return new global::Neon.JsonConverters.BillingAccountStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BillingSubscriptionType))
+                {
+                    return new global::Neon.JsonConverters.BillingSubscriptionTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BillingSubscriptionType?))
+                {
+                    return new global::Neon.JsonConverters.BillingSubscriptionTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BillingPaymentMethod))
+                {
+                    return new global::Neon.JsonConverters.BillingPaymentMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BillingPaymentMethod?))
+                {
+                    return new global::Neon.JsonConverters.BillingPaymentMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.MemberRole))
+                {
+                    return new global::Neon.JsonConverters.MemberRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.MemberRole?))
+                {
+                    return new global::Neon.JsonConverters.MemberRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.AuthDetailsResponseAuthMethod))
+                {
+                    return new global::Neon.JsonConverters.AuthDetailsResponseAuthMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.AuthDetailsResponseAuthMethod?))
+                {
+                    return new global::Neon.JsonConverters.AuthDetailsResponseAuthMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.IdentityProviderId))
+                {
+                    return new global::Neon.JsonConverters.IdentityProviderIdJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.IdentityProviderId?))
+                {
+                    return new global::Neon.JsonConverters.IdentityProviderIdNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.DataAPICreateRequestAuthProvider))
+                {
+                    return new global::Neon.JsonConverters.DataAPICreateRequestAuthProviderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.DataAPICreateRequestAuthProvider?))
+                {
+                    return new global::Neon.JsonConverters.DataAPICreateRequestAuthProviderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthSupportedAuthProvider))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthSupportedAuthProviderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthSupportedAuthProvider?))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthSupportedAuthProviderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthProviderProjectOwnedBy))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthProviderProjectOwnedByJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthProviderProjectOwnedBy?))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthProviderProjectOwnedByNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthProviderProjectTransferStatus))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthProviderProjectTransferStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthProviderProjectTransferStatus?))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthProviderProjectTransferStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthOrganizationConfigCreatorRole))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthOrganizationConfigCreatorRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthOrganizationConfigCreatorRole?))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthOrganizationConfigCreatorRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthOrganizationConfigUpdateCreatorRole))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthOrganizationConfigUpdateCreatorRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthOrganizationConfigUpdateCreatorRole?))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthOrganizationConfigUpdateCreatorRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthWebhookConfigEnabledEvent))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthWebhookConfigEnabledEventJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthWebhookConfigEnabledEvent?))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthWebhookConfigEnabledEventNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthOauthProviderId))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthOauthProviderIdJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthOauthProviderId?))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthOauthProviderIdNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthOauthProviderType))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthOauthProviderTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthOauthProviderType?))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthOauthProviderTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthEmailServerConfigDiscriminatorType))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthEmailServerConfigDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthEmailServerConfigDiscriminatorType?))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthEmailServerConfigDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthEmailServerConfigResponseDiscriminatorType))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthEmailServerConfigResponseDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthEmailServerConfigResponseDiscriminatorType?))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthEmailServerConfigResponseDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthEmailVerificationMethod))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthEmailVerificationMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthEmailVerificationMethod?))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthEmailVerificationMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ApplicationType))
+                {
+                    return new global::Neon.JsonConverters.ApplicationTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ApplicationType?))
+                {
+                    return new global::Neon.JsonConverters.ApplicationTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BucketAccessLevel))
+                {
+                    return new global::Neon.JsonConverters.BucketAccessLevelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BucketAccessLevel?))
+                {
+                    return new global::Neon.JsonConverters.BucketAccessLevelNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BucketCreateRequestAccessLevel))
+                {
+                    return new global::Neon.JsonConverters.BucketCreateRequestAccessLevelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BucketCreateRequestAccessLevel?))
+                {
+                    return new global::Neon.JsonConverters.BucketCreateRequestAccessLevelNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BranchStorageNotEnabledReason))
+                {
+                    return new global::Neon.JsonConverters.BranchStorageNotEnabledReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BranchStorageNotEnabledReason?))
+                {
+                    return new global::Neon.JsonConverters.BranchStorageNotEnabledReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectBranchLogSource))
+                {
+                    return new global::Neon.JsonConverters.ProjectBranchLogSourceJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectBranchLogSource?))
+                {
+                    return new global::Neon.JsonConverters.ProjectBranchLogSourceNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectBranchLogSeverity))
+                {
+                    return new global::Neon.JsonConverters.ProjectBranchLogSeverityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectBranchLogSeverity?))
+                {
+                    return new global::Neon.JsonConverters.ProjectBranchLogSeverityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectBranchLogsNotAvailableReason))
+                {
+                    return new global::Neon.JsonConverters.ProjectBranchLogsNotAvailableReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectBranchLogsNotAvailableReason?))
+                {
+                    return new global::Neon.JsonConverters.ProjectBranchLogsNotAvailableReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectBranchLogsInvalidQueryReason))
+                {
+                    return new global::Neon.JsonConverters.ProjectBranchLogsInvalidQueryReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectBranchLogsInvalidQueryReason?))
+                {
+                    return new global::Neon.JsonConverters.ProjectBranchLogsInvalidQueryReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectBranchLogsQueryRequestSortOrder))
+                {
+                    return new global::Neon.JsonConverters.ProjectBranchLogsQueryRequestSortOrderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ProjectBranchLogsQueryRequestSortOrder?))
+                {
+                    return new global::Neon.JsonConverters.ProjectBranchLogsQueryRequestSortOrderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BranchAiGatewayNotEnabledReason))
+                {
+                    return new global::Neon.JsonConverters.BranchAiGatewayNotEnabledReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.BranchAiGatewayNotEnabledReason?))
+                {
+                    return new global::Neon.JsonConverters.BranchAiGatewayNotEnabledReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.PresignRequestOperation))
+                {
+                    return new global::Neon.JsonConverters.PresignRequestOperationJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.PresignRequestOperation?))
+                {
+                    return new global::Neon.JsonConverters.PresignRequestOperationNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.CredentialScope))
+                {
+                    return new global::Neon.JsonConverters.CredentialScopeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.CredentialScope?))
+                {
+                    return new global::Neon.JsonConverters.CredentialScopeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.GrantedCredentialScope))
+                {
+                    return new global::Neon.JsonConverters.GrantedCredentialScopeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.GrantedCredentialScope?))
+                {
+                    return new global::Neon.JsonConverters.GrantedCredentialScopeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.CreateCredentialRequestPrincipalType))
+                {
+                    return new global::Neon.JsonConverters.CreateCredentialRequestPrincipalTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.CreateCredentialRequestPrincipalType?))
+                {
+                    return new global::Neon.JsonConverters.CreateCredentialRequestPrincipalTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.RotateCredentialResponsePrincipalType))
+                {
+                    return new global::Neon.JsonConverters.RotateCredentialResponsePrincipalTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.RotateCredentialResponsePrincipalType?))
+                {
+                    return new global::Neon.JsonConverters.RotateCredentialResponsePrincipalTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonFunctionDeploymentStatus))
+                {
+                    return new global::Neon.JsonConverters.NeonFunctionDeploymentStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonFunctionDeploymentStatus?))
+                {
+                    return new global::Neon.JsonConverters.NeonFunctionDeploymentStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.TriggerCreateRequestDiscriminatorType))
+                {
+                    return new global::Neon.JsonConverters.TriggerCreateRequestDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.TriggerCreateRequestDiscriminatorType?))
+                {
+                    return new global::Neon.JsonConverters.TriggerCreateRequestDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ScheduleTriggerCreateRequestType))
+                {
+                    return new global::Neon.JsonConverters.ScheduleTriggerCreateRequestTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ScheduleTriggerCreateRequestType?))
+                {
+                    return new global::Neon.JsonConverters.ScheduleTriggerCreateRequestTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.StorageObjectCreatedTriggerCreateRequestType))
+                {
+                    return new global::Neon.JsonConverters.StorageObjectCreatedTriggerCreateRequestTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.StorageObjectCreatedTriggerCreateRequestType?))
+                {
+                    return new global::Neon.JsonConverters.StorageObjectCreatedTriggerCreateRequestTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.TriggerUpdateRequestDiscriminatorType))
+                {
+                    return new global::Neon.JsonConverters.TriggerUpdateRequestDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.TriggerUpdateRequestDiscriminatorType?))
+                {
+                    return new global::Neon.JsonConverters.TriggerUpdateRequestDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ScheduleTriggerUpdateRequestType))
+                {
+                    return new global::Neon.JsonConverters.ScheduleTriggerUpdateRequestTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ScheduleTriggerUpdateRequestType?))
+                {
+                    return new global::Neon.JsonConverters.ScheduleTriggerUpdateRequestTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.StorageObjectCreatedTriggerUpdateRequestType))
+                {
+                    return new global::Neon.JsonConverters.StorageObjectCreatedTriggerUpdateRequestTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.StorageObjectCreatedTriggerUpdateRequestType?))
+                {
+                    return new global::Neon.JsonConverters.StorageObjectCreatedTriggerUpdateRequestTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.TriggerDiscriminatorType))
+                {
+                    return new global::Neon.JsonConverters.TriggerDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.TriggerDiscriminatorType?))
+                {
+                    return new global::Neon.JsonConverters.TriggerDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ScheduleTriggerType))
+                {
+                    return new global::Neon.JsonConverters.ScheduleTriggerTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ScheduleTriggerType?))
+                {
+                    return new global::Neon.JsonConverters.ScheduleTriggerTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.StorageObjectCreatedTriggerType))
+                {
+                    return new global::Neon.JsonConverters.StorageObjectCreatedTriggerTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.StorageObjectCreatedTriggerType?))
+                {
+                    return new global::Neon.JsonConverters.StorageObjectCreatedTriggerTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.FunctionDeployRequestRuntime))
+                {
+                    return new global::Neon.JsonConverters.FunctionDeployRequestRuntimeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.FunctionDeployRequestRuntime?))
+                {
+                    return new global::Neon.JsonConverters.FunctionDeployRequestRuntimeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.GetProjectAdvisorSecurityIssuesMinSeverity))
+                {
+                    return new global::Neon.JsonConverters.GetProjectAdvisorSecurityIssuesMinSeverityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.GetProjectAdvisorSecurityIssuesMinSeverity?))
+                {
+                    return new global::Neon.JsonConverters.GetProjectAdvisorSecurityIssuesMinSeverityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ListProjectBranchesSortBy))
+                {
+                    return new global::Neon.JsonConverters.ListProjectBranchesSortByJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ListProjectBranchesSortBy?))
+                {
+                    return new global::Neon.JsonConverters.ListProjectBranchesSortByNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ListProjectBranchesSortOrder))
+                {
+                    return new global::Neon.JsonConverters.ListProjectBranchesSortOrderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.ListProjectBranchesSortOrder?))
+                {
+                    return new global::Neon.JsonConverters.ListProjectBranchesSortOrderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.GetOrganizationMembersSortBy))
+                {
+                    return new global::Neon.JsonConverters.GetOrganizationMembersSortByJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.GetOrganizationMembersSortBy?))
+                {
+                    return new global::Neon.JsonConverters.GetOrganizationMembersSortByNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.GetOrganizationMembersSortOrder))
+                {
+                    return new global::Neon.JsonConverters.GetOrganizationMembersSortOrderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.GetOrganizationMembersSortOrder?))
+                {
+                    return new global::Neon.JsonConverters.GetOrganizationMembersSortOrderNullableJsonConverter();
+                }
+                throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
+            }
+        }
+
+        private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {
+            private readonly object _gate = new();
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[2];
+
+            public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                global::System.Type type,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                for (var index = 0; index < _resolvers.Length; index++)
+                {
+                    var typeInfo = GetResolver(index).GetTypeInfo(type, options);
+                    if (typeInfo is not null)
+                    {
+                        return typeInfo;
+                    }
+                }
+
+                return null;
+            }
+
+            private global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver GetResolver(int index)
+            {
+                var resolver = global::System.Threading.Volatile.Read(ref _resolvers[index]);
+                if (resolver is not null)
+                {
+                    return resolver;
+                }
+
+                lock (_gate)
+                {
+                    return _resolvers[index] ??= CreateResolver(index);
+                }
+            }
+
+            private static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver CreateResolver(int index)
+            {
+                return index switch
+                {
+                    0 => new SourceGenerationContextChunk0(new global::System.Text.Json.JsonSerializerOptions()),
+
+                    1 => new SourceGenerationContextChunk1(new global::System.Text.Json.JsonSerializerOptions()),
+                    _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
+                };
+            }
+        }
     }
 }

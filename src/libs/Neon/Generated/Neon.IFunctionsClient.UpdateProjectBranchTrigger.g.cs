@@ -7,13 +7,18 @@ namespace Neon
         /// <summary>
         /// Update a trigger<br/>
         /// Applies a partial update. The required `type` discriminator must identify<br/>
-        /// the existing trigger kind; the only currently supported type is<br/>
-        /// `schedule`. Editing an inherited trigger creates a child-local shadow<br/>
-        /// with the same `trigger_id`; it remains disabled unless this request<br/>
-        /// explicitly enables it. Updating the schedule or enabled state increments<br/>
-        /// `version` and recomputes `next_run_at`.<br/>
+        /// the existing trigger kind. The supported types are `schedule` and<br/>
+        /// `storage_object_created`. Editing an inherited trigger creates a<br/>
+        /// child-local shadow with the same `trigger_id`; it remains disabled unless<br/>
+        /// this request explicitly enables it. For a schedule trigger, updating the<br/>
+        /// schedule or enabled state increments `version` and recomputes<br/>
+        /// `next_run_at`.<br/>
         /// Disabling stops future scheduling but does not cancel occurrences already<br/>
-        /// committed for delivery.<br/>
+        /// committed for delivery. For `storage_object_created`, the configuration<br/>
+        /// selects one exact bucket. An omitted object-key prefix matches every key<br/>
+        /// in that bucket; a present prefix is matched byte-for-byte and<br/>
+        /// case-sensitively against the full key, without path normalization or a<br/>
+        /// path-segment boundary.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
@@ -34,13 +39,18 @@ namespace Neon
         /// <summary>
         /// Update a trigger<br/>
         /// Applies a partial update. The required `type` discriminator must identify<br/>
-        /// the existing trigger kind; the only currently supported type is<br/>
-        /// `schedule`. Editing an inherited trigger creates a child-local shadow<br/>
-        /// with the same `trigger_id`; it remains disabled unless this request<br/>
-        /// explicitly enables it. Updating the schedule or enabled state increments<br/>
-        /// `version` and recomputes `next_run_at`.<br/>
+        /// the existing trigger kind. The supported types are `schedule` and<br/>
+        /// `storage_object_created`. Editing an inherited trigger creates a<br/>
+        /// child-local shadow with the same `trigger_id`; it remains disabled unless<br/>
+        /// this request explicitly enables it. For a schedule trigger, updating the<br/>
+        /// schedule or enabled state increments `version` and recomputes<br/>
+        /// `next_run_at`.<br/>
         /// Disabling stops future scheduling but does not cancel occurrences already<br/>
-        /// committed for delivery.<br/>
+        /// committed for delivery. For `storage_object_created`, the configuration<br/>
+        /// selects one exact bucket. An omitted object-key prefix matches every key<br/>
+        /// in that bucket; a present prefix is matched byte-for-byte and<br/>
+        /// case-sensitively against the full key, without path normalization or a<br/>
+        /// path-segment boundary.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>

@@ -28,10 +28,19 @@ namespace Neon.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Neon.ScheduleTriggerUpdateRequest)}");
                 schedule = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Neon.StorageObjectCreatedTriggerUpdateRequest? storageObjectCreated = default;
+            if (discriminator?.Type == global::Neon.TriggerUpdateRequestDiscriminatorType.StorageObjectCreated)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.StorageObjectCreatedTriggerUpdateRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.StorageObjectCreatedTriggerUpdateRequest> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Neon.StorageObjectCreatedTriggerUpdateRequest)}");
+                storageObjectCreated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Neon.TriggerUpdateRequest(
                 discriminator?.Type,
-                schedule
+                schedule,
+
+                storageObjectCreated
                 );
 
             return __value;
@@ -51,6 +60,12 @@ namespace Neon.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.ScheduleTriggerUpdateRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.ScheduleTriggerUpdateRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.ScheduleTriggerUpdateRequest).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Schedule!, typeInfo);
+            }
+            else if (value.IsStorageObjectCreated)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.StorageObjectCreatedTriggerUpdateRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.StorageObjectCreatedTriggerUpdateRequest?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.StorageObjectCreatedTriggerUpdateRequest).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StorageObjectCreated!, typeInfo);
             }
         }
     }

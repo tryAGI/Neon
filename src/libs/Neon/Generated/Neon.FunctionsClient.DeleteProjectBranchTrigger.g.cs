@@ -44,8 +44,9 @@ namespace Neon
         /// Delete a trigger<br/>
         /// Deletes a branch-local trigger or writes a branch-local tombstone for an<br/>
         /// inherited trigger so it does not reappear. Deletion stops future<br/>
-        /// scheduling but does not cancel occurrences already committed for delivery.<br/>
-        /// The only currently supported trigger type is `schedule`.<br/>
+        /// scheduling or storage-event matching but does not cancel invocations<br/>
+        /// already committed for delivery. The supported trigger types are<br/>
+        /// `schedule` and `storage_object_created`.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
@@ -73,8 +74,9 @@ namespace Neon
         /// Delete a trigger<br/>
         /// Deletes a branch-local trigger or writes a branch-local tombstone for an<br/>
         /// inherited trigger so it does not reappear. Deletion stops future<br/>
-        /// scheduling but does not cancel occurrences already committed for delivery.<br/>
-        /// The only currently supported trigger type is `schedule`.<br/>
+        /// scheduling or storage-event matching but does not cancel invocations<br/>
+        /// already committed for delivery. The supported trigger types are<br/>
+        /// `schedule` and `storage_object_created`.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>

@@ -4,14 +4,10 @@
 namespace Neon
 {
     /// <summary>
-    ///
+    /// Trigger type discriminator.
     /// </summary>
-    public enum TriggerDiscriminatorType
+    public enum StorageObjectCreatedTriggerCreateRequestType
     {
-        /// <summary>
-        ///
-        /// </summary>
-        Schedule,
         /// <summary>
         ///
         /// </summary>
@@ -21,29 +17,27 @@ namespace Neon
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class TriggerDiscriminatorTypeExtensions
+    public static class StorageObjectCreatedTriggerCreateRequestTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this TriggerDiscriminatorType value)
+        public static string ToValueString(this StorageObjectCreatedTriggerCreateRequestType value)
         {
             return value switch
             {
-                TriggerDiscriminatorType.Schedule => "schedule",
-                TriggerDiscriminatorType.StorageObjectCreated => "storage_object_created",
+                StorageObjectCreatedTriggerCreateRequestType.StorageObjectCreated => "storage_object_created",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TriggerDiscriminatorType? ToEnum(string value)
+        public static StorageObjectCreatedTriggerCreateRequestType? ToEnum(string value)
         {
             return value switch
             {
-                "schedule" => TriggerDiscriminatorType.Schedule,
-                "storage_object_created" => TriggerDiscriminatorType.StorageObjectCreated,
+                "storage_object_created" => StorageObjectCreatedTriggerCreateRequestType.StorageObjectCreated,
                 _ => null,
             };
         }
