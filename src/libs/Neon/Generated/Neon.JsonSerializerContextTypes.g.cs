@@ -1509,243 +1509,271 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.TriggerCreateRequest? Type369 { get; set; }
+        public global::Neon.FunctionTriggerStorageObjectCreated? Type369 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ScheduleTriggerCreateRequest? Type370 { get; set; }
+        public global::Neon.TriggerCreateRequest? Type370 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.TriggerCreateRequestDiscriminator? Type371 { get; set; }
+        public global::Neon.ScheduleTriggerCreateRequest? Type371 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.TriggerCreateRequestDiscriminatorType? Type372 { get; set; }
+        public global::Neon.StorageObjectCreatedTriggerCreateRequest? Type372 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ScheduleTriggerCreateRequestType? Type373 { get; set; }
+        public global::Neon.TriggerCreateRequestDiscriminator? Type373 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.TriggerUpdateRequest? Type374 { get; set; }
+        public global::Neon.TriggerCreateRequestDiscriminatorType? Type374 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ScheduleTriggerUpdateRequest? Type375 { get; set; }
+        public global::Neon.ScheduleTriggerCreateRequestType? Type375 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.TriggerUpdateRequestDiscriminator? Type376 { get; set; }
+        public global::Neon.StorageObjectCreatedTriggerCreateRequestType? Type376 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.TriggerUpdateRequestDiscriminatorType? Type377 { get; set; }
+        public global::Neon.TriggerUpdateRequest? Type377 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ScheduleTriggerUpdateRequestType? Type378 { get; set; }
+        public global::Neon.ScheduleTriggerUpdateRequest? Type378 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.Trigger? Type379 { get; set; }
+        public global::Neon.StorageObjectCreatedTriggerUpdateRequest? Type379 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ScheduleTrigger? Type380 { get; set; }
+        public global::Neon.TriggerUpdateRequestDiscriminator? Type380 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.TriggerDiscriminator? Type381 { get; set; }
+        public global::Neon.TriggerUpdateRequestDiscriminatorType? Type381 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.TriggerDiscriminatorType? Type382 { get; set; }
+        public global::Neon.ScheduleTriggerUpdateRequestType? Type382 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ScheduleTriggerType? Type383 { get; set; }
+        public global::Neon.StorageObjectCreatedTriggerUpdateRequestType? Type383 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.TriggerResponse? Type384 { get; set; }
+        public global::Neon.Trigger? Type384 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.TriggersListResponse? Type385 { get; set; }
+        public global::Neon.ScheduleTrigger? Type385 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Neon.Trigger>? Type386 { get; set; }
+        public global::Neon.StorageObjectCreatedTrigger? Type386 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.CustomDomain? Type387 { get; set; }
+        public global::Neon.TriggerDiscriminator? Type387 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.CustomDomainRegisterRequest? Type388 { get; set; }
+        public global::Neon.TriggerDiscriminatorType? Type388 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.CustomDomainsListResponse? Type389 { get; set; }
+        public global::Neon.ScheduleTriggerType? Type389 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Neon.CustomDomain>? Type390 { get; set; }
+        public global::Neon.StorageObjectCreatedTriggerType? Type390 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.NeonFunctionUpdateRequest? Type391 { get; set; }
+        public global::Neon.TriggerResponse? Type391 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.NeonFunctionDeploymentResponse? Type392 { get; set; }
+        public global::Neon.TriggersListResponse? Type392 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.FunctionDeployRequest? Type393 { get; set; }
+        public global::System.Collections.Generic.IList<global::Neon.Trigger>? Type393 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public byte[]? Type394 { get; set; }
+        public global::Neon.CustomDomain? Type394 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.FunctionDeployRequestRuntime? Type395 { get; set; }
+        public global::Neon.CustomDomainRegisterRequest? Type395 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.CreateProjectTransferRequestRequest? Type396 { get; set; }
+        public global::Neon.CustomDomainsListResponse? Type396 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AcceptProjectTransferRequestRequest? Type397 { get; set; }
+        public global::System.Collections.Generic.IList<global::Neon.CustomDomain>? Type397 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.DisableNeonAuthRequest? Type398 { get; set; }
+        public global::Neon.NeonFunctionUpdateRequest? Type398 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.DeleteNeonAuthIntegrationRequest? Type399 { get; set; }
+        public global::Neon.NeonFunctionDeploymentResponse? Type399 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.BranchCreateRequest, global::Neon.AnnotationCreateValueRequest>? Type400 { get; set; }
+        public global::Neon.FunctionDeployRequest? Type400 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.FinalizeRestoreBranchRequest? Type401 { get; set; }
+        public byte[]? Type401 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.RestoreSnapshotRequest? Type402 { get; set; }
+        public global::Neon.FunctionDeployRequestRuntime? Type402 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.GetProjectAdvisorSecurityIssuesMinSeverity? Type403 { get; set; }
+        public global::Neon.CreateProjectTransferRequestRequest? Type403 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ListProjectBranchesSortBy? Type404 { get; set; }
+        public global::Neon.AcceptProjectTransferRequestRequest? Type404 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ListProjectBranchesSortOrder? Type405 { get; set; }
+        public global::Neon.DisableNeonAuthRequest? Type405 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.GetOrganizationMembersSortBy? Type406 { get; set; }
+        public global::Neon.DeleteNeonAuthIntegrationRequest? Type406 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.GetOrganizationMembersSortOrder? Type407 { get; set; }
+        public global::Neon.AllOf<global::Neon.BranchCreateRequest, global::Neon.AnnotationCreateValueRequest>? Type407 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.GetProjectAdvisorSecurityIssuesResponse? Type408 { get; set; }
+        public global::Neon.FinalizeRestoreBranchRequest? Type408 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Neon.AdvisorIssue>? Type409 { get; set; }
+        public global::Neon.RestoreSnapshotRequest? Type409 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Neon.ApiKeysListResponseItem>? Type410 { get; set; }
+        public global::Neon.GetProjectAdvisorSecurityIssuesMinSeverity? Type410 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.ProjectsResponse, global::Neon.PaginationResponse, global::Neon.ProjectsApplicationsMapResponse, global::Neon.ProjectsIntegrationsMapResponse>? Type411 { get; set; }
+        public global::Neon.ListProjectBranchesSortBy? Type411 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.ProjectsResponse, global::Neon.PaginationResponse>? Type412 { get; set; }
+        public global::Neon.ListProjectBranchesSortOrder? Type412 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.OperationsResponse>? Type413 { get; set; }
+        public global::Neon.GetOrganizationMembersSortBy? Type413 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.OperationsResponse, global::Neon.PaginationResponse>? Type414 { get; set; }
+        public global::Neon.GetOrganizationMembersSortOrder? Type414 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.BranchesResponse, global::Neon.AnnotationsMapResponse, global::Neon.CursorPaginationResponse>? Type415 { get; set; }
+        public global::Neon.GetProjectAdvisorSecurityIssuesResponse? Type415 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.AnnotationResponse>? Type416 { get; set; }
+        public global::System.Collections.Generic.IList<global::Neon.AdvisorIssue>? Type416 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectResponse, global::Neon.PaginationResponse>? Type417 { get; set; }
+        public global::System.Collections.Generic.IList<global::Neon.ApiKeysListResponseItem>? Type417 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>? Type418 { get; set; }
+        public global::Neon.AllOf<global::Neon.ProjectsResponse, global::Neon.PaginationResponse, global::Neon.ProjectsApplicationsMapResponse, global::Neon.ProjectsIntegrationsMapResponse>? Type418 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>? Type419 { get; set; }
+        public global::Neon.AllOf<global::Neon.ProjectsResponse, global::Neon.PaginationResponse>? Type419 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Neon.OrgApiKeysListResponseItem>? Type420 { get; set; }
+        public global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.OperationsResponse>? Type420 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.OrganizationMembersResponse, global::Neon.CursorPaginationResponse>? Type421 { get; set; }
+        public global::Neon.AllOf<global::Neon.OperationsResponse, global::Neon.PaginationResponse>? Type421 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.CreateSnapshotResponse? Type422 { get; set; }
+        public global::Neon.AllOf<global::Neon.BranchesResponse, global::Neon.AnnotationsMapResponse, global::Neon.CursorPaginationResponse>? Type422 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ListSnapshotsResponse? Type423 { get; set; }
+        public global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.AnnotationResponse>? Type423 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Neon.Snapshot>? Type424 { get; set; }
+        public global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectResponse, global::Neon.PaginationResponse>? Type424 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.UpdateSnapshotResponse? Type425 { get; set; }
+        public global::Neon.AllOf<global::Neon.ConsumptionHistoryPerProjectV2Response, global::Neon.PaginationResponse>? Type425 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>? Type426 { get; set; }
+        public global::Neon.AllOf<global::Neon.ConsumptionHistoryPerBranchV2Response, global::Neon.PaginationResponse>? Type426 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.NeonFunctionsListResponse, global::Neon.CursorPaginationResponse>? Type427 { get; set; }
+        public global::System.Collections.Generic.IList<global::Neon.OrgApiKeysListResponseItem>? Type427 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AllOf<global::Neon.CustomDomainsListResponse, global::Neon.CursorPaginationResponse>? Type428 { get; set; }
+        public global::Neon.AllOf<global::Neon.OrganizationMembersResponse, global::Neon.CursorPaginationResponse>? Type428 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Neon.CreateSnapshotResponse? Type429 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Neon.ListSnapshotsResponse? Type430 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Neon.Snapshot>? Type431 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Neon.UpdateSnapshotResponse? Type432 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsOptionalResponse, global::Neon.OperationsResponse>? Type433 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Neon.AllOf<global::Neon.NeonFunctionsListResponse, global::Neon.CursorPaginationResponse>? Type434 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Neon.AllOf<global::Neon.CustomDomainsListResponse, global::Neon.CursorPaginationResponse>? Type435 { get; set; }
 
         /// <summary>
         ///

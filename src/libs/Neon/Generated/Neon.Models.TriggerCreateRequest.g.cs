@@ -5,8 +5,8 @@
 namespace Neon
 {
     /// <summary>
-    /// Trigger creation payload discriminated by `type`. The only currently<br/>
-    /// supported trigger type is `schedule`.
+    /// Trigger creation payload discriminated by `type`. The supported trigger<br/>
+    /// types are `schedule` and `storage_object_created`.
     /// </summary>
     public readonly partial struct TriggerCreateRequest : global::System.IEquatable<TriggerCreateRequest>
     {
@@ -51,6 +51,43 @@ namespace Neon
         public global::Neon.ScheduleTriggerCreateRequest PickSchedule() => IsSchedule
             ? Schedule!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Schedule' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Neon.StorageObjectCreatedTriggerCreateRequest? StorageObjectCreated { get; init; }
+#else
+        public global::Neon.StorageObjectCreatedTriggerCreateRequest? StorageObjectCreated { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StorageObjectCreated))]
+#endif
+        public bool IsStorageObjectCreated => StorageObjectCreated != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickStorageObjectCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Neon.StorageObjectCreatedTriggerCreateRequest? value)
+        {
+            value = StorageObjectCreated;
+            return IsStorageObjectCreated;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Neon.StorageObjectCreatedTriggerCreateRequest PickStorageObjectCreated() => IsStorageObjectCreated
+            ? StorageObjectCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StorageObjectCreated' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -77,20 +114,46 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator TriggerCreateRequest(global::Neon.StorageObjectCreatedTriggerCreateRequest value) => new TriggerCreateRequest((global::Neon.StorageObjectCreatedTriggerCreateRequest?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Neon.StorageObjectCreatedTriggerCreateRequest?(TriggerCreateRequest @this) => @this.StorageObjectCreated;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public TriggerCreateRequest(global::Neon.StorageObjectCreatedTriggerCreateRequest? value)
+        {
+            StorageObjectCreated = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static TriggerCreateRequest FromStorageObjectCreated(global::Neon.StorageObjectCreatedTriggerCreateRequest? value) => new TriggerCreateRequest(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public TriggerCreateRequest(
             global::Neon.TriggerCreateRequestDiscriminatorType? type,
-            global::Neon.ScheduleTriggerCreateRequest? schedule
+            global::Neon.ScheduleTriggerCreateRequest? schedule,
+            global::Neon.StorageObjectCreatedTriggerCreateRequest? storageObjectCreated
             )
         {
             Type = type;
 
             Schedule = schedule;
+            StorageObjectCreated = storageObjectCreated;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            StorageObjectCreated as object ??
             Schedule as object
             ;
 
@@ -98,7 +161,8 @@ namespace Neon
         ///
         /// </summary>
         public override string? ToString() =>
-            Schedule?.ToString()
+            Schedule?.ToString() ??
+            StorageObjectCreated?.ToString()
             ;
 
         /// <summary>
@@ -106,7 +170,7 @@ namespace Neon
         /// </summary>
         public bool Validate()
         {
-            return IsSchedule;
+            return IsSchedule && !IsStorageObjectCreated || !IsSchedule && IsStorageObjectCreated;
         }
 
         /// <summary>
@@ -114,6 +178,7 @@ namespace Neon
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Neon.ScheduleTriggerCreateRequest, TResult>? schedule = null,
+            global::System.Func<global::Neon.StorageObjectCreatedTriggerCreateRequest, TResult>? storageObjectCreated = null,
             bool validate = true)
         {
             if (validate)
@@ -125,6 +190,10 @@ namespace Neon
             {
                 return schedule(Schedule!);
             }
+            else if (IsStorageObjectCreated && storageObjectCreated != null)
+            {
+                return storageObjectCreated(StorageObjectCreated!);
+            }
 
             return default(TResult);
         }
@@ -134,6 +203,8 @@ namespace Neon
         /// </summary>
         public void Match(
             global::System.Action<global::Neon.ScheduleTriggerCreateRequest>? schedule = null,
+
+            global::System.Action<global::Neon.StorageObjectCreatedTriggerCreateRequest>? storageObjectCreated = null,
             bool validate = true)
         {
             if (validate)
@@ -144,6 +215,10 @@ namespace Neon
             if (IsSchedule)
             {
                 schedule?.Invoke(Schedule!);
+            }
+            else if (IsStorageObjectCreated)
+            {
+                storageObjectCreated?.Invoke(StorageObjectCreated!);
             }
         }
 
@@ -152,6 +227,7 @@ namespace Neon
         /// </summary>
         public void Switch(
             global::System.Action<global::Neon.ScheduleTriggerCreateRequest>? schedule = null,
+            global::System.Action<global::Neon.StorageObjectCreatedTriggerCreateRequest>? storageObjectCreated = null,
             bool validate = true)
         {
             if (validate)
@@ -162,6 +238,10 @@ namespace Neon
             if (IsSchedule)
             {
                 schedule?.Invoke(Schedule!);
+            }
+            else if (IsStorageObjectCreated)
+            {
+                storageObjectCreated?.Invoke(StorageObjectCreated!);
             }
         }
 
@@ -174,6 +254,8 @@ namespace Neon
             {
                 Schedule,
                 typeof(global::Neon.ScheduleTriggerCreateRequest),
+                StorageObjectCreated,
+                typeof(global::Neon.StorageObjectCreatedTriggerCreateRequest),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,7 +272,8 @@ namespace Neon
         public bool Equals(TriggerCreateRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Neon.ScheduleTriggerCreateRequest?>.Default.Equals(Schedule, other.Schedule)
+                global::System.Collections.Generic.EqualityComparer<global::Neon.ScheduleTriggerCreateRequest?>.Default.Equals(Schedule, other.Schedule) &&
+                global::System.Collections.Generic.EqualityComparer<global::Neon.StorageObjectCreatedTriggerCreateRequest?>.Default.Equals(StorageObjectCreated, other.StorageObjectCreated)
                 ;
         }
 

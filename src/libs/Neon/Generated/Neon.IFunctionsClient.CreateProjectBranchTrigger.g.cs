@@ -8,8 +8,10 @@ namespace Neon
         /// Create a trigger<br/>
         /// Creates a trigger for a Function visible on the branch. The required<br/>
         /// `type` discriminator selects the trigger-specific configuration. The<br/>
-        /// only currently supported type is `schedule`, whose cron is a numeric<br/>
-        /// five-field expression interpreted in UTC.<br/>
+        /// supported types are `schedule` and `storage_object_created`. A schedule<br/>
+        /// trigger uses a numeric five-field cron expression interpreted in UTC. A<br/>
+        /// storage-object-created trigger fires only after a successful upload to<br/>
+        /// one exact bucket and may narrow matches to an object-key prefix.<br/>
         /// The name must be unique among triggers visible on the branch, including<br/>
         /// inherited triggers.<br/>
         /// **Note**: This endpoint is currently in Beta.
@@ -31,8 +33,10 @@ namespace Neon
         /// Create a trigger<br/>
         /// Creates a trigger for a Function visible on the branch. The required<br/>
         /// `type` discriminator selects the trigger-specific configuration. The<br/>
-        /// only currently supported type is `schedule`, whose cron is a numeric<br/>
-        /// five-field expression interpreted in UTC.<br/>
+        /// supported types are `schedule` and `storage_object_created`. A schedule<br/>
+        /// trigger uses a numeric five-field cron expression interpreted in UTC. A<br/>
+        /// storage-object-created trigger fires only after a successful upload to<br/>
+        /// one exact bucket and may narrow matches to an object-key prefix.<br/>
         /// The name must be unique among triggers visible on the branch, including<br/>
         /// inherited triggers.<br/>
         /// **Note**: This endpoint is currently in Beta.

@@ -9,12 +9,13 @@ namespace Neon
     public sealed partial class TriggerResponse
     {
         /// <summary>
-        /// A branch-effective trigger discriminated by `type`. The only currently<br/>
-        /// supported trigger type is `schedule`.
+        /// A branch-effective trigger discriminated by `type`. The supported trigger<br/>
+        /// types are `schedule` and `storage_object_created`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trigger")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.TriggerJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Neon.ScheduleTrigger Trigger { get; set; }
+        public required global::Neon.Trigger Trigger { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,16 +27,16 @@ namespace Neon
         /// Initializes a new instance of the <see cref="TriggerResponse" /> class.
         /// </summary>
         /// <param name="trigger">
-        /// A branch-effective trigger discriminated by `type`. The only currently<br/>
-        /// supported trigger type is `schedule`.
+        /// A branch-effective trigger discriminated by `type`. The supported trigger<br/>
+        /// types are `schedule` and `storage_object_created`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TriggerResponse(
-            global::Neon.ScheduleTrigger trigger)
+            global::Neon.Trigger trigger)
         {
-            this.Trigger = trigger ?? throw new global::System.ArgumentNullException(nameof(trigger));
+            this.Trigger = trigger;
         }
 
         /// <summary>

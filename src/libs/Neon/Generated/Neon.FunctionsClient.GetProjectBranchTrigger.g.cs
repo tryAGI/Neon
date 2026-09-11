@@ -47,8 +47,8 @@ namespace Neon
 
         /// <summary>
         /// Get a trigger<br/>
-        /// Returns the trigger visible on the branch. The only currently supported<br/>
-        /// trigger type is `schedule`.<br/>
+        /// Returns the trigger visible on the branch. The supported trigger types<br/>
+        /// are `schedule` and `storage_object_created`.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
@@ -76,8 +76,8 @@ namespace Neon
         }
         /// <summary>
         /// Get a trigger<br/>
-        /// Returns the trigger visible on the branch. The only currently supported<br/>
-        /// trigger type is `schedule`.<br/>
+        /// Returns the trigger visible on the branch. The supported trigger types<br/>
+        /// are `schedule` and `storage_object_created`.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>

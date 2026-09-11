@@ -12,6 +12,10 @@ namespace Neon
         ///
         /// </summary>
         Schedule,
+        /// <summary>
+        ///
+        /// </summary>
+        StorageObjectCreated,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace Neon
             return value switch
             {
                 TriggerUpdateRequestDiscriminatorType.Schedule => "schedule",
+                TriggerUpdateRequestDiscriminatorType.StorageObjectCreated => "storage_object_created",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace Neon
             return value switch
             {
                 "schedule" => TriggerUpdateRequestDiscriminatorType.Schedule,
+                "storage_object_created" => TriggerUpdateRequestDiscriminatorType.StorageObjectCreated,
                 _ => null,
             };
         }

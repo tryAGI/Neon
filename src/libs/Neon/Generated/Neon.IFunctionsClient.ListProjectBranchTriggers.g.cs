@@ -10,7 +10,9 @@ namespace Neon
         /// ordered by `trigger_id`. An inherited trigger keeps its project-wide ID<br/>
         /// and source branch, and is disabled on the child until explicitly enabled<br/>
         /// there.<br/>
-        /// The only currently supported trigger type is `schedule`.<br/>
+        /// The supported trigger types are `schedule` and<br/>
+        /// `storage_object_created`. A storage-object-created trigger watches one<br/>
+        /// exact bucket and fires only after an object upload succeeds.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
@@ -29,7 +31,9 @@ namespace Neon
         /// ordered by `trigger_id`. An inherited trigger keeps its project-wide ID<br/>
         /// and source branch, and is disabled on the child until explicitly enabled<br/>
         /// there.<br/>
-        /// The only currently supported trigger type is `schedule`.<br/>
+        /// The supported trigger types are `schedule` and<br/>
+        /// `storage_object_created`. A storage-object-created trigger watches one<br/>
+        /// exact bucket and fires only after an object upload succeeds.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
