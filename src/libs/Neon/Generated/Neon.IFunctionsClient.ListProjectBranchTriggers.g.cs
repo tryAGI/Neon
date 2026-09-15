@@ -8,7 +8,7 @@ namespace Neon
         /// List triggers on the branch<br/>
         /// Lists the complete project-bounded set of triggers visible on the branch,<br/>
         /// ordered by `trigger_id`. An inherited trigger keeps its project-wide ID<br/>
-        /// and source branch, and is disabled on the child until explicitly enabled<br/>
+        /// and configuration, and is disabled on the child until explicitly enabled<br/>
         /// there.<br/>
         /// The supported trigger types are `schedule` and<br/>
         /// `storage_object_created`. A storage-object-created trigger watches one<br/>
@@ -29,7 +29,7 @@ namespace Neon
         /// List triggers on the branch<br/>
         /// Lists the complete project-bounded set of triggers visible on the branch,<br/>
         /// ordered by `trigger_id`. An inherited trigger keeps its project-wide ID<br/>
-        /// and source branch, and is disabled on the child until explicitly enabled<br/>
+        /// and configuration, and is disabled on the child until explicitly enabled<br/>
         /// there.<br/>
         /// The supported trigger types are `schedule` and<br/>
         /// `storage_object_created`. A storage-object-created trigger watches one<br/>
