@@ -69,13 +69,6 @@ namespace Neon
         public required long Version { get; set; }
 
         /// <summary>
-        /// The public `branch_id` of the branch that authored the effective configuration.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("source_branch_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SourceBranchId { get; set; }
-
-        /// <summary>
         /// True when the effective configuration was authored on an ancestor branch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inherited")]
@@ -113,9 +106,6 @@ namespace Neon
         /// <param name="version">
         /// Monotonic configuration version.
         /// </param>
-        /// <param name="sourceBranchId">
-        /// The public `branch_id` of the branch that authored the effective configuration.
-        /// </param>
         /// <param name="inherited">
         /// True when the effective configuration was authored on an ancestor branch.
         /// </param>
@@ -133,7 +123,6 @@ namespace Neon
             global::Neon.FunctionTriggerStorageObjectCreated storageObjectCreated,
             bool enabled,
             long version,
-            string sourceBranchId,
             bool inherited,
             global::Neon.StorageObjectCreatedTriggerType type)
         {
@@ -145,7 +134,6 @@ namespace Neon
             this.StorageObjectCreated = storageObjectCreated ?? throw new global::System.ArgumentNullException(nameof(storageObjectCreated));
             this.Enabled = enabled;
             this.Version = version;
-            this.SourceBranchId = sourceBranchId ?? throw new global::System.ArgumentNullException(nameof(sourceBranchId));
             this.Inherited = inherited;
         }
 
