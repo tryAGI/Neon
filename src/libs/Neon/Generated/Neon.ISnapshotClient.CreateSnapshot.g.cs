@@ -14,6 +14,7 @@ namespace Neon
         /// Example: 2025-08-05T22:00:00Z
         /// </param>
         /// <param name="name"></param>
+        /// <param name="slug"></param>
         /// <param name="expiresAt">
         /// Example: 2025-08-05T22:00:00Z
         /// </param>
@@ -28,6 +29,7 @@ namespace Neon
             string? lsn = default,
             string? timestamp = default,
             string? name = default,
+            string? slug = default,
             string? expiresAt = default,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -41,6 +43,7 @@ namespace Neon
         /// Example: 2025-08-05T22:00:00Z
         /// </param>
         /// <param name="name"></param>
+        /// <param name="slug"></param>
         /// <param name="expiresAt">
         /// Example: 2025-08-05T22:00:00Z
         /// </param>
@@ -55,6 +58,7 @@ namespace Neon
             string? lsn = default,
             string? timestamp = default,
             string? name = default,
+            string? slug = default,
             string? expiresAt = default,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
