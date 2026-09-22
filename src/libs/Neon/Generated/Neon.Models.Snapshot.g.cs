@@ -23,6 +23,12 @@ namespace Neon
         public required string Name { get; set; }
 
         /// <summary>
+        /// Snapshot resource ID, unique within the project. Distinct from the internal snapshot ID and display name.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("slug")]
+        public string? Slug { get; set; }
+
+        /// <summary>
         /// WAL position (Log Sequence Number) at which the snapshot was captured, in Postgres LSN format (for example, `0/3000000`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lsn")]
@@ -95,6 +101,9 @@ namespace Neon
         /// Timestamp when the snapshot was created, in RFC 3339 format (UTC).<br/>
         /// Example: 2025-01-15T10:30:00Z
         /// </param>
+        /// <param name="slug">
+        /// Snapshot resource ID, unique within the project. Distinct from the internal snapshot ID and display name.
+        /// </param>
         /// <param name="lsn">
         /// WAL position (Log Sequence Number) at which the snapshot was captured, in Postgres LSN format (for example, `0/3000000`).
         /// </param>
@@ -126,6 +135,7 @@ namespace Neon
             string id,
             string name,
             string createdAt,
+            string? slug,
             string? lsn,
             string? timestamp,
             string? sourceBranchId,
@@ -136,6 +146,7 @@ namespace Neon
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Slug = slug;
             this.Lsn = lsn;
             this.Timestamp = timestamp;
             this.SourceBranchId = sourceBranchId;

@@ -30,6 +30,7 @@ namespace Neon
             ref string? lsn,
             ref string? timestamp,
             ref string? name,
+            ref string? slug,
             ref string? expiresAt,
             ref string projectId,
             ref string branchId);
@@ -39,6 +40,7 @@ namespace Neon
             string? lsn,
             string? timestamp,
             string? name,
+            string? slug,
             string? expiresAt,
             string projectId,
             string branchId);
@@ -61,6 +63,7 @@ namespace Neon
         /// Example: 2025-08-05T22:00:00Z
         /// </param>
         /// <param name="name"></param>
+        /// <param name="slug"></param>
         /// <param name="expiresAt">
         /// Example: 2025-08-05T22:00:00Z
         /// </param>
@@ -75,6 +78,7 @@ namespace Neon
             string? lsn = default,
             string? timestamp = default,
             string? name = default,
+            string? slug = default,
             string? expiresAt = default,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -85,6 +89,7 @@ namespace Neon
                 lsn: lsn,
                 timestamp: timestamp,
                 name: name,
+                slug: slug,
                 expiresAt: expiresAt,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -102,6 +107,7 @@ namespace Neon
         /// Example: 2025-08-05T22:00:00Z
         /// </param>
         /// <param name="name"></param>
+        /// <param name="slug"></param>
         /// <param name="expiresAt">
         /// Example: 2025-08-05T22:00:00Z
         /// </param>
@@ -116,6 +122,7 @@ namespace Neon
             string? lsn = default,
             string? timestamp = default,
             string? name = default,
+            string? slug = default,
             string? expiresAt = default,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -127,6 +134,7 @@ namespace Neon
                 lsn: ref lsn,
                 timestamp: ref timestamp,
                 name: ref name,
+                slug: ref slug,
                 expiresAt: ref expiresAt,
                 projectId: ref projectId,
                 branchId: ref branchId);
@@ -161,6 +169,7 @@ namespace Neon
                                 .AddOptionalParameter("lsn", lsn)
                                 .AddOptionalParameter("timestamp", timestamp)
                                 .AddOptionalParameter("name", name)
+                                .AddOptionalParameter("slug", slug)
                                 .AddOptionalParameter("expires_at", expiresAt)
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -206,6 +215,7 @@ namespace Neon
                     lsn: lsn,
                     timestamp: timestamp,
                     name: name,
+                    slug: slug,
                     expiresAt: expiresAt,
                     projectId: projectId!,
                     branchId: branchId!);
