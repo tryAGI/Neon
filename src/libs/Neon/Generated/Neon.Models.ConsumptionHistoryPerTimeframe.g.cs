@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Neon
@@ -44,6 +46,7 @@ namespace Neon
         public required int WrittenDataBytes { get; set; }
 
         /// <summary>
+        /// Deprecated: always returns 0. Use the consumption history v2 endpoints (`/consumption_history/v2/projects`, `/consumption_history/v2/branches`) instead.<br/>
         /// Bytes. The space occupied in Postgres storage. Synthetic Postgres storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("synthetic_storage_size_bytes")]
@@ -93,6 +96,7 @@ namespace Neon
         /// Bytes. The amount of written data for all branches.
         /// </param>
         /// <param name="syntheticStorageSizeBytes">
+        /// Deprecated: always returns 0. Use the consumption history v2 endpoints (`/consumption_history/v2/projects`, `/consumption_history/v2/branches`) instead.<br/>
         /// Bytes. The space occupied in Postgres storage. Synthetic Postgres storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches.
         /// </param>
         /// <param name="dataStorageBytesHour">
