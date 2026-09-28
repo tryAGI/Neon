@@ -47,8 +47,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.StandardEmailServer PickStandard() => IsStandard
-            ? Standard!
+        public global::Neon.StandardEmailServer PickStandard() => Standard is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Standard' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.SharedEmailServer PickShared() => IsShared
-            ? Shared!
+        public global::Neon.SharedEmailServer PickShared() => Shared is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsStandard && standard != null)
+            if (Standard is { } __value0 && standard != null)
             {
-                return standard(Standard!);
+                return standard(__value0);
             }
-            else if (IsShared && shared != null)
+            else if (Shared is { } __value1 && shared != null)
             {
-                return shared(Shared!);
+                return shared(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsStandard)
+            if (Standard is { } __value0)
             {
-                standard?.Invoke(Standard!);
+                standard?.Invoke(__value0);
             }
-            else if (IsShared)
+            else if (Shared is { } __value1)
             {
-                shared?.Invoke(Shared!);
+                shared?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsStandard)
+            if (Standard is { } __value0)
             {
-                standard?.Invoke(Standard!);
+                standard?.Invoke(__value0);
             }
-            else if (IsShared)
+            else if (Shared is { } __value1)
             {
-                shared?.Invoke(Shared!);
+                shared?.Invoke(__value1);
             }
         }
 

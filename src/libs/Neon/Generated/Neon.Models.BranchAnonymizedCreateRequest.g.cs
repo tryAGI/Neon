@@ -42,8 +42,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.AnnotationCreateValueRequest PickAnnotationValue() => IsAnnotationValue
-            ? AnnotationValue!
+        public global::Neon.AnnotationCreateValueRequest PickAnnotationValue() => AnnotationValue is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnnotationValue' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.BranchAnonymizedCreateRequestVariant2 PickBranchAnonymizedCreateRequestVariant2() => IsBranchAnonymizedCreateRequestVariant2
-            ? BranchAnonymizedCreateRequestVariant2!
+        public global::Neon.BranchAnonymizedCreateRequestVariant2 PickBranchAnonymizedCreateRequestVariant2() => BranchAnonymizedCreateRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BranchAnonymizedCreateRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsAnnotationValue && annotationValue != null)
+            if (AnnotationValue is { } __value0 && annotationValue != null)
             {
-                return annotationValue(AnnotationValue!);
+                return annotationValue(__value0);
             }
-            else if (IsBranchAnonymizedCreateRequestVariant2 && branchAnonymizedCreateRequestVariant2 != null)
+            else if (BranchAnonymizedCreateRequestVariant2 is { } __value1 && branchAnonymizedCreateRequestVariant2 != null)
             {
-                return branchAnonymizedCreateRequestVariant2(BranchAnonymizedCreateRequestVariant2!);
+                return branchAnonymizedCreateRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsAnnotationValue)
+            if (AnnotationValue is { } __value0)
             {
-                annotationValue?.Invoke(AnnotationValue!);
+                annotationValue?.Invoke(__value0);
             }
-            else if (IsBranchAnonymizedCreateRequestVariant2)
+            else if (BranchAnonymizedCreateRequestVariant2 is { } __value1)
             {
-                branchAnonymizedCreateRequestVariant2?.Invoke(BranchAnonymizedCreateRequestVariant2!);
+                branchAnonymizedCreateRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsAnnotationValue)
+            if (AnnotationValue is { } __value0)
             {
-                annotationValue?.Invoke(AnnotationValue!);
+                annotationValue?.Invoke(__value0);
             }
-            else if (IsBranchAnonymizedCreateRequestVariant2)
+            else if (BranchAnonymizedCreateRequestVariant2 is { } __value1)
             {
-                branchAnonymizedCreateRequestVariant2?.Invoke(BranchAnonymizedCreateRequestVariant2!);
+                branchAnonymizedCreateRequestVariant2?.Invoke(__value1);
             }
         }
 

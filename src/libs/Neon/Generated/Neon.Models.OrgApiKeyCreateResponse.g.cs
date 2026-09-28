@@ -42,8 +42,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ApiKeyCreateResponse PickApiKeyCreateResponse() => IsApiKeyCreateResponse
-            ? ApiKeyCreateResponse!
+        public global::Neon.ApiKeyCreateResponse PickApiKeyCreateResponse() => ApiKeyCreateResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKeyCreateResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.OrgApiKeyCreateResponseVariant2 PickOrgApiKeyCreateResponseVariant2() => IsOrgApiKeyCreateResponseVariant2
-            ? OrgApiKeyCreateResponseVariant2!
+        public global::Neon.OrgApiKeyCreateResponseVariant2 PickOrgApiKeyCreateResponseVariant2() => OrgApiKeyCreateResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrgApiKeyCreateResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsApiKeyCreateResponse && apiKeyCreateResponse != null)
+            if (ApiKeyCreateResponse is { } __value0 && apiKeyCreateResponse != null)
             {
-                return apiKeyCreateResponse(ApiKeyCreateResponse!);
+                return apiKeyCreateResponse(__value0);
             }
-            else if (IsOrgApiKeyCreateResponseVariant2 && orgApiKeyCreateResponseVariant2 != null)
+            else if (OrgApiKeyCreateResponseVariant2 is { } __value1 && orgApiKeyCreateResponseVariant2 != null)
             {
-                return orgApiKeyCreateResponseVariant2(OrgApiKeyCreateResponseVariant2!);
+                return orgApiKeyCreateResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsApiKeyCreateResponse)
+            if (ApiKeyCreateResponse is { } __value0)
             {
-                apiKeyCreateResponse?.Invoke(ApiKeyCreateResponse!);
+                apiKeyCreateResponse?.Invoke(__value0);
             }
-            else if (IsOrgApiKeyCreateResponseVariant2)
+            else if (OrgApiKeyCreateResponseVariant2 is { } __value1)
             {
-                orgApiKeyCreateResponseVariant2?.Invoke(OrgApiKeyCreateResponseVariant2!);
+                orgApiKeyCreateResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsApiKeyCreateResponse)
+            if (ApiKeyCreateResponse is { } __value0)
             {
-                apiKeyCreateResponse?.Invoke(ApiKeyCreateResponse!);
+                apiKeyCreateResponse?.Invoke(__value0);
             }
-            else if (IsOrgApiKeyCreateResponseVariant2)
+            else if (OrgApiKeyCreateResponseVariant2 is { } __value1)
             {
-                orgApiKeyCreateResponseVariant2?.Invoke(OrgApiKeyCreateResponseVariant2!);
+                orgApiKeyCreateResponseVariant2?.Invoke(__value1);
             }
         }
 

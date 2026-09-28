@@ -48,8 +48,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ScheduleTrigger PickSchedule() => IsSchedule
-            ? Schedule!
+        public global::Neon.ScheduleTrigger PickSchedule() => Schedule is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Schedule' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.StorageObjectCreatedTrigger PickStorageObjectCreated() => IsStorageObjectCreated
-            ? StorageObjectCreated!
+        public global::Neon.StorageObjectCreatedTrigger PickStorageObjectCreated() => StorageObjectCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StorageObjectCreated' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -187,13 +187,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsSchedule && schedule != null)
+            if (Schedule is { } __value0 && schedule != null)
             {
-                return schedule(Schedule!);
+                return schedule(__value0);
             }
-            else if (IsStorageObjectCreated && storageObjectCreated != null)
+            else if (StorageObjectCreated is { } __value1 && storageObjectCreated != null)
             {
-                return storageObjectCreated(StorageObjectCreated!);
+                return storageObjectCreated(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsSchedule)
+            if (Schedule is { } __value0)
             {
-                schedule?.Invoke(Schedule!);
+                schedule?.Invoke(__value0);
             }
-            else if (IsStorageObjectCreated)
+            else if (StorageObjectCreated is { } __value1)
             {
-                storageObjectCreated?.Invoke(StorageObjectCreated!);
+                storageObjectCreated?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsSchedule)
+            if (Schedule is { } __value0)
             {
-                schedule?.Invoke(Schedule!);
+                schedule?.Invoke(__value0);
             }
-            else if (IsStorageObjectCreated)
+            else if (StorageObjectCreated is { } __value1)
             {
-                storageObjectCreated?.Invoke(StorageObjectCreated!);
+                storageObjectCreated?.Invoke(__value1);
             }
         }
 

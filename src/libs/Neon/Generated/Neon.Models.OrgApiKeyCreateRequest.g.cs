@@ -42,8 +42,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ApiKeyCreateRequest PickApiKeyCreateRequest() => IsApiKeyCreateRequest
-            ? ApiKeyCreateRequest!
+        public global::Neon.ApiKeyCreateRequest PickApiKeyCreateRequest() => ApiKeyCreateRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKeyCreateRequest' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.OrgApiKeyCreateRequestVariant2 PickOrgApiKeyCreateRequestVariant2() => IsOrgApiKeyCreateRequestVariant2
-            ? OrgApiKeyCreateRequestVariant2!
+        public global::Neon.OrgApiKeyCreateRequestVariant2 PickOrgApiKeyCreateRequestVariant2() => OrgApiKeyCreateRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrgApiKeyCreateRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsApiKeyCreateRequest && apiKeyCreateRequest != null)
+            if (ApiKeyCreateRequest is { } __value0 && apiKeyCreateRequest != null)
             {
-                return apiKeyCreateRequest(ApiKeyCreateRequest!);
+                return apiKeyCreateRequest(__value0);
             }
-            else if (IsOrgApiKeyCreateRequestVariant2 && orgApiKeyCreateRequestVariant2 != null)
+            else if (OrgApiKeyCreateRequestVariant2 is { } __value1 && orgApiKeyCreateRequestVariant2 != null)
             {
-                return orgApiKeyCreateRequestVariant2(OrgApiKeyCreateRequestVariant2!);
+                return orgApiKeyCreateRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsApiKeyCreateRequest)
+            if (ApiKeyCreateRequest is { } __value0)
             {
-                apiKeyCreateRequest?.Invoke(ApiKeyCreateRequest!);
+                apiKeyCreateRequest?.Invoke(__value0);
             }
-            else if (IsOrgApiKeyCreateRequestVariant2)
+            else if (OrgApiKeyCreateRequestVariant2 is { } __value1)
             {
-                orgApiKeyCreateRequestVariant2?.Invoke(OrgApiKeyCreateRequestVariant2!);
+                orgApiKeyCreateRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsApiKeyCreateRequest)
+            if (ApiKeyCreateRequest is { } __value0)
             {
-                apiKeyCreateRequest?.Invoke(ApiKeyCreateRequest!);
+                apiKeyCreateRequest?.Invoke(__value0);
             }
-            else if (IsOrgApiKeyCreateRequestVariant2)
+            else if (OrgApiKeyCreateRequestVariant2 is { } __value1)
             {
-                orgApiKeyCreateRequestVariant2?.Invoke(OrgApiKeyCreateRequestVariant2!);
+                orgApiKeyCreateRequestVariant2?.Invoke(__value1);
             }
         }
 

@@ -42,8 +42,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ApiKeysListResponseItem PickApiKeysListResponseItem() => IsApiKeysListResponseItem
-            ? ApiKeysListResponseItem!
+        public global::Neon.ApiKeysListResponseItem PickApiKeysListResponseItem() => ApiKeysListResponseItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKeysListResponseItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.OrgApiKeysListResponseItemVariant2 PickOrgApiKeysListResponseItemVariant2() => IsOrgApiKeysListResponseItemVariant2
-            ? OrgApiKeysListResponseItemVariant2!
+        public global::Neon.OrgApiKeysListResponseItemVariant2 PickOrgApiKeysListResponseItemVariant2() => OrgApiKeysListResponseItemVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrgApiKeysListResponseItemVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsApiKeysListResponseItem && apiKeysListResponseItem != null)
+            if (ApiKeysListResponseItem is { } __value0 && apiKeysListResponseItem != null)
             {
-                return apiKeysListResponseItem(ApiKeysListResponseItem!);
+                return apiKeysListResponseItem(__value0);
             }
-            else if (IsOrgApiKeysListResponseItemVariant2 && orgApiKeysListResponseItemVariant2 != null)
+            else if (OrgApiKeysListResponseItemVariant2 is { } __value1 && orgApiKeysListResponseItemVariant2 != null)
             {
-                return orgApiKeysListResponseItemVariant2(OrgApiKeysListResponseItemVariant2!);
+                return orgApiKeysListResponseItemVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsApiKeysListResponseItem)
+            if (ApiKeysListResponseItem is { } __value0)
             {
-                apiKeysListResponseItem?.Invoke(ApiKeysListResponseItem!);
+                apiKeysListResponseItem?.Invoke(__value0);
             }
-            else if (IsOrgApiKeysListResponseItemVariant2)
+            else if (OrgApiKeysListResponseItemVariant2 is { } __value1)
             {
-                orgApiKeysListResponseItemVariant2?.Invoke(OrgApiKeysListResponseItemVariant2!);
+                orgApiKeysListResponseItemVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsApiKeysListResponseItem)
+            if (ApiKeysListResponseItem is { } __value0)
             {
-                apiKeysListResponseItem?.Invoke(ApiKeysListResponseItem!);
+                apiKeysListResponseItem?.Invoke(__value0);
             }
-            else if (IsOrgApiKeysListResponseItemVariant2)
+            else if (OrgApiKeysListResponseItemVariant2 is { } __value1)
             {
-                orgApiKeysListResponseItemVariant2?.Invoke(OrgApiKeysListResponseItemVariant2!);
+                orgApiKeysListResponseItemVariant2?.Invoke(__value1);
             }
         }
 

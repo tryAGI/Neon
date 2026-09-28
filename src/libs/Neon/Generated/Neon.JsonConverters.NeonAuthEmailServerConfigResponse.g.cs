@@ -59,13 +59,13 @@ namespace Neon.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.StandardEmailServerResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.StandardEmailServerResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.StandardEmailServerResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Standard!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStandard(), typeInfo);
             }
             else if (value.IsShared)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.SharedEmailServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.SharedEmailServer?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.SharedEmailServer).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Shared!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickShared(), typeInfo);
             }
         }
     }

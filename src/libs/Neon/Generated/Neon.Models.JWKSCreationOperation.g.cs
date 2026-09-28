@@ -42,8 +42,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.JWKSResponse PickResponse() => IsResponse
-            ? Response!
+        public global::Neon.JWKSResponse PickResponse() => Response is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Response' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.OperationsResponse PickOperationsResponse() => IsOperationsResponse
-            ? OperationsResponse!
+        public global::Neon.OperationsResponse PickOperationsResponse() => OperationsResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OperationsResponse' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsResponse && response != null)
+            if (Response is { } __value0 && response != null)
             {
-                return response(Response!);
+                return response(__value0);
             }
-            else if (IsOperationsResponse && operationsResponse != null)
+            else if (OperationsResponse is { } __value1 && operationsResponse != null)
             {
-                return operationsResponse(OperationsResponse!);
+                return operationsResponse(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsResponse)
+            if (Response is { } __value0)
             {
-                response?.Invoke(Response!);
+                response?.Invoke(__value0);
             }
-            else if (IsOperationsResponse)
+            else if (OperationsResponse is { } __value1)
             {
-                operationsResponse?.Invoke(OperationsResponse!);
+                operationsResponse?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsResponse)
+            if (Response is { } __value0)
             {
-                response?.Invoke(Response!);
+                response?.Invoke(__value0);
             }
-            else if (IsOperationsResponse)
+            else if (OperationsResponse is { } __value1)
             {
-                operationsResponse?.Invoke(OperationsResponse!);
+                operationsResponse?.Invoke(__value1);
             }
         }
 
