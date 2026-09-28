@@ -42,8 +42,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.ProjectResponse PickProjectResponse() => IsProjectResponse
-            ? ProjectResponse!
+        public global::Neon.ProjectResponse PickProjectResponse() => ProjectResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProjectResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.BranchesResponse PickBranches() => IsBranches
-            ? Branches!
+        public global::Neon.BranchesResponse PickBranches() => Branches is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Branches' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsProjectResponse && projectResponse != null)
+            if (ProjectResponse is { } __value0 && projectResponse != null)
             {
-                return projectResponse(ProjectResponse!);
+                return projectResponse(__value0);
             }
-            else if (IsBranches && branches != null)
+            else if (Branches is { } __value1 && branches != null)
             {
-                return branches(Branches!);
+                return branches(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsProjectResponse)
+            if (ProjectResponse is { } __value0)
             {
-                projectResponse?.Invoke(ProjectResponse!);
+                projectResponse?.Invoke(__value0);
             }
-            else if (IsBranches)
+            else if (Branches is { } __value1)
             {
-                branches?.Invoke(Branches!);
+                branches?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsProjectResponse)
+            if (ProjectResponse is { } __value0)
             {
-                projectResponse?.Invoke(ProjectResponse!);
+                projectResponse?.Invoke(__value0);
             }
-            else if (IsBranches)
+            else if (Branches is { } __value1)
             {
-                branches?.Invoke(Branches!);
+                branches?.Invoke(__value1);
             }
         }
 

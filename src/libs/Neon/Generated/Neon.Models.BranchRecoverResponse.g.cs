@@ -42,8 +42,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.BranchResponse PickBranchResponse() => IsBranchResponse
-            ? BranchResponse!
+        public global::Neon.BranchResponse PickBranchResponse() => BranchResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BranchResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.EndpointsOptionalResponse PickEndpointsOptional() => IsEndpointsOptional
-            ? EndpointsOptional!
+        public global::Neon.EndpointsOptionalResponse PickEndpointsOptional() => EndpointsOptional is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EndpointsOptional' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsBranchResponse && branchResponse != null)
+            if (BranchResponse is { } __value0 && branchResponse != null)
             {
-                return branchResponse(BranchResponse!);
+                return branchResponse(__value0);
             }
-            else if (IsEndpointsOptional && endpointsOptional != null)
+            else if (EndpointsOptional is { } __value1 && endpointsOptional != null)
             {
-                return endpointsOptional(EndpointsOptional!);
+                return endpointsOptional(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsBranchResponse)
+            if (BranchResponse is { } __value0)
             {
-                branchResponse?.Invoke(BranchResponse!);
+                branchResponse?.Invoke(__value0);
             }
-            else if (IsEndpointsOptional)
+            else if (EndpointsOptional is { } __value1)
             {
-                endpointsOptional?.Invoke(EndpointsOptional!);
+                endpointsOptional?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsBranchResponse)
+            if (BranchResponse is { } __value0)
             {
-                branchResponse?.Invoke(BranchResponse!);
+                branchResponse?.Invoke(__value0);
             }
-            else if (IsEndpointsOptional)
+            else if (EndpointsOptional is { } __value1)
             {
-                endpointsOptional?.Invoke(EndpointsOptional!);
+                endpointsOptional?.Invoke(__value1);
             }
         }
 

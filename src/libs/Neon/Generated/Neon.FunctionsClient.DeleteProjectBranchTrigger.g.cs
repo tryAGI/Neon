@@ -166,9 +166,9 @@ namespace Neon
                 PrepareDeleteProjectBranchTriggerRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId!,
-                    branchId: branchId!,
-                    triggerId: triggerId!);
+                    projectId: projectId,
+                    branchId: branchId,
+                    triggerId: triggerId);
 
                 return __httpRequest;
             }
@@ -190,7 +190,7 @@ namespace Neon
                                 pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/triggers/{triggerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -224,7 +224,7 @@ namespace Neon
                                 pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/triggers/{triggerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -265,7 +265,7 @@ namespace Neon
                                 pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/triggers/{triggerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -313,7 +313,7 @@ namespace Neon
                                 pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/triggers/{triggerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -335,7 +335,7 @@ namespace Neon
                                 pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/triggers/{triggerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

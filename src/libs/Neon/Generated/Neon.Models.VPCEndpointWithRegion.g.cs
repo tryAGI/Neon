@@ -42,8 +42,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.VPCEndpoint PickVPCEndpoint() => IsVPCEndpoint
-            ? VPCEndpoint!
+        public global::Neon.VPCEndpoint PickVPCEndpoint() => VPCEndpoint is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VPCEndpoint' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
-        public global::Neon.VPCEndpointWithRegionVariant2 PickVPCEndpointWithRegionVariant2() => IsVPCEndpointWithRegionVariant2
-            ? VPCEndpointWithRegionVariant2!
+        public global::Neon.VPCEndpointWithRegionVariant2 PickVPCEndpointWithRegionVariant2() => VPCEndpointWithRegionVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VPCEndpointWithRegionVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsVPCEndpoint && vPCEndpoint != null)
+            if (VPCEndpoint is { } __value0 && vPCEndpoint != null)
             {
-                return vPCEndpoint(VPCEndpoint!);
+                return vPCEndpoint(__value0);
             }
-            else if (IsVPCEndpointWithRegionVariant2 && vPCEndpointWithRegionVariant2 != null)
+            else if (VPCEndpointWithRegionVariant2 is { } __value1 && vPCEndpointWithRegionVariant2 != null)
             {
-                return vPCEndpointWithRegionVariant2(VPCEndpointWithRegionVariant2!);
+                return vPCEndpointWithRegionVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsVPCEndpoint)
+            if (VPCEndpoint is { } __value0)
             {
-                vPCEndpoint?.Invoke(VPCEndpoint!);
+                vPCEndpoint?.Invoke(__value0);
             }
-            else if (IsVPCEndpointWithRegionVariant2)
+            else if (VPCEndpointWithRegionVariant2 is { } __value1)
             {
-                vPCEndpointWithRegionVariant2?.Invoke(VPCEndpointWithRegionVariant2!);
+                vPCEndpointWithRegionVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Neon
                 Validate();
             }
 
-            if (IsVPCEndpoint)
+            if (VPCEndpoint is { } __value0)
             {
-                vPCEndpoint?.Invoke(VPCEndpoint!);
+                vPCEndpoint?.Invoke(__value0);
             }
-            else if (IsVPCEndpointWithRegionVariant2)
+            else if (VPCEndpointWithRegionVariant2 is { } __value1)
             {
-                vPCEndpointWithRegionVariant2?.Invoke(VPCEndpointWithRegionVariant2!);
+                vPCEndpointWithRegionVariant2?.Invoke(__value1);
             }
         }
 

@@ -70,7 +70,7 @@ namespace Neon.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.BranchResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.BranchResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.BranchResponse).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.BranchResponse!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickBranchResponse(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -88,7 +88,7 @@ namespace Neon.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.EndpointsOptionalResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.EndpointsOptionalResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.EndpointsOptionalResponse).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.EndpointsOptional!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickEndpointsOptional(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

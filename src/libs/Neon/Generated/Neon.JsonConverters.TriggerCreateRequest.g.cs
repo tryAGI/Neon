@@ -59,13 +59,13 @@ namespace Neon.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.ScheduleTriggerCreateRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.ScheduleTriggerCreateRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.ScheduleTriggerCreateRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Schedule!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSchedule(), typeInfo);
             }
             else if (value.IsStorageObjectCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Neon.StorageObjectCreatedTriggerCreateRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Neon.StorageObjectCreatedTriggerCreateRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Neon.StorageObjectCreatedTriggerCreateRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StorageObjectCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStorageObjectCreated(), typeInfo);
             }
         }
     }

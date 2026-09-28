@@ -173,9 +173,9 @@ namespace Neon
                 PrepareResetProjectBranchRolePasswordRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId!,
-                    branchId: branchId!,
-                    roleName: roleName!);
+                    projectId: projectId,
+                    branchId: branchId,
+                    roleName: roleName);
 
                 return __httpRequest;
             }
@@ -197,7 +197,7 @@ namespace Neon
                                 pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/roles/{roleName}/reset_password\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -231,7 +231,7 @@ namespace Neon
                                 pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/roles/{roleName}/reset_password\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -272,7 +272,7 @@ namespace Neon
                                 pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/roles/{roleName}/reset_password\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -320,7 +320,7 @@ namespace Neon
                                 pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/roles/{roleName}/reset_password\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -342,7 +342,7 @@ namespace Neon
                                 pathTemplate: "$\"/projects/{projectId}/branches/{branchId}/roles/{roleName}/reset_password\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

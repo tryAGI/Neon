@@ -133,7 +133,7 @@ namespace Neon.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T1).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Value1!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickValue1(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -151,7 +151,7 @@ namespace Neon.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T2).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Value2!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickValue2(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -169,7 +169,7 @@ namespace Neon.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T3).Name}");
-                var __element2 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Value3!, typeInfo);
+                var __element2 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickValue3(), typeInfo);
                 if (__element2.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -187,7 +187,7 @@ namespace Neon.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T4).Name}");
-                var __element3 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Value4!, typeInfo);
+                var __element3 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickValue4(), typeInfo);
                 if (__element3.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -205,7 +205,7 @@ namespace Neon.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T5?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T5).Name}");
-                var __element4 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Value5!, typeInfo);
+                var __element4 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickValue5(), typeInfo);
                 if (__element4.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -223,7 +223,7 @@ namespace Neon.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T6?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T6).Name}");
-                var __element5 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Value6!, typeInfo);
+                var __element5 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickValue6(), typeInfo);
                 if (__element5.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
