@@ -11,6 +11,7 @@ namespace Neon
     public sealed partial class Project
     {
         /// <summary>
+        /// Deprecated: always returns 0. Use the consumption history v2 endpoints (`/consumption_history/v2/projects`, `/consumption_history/v2/branches`) instead.<br/>
         /// Bytes-Hour. Project consumed that much Postgres storage hourly during the billing period. The value has some lag.<br/>
         /// The value is reset at the beginning of each billing period.
         /// </summary>
@@ -269,6 +270,7 @@ namespace Neon
         /// Initializes a new instance of the <see cref="Project" /> class.
         /// </summary>
         /// <param name="dataStorageBytesHour">
+        /// Deprecated: always returns 0. Use the consumption history v2 endpoints (`/consumption_history/v2/projects`, `/consumption_history/v2/branches`) instead.<br/>
         /// Bytes-Hour. Project consumed that much Postgres storage hourly during the billing period. The value has some lag.<br/>
         /// The value is reset at the beginning of each billing period.
         /// </param>

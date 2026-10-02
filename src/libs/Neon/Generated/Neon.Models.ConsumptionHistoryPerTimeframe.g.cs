@@ -54,10 +54,12 @@ namespace Neon
         public required int SyntheticStorageSizeBytes { get; set; }
 
         /// <summary>
+        /// Deprecated: always returns 0. Use the consumption history v2 endpoints (`/consumption_history/v2/projects`, `/consumption_history/v2/branches`) instead.<br/>
         /// Bytes-Hour. The amount of Postgres storage consumed hourly.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_storage_bytes_hour")]
-        public int? DataStorageBytesHour { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int DataStorageBytesHour { get; set; }
 
         /// <summary>
         /// Bytes. The amount of logical size consumed.
@@ -100,6 +102,7 @@ namespace Neon
         /// Bytes. The space occupied in Postgres storage. Synthetic Postgres storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches.
         /// </param>
         /// <param name="dataStorageBytesHour">
+        /// Deprecated: always returns 0. Use the consumption history v2 endpoints (`/consumption_history/v2/projects`, `/consumption_history/v2/branches`) instead.<br/>
         /// Bytes-Hour. The amount of Postgres storage consumed hourly.
         /// </param>
         /// <param name="logicalSizeBytes">
@@ -118,7 +121,7 @@ namespace Neon
             int computeTimeSeconds,
             int writtenDataBytes,
             int syntheticStorageSizeBytes,
-            int? dataStorageBytesHour,
+            int dataStorageBytesHour,
             int? logicalSizeBytes,
             int? logicalSizeBytesHour)
         {
