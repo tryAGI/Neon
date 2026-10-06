@@ -67,12 +67,54 @@ namespace Neon
         /// <param name="zip">
         /// Optional ZIP archive of the function source code. Omit to reuse the<br/>
         /// latest version's bundle (a config-only change). Required for the<br/>
-        /// first deployment of a function.
+        /// first deployment of a function.<br/>
+        /// Place `index.mjs` or `index.js` at the archive root, without a<br/>
+        /// containing directory. If both exist, `index.mjs` is loaded. Export a<br/>
+        /// request handler function or an object with a `fetch` method. Use<br/>
+        /// `export default` for ESM or `module.exports` for CommonJS; prefer<br/>
+        /// `index.mjs` for ESM.<br/>
+        /// Upload JavaScript ready to run on Node.js 24. Compile TypeScript<br/>
+        /// before uploading. Bundle dependencies into the entry module, or<br/>
+        /// include the required modules and assets in the archive with their<br/>
+        /// relative paths preserved (including `node_modules` for external<br/>
+        /// packages). Node.js built-in modules do not need to be bundled.<br/>
+        /// The API does not transpile, bundle, or install dependencies.<br/>
+        /// The ZIP is limited to 32 MiB compressed and 128 MiB extracted, with<br/>
+        /// at most 32,768 entries and 64 MiB per file. Bundle large dependency<br/>
+        /// trees to keep the archive small. ZIPs larger than 32 MiB are rejected<br/>
+        /// with HTTP 413 before creating a deployment. The extracted-size,<br/>
+        /// entry-count, and per-file limits are enforced during the asynchronous<br/>
+        /// build; an accepted upload that exceeds them fails the build.<br/>
+        /// For example, a self-contained ESM bundle needs only `index.mjs`<br/>
+        /// at the ZIP root. The Neon CLI bundles source into this layout by<br/>
+        /// default; `neon function deploy --no-bundle` packages a prebuilt<br/>
+        /// directory or an entry file named `index.mjs` or `index.js`.
         /// </param>
         /// <param name="zipname">
         /// Optional ZIP archive of the function source code. Omit to reuse the<br/>
         /// latest version's bundle (a config-only change). Required for the<br/>
-        /// first deployment of a function.
+        /// first deployment of a function.<br/>
+        /// Place `index.mjs` or `index.js` at the archive root, without a<br/>
+        /// containing directory. If both exist, `index.mjs` is loaded. Export a<br/>
+        /// request handler function or an object with a `fetch` method. Use<br/>
+        /// `export default` for ESM or `module.exports` for CommonJS; prefer<br/>
+        /// `index.mjs` for ESM.<br/>
+        /// Upload JavaScript ready to run on Node.js 24. Compile TypeScript<br/>
+        /// before uploading. Bundle dependencies into the entry module, or<br/>
+        /// include the required modules and assets in the archive with their<br/>
+        /// relative paths preserved (including `node_modules` for external<br/>
+        /// packages). Node.js built-in modules do not need to be bundled.<br/>
+        /// The API does not transpile, bundle, or install dependencies.<br/>
+        /// The ZIP is limited to 32 MiB compressed and 128 MiB extracted, with<br/>
+        /// at most 32,768 entries and 64 MiB per file. Bundle large dependency<br/>
+        /// trees to keep the archive small. ZIPs larger than 32 MiB are rejected<br/>
+        /// with HTTP 413 before creating a deployment. The extracted-size,<br/>
+        /// entry-count, and per-file limits are enforced during the asynchronous<br/>
+        /// build; an accepted upload that exceeds them fails the build.<br/>
+        /// For example, a self-contained ESM bundle needs only `index.mjs`<br/>
+        /// at the ZIP root. The Neon CLI bundles source into this layout by<br/>
+        /// default; `neon function deploy --no-bundle` packages a prebuilt<br/>
+        /// directory or an entry file named `index.mjs` or `index.js`.
         /// </param>
         /// <param name="runtime"></param>
         /// <param name="environment">
