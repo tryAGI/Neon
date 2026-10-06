@@ -35,7 +35,7 @@ namespace Neon
         public bool? Protected { get; set; }
 
         /// <summary>
-        /// Authentication method configured for this role: `password`, `oauth`, or `no_login`.<br/>
+        /// Authentication method configured for this role: `password`, `oauth`, `oidc`, or `no_login`.<br/>
         /// Example: password
         /// </summary>
         /// <example>password</example>
@@ -84,7 +84,7 @@ namespace Neon
         /// Whether or not the role is system-protected
         /// </param>
         /// <param name="authenticationMethod">
-        /// Authentication method configured for this role: `password`, `oauth`, or `no_login`.<br/>
+        /// Authentication method configured for this role: `password`, `oauth`, `oidc`, or `no_login`.<br/>
         /// Example: password
         /// </param>
 #if NET7_0_OR_GREATER
