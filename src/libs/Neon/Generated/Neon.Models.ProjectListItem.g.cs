@@ -141,9 +141,11 @@ namespace Neon
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
+        /// Deprecated: always returns 0. Use the consumption history v2 endpoints (`/consumption_history/v2/projects`, `/consumption_history/v2/branches`) instead.<br/>
         /// The current space occupied by the project in Postgres storage, in bytes. Synthetic Postgres storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches in a project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("synthetic_storage_size")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public long? SyntheticStorageSize { get; set; }
 
         /// <summary>
@@ -277,9 +279,6 @@ namespace Neon
         /// <param name="maintenanceStartsAt">
         /// A timestamp indicating when project maintenance begins. If set, the project is placed into maintenance mode at this time.
         /// </param>
-        /// <param name="syntheticStorageSize">
-        /// The current space occupied by the project in Postgres storage, in bytes. Synthetic Postgres storage size combines the logical data size and Write-Ahead Log (WAL) size for all branches in a project.
-        /// </param>
         /// <param name="computeLastActiveAt">
         /// The most recent time when any endpoint of this project was active.<br/>
         /// Omitted when observed no activity for endpoints of this project.
@@ -326,7 +325,6 @@ namespace Neon
             global::Neon.DefaultEndpointSettings? defaultEndpointSettings,
             global::Neon.ProjectSettingsData? settings,
             global::System.DateTime? maintenanceStartsAt,
-            long? syntheticStorageSize,
             global::System.DateTime? computeLastActiveAt,
             string? orgId,
             string? orgName,
@@ -354,7 +352,6 @@ namespace Neon
             this.CreationSource = creationSource ?? throw new global::System.ArgumentNullException(nameof(creationSource));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.SyntheticStorageSize = syntheticStorageSize;
             this.OwnerId = ownerId ?? throw new global::System.ArgumentNullException(nameof(ownerId));
             this.ComputeLastActiveAt = computeLastActiveAt;
             this.OrgId = orgId;
