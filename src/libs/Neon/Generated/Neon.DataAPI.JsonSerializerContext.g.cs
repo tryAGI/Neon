@@ -20,6 +20,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPISettings))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPICreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPICreateRequestAuthProvider), TypeInfoPropertyName = "DataAPICreateRequestAuthProvider2")]
@@ -29,6 +30,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.GeneralError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPICreateRequestAuthProvider?), TypeInfoPropertyName = "NullableDataAPICreateRequestAuthProvider2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     internal sealed partial class DataAPISourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
