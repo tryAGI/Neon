@@ -35,6 +35,15 @@ namespace Neon
         public global::System.Collections.Generic.IList<string>? AvailableSchemas { get; set; }
 
         /// <summary>
+        /// When `settings` and `available_schemas` were read from the database. While the<br/>
+        /// compute is suspended they are served from that read, so a change made directly in<br/>
+        /// the database since then shows up in the first response served while the compute is<br/>
+        /// active.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("observed_at")]
+        public global::System.DateTime? ObservedAt { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,6 +64,12 @@ namespace Neon
         /// <param name="availableSchemas">
         /// List of available database schemas (SubZero only)
         /// </param>
+        /// <param name="observedAt">
+        /// When `settings` and `available_schemas` were read from the database. While the<br/>
+        /// compute is suspended they are served from that read, so a change made directly in<br/>
+        /// the database since then shows up in the first response served while the compute is<br/>
+        /// active.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,12 +77,14 @@ namespace Neon
             string url,
             string status,
             global::Neon.DataAPISettings? settings,
-            global::System.Collections.Generic.IList<string>? availableSchemas)
+            global::System.Collections.Generic.IList<string>? availableSchemas,
+            global::System.DateTime? observedAt)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.Settings = settings;
             this.AvailableSchemas = availableSchemas;
+            this.ObservedAt = observedAt;
         }
 
         /// <summary>
