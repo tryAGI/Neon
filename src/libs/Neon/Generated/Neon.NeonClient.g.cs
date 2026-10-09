@@ -184,6 +184,15 @@ namespace Neon
         };
 
         /// <summary>
+        /// These methods allow you to enable and manage Realtime on your branches.
+        /// </summary>
+        public RealtimeClient Realtime => new RealtimeClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+        };
+
+        /// <summary>
         /// These methods allow you to inspect Neon regions.
         /// </summary>
         public RegionClient Region => new RegionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)

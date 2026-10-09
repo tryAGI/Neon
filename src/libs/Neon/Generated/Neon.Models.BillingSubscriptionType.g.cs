@@ -20,6 +20,10 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
+        Build,
+        /// <summary>
+        ///
+        /// </summary>
         Business,
         /// <summary>
         ///
@@ -73,6 +77,7 @@ namespace Neon
             {
                 BillingSubscriptionType.Unknown => "UNKNOWN",
                 BillingSubscriptionType.AwsMarketplace => "aws_marketplace",
+                BillingSubscriptionType.Build => "build",
                 BillingSubscriptionType.Business => "business",
                 BillingSubscriptionType.DirectSales => "direct_sales",
                 BillingSubscriptionType.DirectSalesV3 => "direct_sales_v3",
@@ -95,6 +100,7 @@ namespace Neon
             {
                 "UNKNOWN" => BillingSubscriptionType.Unknown,
                 "aws_marketplace" => BillingSubscriptionType.AwsMarketplace,
+                "build" => BillingSubscriptionType.Build,
                 "business" => BillingSubscriptionType.Business,
                 "direct_sales" => BillingSubscriptionType.DirectSales,
                 "direct_sales_v3" => BillingSubscriptionType.DirectSalesV3,

@@ -21,6 +21,12 @@ namespace Neon
         public string? Name { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("realtime")]
+        public global::Neon.RealtimeOptions? Realtime { get; set; }
+
+        /// <summary>
         /// Configuration for the initial branch created with the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branch")]
@@ -97,6 +103,7 @@ namespace Neon
         /// <param name="name">
         /// The project name. If not specified, the name will be identical to the generated project ID
         /// </param>
+        /// <param name="realtime"></param>
         /// <param name="branch">
         /// Configuration for the initial branch created with the project.
         /// </param>
@@ -131,6 +138,7 @@ namespace Neon
         public ProjectCreateRequestProject(
             global::Neon.ProjectSettingsData? settings,
             string? name,
+            global::Neon.RealtimeOptions? realtime,
             global::Neon.ProjectCreateRequestProjectBranch? branch,
             double? autoscalingLimitMinCu,
             double? autoscalingLimitMaxCu,
@@ -144,6 +152,7 @@ namespace Neon
         {
             this.Settings = settings;
             this.Name = name;
+            this.Realtime = realtime;
             this.Branch = branch;
             this.AutoscalingLimitMinCu = autoscalingLimitMinCu;
             this.AutoscalingLimitMaxCu = autoscalingLimitMaxCu;

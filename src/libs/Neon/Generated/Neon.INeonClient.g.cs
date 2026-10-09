@@ -122,6 +122,11 @@ namespace Neon
         public ProjectClient Project { get; }
 
         /// <summary>
+        /// These methods allow you to enable and manage Realtime on your branches.
+        /// </summary>
+        public RealtimeClient Realtime { get; }
+
+        /// <summary>
         /// These methods allow you to inspect Neon regions.
         /// </summary>
         public RegionClient Region { get; }

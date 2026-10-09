@@ -67,6 +67,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectOwnerData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectCreateRequestProject))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RealtimeOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectCreateRequestProjectBranch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectUpdateRequestProject))]
@@ -179,6 +180,8 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.Endpoint>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.EndpointsOptionalResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Realtime))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RealtimeSecret))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.Role))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RoleCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RoleCreateRequestRole))]
@@ -512,9 +515,6 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DatabaseOperations?), TypeInfoPropertyName = "NullableDatabaseOperations2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RoleOperations?), TypeInfoPropertyName = "NullableRoleOperations2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.JWKSCreationOperation?), TypeInfoPropertyName = "NullableJWKSCreationOperation2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ApplicationType?), TypeInfoPropertyName = "NullableApplicationType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketAccessLevel?), TypeInfoPropertyName = "NullableBucketAccessLevel2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketCreateRequestAccessLevel?), TypeInfoPropertyName = "NullableBucketCreateRequestAccessLevel2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -528,6 +528,9 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>), TypeInfoPropertyName = "EndpointsResponse_94af327886d2127e")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>?), TypeInfoPropertyName = "EndpointsResponse_18e24691ef0e4f53")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>?), TypeInfoPropertyName = "ConnectionURIsOptionalResponse_dba8030245622754")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ApplicationType?), TypeInfoPropertyName = "NullableApplicationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketAccessLevel?), TypeInfoPropertyName = "NullableBucketAccessLevel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketCreateRequestAccessLevel?), TypeInfoPropertyName = "NullableBucketCreateRequestAccessLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchStorageNotEnabledReason?), TypeInfoPropertyName = "NullableBranchStorageNotEnabledReason2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectBranchLogSource?), TypeInfoPropertyName = "NullableProjectBranchLogSource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectBranchLogSeverity?), TypeInfoPropertyName = "NullableProjectBranchLogSeverity2")]
