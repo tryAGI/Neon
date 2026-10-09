@@ -29,6 +29,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OperationStatus), TypeInfoPropertyName = "OperationStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.OperationsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.Operation>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RealtimeOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.PreloadLibraries))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.CursorPagination))]

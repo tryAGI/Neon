@@ -42,6 +42,12 @@ namespace Neon
         public bool? Protected { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("realtime")]
+        public global::Neon.RealtimeOptions? Realtime { get; set; }
+
+        /// <summary>
         /// Whether to create the branch in the archived state. When omitted, the branch is created as a normal (non-archived) branch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
@@ -90,6 +96,7 @@ namespace Neon
         /// Whether the branch is protected. Protected branches (and their computes) cannot be deleted, archived, or reset, and block deletion of the project. Can be gated by `protected_branches_only` in the IP allowlist. Paid plans only.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="realtime"></param>
         /// <param name="archived">
         /// Whether to create the branch in the archived state. When omitted, the branch is created as a normal (non-archived) branch.
         /// </param>
@@ -111,6 +118,7 @@ namespace Neon
             string? parentLsn,
             global::System.DateTime? parentTimestamp,
             bool? @protected,
+            global::Neon.RealtimeOptions? realtime,
             bool? archived,
             string? initSource,
             global::System.DateTime? expiresAt)
@@ -120,6 +128,7 @@ namespace Neon
             this.ParentLsn = parentLsn;
             this.ParentTimestamp = parentTimestamp;
             this.Protected = @protected;
+            this.Realtime = realtime;
             this.Archived = archived;
             this.InitSource = initSource;
             this.ExpiresAt = expiresAt;
