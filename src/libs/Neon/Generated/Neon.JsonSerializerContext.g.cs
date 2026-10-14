@@ -274,6 +274,21 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthMagicLinkConfigUpdate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthPhoneNumberConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthPhoneNumberConfigUpdate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthProviderResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthProviderMcp))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthProviderMcpUpdate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthProviderConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.NeonAuthOAuthProviderResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthProviderConfigUpdate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthClientType), TypeInfoPropertyName = "NeonAuthOAuthClientType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthClient))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthClientCreated), TypeInfoPropertyName = "NeonAuthOAuthClientCreated2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthClientCreatedVariant2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ListNeonAuthOAuthClientsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.NeonAuthOAuthClient>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthClientCreateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthClientUpdateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthClientSecret))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthTransferAuthProviderProjectRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthTransferAuthProviderProjectResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ListNeonAuthIntegrationsResponse))]
@@ -500,7 +515,22 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthProviderProjectOwnedBy?), TypeInfoPropertyName = "NullableNeonAuthProviderProjectOwnedBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthProviderProjectTransferStatus?), TypeInfoPropertyName = "NullableNeonAuthProviderProjectTransferStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOrganizationConfigCreatorRole?), TypeInfoPropertyName = "NullableNeonAuthOrganizationConfigCreatorRole2")]
+    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    ///
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>), TypeInfoPropertyName = "EndpointsResponse_94af327886d2127e")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>?), TypeInfoPropertyName = "EndpointsResponse_18e24691ef0e4f53")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>?), TypeInfoPropertyName = "ConnectionURIsOptionalResponse_dba8030245622754")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOrganizationConfigUpdateCreatorRole?), TypeInfoPropertyName = "NullableNeonAuthOrganizationConfigUpdateCreatorRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthClientType?), TypeInfoPropertyName = "NullableNeonAuthOAuthClientType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOAuthClientCreated?), TypeInfoPropertyName = "NullableNeonAuthOAuthClientCreated2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthEmailServerConfigResponse?), TypeInfoPropertyName = "NullableNeonAuthEmailServerConfigResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthWebhookConfigEnabledEvent?), TypeInfoPropertyName = "NullableNeonAuthWebhookConfigEnabledEvent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.NeonAuthOauthProviderId?), TypeInfoPropertyName = "NullableNeonAuthOauthProviderId2")]
@@ -515,19 +545,6 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DatabaseOperations?), TypeInfoPropertyName = "NullableDatabaseOperations2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RoleOperations?), TypeInfoPropertyName = "NullableRoleOperations2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.JWKSCreationOperation?), TypeInfoPropertyName = "NullableJWKSCreationOperation2")]
-    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
-    {
-    }
-
-    /// <summary>
-    ///
-    /// </summary>
-    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
-    )]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>), TypeInfoPropertyName = "EndpointsResponse_94af327886d2127e")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.ProjectResponse, global::Neon.ConnectionURIsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.OperationsResponse, global::Neon.BranchResponse, global::Neon.EndpointsResponse>?), TypeInfoPropertyName = "EndpointsResponse_18e24691ef0e4f53")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.AllOf<global::Neon.BranchResponse, global::Neon.EndpointsResponse, global::Neon.OperationsResponse, global::Neon.RolesResponse, global::Neon.DatabasesResponse, global::Neon.ConnectionURIsOptionalResponse>?), TypeInfoPropertyName = "ConnectionURIsOptionalResponse_dba8030245622754")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ApplicationType?), TypeInfoPropertyName = "NullableApplicationType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketAccessLevel?), TypeInfoPropertyName = "NullableBucketAccessLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BucketCreateRequestAccessLevel?), TypeInfoPropertyName = "NullableBucketCreateRequestAccessLevel2")]
@@ -614,6 +631,8 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.ProjectsWithIntegrationResponseProject>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.NeonAuthRedirectURIWhitelistDomain>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.NeonAuthDeleteDomainFromRedirectURIWhitelistItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.NeonAuthOAuthProviderResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.NeonAuthOAuthClient>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.NeonAuthIntegration>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.NeonAuthOauthProvider>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.NeonAuthWebhookConfigEnabledEvent>))]
@@ -680,6 +699,7 @@ namespace Neon
             options.Converters.Add(new global::Neon.JsonConverters.ProjectRecoverResponseJsonConverter());
             options.Converters.Add(new global::Neon.JsonConverters.BranchAnonymizedCreateRequestJsonConverter());
             options.Converters.Add(new global::Neon.JsonConverters.VPCEndpointWithRegionJsonConverter());
+            options.Converters.Add(new global::Neon.JsonConverters.NeonAuthOAuthClientCreatedJsonConverter());
             options.Converters.Add(new global::Neon.JsonConverters.NeonAuthEmailServerConfigJsonConverter());
             options.Converters.Add(new global::Neon.JsonConverters.NeonAuthEmailServerConfigResponseJsonConverter());
             options.Converters.Add(new global::Neon.JsonConverters.BranchOperationsJsonConverter());
@@ -837,6 +857,10 @@ namespace Neon
                     || typeToConvert == typeof(global::Neon.NeonAuthOrganizationConfigUpdateCreatorRole)
 
                     || typeToConvert == typeof(global::Neon.NeonAuthOrganizationConfigUpdateCreatorRole?)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthOAuthClientType)
+
+                    || typeToConvert == typeof(global::Neon.NeonAuthOAuthClientType?)
 
                     || typeToConvert == typeof(global::Neon.NeonAuthWebhookConfigEnabledEvent)
 
@@ -1259,6 +1283,16 @@ namespace Neon
                 if (typeToConvert == typeof(global::Neon.NeonAuthOrganizationConfigUpdateCreatorRole?))
                 {
                     return new global::Neon.JsonConverters.NeonAuthOrganizationConfigUpdateCreatorRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthOAuthClientType))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthOAuthClientTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.NeonAuthOAuthClientType?))
+                {
+                    return new global::Neon.JsonConverters.NeonAuthOAuthClientTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Neon.NeonAuthWebhookConfigEnabledEvent))

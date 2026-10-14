@@ -29,6 +29,12 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("oauth_provider")]
+        public global::Neon.NeonAuthOAuthProviderConfig? OauthProvider { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email_provider")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Neon.JsonConverters.NeonAuthEmailServerConfigResponseJsonConverter))]
         public global::Neon.NeonAuthEmailServerConfigResponse? EmailProvider { get; set; }
@@ -63,6 +69,7 @@ namespace Neon
         /// <param name="organization"></param>
         /// <param name="magicLink"></param>
         /// <param name="phoneNumber"></param>
+        /// <param name="oauthProvider"></param>
         /// <param name="emailProvider"></param>
         /// <param name="emailAndPassword"></param>
         /// <param name="oauthProviders">
@@ -78,6 +85,7 @@ namespace Neon
             global::Neon.NeonAuthOrganizationConfig? organization,
             global::Neon.NeonAuthMagicLinkConfig? magicLink,
             global::Neon.NeonAuthPhoneNumberConfig? phoneNumber,
+            global::Neon.NeonAuthOAuthProviderConfig? oauthProvider,
             global::Neon.NeonAuthEmailServerConfigResponse? emailProvider,
             global::Neon.NeonAuthEmailAndPasswordConfig? emailAndPassword,
             global::System.Collections.Generic.IList<global::Neon.NeonAuthOauthProvider>? oauthProviders,
@@ -86,6 +94,7 @@ namespace Neon
             this.Organization = organization;
             this.MagicLink = magicLink;
             this.PhoneNumber = phoneNumber;
+            this.OauthProvider = oauthProvider;
             this.EmailProvider = emailProvider;
             this.EmailAndPassword = emailAndPassword;
             this.OauthProviders = oauthProviders;
