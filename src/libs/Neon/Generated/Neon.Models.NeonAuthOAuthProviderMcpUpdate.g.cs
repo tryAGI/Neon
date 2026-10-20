@@ -9,7 +9,7 @@ namespace Neon
     public sealed partial class NeonAuthOAuthProviderMcpUpdate
     {
         /// <summary>
-        /// The MCP server URL that dynamically registered clients are linked to.
+        /// The MCP server URL that MCP clients (Client ID Metadata Document and dynamically registered) are linked to. Required for either to be accepted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -22,6 +22,12 @@ namespace Neon
         public bool? DynamicRegistration { get; set; }
 
         /// <summary>
+        /// Whether MCP clients may identify themselves with an https Client ID Metadata Document (CIMD) URL. When omitted, the stored value is kept.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("client_id_metadata_documents")]
+        public bool? ClientIdMetadataDocuments { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -31,20 +37,25 @@ namespace Neon
         /// Initializes a new instance of the <see cref="NeonAuthOAuthProviderMcpUpdate" /> class.
         /// </summary>
         /// <param name="resource">
-        /// The MCP server URL that dynamically registered clients are linked to.
+        /// The MCP server URL that MCP clients (Client ID Metadata Document and dynamically registered) are linked to. Required for either to be accepted.
         /// </param>
         /// <param name="dynamicRegistration">
         /// Whether MCP clients may register themselves via dynamic client registration (RFC 7591). When omitted, the stored value is kept.
+        /// </param>
+        /// <param name="clientIdMetadataDocuments">
+        /// Whether MCP clients may identify themselves with an https Client ID Metadata Document (CIMD) URL. When omitted, the stored value is kept.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public NeonAuthOAuthProviderMcpUpdate(
             string resource,
-            bool? dynamicRegistration)
+            bool? dynamicRegistration,
+            bool? clientIdMetadataDocuments)
         {
             this.Resource = resource ?? throw new global::System.ArgumentNullException(nameof(resource));
             this.DynamicRegistration = dynamicRegistration;
+            this.ClientIdMetadataDocuments = clientIdMetadataDocuments;
         }
 
         /// <summary>
