@@ -114,7 +114,7 @@
       "Order": 11,
       "Title": "Retrieve branch details",
       "Slug": "getprojectbranch",
-      "Description": "Retrieves information about the specified branch.\nA \u0060branch_id\u0060 value has a \u0060br-\u0060 prefix.\n\nEach Neon project is initially created with a root and default branch named \u0060main\u0060.\nA project can contain one or more branches.\nA parent branch is identified by a \u0060parent_id\u0060 value, which is the \u0060id\u0060 of the parent branch.\nFor related information, see [Manage branches](https://neon.com/docs/manage/branches/).",
+      "Description": "Retrieves information about the specified branch.\nA \u0060branch_id\u0060 value has a \u0060br-\u0060 prefix.\n\nEach Neon project is initially created with a root and default branch named \u0060main\u0060.\nA project can contain one or more branches.\nA parent branch is identified by a \u0060parent_id\u0060 value, which is the \u0060id\u0060 of the parent branch.\nFor related information, see [Manage branches](https://neon.com/docs/manage/branches/).\nThe usage metrics are not intended for billing or metering. For billing, use \u0060/consumption_history/v2/branches\u0060.",
       "Language": "http",
       "Code": "### Retrieve branch details\n# @name getProjectBranch\nGET {{host}}/projects/{{project_id}}/branches/{{branch_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Returned information about the specified branch\n# Content-Type: application/json\n# default\n# Description: General Error.\n\nThe request may or may not be safe to retry, depending on the HTTP method, response status code,\nand whether a response was received.\n\n- If no response is returned from the API, a network error or timeout likely occurred.\n- In some cases, the request may have reached the server and been successfully processed, but the response failed to reach the client. As a result, retrying non-idempotent requests can lead to unintended results.\n\nThe following HTTP methods are considered non-idempotent: \u0060POST\u0060, \u0060PATCH\u0060, \u0060DELETE\u0060, and \u0060PUT\u0060. Retrying these methods is generally **not safe**.\nThe following methods are considered idempotent: \u0060GET\u0060, \u0060HEAD\u0060, and \u0060OPTIONS\u0060. Retrying these methods is **safe** in the event of a network error or timeout.\n\nAny request that returns a \u0060503 Service Unavailable\u0060 response is always safe to retry.\n\nAny request that returns a \u0060423 Locked\u0060 response is safe to retry. \u0060423 Locked\u0060 indicates that the resource is temporarily locked, for example, due to another operation in progress.\n\n# Content-Type: application/json",
       "Format": "http",
@@ -464,6 +464,17 @@
     },
     {
       "Order": 43,
+      "Title": "Retrieve projects count",
+      "Slug": "countprojects",
+      "Description": "Retrieves the number of active projects you can access in the specified organization, without paging through the list of projects.\nProjects that are being created or deleted are not counted.\nIf using a personal API key, include the \u0060org_id\u0060 parameter to specify which organization to work with.\nIf using an org API key, \u0060org_id\u0060 is automatically inferred from the key.",
+      "Language": "csharp",
+      "Code": "using var client = new NeonClient(apiKey);\nvar response = await client.Project.CountProjectsAsync();\n\n// Example response:\n// {\n//   \u0022count\u0022: 42\n// }",
+      "Format": "sdk",
+      "OperationId": "countProjects",
+      "Setup": "This example assumes \u0060using Neon;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 44,
       "Title": "Create project",
       "Slug": "createproject",
       "Description": "Creates a Neon project within an organization.\nIf using a personal API key, include the \u0060org_id\u0060 parameter to specify which organization to create the project in.\nIf using an org API key, \u0060org_id\u0060 is automatically inferred from the key.\nPlan limits define how many projects you can create.\nFor more information, see [Manage projects](https://neon.com/docs/manage/projects/).\n\nYou can specify a region and Postgres version in the request body.\nNeon supports Postgres 14 through 18, with 19 rolling out to enabled regions.\nFor supported regions and \u0060region_id\u0060 values, see [Regions](https://neon.com/docs/introduction/regions/).",
@@ -474,7 +485,7 @@
       "Setup": "This example assumes \u0060using Neon;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 44,
+      "Order": 45,
       "Title": "Delete project",
       "Slug": "deleteproject",
       "Description": "Deletes the specified project and all its endpoints, branches, databases, and users.\nDeleted projects can be recovered within 7 days using \u0060POST /projects/{project_id}/recover\u0060.\nTo list recoverable projects, use \u0060GET /projects?recoverable=true\u0060.",
@@ -485,10 +496,10 @@
       "Setup": null
     },
     {
-      "Order": 45,
+      "Order": 46,
       "Title": "Retrieve project details",
       "Slug": "getproject",
-      "Description": "Retrieves information about the specified project.\nReturned details include the project settings, compute configuration, history retention, owner information, and current usage metrics.",
+      "Description": "Retrieves information about the specified project.\nReturned details include the project settings, compute configuration, history retention, owner information, and current usage metrics.\nThe usage metrics are not intended for billing or metering. For billing, use \u0060/consumption_history/v2/projects\u0060.",
       "Language": "http",
       "Code": "### Retrieve project details\n# @name getProject\nGET {{host}}/projects/{{project_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Returned information about the specified project\n# Content-Type: application/json\n# default\n# Description: General Error.\n\nThe request may or may not be safe to retry, depending on the HTTP method, response status code,\nand whether a response was received.\n\n- If no response is returned from the API, a network error or timeout likely occurred.\n- In some cases, the request may have reached the server and been successfully processed, but the response failed to reach the client. As a result, retrying non-idempotent requests can lead to unintended results.\n\nThe following HTTP methods are considered non-idempotent: \u0060POST\u0060, \u0060PATCH\u0060, \u0060DELETE\u0060, and \u0060PUT\u0060. Retrying these methods is generally **not safe**.\nThe following methods are considered idempotent: \u0060GET\u0060, \u0060HEAD\u0060, and \u0060OPTIONS\u0060. Retrying these methods is **safe** in the event of a network error or timeout.\n\nAny request that returns a \u0060503 Service Unavailable\u0060 response is always safe to retry.\n\nAny request that returns a \u0060423 Locked\u0060 response is safe to retry. \u0060423 Locked\u0060 indicates that the resource is temporarily locked, for example, due to another operation in progress.\n\n# Content-Type: application/json",
       "Format": "http",
@@ -496,7 +507,7 @@
       "Setup": null
     },
     {
-      "Order": 46,
+      "Order": 47,
       "Title": "List projects",
       "Slug": "listprojects",
       "Description": "Retrieves a list of projects for the specified organization.\nIf using a personal API key, include the \u0060org_id\u0060 parameter to specify which organization to work with.\nIf using an org API key, \u0060org_id\u0060 is automatically inferred from the key.\nFor more information, see [Manage organizations using the Neon API](https://neon.com/docs/manage/orgs-api)\nand [Manage projects](https://neon.com/docs/manage/projects/).",
@@ -507,7 +518,7 @@
       "Setup": "This example assumes \u0060using Neon;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 47,
+      "Order": 48,
       "Title": "List shared projects",
       "Slug": "listsharedprojects",
       "Description": "Retrieves a list of projects shared with your Neon account.\nFor more information, see [Manage projects](https://neon.com/docs/manage/projects/).",
@@ -518,7 +529,7 @@
       "Setup": "This example assumes \u0060using Neon;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 48,
+      "Order": 49,
       "Title": "Update project",
       "Slug": "updateproject",
       "Description": "Updates the specified project.\nConfigurable properties include the project name, default compute settings, history retention period, and IP allowlist.",

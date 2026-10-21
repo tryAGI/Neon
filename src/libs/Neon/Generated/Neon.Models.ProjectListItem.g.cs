@@ -100,7 +100,8 @@ namespace Neon
         public required bool StorePasswords { get; set; }
 
         /// <summary>
-        /// Control plane observed endpoints of this project being active this amount of wall-clock time.
+        /// Control plane observed endpoints of this project being active this amount of wall-clock time.<br/>
+        /// Not intended for billing or metering. For billing, use `/consumption_history/v2/projects`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -255,7 +256,8 @@ namespace Neon
         /// Whether or not passwords are stored for roles in the Neon project. Storing passwords facilitates access to Neon features that require authorization.
         /// </param>
         /// <param name="activeTime">
-        /// Control plane observed endpoints of this project being active this amount of wall-clock time.
+        /// Control plane observed endpoints of this project being active this amount of wall-clock time.<br/>
+        /// Not intended for billing or metering. For billing, use `/consumption_history/v2/projects`.
         /// </param>
         /// <param name="cpuUsedSec">
         /// Deprecated. Use `compute_time_seconds` from `GET /projects/{project_id}` instead.

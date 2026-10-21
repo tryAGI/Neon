@@ -67,6 +67,7 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.BranchesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ProjectListItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectsCountResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectPermission))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ProjectPermissions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.ProjectPermission>))]

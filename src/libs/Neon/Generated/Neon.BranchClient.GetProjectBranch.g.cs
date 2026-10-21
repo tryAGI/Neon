@@ -50,7 +50,8 @@ namespace Neon
         /// Each Neon project is initially created with a root and default branch named `main`.<br/>
         /// A project can contain one or more branches.<br/>
         /// A parent branch is identified by a `parent_id` value, which is the `id` of the parent branch.<br/>
-        /// For related information, see [Manage branches](https://neon.com/docs/manage/branches/).
+        /// For related information, see [Manage branches](https://neon.com/docs/manage/branches/).<br/>
+        /// The usage metrics are not intended for billing or metering. For billing, use `/consumption_history/v2/branches`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>
@@ -79,7 +80,8 @@ namespace Neon
         /// Each Neon project is initially created with a root and default branch named `main`.<br/>
         /// A project can contain one or more branches.<br/>
         /// A parent branch is identified by a `parent_id` value, which is the `id` of the parent branch.<br/>
-        /// For related information, see [Manage branches](https://neon.com/docs/manage/branches/).
+        /// For related information, see [Manage branches](https://neon.com/docs/manage/branches/).<br/>
+        /// The usage metrics are not intended for billing or metering. For billing, use `/consumption_history/v2/branches`.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="branchId"></param>

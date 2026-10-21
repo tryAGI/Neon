@@ -124,28 +124,32 @@ namespace Neon
         public required long CpuUsedSec { get; set; }
 
         /// <summary>
-        /// Total Postgres compute time consumed by this branch during the current billing period, in CU-seconds (weighted by compute size). Divide by 3600 for CU-hours.
+        /// Total Postgres compute time consumed by this branch during the current billing period, in CU-seconds (weighted by compute size). Divide by 3600 for CU-hours.<br/>
+        /// Not intended for billing or metering. For billing, use `/consumption_history/v2/branches`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compute_time_seconds")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long ComputeTimeSeconds { get; set; }
 
         /// <summary>
-        /// Total time this branch's compute has been active during the current billing period, in seconds (not weighted by compute size). Distinct from `compute_time_seconds`, which is CU-weighted.
+        /// Total time this branch's compute has been active during the current billing period, in seconds (not weighted by compute size). Distinct from `compute_time_seconds`, which is CU-weighted.<br/>
+        /// Not intended for billing or metering. For billing, use `/consumption_history/v2/branches`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_time_seconds")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long ActiveTimeSeconds { get; set; }
 
         /// <summary>
-        /// Data written by this branch during the current billing period, in bytes.
+        /// Data written by this branch during the current billing period, in bytes.<br/>
+        /// Not intended for billing or metering. For billing, use `/consumption_history/v2/branches`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("written_data_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long WrittenDataBytes { get; set; }
 
         /// <summary>
-        /// Total data transferred out of the branch, in bytes. Used as a consumption metric.
+        /// Total data transferred out of the branch, in bytes. Used as a consumption metric.<br/>
+        /// Not intended for billing or metering. For billing, use `/consumption_history/v2/branches`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_transfer_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -278,16 +282,20 @@ namespace Neon
         /// Deprecated. Use `compute_time_seconds` instead. CPU seconds used by all of the branch's compute endpoints, including deleted ones. This value is reset at the beginning of each billing period.
         /// </param>
         /// <param name="computeTimeSeconds">
-        /// Total Postgres compute time consumed by this branch during the current billing period, in CU-seconds (weighted by compute size). Divide by 3600 for CU-hours.
+        /// Total Postgres compute time consumed by this branch during the current billing period, in CU-seconds (weighted by compute size). Divide by 3600 for CU-hours.<br/>
+        /// Not intended for billing or metering. For billing, use `/consumption_history/v2/branches`.
         /// </param>
         /// <param name="activeTimeSeconds">
-        /// Total time this branch's compute has been active during the current billing period, in seconds (not weighted by compute size). Distinct from `compute_time_seconds`, which is CU-weighted.
+        /// Total time this branch's compute has been active during the current billing period, in seconds (not weighted by compute size). Distinct from `compute_time_seconds`, which is CU-weighted.<br/>
+        /// Not intended for billing or metering. For billing, use `/consumption_history/v2/branches`.
         /// </param>
         /// <param name="writtenDataBytes">
-        /// Data written by this branch during the current billing period, in bytes.
+        /// Data written by this branch during the current billing period, in bytes.<br/>
+        /// Not intended for billing or metering. For billing, use `/consumption_history/v2/branches`.
         /// </param>
         /// <param name="dataTransferBytes">
-        /// Total data transferred out of the branch, in bytes. Used as a consumption metric.
+        /// Total data transferred out of the branch, in bytes. Used as a consumption metric.<br/>
+        /// Not intended for billing or metering. For billing, use `/consumption_history/v2/branches`.
         /// </param>
         /// <param name="createdAt">
         /// A timestamp indicating when the branch was created
