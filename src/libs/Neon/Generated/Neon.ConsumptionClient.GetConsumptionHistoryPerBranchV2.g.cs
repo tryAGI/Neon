@@ -63,10 +63,12 @@ namespace Neon
         /// `project_ids` (1 to 100 projects). Available for accounts on paid usage-based Launch, Scale,<br/>
         /// Agent, and Enterprise plans.<br/>
         /// History starts when the account first ingests branch-level consumption data.<br/>
-        /// The `metrics` query parameter is required. Only these six values are supported on this<br/>
+        /// The `metrics` query parameter is required. These values are supported on this<br/>
         /// endpoint:<br/>
         /// `compute_unit_seconds`, `root_branch_bytes_month`, `child_branch_bytes_month`,<br/>
-        /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`.<br/>
+        /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`,<br/>
+        /// `functions_active_capacity_microseconds`, `functions_waiting_capacity_microseconds`,<br/>
+        /// `functions_invocations`, `functions_egress_bytes`.<br/>
         /// This endpoint does not support `extra_branches_month` or `snapshot_storage_bytes_month`.<br/>
         /// Use `GET /consumption_history/v2/projects` for those.<br/>
         /// Consumption metrics within each branch are returned in ascending time order (oldest first).<br/>
@@ -121,10 +123,12 @@ namespace Neon
         /// `project_ids` (1 to 100 projects). Available for accounts on paid usage-based Launch, Scale,<br/>
         /// Agent, and Enterprise plans.<br/>
         /// History starts when the account first ingests branch-level consumption data.<br/>
-        /// The `metrics` query parameter is required. Only these six values are supported on this<br/>
+        /// The `metrics` query parameter is required. These values are supported on this<br/>
         /// endpoint:<br/>
         /// `compute_unit_seconds`, `root_branch_bytes_month`, `child_branch_bytes_month`,<br/>
-        /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`.<br/>
+        /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`,<br/>
+        /// `functions_active_capacity_microseconds`, `functions_waiting_capacity_microseconds`,<br/>
+        /// `functions_invocations`, `functions_egress_bytes`.<br/>
         /// This endpoint does not support `extra_branches_month` or `snapshot_storage_bytes_month`.<br/>
         /// Use `GET /consumption_history/v2/projects` for those.<br/>
         /// Consumption metrics within each branch are returned in ascending time order (oldest first).<br/>

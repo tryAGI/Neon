@@ -14,7 +14,9 @@ namespace Neon
         /// The `metrics` query parameter is required. Supported values:<br/>
         /// `compute_unit_seconds`, `root_branch_bytes_month`, `child_branch_bytes_month`,<br/>
         /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`,<br/>
-        /// `extra_branches_month`, `snapshot_storage_bytes_month`.<br/>
+        /// `extra_branches_month`, `snapshot_storage_bytes_month`,<br/>
+        /// `functions_active_capacity_microseconds`, `functions_waiting_capacity_microseconds`,<br/>
+        /// `functions_invocations`, `functions_egress_bytes`.<br/>
         /// Consumption metrics within each project are returned in ascending time order (oldest first).<br/>
         /// This request does not wake project computes.
         /// </summary>
@@ -52,7 +54,9 @@ namespace Neon
         /// The `metrics` query parameter is required. Supported values:<br/>
         /// `compute_unit_seconds`, `root_branch_bytes_month`, `child_branch_bytes_month`,<br/>
         /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`,<br/>
-        /// `extra_branches_month`, `snapshot_storage_bytes_month`.<br/>
+        /// `extra_branches_month`, `snapshot_storage_bytes_month`,<br/>
+        /// `functions_active_capacity_microseconds`, `functions_waiting_capacity_microseconds`,<br/>
+        /// `functions_invocations`, `functions_egress_bytes`.<br/>
         /// Consumption metrics within each project are returned in ascending time order (oldest first).<br/>
         /// This request does not wake project computes.
         /// </summary>
