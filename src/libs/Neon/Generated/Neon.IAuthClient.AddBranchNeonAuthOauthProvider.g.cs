@@ -57,6 +57,12 @@ namespace Neon
         /// <param name="microsoftTenantId">
         /// Tenant ID for the Microsoft OAuth provider. Only relevant when the OAuth provider is Microsoft; omit or leave blank for other providers.
         /// </param>
+        /// <param name="appleTeamId">
+        /// Apple Developer Team ID. Only relevant when the OAuth provider is Apple; omit for other providers.
+        /// </param>
+        /// <param name="appleKeyId">
+        /// Key ID of the Sign in with Apple private key supplied in `client_secret`. Only relevant when the OAuth provider is Apple; omit for other providers.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -67,6 +73,8 @@ namespace Neon
             string? clientId = default,
             string? clientSecret = default,
             string? microsoftTenantId = default,
+            string? appleTeamId = default,
+            string? appleKeyId = default,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

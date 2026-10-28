@@ -37,6 +37,18 @@ namespace Neon
         public string? ClientSecret { get; set; }
 
         /// <summary>
+        /// Apple Developer Team ID. Present only for the Apple OAuth provider.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("apple_team_id")]
+        public string? AppleTeamId { get; set; }
+
+        /// <summary>
+        /// Key ID of the Sign in with Apple private key. Present only for the Apple OAuth provider.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("apple_key_id")]
+        public string? AppleKeyId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -53,6 +65,12 @@ namespace Neon
         /// <param name="clientSecret">
         /// OAuth client secret for the provider.
         /// </param>
+        /// <param name="appleTeamId">
+        /// Apple Developer Team ID. Present only for the Apple OAuth provider.
+        /// </param>
+        /// <param name="appleKeyId">
+        /// Key ID of the Sign in with Apple private key. Present only for the Apple OAuth provider.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,12 +78,16 @@ namespace Neon
             global::Neon.NeonAuthOauthProviderId id,
             global::Neon.NeonAuthOauthProviderType type,
             string? clientId,
-            string? clientSecret)
+            string? clientSecret,
+            string? appleTeamId,
+            string? appleKeyId)
         {
             this.Id = id;
             this.Type = type;
             this.ClientId = clientId;
             this.ClientSecret = clientSecret;
+            this.AppleTeamId = appleTeamId;
+            this.AppleKeyId = appleKeyId;
         }
 
         /// <summary>
