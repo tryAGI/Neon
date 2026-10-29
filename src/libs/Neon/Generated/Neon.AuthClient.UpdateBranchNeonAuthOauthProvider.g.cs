@@ -508,7 +508,8 @@ namespace Neon
         /// The OAuth client ID registered with the provider. Omit to keep the currently configured value.
         /// </param>
         /// <param name="clientSecret">
-        /// OAuth client secret for the provider. Omit to leave the existing secret unchanged.
+        /// OAuth client secret for the provider. Omit to leave the existing secret unchanged.<br/>
+        /// For `apple`, a new `.p8` private key must be sent together with its `apple_key_id` in the same request; omit both to keep the stored key.
         /// </param>
         /// <param name="microsoftTenantId">
         /// The tenant ID scoping the Microsoft OAuth provider. Supply this field when the provider type is microsoft; it has no effect for other provider types.

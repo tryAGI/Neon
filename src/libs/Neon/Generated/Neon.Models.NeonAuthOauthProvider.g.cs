@@ -31,10 +31,16 @@ namespace Neon
         public string? ClientId { get; set; }
 
         /// <summary>
-        /// OAuth client secret for the provider.
+        /// Masked OAuth client secret for the provider. For `apple`, a masked fingerprint of the Sign in with Apple `.p8` private key; the key itself is never returned.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         public string? ClientSecret { get; set; }
+
+        /// <summary>
+        /// Tenant ID of the Microsoft OAuth provider. Present only for the Microsoft OAuth provider when a tenant is configured.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("microsoft_tenant_id")]
+        public string? MicrosoftTenantId { get; set; }
 
         /// <summary>
         /// Apple Developer Team ID. Present only for the Apple OAuth provider.
@@ -63,7 +69,10 @@ namespace Neon
         /// Public identifier for the OAuth application, issued by the provider when the application is registered.
         /// </param>
         /// <param name="clientSecret">
-        /// OAuth client secret for the provider.
+        /// Masked OAuth client secret for the provider. For `apple`, a masked fingerprint of the Sign in with Apple `.p8` private key; the key itself is never returned.
+        /// </param>
+        /// <param name="microsoftTenantId">
+        /// Tenant ID of the Microsoft OAuth provider. Present only for the Microsoft OAuth provider when a tenant is configured.
         /// </param>
         /// <param name="appleTeamId">
         /// Apple Developer Team ID. Present only for the Apple OAuth provider.
@@ -79,6 +88,7 @@ namespace Neon
             global::Neon.NeonAuthOauthProviderType type,
             string? clientId,
             string? clientSecret,
+            string? microsoftTenantId,
             string? appleTeamId,
             string? appleKeyId)
         {
@@ -86,6 +96,7 @@ namespace Neon
             this.Type = type;
             this.ClientId = clientId;
             this.ClientSecret = clientSecret;
+            this.MicrosoftTenantId = microsoftTenantId;
             this.AppleTeamId = appleTeamId;
             this.AppleKeyId = appleKeyId;
         }
