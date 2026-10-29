@@ -23,7 +23,7 @@ namespace Neon
         public string? ClientId { get; set; }
 
         /// <summary>
-        /// OAuth client secret for the provider.
+        /// OAuth client secret for the provider. For `apple`, the contents of the Sign in with Apple `.p8` private key. For `microsoft`, the client secret value from Microsoft Entra ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         public string? ClientSecret { get; set; }
@@ -60,7 +60,7 @@ namespace Neon
         /// The client ID issued by the OAuth provider for your application. Used to identify the application during the OAuth flow.
         /// </param>
         /// <param name="clientSecret">
-        /// OAuth client secret for the provider.
+        /// OAuth client secret for the provider. For `apple`, the contents of the Sign in with Apple `.p8` private key. For `microsoft`, the client secret value from Microsoft Entra ID.
         /// </param>
         /// <param name="microsoftTenantId">
         /// Tenant ID for the Microsoft OAuth provider. Only relevant when the OAuth provider is Microsoft; omit or leave blank for other providers.
