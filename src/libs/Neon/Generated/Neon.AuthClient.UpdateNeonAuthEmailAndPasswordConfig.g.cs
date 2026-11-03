@@ -520,6 +520,9 @@ namespace Neon
         /// <param name="disableSignUp">
         /// Whether to disable new user sign ups. When omitted, the current setting is not changed.
         /// </param>
+        /// <param name="revokeSessionsOnPasswordReset">
+        /// Whether all of a user's sessions are revoked when their password is reset. When omitted, the current setting is not changed.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -533,6 +536,7 @@ namespace Neon
             bool? sendVerificationEmailOnSignUp = default,
             bool? sendVerificationEmailOnSignIn = default,
             bool? disableSignUp = default,
+            bool? revokeSessionsOnPasswordReset = default,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -545,6 +549,7 @@ namespace Neon
                 SendVerificationEmailOnSignUp = sendVerificationEmailOnSignUp,
                 SendVerificationEmailOnSignIn = sendVerificationEmailOnSignIn,
                 DisableSignUp = disableSignUp,
+                RevokeSessionsOnPasswordReset = revokeSessionsOnPasswordReset,
             };
 
             return await UpdateNeonAuthEmailAndPasswordConfigAsync(
