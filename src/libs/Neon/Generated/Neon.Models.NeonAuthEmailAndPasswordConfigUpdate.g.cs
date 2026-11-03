@@ -54,6 +54,12 @@ namespace Neon
         public bool? DisableSignUp { get; set; }
 
         /// <summary>
+        /// Whether all of a user's sessions are revoked when their password is reset. When omitted, the current setting is not changed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("revoke_sessions_on_password_reset")]
+        public bool? RevokeSessionsOnPasswordReset { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -85,6 +91,9 @@ namespace Neon
         /// <param name="disableSignUp">
         /// Whether to disable new user sign ups. When omitted, the current setting is not changed.
         /// </param>
+        /// <param name="revokeSessionsOnPasswordReset">
+        /// Whether all of a user's sessions are revoked when their password is reset. When omitted, the current setting is not changed.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -95,7 +104,8 @@ namespace Neon
             bool? autoSignInAfterVerification,
             bool? sendVerificationEmailOnSignUp,
             bool? sendVerificationEmailOnSignIn,
-            bool? disableSignUp)
+            bool? disableSignUp,
+            bool? revokeSessionsOnPasswordReset)
         {
             this.Enabled = enabled;
             this.EmailVerificationMethod = emailVerificationMethod;
@@ -104,6 +114,7 @@ namespace Neon
             this.SendVerificationEmailOnSignUp = sendVerificationEmailOnSignUp;
             this.SendVerificationEmailOnSignIn = sendVerificationEmailOnSignIn;
             this.DisableSignUp = disableSignUp;
+            this.RevokeSessionsOnPasswordReset = revokeSessionsOnPasswordReset;
         }
 
         /// <summary>
