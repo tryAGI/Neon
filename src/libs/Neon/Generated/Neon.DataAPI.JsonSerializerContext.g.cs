@@ -27,12 +27,14 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPICreateRequestAuthProvider), TypeInfoPropertyName = "DataAPICreateRequestAuthProvider2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPICreateResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPIReponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPIReponseAuthProvider), TypeInfoPropertyName = "DataAPIReponseAuthProvider2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPIUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.GeneralError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPICreateRequestAuthProvider?), TypeInfoPropertyName = "NullableDataAPICreateRequestAuthProvider2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.DataAPIReponseAuthProvider?), TypeInfoPropertyName = "NullableDataAPIReponseAuthProvider2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     internal sealed partial class DataAPISourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
@@ -105,7 +107,11 @@ namespace Neon
                 return
                     typeToConvert == typeof(global::Neon.DataAPICreateRequestAuthProvider)
 
-                    || typeToConvert == typeof(global::Neon.DataAPICreateRequestAuthProvider?);
+                    || typeToConvert == typeof(global::Neon.DataAPICreateRequestAuthProvider?)
+
+                    || typeToConvert == typeof(global::Neon.DataAPIReponseAuthProvider)
+
+                    || typeToConvert == typeof(global::Neon.DataAPIReponseAuthProvider?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -120,6 +126,16 @@ namespace Neon
                 if (typeToConvert == typeof(global::Neon.DataAPICreateRequestAuthProvider?))
                 {
                     return new global::Neon.JsonConverters.DataAPICreateRequestAuthProviderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.DataAPIReponseAuthProvider))
+                {
+                    return new global::Neon.JsonConverters.DataAPIReponseAuthProviderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Neon.DataAPIReponseAuthProvider?))
+                {
+                    return new global::Neon.JsonConverters.DataAPIReponseAuthProviderNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }
