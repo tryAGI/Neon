@@ -58,6 +58,12 @@ namespace Neon
         public bool? AllowLocalhost { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logs_export")]
+        public global::Neon.NeonAuthLogsExportConfig? LogsExport { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -78,6 +84,7 @@ namespace Neon
         /// <param name="allowLocalhost">
         /// Permits authentication requests from localhost origins when true. Intended for local development; disable in production environments.
         /// </param>
+        /// <param name="logsExport"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,7 +96,8 @@ namespace Neon
             global::Neon.NeonAuthEmailServerConfigResponse? emailProvider,
             global::Neon.NeonAuthEmailAndPasswordConfig? emailAndPassword,
             global::System.Collections.Generic.IList<global::Neon.NeonAuthOauthProvider>? oauthProviders,
-            bool? allowLocalhost)
+            bool? allowLocalhost,
+            global::Neon.NeonAuthLogsExportConfig? logsExport)
         {
             this.Organization = organization;
             this.MagicLink = magicLink;
@@ -99,6 +107,7 @@ namespace Neon
             this.EmailAndPassword = emailAndPassword;
             this.OauthProviders = oauthProviders;
             this.AllowLocalhost = allowLocalhost;
+            this.LogsExport = logsExport;
         }
 
         /// <summary>

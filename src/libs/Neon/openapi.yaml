@@ -3328,6 +3328,64 @@
                 }
             }
         },
+        "/projects/{project_id}/branches/{branch_id}/auth/logs_export": {
+            "parameters": [
+                {
+                    "name": "project_id",
+                    "in": "path",
+                    "description": "The Neon project ID",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9-]{1,60}$"
+                    }
+                },
+                {
+                    "name": "branch_id",
+                    "in": "path",
+                    "description": "The Neon branch ID",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9-]{1,60}$"
+                    }
+                }
+            ],
+            "patch": {
+                "summary": "Update Neon Auth logs export setting",
+                "description": "Enables or disables exporting Neon Auth events for the branch to Neon Platform logs.\nOnly supported for Neon Auth (`better_auth`) integrations.\nWhen logs export is not available for the project, only disabling is accepted.\n",
+                "tags": [
+                    "Auth"
+                ],
+                "x-stability-level": "beta",
+                "operationId": "updateNeonAuthLogsExport",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NeonAuthLogsExportConfig"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "The logs export setting has been updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NeonAuthLogsExportConfig"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/GeneralError"
+                    }
+                }
+            }
+        },
         "/projects/{project_id}/branches/{branch_id}/auth/plugins": {
             "parameters": [
                 {
@@ -16083,6 +16141,18 @@
                     }
                 }
             },
+            "NeonAuthLogsExportConfig": {
+                "type": "object",
+                "required": [
+                    "enabled"
+                ],
+                "properties": {
+                    "enabled": {
+                        "type": "boolean",
+                        "description": "Whether Neon Auth events are exported to Neon Platform logs."
+                    }
+                }
+            },
             "NeonAuthAllowLocalhostResponse": {
                 "type": "object",
                 "required": [
@@ -16668,6 +16738,10 @@
                     "allow_localhost": {
                         "type": "boolean",
                         "description": "Permits authentication requests from localhost origins when true. Intended for local development; disable in production environments."
+                    },
+                    "logs_export": {
+                        "$ref": "#/components/schemas/NeonAuthLogsExportConfig",
+                        "description": "Whether Neon Auth events for the branch are exported to Neon Platform logs."
                     }
                 }
             },
