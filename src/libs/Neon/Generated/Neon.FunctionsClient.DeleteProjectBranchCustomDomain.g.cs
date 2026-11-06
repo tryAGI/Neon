@@ -43,6 +43,10 @@ namespace Neon
         /// <summary>
         /// Delete a custom domain from a branch<br/>
         /// Removes a custom domain registered on the branch and stops routing it.<br/>
+        /// For organizations on the per-project role model, deleting a custom domain<br/>
+        /// requires the project Admin role. Other callers receive `403` with code<br/>
+        /// `CUSTOM_DOMAIN_ADMIN_REQUIRED`. Organization API keys keep write-level<br/>
+        /// access.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
@@ -69,6 +73,10 @@ namespace Neon
         /// <summary>
         /// Delete a custom domain from a branch<br/>
         /// Removes a custom domain registered on the branch and stops routing it.<br/>
+        /// For organizations on the per-project role model, deleting a custom domain<br/>
+        /// requires the project Admin role. Other callers receive `403` with code<br/>
+        /// `CUSTOM_DOMAIN_ADMIN_REQUIRED`. Organization API keys keep write-level<br/>
+        /// access.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>

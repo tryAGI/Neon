@@ -9,6 +9,9 @@ namespace Neon
         /// Streams the raw bytes of the named object from the bucket on the<br/>
         /// specified branch, including objects inherited from ancestor branches.<br/>
         /// Served by the user's session (no customer S3 credentials required).<br/>
+        /// For organizations on the per-project role model, downloading object<br/>
+        /// bytes requires the Editor role or higher. Viewers can list objects<br/>
+        /// but not download them.<br/>
         /// The body is returned as `application/octet-stream` so a browser treats<br/>
         /// it as a download; the `Content-Length` and `ETag` response headers echo<br/>
         /// the stored object metadata.<br/>
@@ -39,6 +42,9 @@ namespace Neon
         /// Streams the raw bytes of the named object from the bucket on the<br/>
         /// specified branch, including objects inherited from ancestor branches.<br/>
         /// Served by the user's session (no customer S3 credentials required).<br/>
+        /// For organizations on the per-project role model, downloading object<br/>
+        /// bytes requires the Editor role or higher. Viewers can list objects<br/>
+        /// but not download them.<br/>
         /// The body is returned as `application/octet-stream` so a browser treats<br/>
         /// it as a download; the `Content-Length` and `ETag` response headers echo<br/>
         /// the stored object metadata.<br/>
@@ -69,6 +75,9 @@ namespace Neon
         /// Streams the raw bytes of the named object from the bucket on the<br/>
         /// specified branch, including objects inherited from ancestor branches.<br/>
         /// Served by the user's session (no customer S3 credentials required).<br/>
+        /// For organizations on the per-project role model, downloading object<br/>
+        /// bytes requires the Editor role or higher. Viewers can list objects<br/>
+        /// but not download them.<br/>
         /// The body is returned as `application/octet-stream` so a browser treats<br/>
         /// it as a download; the `Content-Length` and `ETag` response headers echo<br/>
         /// the stored object metadata.<br/>
@@ -100,6 +109,9 @@ namespace Neon
         /// Streams the raw bytes of the named object from the bucket on the<br/>
         /// specified branch, including objects inherited from ancestor branches.<br/>
         /// Served by the user's session (no customer S3 credentials required).<br/>
+        /// For organizations on the per-project role model, downloading object<br/>
+        /// bytes requires the Editor role or higher. Viewers can list objects<br/>
+        /// but not download them.<br/>
         /// The body is returned as `application/octet-stream` so a browser treats<br/>
         /// it as a download; the `Content-Length` and `ETag` response headers echo<br/>
         /// the stored object metadata.<br/>

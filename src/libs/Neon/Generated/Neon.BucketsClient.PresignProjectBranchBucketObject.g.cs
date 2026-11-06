@@ -59,6 +59,9 @@ namespace Neon
         ///   project write access.<br/>
         /// - `download` returns a presigned `GET` URL (the caller `GET`s the<br/>
         ///   bytes straight from `url`). Authorized with project read access.<br/>
+        ///   For organizations on the per-project role model, it also requires<br/>
+        ///   the Editor role or higher, because the URL grants access to the<br/>
+        ///   object's bytes.<br/>
         /// The platform mints a short-lived credential and builds the SigV4-signed<br/>
         /// URL against the branch's S3 data-plane host, returning it together with<br/>
         /// the HTTP method, any headers the caller must echo, and the URL's expiry.<br/>
@@ -106,6 +109,9 @@ namespace Neon
         ///   project write access.<br/>
         /// - `download` returns a presigned `GET` URL (the caller `GET`s the<br/>
         ///   bytes straight from `url`). Authorized with project read access.<br/>
+        ///   For organizations on the per-project role model, it also requires<br/>
+        ///   the Editor role or higher, because the URL grants access to the<br/>
+        ///   object's bytes.<br/>
         /// The platform mints a short-lived credential and builds the SigV4-signed<br/>
         /// URL against the branch's S3 data-plane host, returning it together with<br/>
         /// the HTTP method, any headers the caller must echo, and the URL's expiry.<br/>
@@ -397,6 +403,43 @@ namespace Neon
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // For organizations on the per-project role model, a `download` URL requires the Editor role or higher, because it grants access to the object's bytes. OAuth clients also need the `urn:neoncloud:projects:update` scope. Returned with code `OBJECT_DOWNLOAD_ACCESS_DENIED`.
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::Neon.GeneralError? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::Neon.ApiException<global::Neon.GeneralError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Bucket or branch not found
                             if ((int)__response.StatusCode == 404)
                             {
@@ -577,6 +620,9 @@ namespace Neon
         ///   project write access.<br/>
         /// - `download` returns a presigned `GET` URL (the caller `GET`s the<br/>
         ///   bytes straight from `url`). Authorized with project read access.<br/>
+        ///   For organizations on the per-project role model, it also requires<br/>
+        ///   the Editor role or higher, because the URL grants access to the<br/>
+        ///   object's bytes.<br/>
         /// The platform mints a short-lived credential and builds the SigV4-signed<br/>
         /// URL against the branch's S3 data-plane host, returning it together with<br/>
         /// the HTTP method, any headers the caller must echo, and the URL's expiry.<br/>

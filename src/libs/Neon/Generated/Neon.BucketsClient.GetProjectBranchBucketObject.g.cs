@@ -52,6 +52,9 @@ namespace Neon
         /// Streams the raw bytes of the named object from the bucket on the<br/>
         /// specified branch, including objects inherited from ancestor branches.<br/>
         /// Served by the user's session (no customer S3 credentials required).<br/>
+        /// For organizations on the per-project role model, downloading object<br/>
+        /// bytes requires the Editor role or higher. Viewers can list objects<br/>
+        /// but not download them.<br/>
         /// The body is returned as `application/octet-stream` so a browser treats<br/>
         /// it as a download; the `Content-Length` and `ETag` response headers echo<br/>
         /// the stored object metadata.<br/>
@@ -94,6 +97,9 @@ namespace Neon
         /// Streams the raw bytes of the named object from the bucket on the<br/>
         /// specified branch, including objects inherited from ancestor branches.<br/>
         /// Served by the user's session (no customer S3 credentials required).<br/>
+        /// For organizations on the per-project role model, downloading object<br/>
+        /// bytes requires the Editor role or higher. Viewers can list objects<br/>
+        /// but not download them.<br/>
         /// The body is returned as `application/octet-stream` so a browser treats<br/>
         /// it as a download; the `Content-Length` and `ETag` response headers echo<br/>
         /// the stored object metadata.<br/>
@@ -377,6 +383,43 @@ namespace Neon
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // For organizations on the per-project role model, downloading object bytes requires the Editor role or higher. Viewers can list objects but not download them. OAuth clients also need the `urn:neoncloud:projects:update` scope. Returned with code `OBJECT_DOWNLOAD_ACCESS_DENIED`.
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::Neon.GeneralError? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::Neon.ApiException<global::Neon.GeneralError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Object not found
                             if ((int)__response.StatusCode == 404)
                             {
@@ -511,6 +554,9 @@ namespace Neon
         /// Streams the raw bytes of the named object from the bucket on the<br/>
         /// specified branch, including objects inherited from ancestor branches.<br/>
         /// Served by the user's session (no customer S3 credentials required).<br/>
+        /// For organizations on the per-project role model, downloading object<br/>
+        /// bytes requires the Editor role or higher. Viewers can list objects<br/>
+        /// but not download them.<br/>
         /// The body is returned as `application/octet-stream` so a browser treats<br/>
         /// it as a download; the `Content-Length` and `ETag` response headers echo<br/>
         /// the stored object metadata.<br/>
@@ -795,6 +841,43 @@ namespace Neon
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // For organizations on the per-project role model, downloading object bytes requires the Editor role or higher. Viewers can list objects but not download them. OAuth clients also need the `urn:neoncloud:projects:update` scope. Returned with code `OBJECT_DOWNLOAD_ACCESS_DENIED`.
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::Neon.GeneralError? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::Neon.ApiException<global::Neon.GeneralError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Object not found
                             if ((int)__response.StatusCode == 404)
                             {
@@ -933,6 +1016,9 @@ namespace Neon
         /// Streams the raw bytes of the named object from the bucket on the<br/>
         /// specified branch, including objects inherited from ancestor branches.<br/>
         /// Served by the user's session (no customer S3 credentials required).<br/>
+        /// For organizations on the per-project role model, downloading object<br/>
+        /// bytes requires the Editor role or higher. Viewers can list objects<br/>
+        /// but not download them.<br/>
         /// The body is returned as `application/octet-stream` so a browser treats<br/>
         /// it as a download; the `Content-Length` and `ETag` response headers echo<br/>
         /// the stored object metadata.<br/>
@@ -1216,6 +1302,43 @@ namespace Neon
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // For organizations on the per-project role model, downloading object bytes requires the Editor role or higher. Viewers can list objects but not download them. OAuth clients also need the `urn:neoncloud:projects:update` scope. Returned with code `OBJECT_DOWNLOAD_ACCESS_DENIED`.
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::Neon.GeneralError? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::Neon.ApiException<global::Neon.GeneralError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Object not found
                             if ((int)__response.StatusCode == 404)
                             {

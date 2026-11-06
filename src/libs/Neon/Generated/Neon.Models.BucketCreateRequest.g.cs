@@ -18,6 +18,9 @@ namespace Neon
         /// <summary>
         /// Access level for the bucket. Defaults to `private`. Set to `public_read`<br/>
         /// to allow anonymous `GetObject`/`HeadObject` on objects in this bucket.<br/>
+        /// For organizations on the per-project role model, creating a<br/>
+        /// `public_read` bucket requires the project Admin role or an<br/>
+        /// organization API key.<br/>
         /// Default Value: private
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_level")]
@@ -39,6 +42,9 @@ namespace Neon
         /// <param name="accessLevel">
         /// Access level for the bucket. Defaults to `private`. Set to `public_read`<br/>
         /// to allow anonymous `GetObject`/`HeadObject` on objects in this bucket.<br/>
+        /// For organizations on the per-project role model, creating a<br/>
+        /// `public_read` bucket requires the project Admin role or an<br/>
+        /// organization API key.<br/>
         /// Default Value: private
         /// </param>
 #if NET7_0_OR_GREATER

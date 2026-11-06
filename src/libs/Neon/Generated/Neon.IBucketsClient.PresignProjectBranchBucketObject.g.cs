@@ -14,6 +14,9 @@ namespace Neon
         ///   project write access.<br/>
         /// - `download` returns a presigned `GET` URL (the caller `GET`s the<br/>
         ///   bytes straight from `url`). Authorized with project read access.<br/>
+        ///   For organizations on the per-project role model, it also requires<br/>
+        ///   the Editor role or higher, because the URL grants access to the<br/>
+        ///   object's bytes.<br/>
         /// The platform mints a short-lived credential and builds the SigV4-signed<br/>
         /// URL against the branch's S3 data-plane host, returning it together with<br/>
         /// the HTTP method, any headers the caller must echo, and the URL's expiry.<br/>
@@ -47,6 +50,9 @@ namespace Neon
         ///   project write access.<br/>
         /// - `download` returns a presigned `GET` URL (the caller `GET`s the<br/>
         ///   bytes straight from `url`). Authorized with project read access.<br/>
+        ///   For organizations on the per-project role model, it also requires<br/>
+        ///   the Editor role or higher, because the URL grants access to the<br/>
+        ///   object's bytes.<br/>
         /// The platform mints a short-lived credential and builds the SigV4-signed<br/>
         /// URL against the branch's S3 data-plane host, returning it together with<br/>
         /// the HTTP method, any headers the caller must echo, and the URL's expiry.<br/>
@@ -80,6 +86,9 @@ namespace Neon
         ///   project write access.<br/>
         /// - `download` returns a presigned `GET` URL (the caller `GET`s the<br/>
         ///   bytes straight from `url`). Authorized with project read access.<br/>
+        ///   For organizations on the per-project role model, it also requires<br/>
+        ///   the Editor role or higher, because the URL grants access to the<br/>
+        ///   object's bytes.<br/>
         /// The platform mints a short-lived credential and builds the SigV4-signed<br/>
         /// URL against the branch's S3 data-plane host, returning it together with<br/>
         /// the HTTP method, any headers the caller must echo, and the URL's expiry.<br/>

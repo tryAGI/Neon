@@ -16,6 +16,10 @@ namespace Neon
         /// resolves and a certificate is issued on the first request. A domain already<br/>
         /// registered to another resource is rejected with `409` and no detail about<br/>
         /// the owner. Re-registering the same domain for the same entity is idempotent.<br/>
+        /// For organizations on the per-project role model, registering a custom<br/>
+        /// domain requires the project Admin role. Other callers receive `403` with<br/>
+        /// code `CUSTOM_DOMAIN_ADMIN_REQUIRED`. Organization API keys keep write-level<br/>
+        /// access.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
@@ -43,6 +47,10 @@ namespace Neon
         /// resolves and a certificate is issued on the first request. A domain already<br/>
         /// registered to another resource is rejected with `409` and no detail about<br/>
         /// the owner. Re-registering the same domain for the same entity is idempotent.<br/>
+        /// For organizations on the per-project role model, registering a custom<br/>
+        /// domain requires the project Admin role. Other callers receive `403` with<br/>
+        /// code `CUSTOM_DOMAIN_ADMIN_REQUIRED`. Organization API keys keep write-level<br/>
+        /// access.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
@@ -70,6 +78,10 @@ namespace Neon
         /// resolves and a certificate is issued on the first request. A domain already<br/>
         /// registered to another resource is rejected with `409` and no detail about<br/>
         /// the owner. Re-registering the same domain for the same entity is idempotent.<br/>
+        /// For organizations on the per-project role model, registering a custom<br/>
+        /// domain requires the project Admin role. Other callers receive `403` with<br/>
+        /// code `CUSTOM_DOMAIN_ADMIN_REQUIRED`. Organization API keys keep write-level<br/>
+        /// access.<br/>
         /// **Note**: This endpoint is currently in Beta.
         /// </summary>
         /// <param name="projectId"></param>
