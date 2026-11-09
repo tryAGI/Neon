@@ -15,6 +15,10 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
+        Discord,
+        /// <summary>
+        ///
+        /// </summary>
         Github,
         /// <summary>
         ///
@@ -43,6 +47,7 @@ namespace Neon
             return value switch
             {
                 NeonAuthOauthProviderId.Apple => "apple",
+                NeonAuthOauthProviderId.Discord => "discord",
                 NeonAuthOauthProviderId.Github => "github",
                 NeonAuthOauthProviderId.Google => "google",
                 NeonAuthOauthProviderId.Microsoft => "microsoft",
@@ -58,6 +63,7 @@ namespace Neon
             return value switch
             {
                 "apple" => NeonAuthOauthProviderId.Apple,
+                "discord" => NeonAuthOauthProviderId.Discord,
                 "github" => NeonAuthOauthProviderId.Github,
                 "google" => NeonAuthOauthProviderId.Google,
                 "microsoft" => NeonAuthOauthProviderId.Microsoft,
