@@ -15,6 +15,10 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
+        NeonAuth,
+        /// <summary>
+        ///
+        /// </summary>
         PgEndpoint,
         /// <summary>
         ///
@@ -35,6 +39,7 @@ namespace Neon
             return value switch
             {
                 ProjectBranchLogSource.Function => "function",
+                ProjectBranchLogSource.NeonAuth => "neon_auth",
                 ProjectBranchLogSource.PgEndpoint => "pg_endpoint",
                 ProjectBranchLogSource.Storage => "storage",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -48,6 +53,7 @@ namespace Neon
             return value switch
             {
                 "function" => ProjectBranchLogSource.Function,
+                "neon_auth" => ProjectBranchLogSource.NeonAuth,
                 "pg_endpoint" => ProjectBranchLogSource.PgEndpoint,
                 "storage" => ProjectBranchLogSource.Storage,
                 _ => null,

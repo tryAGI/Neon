@@ -32,6 +32,15 @@ namespace Neon
         public global::Neon.CreateCredentialRequestPrincipalType PrincipalType { get; set; }
 
         /// <summary>
+        /// When the credential stops working. Omit it for a credential that<br/>
+        /// doesn't expire. Must be at least 1 minute and at most 365 days from<br/>
+        /// now. Rotating the credential keeps the same expiry, and an expired<br/>
+        /// credential can't be rotated.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public global::System.DateTime? ExpiresAt { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -50,17 +59,25 @@ namespace Neon
         /// platform-internal (e.g. function-serve auto-mint, presign signer)<br/>
         /// and are never issued through the customer-facing API.
         /// </param>
+        /// <param name="expiresAt">
+        /// When the credential stops working. Omit it for a credential that<br/>
+        /// doesn't expire. Must be at least 1 minute and at most 365 days from<br/>
+        /// now. Rotating the credential keeps the same expiry, and an expired<br/>
+        /// credential can't be rotated.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateCredentialRequest(
             global::System.Collections.Generic.IList<global::Neon.CredentialScope> scopes,
             string? name,
-            global::Neon.CreateCredentialRequestPrincipalType principalType)
+            global::Neon.CreateCredentialRequestPrincipalType principalType,
+            global::System.DateTime? expiresAt)
         {
             this.Name = name;
             this.Scopes = scopes ?? throw new global::System.ArgumentNullException(nameof(scopes));
             this.PrincipalType = principalType;
+            this.ExpiresAt = expiresAt;
         }
 
         /// <summary>

@@ -513,6 +513,12 @@ namespace Neon
         /// platform-internal (e.g. function-serve auto-mint, presign signer)<br/>
         /// and are never issued through the customer-facing API.
         /// </param>
+        /// <param name="expiresAt">
+        /// When the credential stops working. Omit it for a credential that<br/>
+        /// doesn't expire. Must be at least 1 minute and at most 365 days from<br/>
+        /// now. Rotating the credential keeps the same expiry, and an expired<br/>
+        /// credential can't be rotated.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -522,6 +528,7 @@ namespace Neon
             global::System.Collections.Generic.IList<global::Neon.CredentialScope> scopes,
             string? name = default,
             global::Neon.CreateCredentialRequestPrincipalType principalType = default,
+            global::System.DateTime? expiresAt = default,
             global::Neon.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -530,6 +537,7 @@ namespace Neon
                 Name = name,
                 Scopes = scopes,
                 PrincipalType = principalType,
+                ExpiresAt = expiresAt,
             };
 
             return await CreateCredentialAsync(
