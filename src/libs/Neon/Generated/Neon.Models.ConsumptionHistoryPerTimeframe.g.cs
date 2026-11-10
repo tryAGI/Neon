@@ -29,21 +29,21 @@ namespace Neon
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_time_seconds")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ActiveTimeSeconds { get; set; }
+        public required long ActiveTimeSeconds { get; set; }
 
         /// <summary>
         /// Seconds. The number of CPU seconds used by compute endpoints, including compute endpoints that have been deleted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compute_time_seconds")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ComputeTimeSeconds { get; set; }
+        public required long ComputeTimeSeconds { get; set; }
 
         /// <summary>
         /// Bytes. The amount of written data for all branches.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("written_data_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int WrittenDataBytes { get; set; }
+        public required long WrittenDataBytes { get; set; }
 
         /// <summary>
         /// Deprecated: always returns 0. Use the consumption history v2 endpoints (`/consumption_history/v2/projects`, `/consumption_history/v2/branches`) instead.<br/>
@@ -51,7 +51,7 @@ namespace Neon
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("synthetic_storage_size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SyntheticStorageSizeBytes { get; set; }
+        public required long SyntheticStorageSizeBytes { get; set; }
 
         /// <summary>
         /// Deprecated: always returns 0. Use the consumption history v2 endpoints (`/consumption_history/v2/projects`, `/consumption_history/v2/branches`) instead.<br/>
@@ -59,19 +59,19 @@ namespace Neon
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_storage_bytes_hour")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int DataStorageBytesHour { get; set; }
+        public required long DataStorageBytesHour { get; set; }
 
         /// <summary>
         /// Bytes. The amount of logical size consumed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logical_size_bytes")]
-        public int? LogicalSizeBytes { get; set; }
+        public long? LogicalSizeBytes { get; set; }
 
         /// <summary>
         /// Bytes-Hour. The amount of logical size consumed hourly.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logical_size_bytes_hour")]
-        public int? LogicalSizeBytesHour { get; set; }
+        public long? LogicalSizeBytesHour { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -117,13 +117,13 @@ namespace Neon
         public ConsumptionHistoryPerTimeframe(
             global::System.DateTime timeframeStart,
             global::System.DateTime timeframeEnd,
-            int activeTimeSeconds,
-            int computeTimeSeconds,
-            int writtenDataBytes,
-            int syntheticStorageSizeBytes,
-            int dataStorageBytesHour,
-            int? logicalSizeBytes,
-            int? logicalSizeBytesHour)
+            long activeTimeSeconds,
+            long computeTimeSeconds,
+            long writtenDataBytes,
+            long syntheticStorageSizeBytes,
+            long dataStorageBytesHour,
+            long? logicalSizeBytes,
+            long? logicalSizeBytesHour)
         {
             this.TimeframeStart = timeframeStart;
             this.TimeframeEnd = timeframeEnd;
