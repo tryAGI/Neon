@@ -58,6 +58,8 @@ namespace Neon
         /// than silently ignored; `limit`, `sort_order`, and the time window still<br/>
         /// apply, because those bound the query rather than form part of the<br/>
         /// expression.<br/>
+        /// `source=neon_auth` returns a 404 `telemetry_not_enabled` response when<br/>
+        /// Neon Auth logs are not enabled for this project.<br/>
         /// Give the window either as `since` — a duration ending at `end_time`, or<br/>
         /// at the current time when `end_time` is omitted — or as an explicit<br/>
         /// `start_time`. Supplying both is rejected.<br/>
@@ -106,6 +108,8 @@ namespace Neon
         /// than silently ignored; `limit`, `sort_order`, and the time window still<br/>
         /// apply, because those bound the query rather than form part of the<br/>
         /// expression.<br/>
+        /// `source=neon_auth` returns a 404 `telemetry_not_enabled` response when<br/>
+        /// Neon Auth logs are not enabled for this project.<br/>
         /// Give the window either as `since` — a duration ending at `end_time`, or<br/>
         /// at the current time when `end_time` is omitted — or as an explicit<br/>
         /// `start_time`. Supplying both is rejected.<br/>
@@ -613,6 +617,8 @@ namespace Neon
         /// than silently ignored; `limit`, `sort_order`, and the time window still<br/>
         /// apply, because those bound the query rather than form part of the<br/>
         /// expression.<br/>
+        /// `source=neon_auth` returns a 404 `telemetry_not_enabled` response when<br/>
+        /// Neon Auth logs are not enabled for this project.<br/>
         /// Give the window either as `since` — a duration ending at `end_time`, or<br/>
         /// at the current time when `end_time` is omitted — or as an explicit<br/>
         /// `start_time`. Supplying both is rejected.<br/>
