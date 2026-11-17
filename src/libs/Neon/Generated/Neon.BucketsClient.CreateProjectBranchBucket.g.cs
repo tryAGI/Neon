@@ -370,13 +370,13 @@ namespace Neon
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::Neon.GeneralError.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -387,7 +387,7 @@ namespace Neon
 
                                 throw global::Neon.ApiException<global::Neon.GeneralError>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_403 is { Length: > 0 } ? __content_403 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
@@ -407,13 +407,13 @@ namespace Neon
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_410 = global::Neon.GeneralError.FromJson(__content_410, JsonSerializerContext);
+                                        __value_410 = __content_410 is not { Length: > 0 } ? null : global::Neon.GeneralError.FromJson(__content_410, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_410 = global::Neon.GeneralError.FromJson(__content_410, JsonSerializerContext);
+                                        __value_410 = __content_410 is not { Length: > 0 } ? null : global::Neon.GeneralError.FromJson(__content_410, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -424,7 +424,7 @@ namespace Neon
 
                                 throw global::Neon.ApiException<global::Neon.GeneralError>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_410 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_410 is { Length: > 0 } ? __content_410 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_410,
                                     responseBody: __content_410,
                                     responseObject: __value_410,
@@ -444,13 +444,13 @@ namespace Neon
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_default = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
+                                        __value_default = __content_default is not { Length: > 0 } ? null : global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_default = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_default = global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
+                                        __value_default = __content_default is not { Length: > 0 } ? null : global::Neon.GeneralError.FromJson(__content_default, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -461,7 +461,7 @@ namespace Neon
 
                                 throw global::Neon.ApiException<global::Neon.GeneralError>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_default ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_default is { Length: > 0 } ? __content_default : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_default,
                                     responseBody: __content_default,
                                     responseObject: __value_default,
@@ -504,7 +504,7 @@ namespace Neon
                                 {
                                     throw global::Neon.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -549,7 +549,7 @@ namespace Neon
 
                                     throw global::Neon.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
