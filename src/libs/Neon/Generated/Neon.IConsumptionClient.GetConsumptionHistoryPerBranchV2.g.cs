@@ -15,7 +15,9 @@ namespace Neon
         /// `compute_unit_seconds`, `root_branch_bytes_month`, `child_branch_bytes_month`,<br/>
         /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`,<br/>
         /// `functions_active_capacity_microseconds`, `functions_waiting_capacity_microseconds`,<br/>
-        /// `functions_invocations`, `functions_egress_bytes`.<br/>
+        /// `functions_invocations`, `functions_egress_bytes`,<br/>
+        /// `ai_gateway_input_tokens`, `ai_gateway_output_tokens`, `ai_gateway_total_tokens`,<br/>
+        /// `ai_gateway_cached_input_tokens`, `ai_gateway_cache_creation_tokens`, `ai_gateway_reasoning_tokens`.<br/>
         /// This endpoint does not support `extra_branches_month` or `snapshot_storage_bytes_month`.<br/>
         /// Use `GET /consumption_history/v2/projects` for those.<br/>
         /// Consumption metrics within each branch are returned in ascending time order (oldest first).<br/>
@@ -58,7 +60,9 @@ namespace Neon
         /// `compute_unit_seconds`, `root_branch_bytes_month`, `child_branch_bytes_month`,<br/>
         /// `instant_restore_bytes_month`, `public_network_transfer_bytes`, `private_network_transfer_bytes`,<br/>
         /// `functions_active_capacity_microseconds`, `functions_waiting_capacity_microseconds`,<br/>
-        /// `functions_invocations`, `functions_egress_bytes`.<br/>
+        /// `functions_invocations`, `functions_egress_bytes`,<br/>
+        /// `ai_gateway_input_tokens`, `ai_gateway_output_tokens`, `ai_gateway_total_tokens`,<br/>
+        /// `ai_gateway_cached_input_tokens`, `ai_gateway_cache_creation_tokens`, `ai_gateway_reasoning_tokens`.<br/>
         /// This endpoint does not support `extra_branches_month` or `snapshot_storage_bytes_month`.<br/>
         /// Use `GET /consumption_history/v2/projects` for those.<br/>
         /// Consumption metrics within each branch are returned in ascending time order (oldest first).<br/>
