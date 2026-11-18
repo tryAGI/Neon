@@ -71,6 +71,15 @@ namespace Neon
         public bool? RequireMfa { get; set; }
 
         /// <summary>
+        /// When this organization's SSO enforcement grace period ends, if enforcement was recently<br/>
+        /// enabled. Present only while the grace window is still open — sessions established before<br/>
+        /// enforcement keep working until then. Lets members see the deadline for signing in through<br/>
+        /// the organization's identity provider before enforcement applies to them.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sso_enforcement_grace_until")]
+        public global::System.DateTime? SsoEnforcementGraceUntil { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -107,6 +116,12 @@ namespace Neon
         /// <param name="requireMfa">
         /// If true, all members must have MFA enabled to access this organization
         /// </param>
+        /// <param name="ssoEnforcementGraceUntil">
+        /// When this organization's SSO enforcement grace period ends, if enforcement was recently<br/>
+        /// enabled. Present only while the grace window is still open — sessions established before<br/>
+        /// enforcement keep working until then. Lets members see the deadline for signing in through<br/>
+        /// the organization's identity provider before enforcement applies to them.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -119,7 +134,8 @@ namespace Neon
             string managedBy,
             global::System.DateTime updatedAt,
             bool? allowHipaaProjects,
-            bool? requireMfa)
+            bool? requireMfa,
+            global::System.DateTime? ssoEnforcementGraceUntil)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -130,6 +146,7 @@ namespace Neon
             this.UpdatedAt = updatedAt;
             this.AllowHipaaProjects = allowHipaaProjects;
             this.RequireMfa = requireMfa;
+            this.SsoEnforcementGraceUntil = ssoEnforcementGraceUntil;
         }
 
         /// <summary>

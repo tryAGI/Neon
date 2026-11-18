@@ -15,12 +15,17 @@ namespace Neon
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RegionVPCEndpointServicesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.ActiveRegionsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Neon.RegionResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.RegionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Neon.GeneralError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Neon.RegionResponse>))]
     internal sealed partial class RegionSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
