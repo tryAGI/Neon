@@ -69,7 +69,8 @@ namespace Neon
         /// `functions_active_capacity_microseconds`, `functions_waiting_capacity_microseconds`,<br/>
         /// `functions_invocations`, `functions_egress_bytes`,<br/>
         /// `ai_gateway_input_tokens`, `ai_gateway_output_tokens`, `ai_gateway_total_tokens`,<br/>
-        /// `ai_gateway_cached_input_tokens`, `ai_gateway_cache_creation_tokens`, `ai_gateway_reasoning_tokens`.<br/>
+        /// `ai_gateway_cached_input_tokens`, `ai_gateway_cache_creation_tokens`, `ai_gateway_reasoning_tokens`,<br/>
+        /// `object_storage_bytes_month`, `object_storage_network_transfer_bytes`.<br/>
         /// Consumption metrics within each project are returned in ascending time order (oldest first).<br/>
         /// This request does not wake project computes.
         /// </summary>
@@ -127,7 +128,8 @@ namespace Neon
         /// `functions_active_capacity_microseconds`, `functions_waiting_capacity_microseconds`,<br/>
         /// `functions_invocations`, `functions_egress_bytes`,<br/>
         /// `ai_gateway_input_tokens`, `ai_gateway_output_tokens`, `ai_gateway_total_tokens`,<br/>
-        /// `ai_gateway_cached_input_tokens`, `ai_gateway_cache_creation_tokens`, `ai_gateway_reasoning_tokens`.<br/>
+        /// `ai_gateway_cached_input_tokens`, `ai_gateway_cache_creation_tokens`, `ai_gateway_reasoning_tokens`,<br/>
+        /// `object_storage_bytes_month`, `object_storage_network_transfer_bytes`.<br/>
         /// Consumption metrics within each project are returned in ascending time order (oldest first).<br/>
         /// This request does not wake project computes.
         /// </summary>

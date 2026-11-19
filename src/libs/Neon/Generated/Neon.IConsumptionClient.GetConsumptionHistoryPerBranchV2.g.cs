@@ -17,8 +17,10 @@ namespace Neon
         /// `functions_active_capacity_microseconds`, `functions_waiting_capacity_microseconds`,<br/>
         /// `functions_invocations`, `functions_egress_bytes`,<br/>
         /// `ai_gateway_input_tokens`, `ai_gateway_output_tokens`, `ai_gateway_total_tokens`,<br/>
-        /// `ai_gateway_cached_input_tokens`, `ai_gateway_cache_creation_tokens`, `ai_gateway_reasoning_tokens`.<br/>
-        /// This endpoint does not support `extra_branches_month` or `snapshot_storage_bytes_month`.<br/>
+        /// `ai_gateway_cached_input_tokens`, `ai_gateway_cache_creation_tokens`, `ai_gateway_reasoning_tokens`,<br/>
+        /// `object_storage_network_transfer_bytes`.<br/>
+        /// This endpoint does not support `extra_branches_month`, `snapshot_storage_bytes_month`,<br/>
+        /// or `object_storage_bytes_month`.<br/>
         /// Use `GET /consumption_history/v2/projects` for those.<br/>
         /// Consumption metrics within each branch are returned in ascending time order (oldest first).<br/>
         /// This request does not wake project computes.
@@ -62,8 +64,10 @@ namespace Neon
         /// `functions_active_capacity_microseconds`, `functions_waiting_capacity_microseconds`,<br/>
         /// `functions_invocations`, `functions_egress_bytes`,<br/>
         /// `ai_gateway_input_tokens`, `ai_gateway_output_tokens`, `ai_gateway_total_tokens`,<br/>
-        /// `ai_gateway_cached_input_tokens`, `ai_gateway_cache_creation_tokens`, `ai_gateway_reasoning_tokens`.<br/>
-        /// This endpoint does not support `extra_branches_month` or `snapshot_storage_bytes_month`.<br/>
+        /// `ai_gateway_cached_input_tokens`, `ai_gateway_cache_creation_tokens`, `ai_gateway_reasoning_tokens`,<br/>
+        /// `object_storage_network_transfer_bytes`.<br/>
+        /// This endpoint does not support `extra_branches_month`, `snapshot_storage_bytes_month`,<br/>
+        /// or `object_storage_bytes_month`.<br/>
         /// Use `GET /consumption_history/v2/projects` for those.<br/>
         /// Consumption metrics within each branch are returned in ascending time order (oldest first).<br/>
         /// This request does not wake project computes.
