@@ -74,7 +74,9 @@ namespace Neon
         /// When this organization's SSO enforcement grace period ends, if enforcement was recently<br/>
         /// enabled. Present only while the grace window is still open — sessions established before<br/>
         /// enforcement keep working until then. Lets members see the deadline for signing in through<br/>
-        /// the organization's identity provider before enforcement applies to them.
+        /// the organization's identity provider before enforcement applies to them.<br/>
+        /// Omitted for browser sessions that already satisfy the organization's SSO requirements.<br/>
+        /// An absent value does not mean that SSO enforcement is disabled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sso_enforcement_grace_until")]
         public global::System.DateTime? SsoEnforcementGraceUntil { get; set; }
@@ -120,7 +122,9 @@ namespace Neon
         /// When this organization's SSO enforcement grace period ends, if enforcement was recently<br/>
         /// enabled. Present only while the grace window is still open — sessions established before<br/>
         /// enforcement keep working until then. Lets members see the deadline for signing in through<br/>
-        /// the organization's identity provider before enforcement applies to them.
+        /// the organization's identity provider before enforcement applies to them.<br/>
+        /// Omitted for browser sessions that already satisfy the organization's SSO requirements.<br/>
+        /// An absent value does not mean that SSO enforcement is disabled.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
