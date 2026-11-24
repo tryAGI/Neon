@@ -42,10 +42,10 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Remove organization spending limit<br/>
-        /// Removes the configured monthly spending limit for the specified organization.<br/>
-        /// Idempotent — removing an already-unset limit still succeeds.<br/>
-        /// Available to organization admins on Launch and Scale plans only.
+        /// Remove organization spending notification threshold<br/>
+        /// Removes the organization's monthly spending notification threshold, which stops the spending notification emails.<br/>
+        /// Idempotent: removing an already-unset threshold still succeeds.<br/>
+        /// Available to organization admins on Launch and Scale plans only. Other plans return `422`.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -65,10 +65,10 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Remove organization spending limit<br/>
-        /// Removes the configured monthly spending limit for the specified organization.<br/>
-        /// Idempotent — removing an already-unset limit still succeeds.<br/>
-        /// Available to organization admins on Launch and Scale plans only.
+        /// Remove organization spending notification threshold<br/>
+        /// Removes the organization's monthly spending notification threshold, which stops the spending notification emails.<br/>
+        /// Idempotent: removing an already-unset threshold still succeeds.<br/>
+        /// Available to organization admins on Launch and Scale plans only. Other plans return `422`.
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

@@ -11,6 +11,10 @@ namespace Neon
         /// <summary>
         ///
         /// </summary>
+        Chatgpt,
+        /// <summary>
+        ///
+        /// </summary>
         Github,
         /// <summary>
         ///
@@ -50,6 +54,7 @@ namespace Neon
         {
             return value switch
             {
+                IdentityProviderId.Chatgpt => "chatgpt",
                 IdentityProviderId.Github => "github",
                 IdentityProviderId.Google => "google",
                 IdentityProviderId.Hasura => "hasura",
@@ -67,6 +72,7 @@ namespace Neon
         {
             return value switch
             {
+                "chatgpt" => IdentityProviderId.Chatgpt,
                 "github" => IdentityProviderId.Github,
                 "google" => IdentityProviderId.Google,
                 "hasura" => IdentityProviderId.Hasura,

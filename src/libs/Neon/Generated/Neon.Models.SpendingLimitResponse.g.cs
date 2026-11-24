@@ -9,8 +9,8 @@ namespace Neon
     public sealed partial class SpendingLimitResponse
     {
         /// <summary>
-        /// Monthly spending cap in cents. `null` indicates that no limit<br/>
-        /// is currently configured.
+        /// Monthly spending notification threshold in cents. `null` indicates<br/>
+        /// that no threshold is currently configured.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spending_limit_cents")]
         public long? SpendingLimitCents { get; set; }
@@ -25,8 +25,8 @@ namespace Neon
         /// Initializes a new instance of the <see cref="SpendingLimitResponse" /> class.
         /// </summary>
         /// <param name="spendingLimitCents">
-        /// Monthly spending cap in cents. `null` indicates that no limit<br/>
-        /// is currently configured.
+        /// Monthly spending notification threshold in cents. `null` indicates<br/>
+        /// that no threshold is currently configured.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
