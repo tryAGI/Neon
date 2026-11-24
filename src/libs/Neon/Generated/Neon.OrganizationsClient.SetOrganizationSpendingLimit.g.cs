@@ -44,12 +44,13 @@ namespace Neon
             ref string content);
 
         /// <summary>
-        /// Set organization spending limit<br/>
-        /// Sets the monthly spending limit for the specified organization.<br/>
-        /// To remove a previously configured limit, send a DELETE request to this endpoint.<br/>
-        /// When a limit is configured, email notifications are sent at 80% and 100% of the limit.<br/>
-        /// Computes are not suspended when the limit is reached.<br/>
-        /// Available to organization admins on Launch and Scale plans only.
+        /// Set organization spending notification threshold<br/>
+        /// Sets a monthly spending notification threshold for the organization, in cents.<br/>
+        /// Neon emails organization admins when monthly charges reach 80% and 100% of the threshold.<br/>
+        /// The threshold is an alert only: computes keep running when it's reached.<br/>
+        /// To remove the threshold, send a DELETE request to this endpoint.<br/>
+        /// Available to organization admins on Launch and Scale plans only. Other plans return `422`.<br/>
+        /// See [Spending notifications](https://neon.com/docs/introduction/spending-notifications).
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="request"></param>
@@ -74,12 +75,13 @@ namespace Neon
             return __response.Body;
         }
         /// <summary>
-        /// Set organization spending limit<br/>
-        /// Sets the monthly spending limit for the specified organization.<br/>
-        /// To remove a previously configured limit, send a DELETE request to this endpoint.<br/>
-        /// When a limit is configured, email notifications are sent at 80% and 100% of the limit.<br/>
-        /// Computes are not suspended when the limit is reached.<br/>
-        /// Available to organization admins on Launch and Scale plans only.
+        /// Set organization spending notification threshold<br/>
+        /// Sets a monthly spending notification threshold for the organization, in cents.<br/>
+        /// Neon emails organization admins when monthly charges reach 80% and 100% of the threshold.<br/>
+        /// The threshold is an alert only: computes keep running when it's reached.<br/>
+        /// To remove the threshold, send a DELETE request to this endpoint.<br/>
+        /// Available to organization admins on Launch and Scale plans only. Other plans return `422`.<br/>
+        /// See [Spending notifications](https://neon.com/docs/introduction/spending-notifications).
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="request"></param>
@@ -488,21 +490,22 @@ namespace Neon
             }
         }
         /// <summary>
-        /// Set organization spending limit<br/>
-        /// Sets the monthly spending limit for the specified organization.<br/>
-        /// To remove a previously configured limit, send a DELETE request to this endpoint.<br/>
-        /// When a limit is configured, email notifications are sent at 80% and 100% of the limit.<br/>
-        /// Computes are not suspended when the limit is reached.<br/>
-        /// Available to organization admins on Launch and Scale plans only.
+        /// Set organization spending notification threshold<br/>
+        /// Sets a monthly spending notification threshold for the organization, in cents.<br/>
+        /// Neon emails organization admins when monthly charges reach 80% and 100% of the threshold.<br/>
+        /// The threshold is an alert only: computes keep running when it's reached.<br/>
+        /// To remove the threshold, send a DELETE request to this endpoint.<br/>
+        /// Available to organization admins on Launch and Scale plans only. Other plans return `422`.<br/>
+        /// See [Spending notifications](https://neon.com/docs/introduction/spending-notifications).
         /// </summary>
         /// <param name="orgId"></param>
         /// <param name="spendingLimitCents">
-        /// Monthly spending cap in cents. Must be positive. To remove a<br/>
-        /// previously configured limit, send a DELETE request to the<br/>
-        /// spending_limit endpoint — `0` and `null` are rejected here.<br/>
-        /// The cap is alert-only: notifications fire at 80% and 100%, but<br/>
-        /// computes are not suspended. Setting a cap below the period's<br/>
-        /// already-accrued spend is permitted and will trigger the<br/>
+        /// Monthly spending notification threshold in cents. Must be positive.<br/>
+        /// To remove a previously configured threshold, send a DELETE request<br/>
+        /// to the spending_limit endpoint — `0` and `null` are rejected here.<br/>
+        /// The threshold is alert-only: notifications are sent at 80% and 100%,<br/>
+        /// but computes are not suspended. Setting a threshold below the<br/>
+        /// period's already-accrued spend is permitted and triggers the<br/>
         /// over-limit notification on the next worker run.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

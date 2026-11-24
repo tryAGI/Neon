@@ -134,9 +134,10 @@ namespace Neon
         public global::Neon.PlanDetails? PlanDetails { get; set; }
 
         /// <summary>
-        /// Monthly spending cap in cents for V3 paid plans. When set,<br/>
-        /// notifications are sent at 80% and 100% of this limit. `null`<br/>
-        /// means no limit is configured.
+        /// Monthly spending notification threshold in cents, on Launch and<br/>
+        /// Scale plans. When set, Neon sends email notifications at 80% and<br/>
+        /// 100% of this threshold; computes are not suspended. `null` means no<br/>
+        /// threshold is configured.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spending_limit_cents")]
         public long? SpendingLimitCents { get; set; }
@@ -202,9 +203,10 @@ namespace Neon
         /// </param>
         /// <param name="planDetails"></param>
         /// <param name="spendingLimitCents">
-        /// Monthly spending cap in cents for V3 paid plans. When set,<br/>
-        /// notifications are sent at 80% and 100% of this limit. `null`<br/>
-        /// means no limit is configured.
+        /// Monthly spending notification threshold in cents, on Launch and<br/>
+        /// Scale plans. When set, Neon sends email notifications at 80% and<br/>
+        /// 100% of this threshold; computes are not suspended. `null` means no<br/>
+        /// threshold is configured.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
